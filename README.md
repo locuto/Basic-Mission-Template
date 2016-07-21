@@ -40,14 +40,16 @@ Detailed description of the mission. This text can be the same as the one posted
 
 **Last modified**: 2016/04/06.
 
-**Description**: The "Arma 3 Basic Mission Template" (A3-BMT) was designed in order to ease the amount of work
-required when editing a mission for Arma 3. Although originally envisaged to satisfy the needs of the "1er Regiment Aerotransportat (1RA)" of the Catalan community of simulation "Cavallers del Cel", its scope has broaden since its
-adoption by other communities.
+**Description**: The "Arma 3 Basic Mission Template" (A3-BMT) was designed in order to ease the amount of
+work required when editing a mission for Arma 3. Although originally envisaged to satisfy the needs of the
+"1er Regiment Aerotransportat (1RA)" of the Catalan community of simulation "Cavallers del Cel", its scope
+has broaden since its adoption by other communities.
 
 ### Requirements:
 
-The "Arma 3 Basic Mission Template (A3-BMT) has been designed to be flexible and to be independent from external addons.
-Any contributer that wants to add an external script must include it with an option to deactivate it.
+The "Arma 3 Basic Mission Template (A3-BMT) has been designed to be flexible and to be independent from
+external addons. Any contributer that wants to add an external script must include it with an option to
+deactivate it.
 
 ### Structure:
 

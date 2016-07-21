@@ -1,4 +1,4 @@
-## scripts/ace3
+## src/ace3
 
 This folder contains functions that take care of ACE3 configuration (www.ace3mod.com). This is done in two
 stages:
@@ -14,3 +14,5 @@ Additionally the following functions are defined that deal with ACE3 functionali
 
 * `fn_ace3_assignWounds.sqf`: function that can be called at the `init` field. It assigns wounds to the
 desired unit.
+* `bmt_ace3_assignRandomDamage.sqf`: script that can be called at the `init` field and in a trigger. It
+assigns random wounds (bullet, vehicle crash or explosion) to a list of units.
