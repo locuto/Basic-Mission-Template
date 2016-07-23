@@ -28,9 +28,9 @@ switch (bmt_param_respawn_tickets) do {
         };
         switch (side player) do {
             case west: { _pos = 0; };
-            case east: { _pos = 0; };
-            case resistance: { _pos = 0; };
-            case civilian: { _pos = 0; };
+            case east: { _pos = 1; };
+            case resistance: { _pos = 2; };
+            case civilian: { _pos = 3; };
         };
         bmt_array_numRespawns set [_pos, _numRespawns];
         publicVariable bmt_array_numRespawns;
