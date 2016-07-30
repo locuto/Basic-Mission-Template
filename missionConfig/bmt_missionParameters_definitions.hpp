@@ -19,6 +19,7 @@
 #define BMT_ACE3_BALLISTICS 1 // 0 = Basic, 1 = Advanced ballistics.
 #define BMT_ACE3_MEDICAL    2 // 0 = Disabled, 1 = Basic medical system, 2 = Advanced medical system.
 #define BMT_ACE3_SPECTATOR  0 // 0 = BI (End Game), 1 = ACE 3 Spectator mode.
+#define BMT_ACE3_REVIVE     0 // 0 = Disabled, 1 = Players only, 2 = Players and AI.
 
 //=======================================================================================================//
 // Advanced Combat Radio Environment 2 (ACRE2)                                                           //
@@ -53,9 +54,9 @@
 //=======================================================================================================//
 // T8 Units                                                                                              //
 //=======================================================================================================//
-#define BMT_T8UNITS_ENABLE 0 // 0 = Disable, 1 = Enable
-#define BMT_T8UNITS_DEBUG  0 // 0 = No debug, 1 = With debug
-#define BMT_T8UNITS_DAC    0 // 0 = Without DAC support, 1 = With DAC support
+#define BMT_T8UNITS_ENABLE 1 // 0 = Disable, 1 = Enable
+#define BMT_T8UNITS_DEBUG  1 // 0 = No debug, 1 = With debug
+#define BMT_T8UNITS_DAC    1 // 0 = Without DAC support, 1 = With DAC support
 
 //=======================================================================================================//
 // Task Force Arrowhead Radio (TFAR)                                                                     //
