@@ -53,9 +53,9 @@
 //=======================================================================================================//
 // T8 Units                                                                                              //
 //=======================================================================================================//
-#define BMT_T8UNITS_ENABLE 0 // 0 = Disable, 1 = Enable
-#define BMT_T8UNITS_DEBUG  0 // 0 = No debug, 1 = With debug
-#define BMT_T8UNITS_DAC    0 // 0 = Without DAC support, 1 = With DAC support
+#define BMT_T8UNITS_ENABLE 1 // 0 = Disable, 1 = Enable
+#define BMT_T8UNITS_DEBUG  1 // 0 = No debug, 1 = With debug
+#define BMT_T8UNITS_DAC    1 // 0 = Without DAC support, 1 = With DAC support
 
 //=======================================================================================================//
 // Task Force Arrowhead Radio (TFAR)                                                                     //
