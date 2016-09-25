@@ -23,7 +23,7 @@
 // Variable declarations.                                                                                //
 //=======================================================================================================//
 private["_isInfantry"];
-private["_uniform", "_vestLD", "_vestRFL", "_vestGR", "_vestDM", "_vestME", "_vestAR", "_helmet", "_helmetSN", "_backpack", "uavBackpack"];
+private["_uniform", "_vestLD", "_vestRFL", "_vestGR", "_vestDM", "_vestME", "_vestAR", "_helmet", "_helmetSN", "_backpack", "uavBackpack", "_unitInsignia"];
 private["_uavBattery", "_cableTie", "_mapTools", "_microDAGR", "_earPlugs", "_vectorIV", "_atragmx", "_kestrel", "_clacker", "_clackerm26", "_defusalKit", "_cellphone"];
 private["_atropine", "_epinephrine", "_morphine", "_bandage", "_elasticBandage", "_quickClot", "_packingBandage"];
 private["_bloodBag250", "_bloodBag500", "_bloodBag1000", "_plasmaBag250", "_plasmaBag500", "_plasmaBag1000", "_salineBag250", "_salineBag500", "_salineBag1000"];
@@ -89,5 +89,8 @@ _helmetSN = "rhs_Booniehat_ocp";
 
 // Backpacks.
 _backpack = "rhsusf_assault_eagleaiii_ocp";
+
+// Insignia
+_unitInsignia = "";
 
 //============================================= END OF FILE =============================================//
