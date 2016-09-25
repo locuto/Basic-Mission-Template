@@ -35,6 +35,17 @@ if (isClass (configFile >> "CfgPatches" >> "ace_common")) then {
     diag_log "(BMT Debug) File not found: ace_common.pbo.";
 };
 
+if (isClass (configFile >> "CfgPatches" >> "ace_cookoff")) then {
+    //====================================================================================================//
+    // Cookoff: http://ace3mod.com/wiki/framework/cookoff-framework.html                       //
+    //====================================================================================================//
+
+    ["ace_cookoff_enable", true, true, true] call ACE_common_fnc_setSetting;                                   // 0 = Disabled, 1* = Enabled.
+} else {
+    _moduleError = true;
+    diag_log "(BMT Debug) File not found: ace_cookoff.pbo.";
+};
+
 if (isClass (configFile >> "CfgPatches" >> "ace_finger")) then {
     //====================================================================================================//
     // Finger: http://ace3mod.com/wiki/missionmaker/modules.html#1-7-finger-settings                      //
@@ -180,7 +191,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
 
     ["ace_medical_allowDeadBodyMovement", false, true, true] call ACE_common_fnc_setSetting;                   // 0* = Disabled, 1 = Enabled.
     ["ace_medical_allowLitterCreation", true, true, true] call ACE_common_fnc_setSetting;                      // 0 = Disabled, 1* = Enabled.
-    // ["ace_medical_litterSimulationDetail", 3.0, false, false] call ACE_common_fnc_setSetting;               // Client side. 0 = Disabled (0), 1 = Baix(50), 2 = Mitjà (100), 3* = Alt (1000), 4 = Ultra (5000).
+    ["ace_medical_litterSimulationDetail", 3.0, true, true] call ACE_common_fnc_setSetting;               // Client side. 0 = Disabled (0), 1 = Baix(50), 2 = Mitjà (100), 3* = Alt (1000), 4 = Ultra (5000).
     ["ace_medical_litterCleanUpDelay", 1800.0, true, true] call ACE_common_fnc_setSetting;                     // Scalar. 1800 = Default value.
     ["ace_medical_medicSetting_basicEpi", 1.0, true, true] call ACE_common_fnc_setSetting;                    // 0 = Disabled, 1* = Enabled.
     ["ace_medical_medicSetting_PAK", 1.0, true, true] call ACE_common_fnc_setSetting;                          // 0 = Anybody, 1* = Only medics, 2 = Only doctors.
@@ -204,6 +215,13 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
 } else {
     _moduleError = true;
     diag_log "(BMT Debug) File not found: ace_medical.pbo.";
+};
+
+if (isClass (configFile >> "CfgPatches" >> "ace_medical_ai")) then {
+    ["ace_medical_ai_enabledFor", 2.0, true, true] call ACE_common_fnc_setSetting;                                  // 0 = Enabled, 1 = Server and HC, 2 = Enabled.
+} else {
+    _moduleError = true;
+    diag_log "(BMT Debug) File not found: ace_medical_ai.pbo.";
 };
 
 if (isClass (configFile >> "CfgPatches" >> "ace_medical_menu")) then {
@@ -328,11 +346,11 @@ if (isClass (configFile >> "CfgPatches" >> "ace_respawn")) then {
     diag_log "(BMT Debug) File not found: ace_respawn.pbo.";
 };
 
-if (isClass (configFile >> "CfgPatches" >> "acex_sitting")) then {
-    ["acex_sitting_enable", true, true, true] call ACE_common_fnc_setSetting;                                   // 0 = Disabled, 1* = Enabled.
+if (isClass (configFile >> "CfgPatches" >> "ace_sitting")) then {
+    ["ace_sitting_enable", true, true, true] call ACE_common_fnc_setSetting;                                   // 0 = Disabled, 1* = Enabled.
 } else {
     _moduleError = true;
-    diag_log "(BMT Debug) File not found: acex_sitting.pbo.";
+    diag_log "(BMT Debug) File not found: ace_sitting.pbo.";
 };
 
 if (isClass (configFile >> "CfgPatches" >> "ace_spectator")) then {
@@ -438,6 +456,44 @@ if (isClass (configFile >> "CfgPatches" >> "ace_zeus")) then {
     diag_log "(BMT Debug) File not found: ace_zeus.pbo.";
 };
 
+if (isClass (configFile >> "CfgPatches" >> "acex_sitting")) then {
+    ["acex_sitting_enable", true, true, true] call ACE_common_fnc_setSetting;                                   // 0 = Disabled, 1* = Enabled.
+} else {
+    _moduleError = true;
+    diag_log "(BMT Debug) File not found: acex_sitting.pbo.";
+};
+
+if (isClass (configFile >> "CfgPatches" >> "acex_viewrestriction")) then {
+    ["acex_viewrestriction_mode", 0, true, true] call ACE_common_fnc_setSetting;                               // Scalar. 0.0 = Default value.
+    ["acex_viewrestriction_modeSelectiveFoot", 0, true, true] call ACE_common_fnc_setSetting;                  // Scalar. 0.0 = Default value.
+    ["acex_viewrestriction_modeSelectiveLand", 0, true, true] call ACE_common_fnc_setSetting;                  // Scalar. 0.0 = Default value.
+    ["acex_viewrestriction_modeSelectiveAir", 0, true, true] call ACE_common_fnc_setSetting;                   // Scalar. 0.0 = Default value.
+    ["acex_viewrestriction_modeSelectiveSea", 0, true, true] call ACE_common_fnc_setSetting;                   // Scalar. 0.0 = Default value.
+
+} else {
+    _moduleError = true;
+    diag_log "(BMT Debug) File not found: acex_viewrestriction.pbo.";
+};
+
+if (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")) then {
+    ["ace_advanced_fatigue_enabled", true, true, true] call ACE_common_fnc_setSetting;                         // 0 = Disabled, 1* = Enabled.
+    ["ace_advanced_fatigue_performanceFactor", 1.0, true, true] call ACE_common_fnc_setSetting;                  // Scalar. 1.0 = Default value.
+    ["ace_advanced_fatigue_recoveryFactor", 1.0, true, true] call ACE_common_fnc_setSetting;                     // Scalar. 1.0 = Default value.
+    ["ace_advanced_fatigue_loadFactor", 1.0, true, true] call ACE_common_fnc_setSetting;                         // Scalar. 1.0 = Default value.
+    ["ace_advanced_fatigue_terrainGradientFactor", 1.0, true, true] call ACE_common_fnc_setSetting;              // Scalar. 1.0 = Default value.
+} else {
+    _moduleError = true;
+    diag_log "(BMT Debug) File not found: ace_advanced_fatigue.pbo.";
+};
+
+if (isClass (configFile >> "CfgPatches" >> "ace_advanced_throwing")) then {
+    ["ace_advanced_throwing_enablePickUp", true, true, true] call ACE_common_fnc_setSetting;                   // 0 = Disabled, 1* = Enabled.
+    ["ace_advanced_throwing_enablePickUpAttached", true, true, true] call ACE_common_fnc_setSetting;           // 0 = Disabled, 1* = Enabled.
+} else {
+    _moduleError = true;
+    diag_log "(BMT Debug) File not found: ace_advanced_throwing.pbo.";
+};
+
 if (isClass (configFile >> "CfgPatches" >> "ace_captives")) then {
     //====================================================================================================//
     // Make Unit Surrender: http://ace3mod.com/wiki/missionmaker/modules.html#1.9-make-unit-surrender     //
@@ -486,6 +542,20 @@ if (isClass (configFile >> "CfgPatches" >> "ace_hearing")) then {
 } else {
     _moduleError = true;
     diag_log "(BMT Debug) File not found: ace_hearing.pbo.";
+};
+
+if (isClass (configFile >> "CfgPatches" >> "acex_headless")) then {
+    //====================================================================================================//
+    // Explosive System: http://ace3mod.com/wiki/missionmaker/modules.html#1.5-explosive-system           //
+    //====================================================================================================//
+
+    ["acex_headless_Enabled", true, true, true] call ACE_common_fnc_setSetting;                               // 0* = No, 1 = Yes.
+    ["acex_headless_Delay", 15.0, true, true] call ACE_common_fnc_setSetting;                                 // Scalar = 15.0 = Default.
+    ["acex_headless_Log", false, true, true] call ACE_common_fnc_setSetting;                                  // 0* = No, 1 = Yes.
+
+} else {
+    _moduleError = true;
+    diag_log "(BMT Debug) File not found: acex_headless.pbo.";
 };
 
 if (isClass (configFile >> "CfgPatches" >> "ace_advanced_ballistics")) then {

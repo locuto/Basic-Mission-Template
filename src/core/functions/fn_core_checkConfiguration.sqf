@@ -86,7 +86,7 @@ if (isClass (missionconfigfile >> "CfgComponents" >> "t8units")) then {
         #include "includes\bmt_core_checkConfiguration_t8units.sqf"
     };
 } else {
-    if (bmt_var_requires_t8units and (bmt_param_debugOutput == 1)) then {
+    if ((bmt_var_requires_t8units == 1) and (bmt_param_debugOutput == 1)) then {
         player sideChat format ["WARNING: The T8 Units component of the template is not loaded but it is necessary for this misison."];
     };
 };

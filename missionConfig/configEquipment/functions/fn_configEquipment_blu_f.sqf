@@ -56,7 +56,7 @@
 //=======================================================================================================//
 
 private["_isInfantry"];
-private["_uniform", "_vestSL", "_vestTL", "_vestRFL", "_vestGR", "_vestME", "_vestSAW", "_vestDIV", "_helmet", "_helmetSN", "_helmetCRW", "_backpack", "_uavBackpack"];
+private["_uniform", "_vestSL", "_vestTL", "_vestRFL", "_vestGR", "_vestME", "_vestSAW", "_vestDIV", "_helmet", "_helmetSN", "_helmetCRW", "_backpack", "_uavBackpack", "_unitInsignia"];
 private["_uavBattery", "_cableTie", "_mapTools", "_microDAGR", "_earPlugs", "_vectorIV", "_atragmx", "_kestrel", "_clacker", "_clackerm26", "_defusalKit", "_cellphone"];
 private["_atropine", "_epinephrine", "_morphine", "_bandage", "_elasticBandage", "_quickClot", "_packingBandage"];
 private["_bloodBag250", "_bloodBag500", "_bloodBag1000", "_plasmaBag250", "_plasmaBag500", "_plasmaBag1000", "_salineBag250", "_salineBag500", "_salineBag1000"];
@@ -102,6 +102,9 @@ if (_unitFaction == "blu_f") then {
 
     // Backpacks.
     _backpack = "rhsusf_assault_eagleaiii_ocp";
+
+    // Insignia
+    _unitInsignia = "";
 };
 
 if (_unitFaction == "blu_ctrg_f") then {
@@ -123,6 +126,9 @@ if (_unitFaction == "blu_ctrg_f") then {
 
     // Backpacks.
     _backpack = "rhsusf_assault_eagleaiii_ocp";
+
+    // Insignia
+    _unitInsignia = "";
 };
 
 if (_unitFaction == "blu_gen_f") then {
@@ -144,6 +150,9 @@ if (_unitFaction == "blu_gen_f") then {
 
     // Backpacks.
     _backpack = "rhsusf_assault_eagleaiii_ocp";
+
+    // Insignia
+    _unitInsignia = "";
 };
 
 if (_unitFaction == "blu_t_f") then {
@@ -165,6 +174,9 @@ if (_unitFaction == "blu_t_f") then {
 
     // Backpacks.
     _backpack = "rhsusf_assault_eagleaiii_ocp";
+
+    // Insignia
+    _unitInsignia = "";
 };
 
 // Common uniforms.
@@ -1774,6 +1786,6 @@ if (_isInfantry) then {
 };
 
 // Unit insignia.
-[_unit,"PATCH_bmt_CC"] call bis_fnc_setUnitInsignia;
+[_unit,_unitInsignia] call bis_fnc_setUnitInsignia;
 
 //============================================= END OF FILE =============================================//

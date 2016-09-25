@@ -27,10 +27,10 @@ switch (bmt_param_respawn_tickets) do {
             player sidechat format ["DEBUG (fn_respawn_config.sqf): Assigning respawn for side %1.", side player];
         };
         switch (side player) do {
-            case west: { _pos = 0; };
-            case east: { _pos = 1; };
+            case west:       { _pos = 0; };
+            case east:       { _pos = 1; };
             case resistance: { _pos = 2; };
-            case civilian: { _pos = 3; };
+            case civilian:   { _pos = 3; };
         };
         bmt_array_numRespawns set [_pos, _numRespawns];
         publicVariable bmt_array_numRespawns;
