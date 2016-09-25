@@ -1,12 +1,12 @@
 /*
  =======================================================================================================================
 
-    T8 Units Script
+	T8 Units Script
 
-    Funktion:    fn_moveTo.sqf
-    Author:        Zorilya + T-800a
+	Funktion:	fn_moveTo.sqf
+	Author:		Zorilya + T-800a
 
-    form Garrison Script ( needed a small mod to work properly with T8 Units )
+	form Garrison Script ( needed a small mod to work properly with T8 Units )
 
  =======================================================================================================================
 */
@@ -27,24 +27,24 @@ _reached = false;
 
 while { !_reached } do
 {
-    _uPos = getPosATL _unit;
-    _dist = _uPos distance _pos;
-    _speed = speed _unit;
+	_uPos = getPosATL _unit;
+	_dist = _uPos distance _pos;
+	_speed = speed _unit;
 
-    if ( !( alive _unit ) ) exitwith {};
+	if ( !( alive _unit ) ) exitwith {};
 
-    if ( _speed <= 0.1 ) then { _idleCnt = _idleCnt + 1 } else { _idleCnt = 0; _idle = false };
-    if ( _idleCnt >= 4 ) then { _idle = true };
+	if ( _speed <= 0.1 ) then { _idleCnt = _idleCnt + 1 } else { _idleCnt = 0; _idle = false };
+	if ( _idleCnt >= 4 ) then { _idle = true };
 
-    if ( _idle ) then
-    {
-        _cnt = _cnt + 1;
-        call _move;
-    };
+	if ( _idle ) then
+	{
+		_cnt = _cnt + 1;
+		call _move;
+	};
 
-    if ( _dist < 1 ) exitwith { _reached = true };
-    if ( _cnt > 3 ) exitwith {};
-    sleep 3;
+	if ( _dist < 1 ) exitwith { _reached = true };
+	if ( _cnt > 3 ) exitwith {};
+	sleep 3;
 };
 
 doStop _unit;
@@ -52,9 +52,9 @@ _unit forceSpeed 0;
 
 if ( ! _reached ) then 
 {
-    _oldPos = getPosATL _unit;
-    [ _unit, _oldPos ] spawn T8U_fnc_MoveOut;
-    _unit setPos _pos;
+	_oldPos = getPosATL _unit;
+	[ _unit, _oldPos ] spawn T8U_fnc_MoveOut;
+	_unit setPos _pos;
 };
 _unit setUnitPos "UP"; 
 _unit setUnitPos "AUTO";
@@ -65,6 +65,6 @@ _b = nearestBuilding _unit;
 
 if ( !isNil "_b" OR { !isNull _b } ) then
 {
-    _d = [ _unit, _b ] call BIS_fnc_dirTo;
-    _unit setDir ( _d + 180 );
+	_d = [ _unit, _b ] call BIS_fnc_dirTo;
+	_unit setDir ( _d + 180 );
 };

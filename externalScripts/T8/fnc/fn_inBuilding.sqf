@@ -1,14 +1,14 @@
 /*
  =======================================================================================================================
 
-    T8 Units Script
-    
-    Funktion:    fn_inBuilding.sqf
-    Author:        T-800a
-    E-Mail:        t-800a@gmx.net
-    
-    if ( T8U_var_DEBUG ) then { [ ".sqf", "some msg", [ _varstoshare ] ] spawn T8U_fnc_DebugLog; };
-    if ( T8U_var_DEBUG AND { T8U_var_DEBUG_marker } ) then { [ getPos _unitCaller, "ICON", "mil_start_noShadow", 1, "ColorBlack", 0.33 ] call T8U_fnc_DebugMarker; };
+	T8 Units Script
+	
+	Funktion:	fn_inBuilding.sqf
+	Author:		T-800a
+	E-Mail:		t-800a@gmx.net
+	
+	if ( T8U_var_DEBUG ) then { [ ".sqf", "some msg", [ _varstoshare ] ] spawn T8U_fnc_DebugLog; };
+	if ( T8U_var_DEBUG AND { T8U_var_DEBUG_marker } ) then { [ getPos _unitCaller, "ICON", "mil_start_noShadow", 1, "ColorBlack", 0.33 ] call T8U_fnc_DebugMarker; };
 
 =======================================================================================================================
 */
@@ -17,8 +17,8 @@
 
 private [ "_unit", "_return", "_b", "_p1", "_p2" ];
 
-_unit        = param [ 0, [], [[],objNull]];
-_return        = false;
+_unit		= param [ 0, [], [[],objNull]];
+_return		= false;
 
 if ( T8U_var_DEBUG ) then { [ "fn_inBuilding.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 

@@ -1,14 +1,14 @@
 /*
  =======================================================================================================================
 
-    T8 Units Script
-    
-    Funktion:    fn_debugLog.sqf
-    Author:        T-800a
-    E-Mail:        t-800a@gmx.net
+	T8 Units Script
+	
+	Funktion:	fn_debugLog.sqf
+	Author:		T-800a
+	E-Mail:		t-800a@gmx.net
 
-    [ "", "", _this ] spawn T8U_fnc_DebugLog;
-    
+	[ "", "", _this ] spawn T8U_fnc_DebugLog;
+	
  =======================================================================================================================
 */
 
@@ -35,18 +35,18 @@
 if ( !T8U_var_DEBUG ) exitWith {};
 
 params [
-    [ "_f", "___no_file___" ],
-    [ "_t", "___" ],
-    [ "_v", "___" ],
-    [ "_h", true ],
-    "_ftxt"
+	[ "_f", "___no_file___" ],
+	[ "_t", "___" ],
+	[ "_v", "___" ],
+	[ "_h", true, [true]],
+	"_ftxt"
 ];
 
 _f = _f splitString "\";
 reverse _f;
 
-_ftxt    = format [ "T8U >> %1 >> %2 >>>>> %3 >> %4", ( round diag_fps ), ( _f select 0 ), _t, _v ]; 
+_ftxt	= format [ "T8U >> %1 >> %2 >>>>> %3 >> %4", ( round diag_fps ), ( _f select 0 ), _t, _v ]; 
 
-if ( T8U_var_DEBUG_useCon ) exitWith { if ( _h ) then { conYellow } else { conWhite( _ftxt ); }; };
+if ( T8U_var_DEBUG_useCon ) exitWith { if ( _h ) then { conCyan( _ftxt )} else { conWhite( _ftxt ); }; };
 [ "%1", _ftxt ] call BIS_fnc_error;
 

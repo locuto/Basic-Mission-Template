@@ -1,24 +1,24 @@
 /*
  =======================================================================================================================
 
-    Script: fn_defendBase.sqf
-    Author(s): T-800a
-    Inspired and partly based on code by Binesi's BIN_taskDefend/Patrole
+	Script: fn_defendBase.sqf
+	Author(s): T-800a
+	Inspired and partly based on code by Binesi's BIN_taskDefend/Patrole
 
-    Description:
-    makes a group get in mil. buildings and units will man static weapons
-    Group will first man Weapons, then Small Guard Cargo Towers, then HQ Cargo Buildings, then the Big Cargo Towers.
-    The group leader +1 unit will do a SAD Waypoint at the center
-    ( if there are more guns then units then only the group leader will do this )
+	Description:
+	makes a group get in mil. buildings and units will man static weapons
+	Group will first man Weapons, then Small Guard Cargo Towers, then HQ Cargo Buildings, then the Big Cargo Towers.
+	The group leader +1 unit will do a SAD Waypoint at the center
+	( if there are more guns then units then only the group leader will do this )
 
-    Parameter(s):
-    _this select 0: the group who should defend a base (group)
-    _this select 1: the position of our base to defend (Markername / string) ( marker as center for our search ... )
-    _this select 2: (optional) range to search for manable vehicle / static guns / buildings (integer)
+	Parameter(s):
+	_this select 0: the group who should defend a base (group)
+	_this select 1: the position of our base to defend (Markername / string) ( marker as center for our search ... )
+	_this select 2: (optional) range to search for manable vehicle / static guns / buildings (integer)
 
-    Example(s):
-    null = [ group this, "MY_MARKER" ] execVM "fn_defendBase.sqf"
-    null = [ group this, "MY_MARKER", 100 ] execVM "fn_defendBase.sqf"  // searches for static weapons within 100m
+	Example(s):
+	null = [ group this, "MY_MARKER" ] execVM "fn_defendBase.sqf"
+	null = [ group this, "MY_MARKER", 100 ] execVM "fn_defendBase.sqf"  // searches for static weapons within 100m
 
  =======================================================================================================================
 */
@@ -27,17 +27,19 @@
 
 private [ "_group", "_units", "_marker", "_areaSizeX", "_areaSizeY", "_range", "_originUnits", "_formation", "_statement", "_range", "_wp", "_ocBuild" ];
 
-_group        = param [ 0, grpNull, [grpNull]];
-_marker        = param [ 1, "NO-MARKER-SET", [""]]; 
+_group		= param [ 0, grpNull, [grpNull]];
+_marker		= param [ 1, "NO-MARKER-SET", ["",[]]]; 
 
 _ocBuild = [];
 
 if ( T8U_var_DEBUG ) then { [ "fn_defendBase.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 
+if ((( typeName _marker ) isEqualTo "ARRAY" ) AND {( count _marker ) isEqualTo 0 }) exitWith { false };
+if (( typeName _marker ) isEqualTo "ARRAY" ) then { _marker = _marker call BIS_fnc_selectRandom; };
 if ( isNull _group OR { str ( getMarkerPos _marker ) == str ([0,0,0]) } ) exitWith { false };
 
-_areaSizeX    = ( getMarkerSize _marker ) select 0;
-_areaSizeY    = ( getMarkerSize _marker ) select 1;
+_areaSizeX	= ( getMarkerSize _marker ) select 0;
+_areaSizeY	= ( getMarkerSize _marker ) select 1;
 _range = ( _areaSizeX + _areaSizeY ) / 2;
 if ( _range < 30 ) then { _range = 30; };
 
@@ -73,10 +75,10 @@ waitUntil { sleep 2; ! ( count ( units _group ) > 0 ) };
 if ( T8U_var_DEBUG ) then { [ "fn_defendBase.sqf", "TERMINATING", [ _group ] ] spawn T8U_fnc_DebugLog; };
 
 { 
-    if ( alive _x ) then
-    {
-        [ _x, false ] call T8U_fnc_MoveOut;
-    };
+	if ( alive _x ) then
+	{
+		[ _x, false ] call T8U_fnc_MoveOut;
+	};
 } count _originUnits;
 
 { _x setvariable [ "occupied", false, false ]; } count _ocBuild;
