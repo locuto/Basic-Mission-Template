@@ -47,71 +47,73 @@ _recognised = true;
 switch (_unitRole) do
 {
     // Squad Leader.
-    case "sl": { _VAProfile = "CC - Lider d'esquadra MARPAT WD";  };
+    case "sl":     { _VAProfile = ""; };
 
     // Team leader.
-    case "tl": { _VAProfile = "CC - Lider d'equip MARPAT WD";     };
+    case "tl":     { _VAProfile = ""; };
 
     // Rifleman.
-    case "rfl": { _VAProfile = "CC - Fuseller MARPAT WD";         };
+    case "rfl":    { _VAProfile = ""; };
 
     // Rifleman AT4.
-    case "rflat": { _VAProfile = "CC - Fuseller AT4 MARPAT WD";   };
+    case "rflat":  { _VAProfile = ""; };
 
     // Grenadier.
-    case "gr": { _VAProfile = "CC - Granader MARPAT WD";          };
+    case "gr":     { _VAProfile = ""; };
 
     // IAR.
-    case "iar": { _VAProfile = "CC - Granader MARPAT WD";         };
+    case "iar":    { _VAProfile = ""; };
 
     // Automatic Rifleman.
-    case "ar": { _VAProfile = "CC - FA M249 MARPAT WD";           };
+    case "ar":     { _VAProfile = ""; };
 
     // Machine Gunner.
-    case "mg": { _VAProfile = "CC - Metrallador M240B MARPAT WD"; };
+    case "mg":     { _VAProfile = ""; };
 
     // Anti-Tank.
-    case "at": { _VAProfile = "CC - AT Javelin MARPAT WD";        };
+    case "at":     { _VAProfile = ""; };
 
     // (Anti-Aircraft Gunner.
-    case "aa": { _VAProfile = "CC - AA Stinger MARPAT WD";        };
+    case "aa":     { _VAProfile = ""; };
 
     // Designated Marksman.
-    case "dm": { _VAProfile = "CC - Tirador MARPAT WD";           };
+    case "dm":     { _VAProfile = ""; };
 
     // Platoon Medic.
-    case "me": { _VAProfile = "CC - Metge MARPAT WD";             };
+    case "me":     { _VAProfile = ""; };
 
     // Explosives Specialist.
-    case "exp": { _VAProfile = "CC - Explosius MARPAT WD";        };
+    case "exp":    { _VAProfile = ""; };
 
     // Sniper.
-    case "sn": { _VAProfile = "CC - Franctirador MARPAT WD";      };
+    case "sn":     { _VAProfile = ""; };
 
     // Spotter.
-    case "sp": { _VAProfile = "CC - Observador MARPAT WD";        };
+    case "sp":     { _VAProfile = ""; };
 
     // Diver Squad Leader.
-    case "divsl": { _VAProfile = "CC - Bussejador lider";         };
+    case "divsl":  { _VAProfile = ""; };
 
     // Diver Medic.
-    case "divme": { _VAProfile = "CC - Bussejador metge";         };
+    case "divme":  { _VAProfile = ""; };
 
     // Diver Explosives Specialist.
-    case "divexp": { _VAProfile = "CC - Bussejador explosius";    };
+    case "divexp": { _VAProfile = ""; };
 
     // Diver.
-    case "div": { _VAProfile = "CC - Bussejador";                 };
+    case "div":    { _VAProfile = ""; };
 
     default {
-        _VAProfile = "CC - Fuseller MARPAT WD";
+        _VAProfile = "";
         _recognised = false;
         _unit sideChat format ["ERROR (bmt_configEquipment_VAProfiles.sqf): VA profile for unit role %1 is not defined. Using instead VA profile %2", _unitRole, _VAProfile];
     };
 };
 
 // Apply the loadout.
-_loadout = [_unit,[profileNamespace,_VAProfile]] call BIS_fnc_loadInventory;
+if (_VAProfile != "") then {
+    _loadout = [_unit,[profileNamespace,_VAProfile]] call BIS_fnc_loadInventory;
+};
 
 if ((bmt_param_debugOutput == 1) and _recognised) then {
     _unit sideChat format ["DEBUG (bmt_configEquipment_VAProfiles.sqf): Using VA profile %1 for unit role %2.", _VAProfile, _unitRole];
