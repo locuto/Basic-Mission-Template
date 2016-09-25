@@ -157,6 +157,8 @@ if (isClass (configFile >> "CfgPatches" >> "ace_map_gestures")) then {
 
 if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
 
+    private _numRespawns =  getNumber (missionConfigFile >> "bmt_config" >> "bmt_config_numAllowedRespawns");
+
     //====================================================================================================//
     // ACE3 Medical: http://ace3mod.com/wiki/missionmaker/modules.html#2.-ace3-medical                    //
     //====================================================================================================//
@@ -177,9 +179,16 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
     ["ace_medical_enableUnconsciousnessAI", 1.0, true, true] call ACE_common_fnc_setSetting;                   // 0 = Disabled, 1* = 50/50, 2 = Enabled.
     ["ace_medical_remoteControlledAI", true, true, true] call ACE_common_fnc_setSetting;                       // 0 = Disabled, 1* = Enabled.
     ["ace_medical_preventInstaDeath", false, true, true] call ACE_common_fnc_setSetting;                       // 0* = Disabled, 1 = Enabled.
-    ["ace_medical_enableRevive", 0.0, true, true] call ACE_common_fnc_setSetting;                              // 0* = Disabled, 1 = Only players, 2 = Players and AI.
+
+    // Revive sistem
+    ["ace_medical_enableRevive", bmt_param_ace3_reviveSystem, true, true] call ACE_common_fnc_setSetting;                              // 0* = Disabled, 1 = Only players, 2 = Players and AI.
     ["ace_medical_maxReviveTime", 120.0, true, true] call ACE_common_fnc_setSetting;                           // Scalar. 120 = Default value.
-    ["ace_medical_amountOfReviveLives", -1.0, true, true] call ACE_common_fnc_setSetting;                      // Scalar. -1 = Default value.
+    if ( (_numRespawns > 0) && (bmt_param_ace3_reviveSystem > 0) ) then {
+        ["ace_medical_amountOfReviveLives", -1.0, true, true] call ACE_common_fnc_setSetting;                      // Scalar. -1 = Default value.
+    } else {
+        ["ace_medical_amountOfReviveLives", -1.0, true, true] call ACE_common_fnc_setSetting;                      // Scalar. -1 = Default value.
+    };
+
     ["ace_medical_allowDeadBodyMovement", false, true, true] call ACE_common_fnc_setSetting;                   // 0* = Disabled, 1 = Enabled.
     ["ace_medical_allowLitterCreation", true, true, true] call ACE_common_fnc_setSetting;                      // 0 = Disabled, 1* = Enabled.
     ["ace_medical_litterSimulationDetail", 3.0, true, true] call ACE_common_fnc_setSetting;               // Client side. 0 = Disabled (0), 1 = Baix(50), 2 = Mitjà (100), 3* = Alt (1000), 4 = Ultra (5000).

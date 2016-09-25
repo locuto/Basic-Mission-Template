@@ -21,6 +21,7 @@
         class ace3_assignWounds {};
         class ace3_config_preInit  { PreInit = 1; };
         class ace3_config_postInit { PostInit = 1; };
+        class ace3_config_revive   { PostInit = 1; };
     };
 #endif
 
@@ -45,6 +46,17 @@
         values[] = {0, 1, 2};
         texts[] = {"Disabled", "Basic", "Advanced"};
         default = BMT_ACE3_MEDICAL;
+    };
+
+    //===================================================================================================//
+    // Medical sistem: Level of detail of the ACE3 medical system.                                       //
+    // Default option: Advanced.                                                                         //
+    //===================================================================================================//
+    class bmt_param_ace3_reviveSystem {
+        title = "Revive system";
+        values[] = {0, 1, 2};
+        texts[] = {"Disabled", "Players only", "Players and AI"};
+        default = BMT_ACE3_REVIVE;
     };
 
     //===================================================================================================//
