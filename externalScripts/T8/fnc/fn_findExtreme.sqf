@@ -1,18 +1,18 @@
 /*
  =======================================================================================================================
 
-    T8 Units Script
-    
-    Funktion:    fn_findExtreme.sqf
-    Author:        T-800a
-    E-Mail:        t-800a@gmx.net
-    
-    if ( T8U_var_DEBUG ) then { [ "fn_findExtreme.sqf", "some msg", [ _varstoshare ] ] spawn T8U_fnc_DebugLog; };
-    if ( T8U_var_DEBUG AND { T8U_var_DEBUG_marker } ) then { [ getPos _unitCaller, "ICON", "mil_start_noShadow", 1, "ColorBlack", 0.33 ] call T8U_fnc_DebugMarker; };
-    
-    
-    
-    marker "creation" by ACE3 | ace3mod.com
+	T8 Units Script
+	
+	Funktion:	fn_findExtreme.sqf
+	Author:		T-800a
+	E-Mail:		t-800a@gmx.net
+	
+	if ( T8U_var_DEBUG ) then { [ "fn_findExtreme.sqf", "some msg", [ _varstoshare ] ] spawn T8U_fnc_DebugLog; };
+	if ( T8U_var_DEBUG AND { T8U_var_DEBUG_marker } ) then { [ getPos _unitCaller, "ICON", "mil_start_noShadow", 1, "ColorBlack", 0.33 ] call T8U_fnc_DebugMarker; };
+	
+	
+	
+	marker "creation" by ACE3 | ace3mod.com
 
  =======================================================================================================================
 */
@@ -20,7 +20,7 @@
 #include <..\MACRO.hpp>
 
 private [ "_positions", "_xCoordinates", "_yCoordinates", "_xMin", "_xMax", "_yMin", "_yMax", "_return" ];
-_positions        = param [ 0, [], [[]]];
+_positions		= param [ 0, [], [[]]];
 
 if ( T8U_var_DEBUG ) then { [ "fn_findExtreme.sqf", "INIT", [ _positions ]] spawn T8U_fnc_DebugLog; };
 if ( count _positions < 3 ) exitWith { if ( T8U_var_DEBUG ) then { [ "fn_findExtreme.sqf", "EXIT: not enough points", [ _positions ]] spawn T8U_fnc_DebugLog; }; false }; 
@@ -29,10 +29,10 @@ _xCoordinates = [];
 _yCoordinates = [];
 
 {
-    _xCoordinates pushback ( _x select 0 );
-    _yCoordinates pushback ( _x select 1 );
-    
-    false
+	_xCoordinates pushback ( _x select 0 );
+	_yCoordinates pushback ( _x select 1 );
+	
+	false
 } count _positions;
 
 _xMin = _xCoordinates select 0;

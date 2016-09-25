@@ -15,7 +15,20 @@
 #endif
 
 // Define the functions of this component.
+#ifdef BMT_FUNCTIONS_INTERNAL
+    class t8units {
+        file = "src\t8units\functions";
+        class t8units_config { };
+    };
+#endif
+
+#ifdef BMT_EXTERNAL_DEFINITIONS
+    #include "..\..\externalScripts\T8\CONFIG.hpp"
+#endif
+
+// Define the functions of this component.
 #ifdef BMT_FUNCTIONS_EXTERNAL
+
     #include "..\..\externalScripts\T8\FUNCTIONS.hpp"
 #endif
 

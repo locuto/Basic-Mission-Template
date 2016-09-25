@@ -1,6 +1,6 @@
-## externalScripts/T8
+## /externalScripts/T8
 
-The Basic Mission Template (BMT-A3) can configure automatically the T8 Units spawn scripts. T8 Units, is
+The Basic Mission Template (A3-BMT) can configure automatically the T8 Units spawn scripts. T8 Units, is
 a less dynamic AI creator than DAC and allows the mission editor to spawn predefined groups of units with
 a specific task like attack, defend or patrol among others. T8 Units can also be made compatible with DAC.
 

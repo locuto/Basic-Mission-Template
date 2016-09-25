@@ -1,25 +1,25 @@
 /*
  =======================================================================================================================
 
-    T8 Units Script
+	T8 Units Script
 
-    Funktion:    fn_createFlankingPos.sqf
-    Author:        T-800a
-    E-Mail:        t-800a@gmx.net
+	Funktion:	fn_createFlankingPos.sqf
+	Author:		T-800a
+	E-Mail:		t-800a@gmx.net
 
  =======================================================================================================================
 */
 
 #include <..\MACRO.hpp>
 
-private [    "_unitCaller", "_unitTarget", "_cPos", "_tPos", "_hyp", "_cX", "_cY", "_tX", "_tY", "_katA", "_katG", "_mX", "_mY", "_aBase", "_switch", "_aReel", 
-            "_aReelFP_A", "_aReelFP_B", "_oX_A", "_oY_A", "_oX_B", "_oY_B", "_fpX_A", "_fpY_A", "_fpX_B", "_fpY_B", "_flankingPos", "_loop", "_tmpAreaSize", "_flankingPosArray" ];
+private [	"_unitCaller", "_unitTarget", "_cPos", "_tPos", "_hyp", "_cX", "_cY", "_tX", "_tY", "_katA", "_katG", "_mX", "_mY", "_aBase", "_switch", "_aReel", 
+			"_aReelFP_A", "_aReelFP_B", "_oX_A", "_oY_A", "_oX_B", "_oY_B", "_fpX_A", "_fpY_A", "_fpX_B", "_fpY_B", "_flankingPos", "_loop", "_tmpAreaSize", "_flankingPosArray" ];
 
-_unitCaller            = param [ 0, objNull, [objNull,[]], [2,3] ];
-_unitTarget            = param [ 1, objNull, [objNull,[]], [2,3] ];
-_modHyp                = param [ 2, 1, [123] ];
+_unitCaller			= param [ 0, objNull, [objNull,[]], [2,3] ];
+_unitTarget			= param [ 1, objNull, [objNull,[]], [2,3] ];
+_modHyp				= param [ 2, 1, [123] ];
 
-_flankingPosArray    = [];
+_flankingPosArray	= [];
 
 if ( typeName _unitCaller != "ARRAY" AND { isNull _unitCaller } ) exitWith { if ( T8U_var_DEBUG ) then { [ "fn_createFlankingPos.sqf", "INPUT Missing", _this ] spawn T8U_fnc_DebugLog; }; false };
 if ( typeName _unitTarget != "ARRAY" AND { isNull _unitTarget } ) exitWith { if ( T8U_var_DEBUG ) then { [ "fn_createFlankingPos.sqf", "INPUT Missing", _this ] spawn T8U_fnc_DebugLog; }; false };
@@ -49,10 +49,10 @@ _aBase = atan ( _katG / _katA );
 _switch = format [ "[%1|%2]", _mX, _mY ];
 _aReel = switch ( _switch ) do
 {
-    case "[1|1]":    { _aBase };
-    case "[-1|1]":    { 180 - _aBase };
-    case "[-1|-1]":    { 180 + _aBase };
-    case "[1|-1]":    { 360 - _aBase };
+	case "[1|1]":	{ _aBase };
+	case "[-1|1]":	{ 180 - _aBase };
+	case "[-1|-1]":	{ 180 + _aBase };
+	case "[1|-1]":	{ 360 - _aBase };
 };
 
 _aReelFP_A = _aReel + 90;
@@ -74,20 +74,20 @@ _flankingPos_A = [ _fpX_A, _fpY_A ];
 _flankingPos_B = [ _fpX_B, _fpY_B ];
 
 {
-    private [ "_loop", "_tmpAreaSize", "_fp", "_fpFEP" ];
+	private [ "_loop", "_tmpAreaSize", "_fp", "_fpFEP" ];
 
-    _loop            = true;
-    _tmpAreaSize    = 5;
-    
-    while { _loop } do
-    {
-        _fp = [  _x, _tmpAreaSize, random 360 ] call BIS_fnc_relPos;
-        _fpFEP = _fp findEmptyPosition [ 1, 20, "B_Truck_01_covered_F" ];
-        if ( count _fpFEP < 1 OR { surfaceIsWater _fpFEP } ) then { _tmpAreaSize = _tmpAreaSize + 5; } else { _loop = false; };
-    };
-    
-    _flankingPosArray pushBack _fpFEP;
-    
+	_loop			= true;
+	_tmpAreaSize	= 5;
+	
+	while { _loop } do
+	{
+		_fp = [  _x, _tmpAreaSize, random 360 ] call BIS_fnc_relPos;
+		_fpFEP = _fp findEmptyPosition [ 1, 20, "B_Truck_01_covered_F" ];
+		if ( count _fpFEP < 1 OR { surfaceIsWater _fpFEP } ) then { _tmpAreaSize = _tmpAreaSize + 5; } else { _loop = false; };
+	};
+	
+	_flankingPosArray pushBack _fpFEP;
+	
 } forEach [ _flankingPos_A, _flankingPos_B ];
 
 // Return Value

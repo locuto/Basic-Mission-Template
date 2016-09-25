@@ -1,24 +1,24 @@
 /*
  =======================================================================================================================
-    
-    Script: fn_hold.sqf
-    Author(s): T-800a
-    Inspired and partly based on code by Binesi's BIN_taskDefend/Patrole
+	
+	Script: fn_hold.sqf
+	Author(s): T-800a
+	Inspired and partly based on code by Binesi's BIN_taskDefend/Patrole
 
-    Description:
-    
+	Description:
+	
 
-    Parameter(s):
-    _this select 0: the group to which to assign the waypoints (Group)
-    _this select 1: the position on which to base the attack (Markername / String)
-    _this select 2: (optional) is infantry group (Bool)
+	Parameter(s):
+	_this select 0: the group to which to assign the waypoints (Group)
+	_this select 1: the position on which to base the attack (Markername / String)
+	_this select 2: (optional) is infantry group (Bool)
 
-    Returns:
-    Boolean - success flag
+	Returns:
+	Boolean - success flag
 
-    Example(s):
-    null = [ group this, "MY_MARKER" ] execVM "attack.sqf"
-    null = [ group this, "MY_MARKER", false ] execVM "attack.sqf"  // Not a Infantry Group
+	Example(s):
+	null = [ group this, "MY_MARKER" ] execVM "attack.sqf"
+	null = [ group this, "MY_MARKER", false ] execVM "attack.sqf"  // Not a Infantry Group
 
  =======================================================================================================================
 */
@@ -27,10 +27,10 @@
 
 private [ "_group", "_infGroup", "_target", "_time", "_sEP", "_holdPosArray", "_holdPos" ];
 
-_group        = param [ 0, grpNull, [grpNull]];
-_infGroup    = param [ 1, true, [true]]; 
-_target        = param [ 2, [], [[]]]; 
-_time        = param [ 3, 10, [123]];
+_group		= param [ 0, grpNull, [grpNull]];
+_infGroup	= param [ 1, true, [true]]; 
+_target		= param [ 2, [], [[]]]; 
+_time		= param [ 3, 10, [123]];
 
 if ( T8U_var_DEBUG ) then { [ "fn_hold.sqf", "INIT", _this ] spawn T8U_fnc_DebugLog; };
 
@@ -44,7 +44,7 @@ if ( count _holdPosArray < 1 ) then { _holdPos = getPos ( leader _group ); } els
 [ _group, _holdPos, "MOVE", "COMBAT", _sEP, 25 ] call T8U_fnc_CreateWaypoint;
 
 {
-    if ( alive _x ) then { [ _x, _target ] call T8U_fnc_SmokeScreen; };
+	if ( alive _x ) then { [ _x, _target ] call T8U_fnc_SmokeScreen; };
 } forEach ( units _group );
 
 

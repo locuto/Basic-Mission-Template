@@ -22,6 +22,14 @@
 #include "missionConfig\bmt_missionConfig.hpp"
 
 //=======================================================================================================//
+// EXTERNAL DEFINITIONS: Definitions from external scripts and/or addons.                                //
+//                       Currently used by: T8-Units.                                                    //
+//=======================================================================================================//
+#define BMT_EXTERNAL_DEFINITIONS
+    #include "bmt_components.hpp"
+#undef BMT_EXTERNAL_DEFINITIONS
+
+//=======================================================================================================//
 // ADDON CONFIGURATION: This file must be modified by the mission editor and allow configuring which     //
 //                      addons are configured using the scripts provided in "Arma 3 Basic Mission        //
 //                      Template" (A3-BMT). Some addons may also allow further tweaking in the parameter //
