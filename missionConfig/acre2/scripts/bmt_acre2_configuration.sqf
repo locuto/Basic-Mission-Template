@@ -61,6 +61,11 @@ bmt_acre2_language_bwa3    = ["german"];
 //        - true: interferences will be modelled when simultaneously transmitting on the same frequency.
 [true] call acre_api_fnc_setInterference;
 
+// ACRE2: Antena direction
+//        - false: antena direction is simulated.
+//        - true: the signal simulation model ignores antena direction.
+[false] call acre_api_fnc_ignoreAntennaDirection;
+
 //=======================================================================================================//
 // Configuration of radio assignement depending on role.                                                 //
 //=======================================================================================================//
