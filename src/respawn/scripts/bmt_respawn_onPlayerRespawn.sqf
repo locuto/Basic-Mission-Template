@@ -36,8 +36,7 @@ if (_respawn == 1) then {
 
     // Assign equipment before death or default one depending on the role
     if (bmt_param_respawn_saveGear == 1) then {
-        //_unitRole = getUnitLoadout _oldUnit;
-        //_unit = setUnitLoadout [_unitRole, false];  // Do not rearm, partially emptied magazines will not be refilled.
+        _unit setUnitLoadout(_unit getVariable["bmt_array_savedLoadout",[]]);
     } else {
         _unitRole = _unit getVariable "bmt_var_configEquipment";
         [_unitRole, _unit] call bmt_fnc_configEquipment;

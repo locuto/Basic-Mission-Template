@@ -33,6 +33,10 @@ if ((_respawn == 3) and ({_x getVariable ["bmt_var_playerAlive", true]} count al
     [] remoteExecCall ["bmt_fnc_endMission", 0, true];
 };
 
+if (bmt_param_respawn_saveGear == 1) then {
+    _unit setVariable["bmt_array_savedLoadout",getUnitLoadout _unit];
+};
+
 //  Do not enter spectator mode if respawn time is less than 1 second.
 if (playerRespawnTime <= 1) exitWith {};
 
