@@ -13,9 +13,15 @@
 
 // Variable declarations.
 params [["_unit", objNull]];
-private["_unitRole", "_longRangeRadio", "_shortRangeRadio", "_riflemanRadio", "_objectsBackpack"];
+private["_unitOptions", "_unitRole", "_longRangeRadio", "_shortRangeRadio", "_riflemanRadio", "_objectsBackpack"];
 
-_unitRole = _unit getVariable ["bmt_var_configEquipment", "nil"];
+_unitOptions = _unit getVariable ["bmt_var_configEquipment", "nil"];
+
+if ((typeName _unitOptions) == "STRING") then {
+    _unitRole = _unitOptions;
+} else {
+    _unitRole = _unitOptions select 0; // First entry must always be the unit role
+};
 
 // Assign radios depending on unit's side.
 switch ((side _unit)) do {

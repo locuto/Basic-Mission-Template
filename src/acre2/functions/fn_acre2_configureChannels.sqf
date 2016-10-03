@@ -13,13 +13,19 @@
 
 // Variable declarations.
 params [["_unit", objNull]];
-private ["_unitGroup", "_unitRole", "_channel", "_squadChannel", "_fireteamChannel", "_commandChannel"];
+private ["_unitGroup", "_unitOptions", "_unitRole", "_channel", "_squadChannel", "_fireteamChannel", "_commandChannel"];
 private ["_radioList"];
 
 sleep 3;
 
 _unitGroup = _unit getVariable ["bmt_var_unitGroup", ["nil", -1]];
-_unitRole = _unit getVariable ["bmt_var_configEquipment", "NIL"];
+_unitOptions = _unit getVariable ["bmt_var_configEquipment", "NIL"];
+
+if ((typeName _unitOptions) == "STRING") then {
+    _unitRole = _unitOptions;
+} else {
+    _unitRole = _unitOptions select 0; // First entry must always be the unit role
+};
 
 if ((_unitGroup select 0 == "nil") or (_unitGroup select 1 == -1)) exitWith {
     _unit sideChat format ["ERROR (fn_acre2_configureChannels.sqf): Channels cannot be configured since variable ""bmt_var_unitGroup"" is not correctly defined: [%1,%2].", _unitGroup select 0, _unitGroup select 1];

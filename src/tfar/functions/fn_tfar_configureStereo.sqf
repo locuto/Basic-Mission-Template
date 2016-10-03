@@ -18,8 +18,15 @@
 
 // Variable declarations.
 params [["_unit", objNull]];
+private ["_unitOptions", "_unitRole"];
 
-private _unitRole = _unit getVariable ["bmt_var_configEquipment", "nil"];
+_unitOptions = _unit getVariable ["bmt_var_configEquipment", "nil"];
+
+if ((typeName _unitOptions) == "STRING") then {
+    _unitRole = _unitOptions;
+} else {
+    _unitRole = _unitOptions select 0; // First entry must always be the unit role
+};
 
 if (_unitRole != "nil") then {
 
