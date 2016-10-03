@@ -11,7 +11,7 @@
 
 // Parameters passed when onPlayerRespawn.
 params [["_unit",objNull], ["_oldUnit",objNull], ["_respawn",0], ["_respawnDelay",0]];
-private ["_unitRole"];
+private ["_unitOptions"];
 
 // End the mission if there are no alive units and respawn of type "NONE" or "BIRD".
 if (_respawn <= 1) then {
@@ -38,8 +38,8 @@ if (_respawn == 1) then {
     if (bmt_param_respawn_saveGear == 1) then {
         _unit setUnitLoadout(_unit getVariable["bmt_array_savedLoadout",[]]);
     } else {
-        _unitRole = _unit getVariable "bmt_var_configEquipment";
-        [_unitRole, _unit] call bmt_fnc_configEquipment;
+        _unitOptions = _unit getVariable "bmt_var_configEquipment";
+        [_unitOptions, _unit] call bmt_fnc_configEquipment;
     };
 
     [] call bmt_fnc_respawn_moveToMarker;

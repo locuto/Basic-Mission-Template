@@ -34,13 +34,22 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-private["_unit", "_unitRole", "_loadout", "_VAProfile", "_recognised"];
+private["_unit", "_unitOptions", "_unitRole", "_loadout", "_VAProfile", "_recognised"];
 
 // Only execute if unit is local.
 if !(local player) exitWith {};
 
 _unit = player;
-_unitRole = _unit getVariable ["bmt_var_configEquipment", "NIL"];
+_unitOptions = _unit getVariable ["bmt_var_configEquipment", "NIL"];
+
+if ((typeName _unitOptions) == "STRING") then {
+    _unitRole = _unitOptions;
+} else {
+    _unitRole = _unitOptions select 0; // First entry must always be the unit role
+};
+
+_unitRole = toLower _unitRole;
+
 _recognised = true;
 
 // Configure equipment for each unit.

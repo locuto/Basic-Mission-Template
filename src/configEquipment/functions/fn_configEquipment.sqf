@@ -6,12 +6,14 @@
 // Description: This function equips the unit according to a specified role and depending on the faction //
 //              it belongs to.                                                                           //
 //              Arguments:                                                                               //
-//               - 0: unit role <STRING>.                                                                //
+//               - 0: unit role <STRING> or array of strings with the first element beign the unit role. //
 //               - 1: unit <OBJECT>.                                                                     //
 //               - 2: unit faction <STRING><OPTIONAL>.                                                   //
 //              Examples:                                                                                //
 //               - Unit is a Fire Team Leader.                                                           //
 //                   ["tl", this] call bmt_fnc_configEquipment;                                          //
+//               - Unit is a Squad Leader with optional equipment foo.                                   //
+//                   [["sl", "foo"], this] call bmt_fnc_configEquipment;                                 //
 //               - Unit is a medic and has the equipment of the RHS faction "United States Marine Corps" //
 //                 (D) despite not belonging to it.                                                      //
 //                   ["me", this, "rhs_faction_usmc_d"] call bmt_fnc_configEquipment;                    //
@@ -78,7 +80,7 @@
 //=======================================================================================================//
 
 // Variable declaration.
-params ["_unitRole", "_unit", ["_unitFaction", nil]];
+params ["_unitOptions", "_unit", ["_unitFaction", nil]];
 private ["_recognised"];
 
 // Only execute if unit is local.
@@ -87,9 +89,6 @@ if !(local _unit) exitWith {};
 // Assume faction is recognised.
 _recognised = true;
 
-// Set unit type to lower case.
-_unitRole = toLower _unitRole;
-
 if (isNil "_unitFaction") then {
     _unitFaction = toLower (faction _unit);
 } else {
@@ -97,7 +96,7 @@ if (isNil "_unitFaction") then {
 };
 
 // Save unit type.
-_unit setVariable ["bmt_var_configEquipment", _unitRole, true];
+_unit setVariable ["bmt_var_configEquipment", _unitOptions, true];
 
 // Begin gear assignement depending on unit's role.
 _unit setVariable ["bmt_var_configEquipment_Ready", false, true];
@@ -112,75 +111,75 @@ switch (_unitFaction) do {
     //====================================================================================================//
 
     // Equipment for BLUFOR faction.
-    case "blu_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
+    case "blu_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
 
     // Equipment for CTRG faction (APEX).
-    case "blu_ctrg_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
+    case "blu_ctrg_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
 
     // Equipment for GENDARMERIE faction (APEX).
-    case "blu_gen_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
+    case "blu_gen_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
 
     // Equipment for BLUFOR Pacific faction (APEX).
-    case "blu_t_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
+    case "blu_t_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
 
     // Equipment for FIA faction.
-    case "blu_g_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_fia_f; };
+    case "blu_g_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_fia_f; };
 
     // Equipment for FIA faction.
-    case "ind_g_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_fia_f; };
+    case "ind_g_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_fia_f; };
 
     // Equipment for FIA faction.
-    case "opf_g_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_fia_f; };
+    case "opf_g_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_fia_f; };
 
     // Equipment for OPFOR faction.
-    case "opf_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_opf_f; };
+    case "opf_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_opf_f; };
 
     // Equipment for OPFOR Pacific faction (APEX).
-    case "opf_t_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_opf_f; };
+    case "opf_t_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_opf_f; };
 
     // Equipment for Independent faction.
-    case "ind_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_ind_f; };
+    case "ind_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_ind_f; };
 
     // Equipment for Syndikat faction.
-    case "ind_c_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_ind_f; };
+    case "ind_c_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_ind_f; };
 
     // Equipment for Civilian faction.
-    case "civ_f": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_civ_f; };
+    case "civ_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_civ_f; };
 
     //====================================================================================================//
     // RHS factions.                                                                                      //
     //====================================================================================================//
 
     // Equipment for RHS: USAF "United States Army" (OCP) faction.
-    case "rhs_faction_usarmy_d": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
+    case "rhs_faction_usarmy_d": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
 
     // Equipment for RHS: USAF "United States Army" (UCP) faction.
-    case "rhs_faction_usarmy_wd": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
+    case "rhs_faction_usarmy_wd": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
 
     // Equipment for RHS: USAF "United States Marine Corps" (D) faction.
-    case "rhs_faction_usmc_d": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
+    case "rhs_faction_usmc_d": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
 
     // Equipment for RHS: USAF "United States Marine Corps" (WD) faction.
-    case "rhs_faction_usmc_wd": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
+    case "rhs_faction_usmc_wd": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
 
     // Equipment for RHS: USAF "United States Navy" faction.
-    case "rhs_faction_usn": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
+    case "rhs_faction_usn": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
 
     // Equipment for RHS: Insurgents faction.
-    case "rhs_faction_insurgents": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_insurgents; };
+    case "rhs_faction_insurgents": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_insurgents; };
 
     // Equipment for RHS: AFRF "Russian Airborne Troops" faction.
-    case "rhs_faction_vdv": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_vdv; };
+    case "rhs_faction_vdv": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_vdv; };
 
     // Equipment for RHS: AFRF "Soviet Air Defense Forces" faction.
-    case "rhs_faction_vpvo": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_vpvo; };
+    case "rhs_faction_vpvo": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_vpvo; };
 
     //====================================================================================================//
     // Bundeswehr.                                                                                        //
     //====================================================================================================//
 
     // Equipment for German army "Bundeswehr" faction.
-    case "bwa3_faction": { [_unitRole, _unit, _unitFaction] call bmt_fnc_configEquipment_bwa3_faction; };
+    case "bwa3_faction": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_bwa3_faction; };
 
     default { _recognised = false; };
 };
