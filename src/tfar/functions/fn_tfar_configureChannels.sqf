@@ -13,10 +13,16 @@
 
 // Variable declarations.
 params [["_unit", objNull]];
-private["_unitGroup", "_unitRole", "_frequencies", "_channel", "_squadChannel", "_fireteamChannel", "_commandChannel"];
+private["_unitGroup", "_unitOptions", "_unitRole", "_frequencies", "_channel", "_squadChannel", "_fireteamChannel", "_commandChannel"];
 
 _unitGroup = _unit getVariable ["bmt_var_unitGroup", ["nil", -1]];
-_unitRole = _unit getVariable ["bmt_var_configEquipment", "nil"];
+_unitOptions = _unit getVariable ["bmt_var_configEquipment", "nil"];
+
+if ((typeName _unitOptions) == "STRING") then {
+    _unitRole = _unitOptions;
+} else {
+    _unitRole = _unitOptions select 0; // First entry must always be the unit role
+};
 
 if ((_unitGroup select 0 != "nil") and (_unitGroup select 1 != -1)) then {
 

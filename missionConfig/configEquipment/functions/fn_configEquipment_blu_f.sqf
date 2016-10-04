@@ -55,7 +55,7 @@
 // Variable declarations.                                                                                //
 //=======================================================================================================//
 
-private["_isInfantry"];
+private["_isInfantry", "_unitRole"];
 private["_uniform", "_vestSL", "_vestTL", "_vestRFL", "_vestGR", "_vestME", "_vestSAW", "_vestDIV", "_helmet", "_helmetSN", "_helmetCRW", "_backpack", "_uavBackpack", "_unitInsignia"];
 private["_uavBattery", "_cableTie", "_mapTools", "_microDAGR", "_earPlugs", "_vectorIV", "_atragmx", "_kestrel", "_clacker", "_clackerm26", "_defusalKit", "_cellphone"];
 private["_atropine", "_epinephrine", "_morphine", "_bandage", "_elasticBandage", "_quickClot", "_packingBandage"];
@@ -67,7 +67,13 @@ private["_flashlight"];
 // Get unit role and if it is an infantry unit.                                                          //
 //=======================================================================================================//
 
-params ["_unitRole", "_unit", "_unitFaction"];
+params ["_unitOptions", "_unit", "_unitFaction"];
+
+if ((typeName _unitOptions) == "STRING") then {
+    _unitRole = _unitOptions;
+} else {
+    _unitRole = _unitOptions select 0; // First entry must always be the unit role
+};
 
 _unitRole = toLower _unitRole;
 
