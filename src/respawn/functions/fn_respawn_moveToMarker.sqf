@@ -53,8 +53,10 @@ _targetUnit = objNull;
 _rank = -1;
 {
     if (alive _x and (rankId _x > _rank) and ((vehicle _x == _x) or ([vehicle _x] call bmt_fnc_misc_checkEmptyPosition))) then {
-        _rank = rankId _x;
-        _targetUnit = _x;
+        if (side _x == side player) then {
+            _rank = rankId _x;
+            _targetUnit = _x;
+        };
     };
 } forEach (playableUnits - [player]);
 
