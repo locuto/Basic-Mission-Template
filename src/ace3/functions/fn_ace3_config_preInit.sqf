@@ -346,13 +346,6 @@ if (isClass (configFile >> "CfgPatches" >> "ace_respawn")) then {
     diag_log "(BMT Debug) File not found: ace_respawn.pbo.";
 };
 
-if (isClass (configFile >> "CfgPatches" >> "ace_sitting")) then {
-    ["ace_sitting_enable", true, true, true] call ACE_common_fnc_setSetting;                                   // 0 = Disabled, 1* = Enabled.
-} else {
-    _moduleError = true;
-    diag_log "(BMT Debug) File not found: ace_sitting.pbo.";
-};
-
 if (isClass (configFile >> "CfgPatches" >> "ace_spectator")) then {
     ["ace_spectator_filterUnits", 1.0, true, true] call ACE_common_fnc_setSetting;                             // 0 = None, 1 = Players, 2* = Playable units, 3 = All units.
     ["ace_spectator_filterSides", 0.0, true, true] call ACE_common_fnc_setSetting;                             // 0* = Player side, 1 = Friendly side, 2 = Enemy side, 3 = All sides.
