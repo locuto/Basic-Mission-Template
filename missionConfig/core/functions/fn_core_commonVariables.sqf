@@ -25,7 +25,7 @@ bmt_var_requires_ace3_AdvBal = 2;  // Variable to control the use of advanced ba
 bmt_var_requires_acre2       = 2;  // Variable to control the use of Advanced Combat Radio Environment 2.
 bmt_var_requires_asrai3      = 2;  // Variable to control the use of ASR AI 3.
 bmt_var_requires_dac         = 2;  // Variable to control the use of Dynamic-AI-Creator (DAC).
-bmt_var_requires_perfils1RA  = 2;  // Variable to control the use of Virtual Arsenal Profiles.
+bmt_var_requires_VAProfiles  = 2;  // Variable to control the use of Virtual Arsenal Profiles.
 bmt_var_requires_t8units     = 2;  // Variable to control the use of T8 Units.
 bmt_var_requires_tfar        = 2;  // Variable to control the use of Task Force Arrowhead Radio.
 
