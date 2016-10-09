@@ -29,7 +29,7 @@ _paramNames = _paramNames + ["bmt_param_zeus_admin"];                           
 
 // Initialise all parameters to zero
 {
-    call compile format["%1 = %2", _paramNames, 0];
+    call compile format["%1 = %2", _paramNames select _forEachIndex, 0];
     publicVariable _x;
 } forEach _paramNames;
 
