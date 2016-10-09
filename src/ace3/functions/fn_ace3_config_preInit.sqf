@@ -3,8 +3,8 @@
 // Author: TheMagnetar                                                                                   //
 // Version 1.1                                                                                           //
 // File creation: 2015/05/28                                                                             //
-// Description: This document is used for configuring a mission with ACE 3 without requiring to place    //
-//              modules in the editor manually.                                                          //
+// Description: DEPRECATED.This document is used for configuring a mission with ACE 3 without requiring  //
+//              to place modules in the editor manually.                                                 //
 //              http://ace3mod.com/wiki/index.html                                                       //
 //              http://ace3mod.com/wiki/missionmaker/modules.html                                        //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
@@ -78,7 +78,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_gforces")) then {
 };
 
 if (isClass (configFile >> "CfgPatches" >> "ace_goggles")) then {
-    ["ace_goggles_effects", 1, true, true] call ACE_common_fnc_setSetting;                                     // 0 = Disabled, 1 = Tint only, 2* = Tint and effects.
+    ["ace_goggles_effects", 2, true, true] call ACE_common_fnc_setSetting;                                     // 0 = Disabled, 1 = Tint only, 2* = Tint and effects.
 } else {
     _moduleError = true;
     diag_log "(BMT Debug) File not found: ace_goggles.pbo.";
@@ -184,9 +184,9 @@ if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
     ["ace_medical_enableRevive", bmt_param_ace3_reviveSystem, true, true] call ACE_common_fnc_setSetting;                              // 0* = Disabled, 1 = Only players, 2 = Players and AI.
     ["ace_medical_maxReviveTime", 120.0, true, true] call ACE_common_fnc_setSetting;                           // Scalar. 120 = Default value.
     if ( (_numRespawns > 0) && (bmt_param_ace3_reviveSystem > 0) ) then {
-        ["ace_medical_amountOfReviveLives", -1.0, true, true] call ACE_common_fnc_setSetting;                      // Scalar. -1 = Default value.
+        ["ace_medical_amountOfReviveLives", _numRespawns, true, true] call ACE_common_fnc_setSetting;          // Scalar. -1 = Default value.
     } else {
-        ["ace_medical_amountOfReviveLives", -1.0, true, true] call ACE_common_fnc_setSetting;                      // Scalar. -1 = Default value.
+        ["ace_medical_amountOfReviveLives", -1.0, true, true] call ACE_common_fnc_setSetting;                  // Scalar. -1 = Default value.
     };
 
     ["ace_medical_allowDeadBodyMovement", false, true, true] call ACE_common_fnc_setSetting;                   // 0* = Disabled, 1 = Enabled.

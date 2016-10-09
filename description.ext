@@ -23,7 +23,7 @@
 
 //=======================================================================================================//
 // EXTERNAL DEFINITIONS: Definitions from external scripts and/or addons.                                //
-//                       Currently used by: T8-Units.                                                    //
+//                       Currently used by: T8-Units and ACE 3.                                          //
 //=======================================================================================================//
 #define BMT_EXTERNAL_DEFINITIONS
     #include "bmt_components.hpp"

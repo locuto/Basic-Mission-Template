@@ -7,20 +7,28 @@
 //              Arguments:                                                                               //
 //               - none                                                                                  //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
+// ToDo: Replace entries with getMissionConfigValue
 //=======================================================================================================//
 
-private ["_paramArray", "_paramName", "_paramValue"];
+private ["_paramName", "_paramValue"];
 
-_paramArray = paramsArray;
 {
     _paramName = (configName ((missionConfigFile >> "Params") select _forEachIndex));
+
+    // Avoid lines starting with "paramLine"
     if (!(["paramLine", _paramName, true] call BIS_fnc_inString)) then {
         _paramValue = _paramName call BIS_fnc_getParamValue;
+
+        // If it is an ACE3 setting, use the variable in bmt_paramID instead.
+        if (["ace_", _paramName, true] call BIS_fnc_inString) then {
+            _paramName = ( getText (missionConfigFile >> "Params" >> _paramName >> "bmt_paramID"));
+        };
+
         call compile format["%1 = %2", _paramName, _paramValue];
         if (isServer) then {
           publicVariable _paramName;
         };
     };
-} forEach _paramArray;
+} forEach paramsArray;
 
 //============================================= END OF FILE =============================================//

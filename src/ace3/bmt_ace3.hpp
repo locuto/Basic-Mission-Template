@@ -19,7 +19,7 @@
     class ace3 {
         file = "src\ace3\functions";
         class ace3_assignWounds {};
-        class ace3_config_preInit  { PreInit = 1; };
+        //class ace3_config_preInit  { PreInit = 1; };
         class ace3_config_postInit { PostInit = 1; };
         class ace3_config_revive   { PostInit = 1; };
     };
@@ -38,24 +38,28 @@
     };
 
     //===================================================================================================//
-    // Medical sistem: Level of detail of the ACE3 medical system.                                       //
+    // Medical system: Level of detail of the ACE3 medical system.                                       //
     // Default option: Advanced.                                                                         //
     //===================================================================================================//
-    class bmt_param_ace3_medicalSystem {
+    class ace_medical_level {
         title = "Medical system";
+        ACE_setting = 1;                              // Marks param to be read as an ace setting.
+        bmt_paramID = "bmt_param_ace3_medicalSystem"; // Parameter for the A3-BMT template.
         values[] = {0, 1, 2};
-        texts[] = {"Disabled", "Basic", "Advanced"};
+        texts[] =  {"Disabled", "Basic", "Advanced"};
         default = BMT_ACE3_MEDICAL;
     };
 
     //===================================================================================================//
-    // Medical sistem: Level of detail of the ACE3 medical system.                                       //
-    // Default option: Advanced.                                                                         //
+    // Revive system: Use ACE3 Revive system?                                                            //
+    // Default option: Disabled.                                                                         //
     //===================================================================================================//
-    class bmt_param_ace3_reviveSystem {
+    class ace_medical_enableRevive {
         title = "Revive system";
-        values[] = {0, 1, 2};
-        texts[] = {"Disabled", "Players only", "Players and AI"};
+        ACE_setting = 1;                               // Marks param to be read as an ace setting.
+        bmt_paramID = "bmt_param_ace3_reviveSystem";   // Parameter for the A3-BMT template.
+        values[] = {0, 1};
+        texts[] = {"Disabled", "Enabled"};
         default = BMT_ACE3_REVIVE;
     };
 
@@ -63,8 +67,10 @@
     // Ballistics: Level of detail of ballistic simulation of ACE3.                                      //
     // Default option: Advanced.                                                                         //
     //===================================================================================================//
-    class bmt_param_ace3_ballistics {
+    class ace_advanced_ballistics_enabled {
         title = "Ballistics";
+        ACE_setting = 1;                               // Marks param to be read as an ace setting.
+        bmt_paramID = "bmt_param_ace3_ballistics";     // Parameter for the A3-BMT template.
         values[] = {0,1};
         texts[] = {"Basic", "Advanced"};
         default = BMT_ACE3_BALLISTICS;
@@ -82,9 +88,10 @@
     };
 #endif
 
-// Define function scope in multiplayer.
-#ifdef BMT_FUNCTIONS_REMOTEEXEC
-    class bmt_fnc_ace3_config { allowedTargets = 0; }; // This function can target everybody.
+#ifdef BMT_EXTERNAL_DEFINITIONS
+    class ACE_Settings {
+        #include "bmt_ace3_settings.hpp"
+    };
 #endif
 
 //============================================= END OF FILE =============================================//

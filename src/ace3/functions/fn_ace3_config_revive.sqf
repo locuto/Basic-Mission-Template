@@ -10,10 +10,9 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-private _numRespawns =  getNumber (missionConfigFile >> "bmt_config" >> "bmt_config_numAllowedRespawns");
+private _numRevives =  getNumber (missionConfigFile >> "bmt_config" >> "bmt_config_numAllowedRespawns");
 
 if (bmt_param_ace3_reviveSystem > 0) then {
-    _numRespawns = 0;
 
     // If ACE3's revive system is used, disable respawns themselves.
     switch (bmt_param_respawn_tickets) do {
@@ -27,14 +26,23 @@ if (bmt_param_ace3_reviveSystem > 0) then {
                 case resistance: { _pos = 2; };
                 case civilian: { _pos = 3; };
             };
-            bmt_array_numRespawns set [_pos, _numRespawns];
+            bmt_array_numRespawns set [_pos, 0];
             publicVariable bmt_array_numRespawns;
         };
         case 1: {
             if (bmt_param_debugOutput == 1) then {
                 player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Disabling player respawn in favour of ACE3 revive system."];
             };
-            player setVariable ["bmt_var_numRespawns", _numRespawns, true];
+            player setVariable ["bmt_var_numRespawns", 0, true];
         };
+    };
+
+    // Set the number of ACE Revives to be equal to the original respawn tickets
+    if (_numRevives > 0) then {
+        player setVariable ["ace_medical_amountOfReviveLives", _numRevives, true];
+        player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Player has %1 ACE 3 Revives.", _numRevives];
+    } else {
+        player setVariable ["ace_medical_amountOfReviveLives", -1, true]; // Unlimited revives.
+        player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Player has unlimited ACE 3 Revives."];
     };
 };
