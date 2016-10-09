@@ -1,5 +1,5 @@
 //=======================================================================================================//
-// File: fn_ace3_config_preInit.sqf                                                                      //
+// File: fn_ace3_config_revive.sqf                                                                       //
 // Author: TheMagnetar                                                                                   //
 // Version 1.1                                                                                           //
 // File creation: 2015/05/28                                                                             //
@@ -46,3 +46,5 @@ if (bmt_param_ace3_reviveSystem > 0) then {
         player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Player has unlimited ACE 3 Revives."];
     };
 };
+
+//============================================= END OF FILE =============================================//
