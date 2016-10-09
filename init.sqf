@@ -32,7 +32,7 @@ bmt_script_briefing = [] execVM "src\briefing\scripts\bmt_briefing.sqf";
 //=======================================================================================================//
 // Initialise the T8 Units script if the A3BMT T8Units component is loaded.                              //
 //=======================================================================================================//
-if (!isNil "bmt_param_t8units_enabled") then {
+if (bmt_param_t8units_enabled == 1) then {
     bmt_script_t8units = [] execVM "src\t8units\scripts\bmt_t8units_init.sqf";
 };
 
@@ -52,7 +52,7 @@ if (!isDedicated && (isNull player)) then {
 //=======================================================================================================//
 // JIP supprt.                                                                                           //
 //=======================================================================================================//
-if (!isNil "bmt_param_jip_enabled") then {
+if (bmt_param_jip_enabled == 1) then {
     #include "src\jip\scripts\bmt_jip_init.sqf"
 };
 

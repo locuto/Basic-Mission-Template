@@ -23,7 +23,7 @@ if ((bmt_param_t8units_enabled == 0) and (bmt_param_t8units_debug == 1)) then {
 };
 
 if (bmt_param_t8units_dac == 1) then {
-    if (isNil "bmt_param_dac_enabled") then {
+    if (!bmt_mod_dac) then {
         player sideChat format ["ERROR (bmt_core_checkConfiguration_t8units.sqf): T8 Units is configured to use DAC but DAC is not loaded."];
     } else {
         if (bmt_param_dac_enabled == 0) then {

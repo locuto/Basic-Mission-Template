@@ -7,10 +7,13 @@
 //              Arguments:                                                                               //
 //               - none                                                                                  //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
-// ToDo: Replace entries with getMissionConfigValue
+// ToDo: Replace entries with getMissionConfigValue.                                                     //
 //=======================================================================================================//
 
 private ["_paramName", "_paramValue"];
+
+// First initialise all parameters to zero.
+[] call bmt_fnc_core_initBMTParams;
 
 {
     _paramName = (configName ((missionConfigFile >> "Params") select _forEachIndex));

@@ -92,9 +92,9 @@ if (isClass (missionconfigfile >> "CfgComponents" >> "t8units")) then {
 };
 
 // Perfils de Virtual Arsenal del grup 1RA.
-if (bmt_var_requires_perfils1RA != 2) then {
-    if (bmt_var_requires_perfils1RA != bmt_param_utilitzarPerfils) then {
-        if (bmt_param_utilitzarPerfils == 1) then {
+if (bmt_var_requires_VAProfiles != 2) then {
+    if (bmt_var_requires_VAProfiles != bmt_param_useVAProfiles) then {
+        if (bmt_param_useVAProfiles == 1) then {
             player sideChat format ["WARNING: Virtual Arsenal profiles are selected but they are not necessary for this mission. This will override equipment!"];
         } else {
             player sideChat format ["ERROR: Virtual Arsenal profiles are not selected but they are necessary for this mission."];
