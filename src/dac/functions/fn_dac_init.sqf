@@ -32,7 +32,7 @@ if (isServer) then {
     } forEach playableUnits;
     publicVariable "DAC_STRPlayers";
 
-    if ((bmt_param_debugOutput == 1)) then {
+    if (bmt_param_debugOutput == 1) then {
         player sideChat format ["DEBUG (fn_dac_init.sqf): %1", DAC_STRPlayers];
     };
 };
