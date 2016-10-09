@@ -1,15 +1,15 @@
 //=======================================================================================================//
-// File: bmt_respawn_on_unitRespawn.sqf                                                                 //
+// File: bmt_respawn_onPlayerRespawn.sqf                                                                 //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
 // File creation: 2015/10/02                                                                             //
-// Description: This document configures the on_unitRespawn event. For the moment ACE3 spectator mode   //
+// Description: This document configures the onPlayerRespawn event. For the moment ACE3 spectator mode   //
 //              (http://ace3mod.com/wiki/feature/spectator.html) in case it is available, defaulting to  //
 //              the vanila one if ACE3 is not loaded.                                                    //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-// Parameters passed when on_unitRespawn.
+// Parameters passed when onPlayerRespawn.
 params [["_unit",objNull], ["_oldUnit",objNull], ["_respawn",0], ["_respawnDelay",0]];
 private ["_unitOptions"];
 
