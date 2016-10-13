@@ -6,7 +6,7 @@
 // Description: This function equips the unit according to a specified role and depending on the faction //
 //              it belongs to.                                                                           //
 //              Arguments:                                                                               //
-//               - 0: unit role <STRING> or array of strings with the first element beign the unit role. //
+//               - 0: unit role <STRING> or unit role with additional options <ARRAY>.                   //
 //               - 1: unit <OBJECT>.                                                                     //
 //               - 2: unit faction <STRING><OPTIONAL>.                                                   //
 //              Examples:                                                                                //

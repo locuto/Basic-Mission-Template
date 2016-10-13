@@ -8,7 +8,7 @@
 //              Arguments:                                                                               //
 //               - 0: group name (Squad callsign) <STRING>.                                              //
 //               - 1: subgroup index (Fire team callsign) <FLOAT>.                                       //
-//               - 2: unit role <STRING>.                                                                //
+//               - 2: unit role <STRING> or unit role with additional options <ARRAY>.                   //
 //               - 3: unit <OBJECT>.                                                                     //
 //               - 4: unit faction <STRING><OPTIONAL>.                                                   //
 //              Examples:                                                                                //

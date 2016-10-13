@@ -6,8 +6,9 @@
 // Description: This function equips the unit according to a specified role and depending on the faction //
 //              it belongs to.                                                                           //
 //              Arguments:                                                                               //
-//               - 0: unit role <STRING>.                                                                //
+//               - 0: unit role <STRING> or unit role with additional options <ARRAY>.                   //
 //               - 1: unit <OBJECT>.                                                                     //
+//               - 2: unit faction <STRING><OPTIONAL>.                                                   //  //
 //              Examples:                                                                                //
 //               - Unit is a Fire Team Leader.                                                           //
 //                   ["tl", this] call bmt_fnc_configEquipment;                                          //
