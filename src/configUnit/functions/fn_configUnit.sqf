@@ -14,6 +14,8 @@
 //              Examples:                                                                                //
 //               - Unit is a Fire Team Leader in Alpha-2.                                                //
 //                   ["Alpha", 2, "tl", this] call bmt_fnc_configUnit;                                   //
+//               - Unit is a Squad Leader in Alpha 1-1 with optional equipment foo.                      //
+//                   ["Alpha 1", 1, ["sl", "foo"], this] call bmt_fnc_configUnit;                        //
 //               - Unit is a medic in fire team Bravo-1 and has the equipment of the RHS faction         //
 //                 "United States Marine Corps" (D) despite not belonging to it.                         //
 //                   ["Bravo", 1, "me", this, "rhs_faction_usmc_d"] call bmt_fnc_configUnit;             //
