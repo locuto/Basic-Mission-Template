@@ -9,7 +9,7 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-private ["_credits", "_radio", "_adminLog", "_execution", "_mission", "_intel", "_situation"];
+private ["_credits", "_radio", "_adminLog", "_intel", "_missionExecution", "_situation"];
 
 //=======================================================================================================//
 // NOTES: CREDITS.                                                                                       //
@@ -32,7 +32,7 @@ _radio = player createDiaryRecord ["diary", ["Radio frequencies","
 <br/><br/>
 <font color='#FF0000' size='18'>Alpha</font>
 <br/>
-- Squad ""Alpha"": 200 kHz.
+- Squad ""Alpha 1"": 200 kHz.
 <br/>
 - Fireteam ""Alpha 1-1"": 201 kHz.
 <br/>
@@ -42,7 +42,7 @@ _radio = player createDiaryRecord ["diary", ["Radio frequencies","
 <br/><br/>
 <font color='#FF0000' size='18'>Bravo</font>
 <br/>
-- Squad ""Bravo"": 210 kHz.
+- Squad ""Bravo 1"": 210 kHz.
 <br/>
 - Fireteam ""Bravo 1-1"": 211 kHz.
 <br/>
@@ -55,41 +55,13 @@ _radio = player createDiaryRecord ["diary", ["Radio frequencies","
 // NOTES: ADMINISTRATION/LOGISTICS.                                                                       //
 //=======================================================================================================//
 _adminLog = player createDiaryRecord ["diary", ["Administration/Logistics","
-<font color='#FF0000' size='18'>CAS</font>
+<font color='#FF0000' size='18'>Support</font>
 <br/>
 *** Description, if they exist, of support units like CAS, field artillery, medevac, ... ***
 <br/><br/>
 <font color='#FF0000' size='18'>Supply</font>
 <br/>
 *** Troop supply: additional ammunition, ... ***
-"]];
-
-//=======================================================================================================//
-// NOTES: EXECUTION.                                                                                     //
-//=======================================================================================================//
-_execution = player createDiaryRecord ["diary", ["Execution","
-<font color='#FF0000' size='18'>Main tasks</font>
-<br/>
-- <font color='#00FFFF'>Main task 1</font>: *** Brief description ***.
-<br/>
-- <font color='#00FFFF'>Main task 2</font>: *** Brief description ***.
-<br/><br/>
-<font color='#FF0000' size='18'>Secondary tasks</font>
-<br/>
-- <font color='#00FFFF'>Secondary task 1</font>: *** Brief description ***.
-<br/>
-- <font color='#00FFFF'>Secondary task 2</font>: *** Brief description ***.
-<br/><br/>
-<font color='#FF0000' size='18'>Execution</font>
-<br/>
-*** Description, using bullet points, of how to execute the mission. ***
-"]];
-
-//=======================================================================================================//
-// NOTES: MISSION.                                                                                       //
-//=======================================================================================================//
-_mission = player createDiaryRecord ["diary", ["Mission","
-*** Mission description. ***
 "]];
 
 //=======================================================================================================//
@@ -105,6 +77,31 @@ _intel = player createDiaryRecord ["diary", ["Intel","
 <font color='#FF0000' size='18'>Allied forces</font>
 <br/>
 *** Description of allied forces. ***
+"]];
+
+//=======================================================================================================//
+// NOTES: EXECUTION.                                                                                     //
+//=======================================================================================================//
+_execution = player createDiaryRecord ["diary", ["Mission and Execution","
+<font color='#FF0000' size='18'>Mission</font>
+<br/>
+*** Mission description. ***
+<br/><br/>
+<font color='#FF0000' size='18'>Main tasks</font>
+<br/>
+- <font color='#00FFFF'>Main task 1</font>: *** Brief description ***.
+<br/>
+- <font color='#00FFFF'>Main task 2</font>: *** Brief description ***.
+<br/><br/>
+<font color='#FF0000' size='18'>Secondary tasks</font>
+<br/>
+- <font color='#00FFFF'>Secondary task 1</font>: *** Brief description ***.
+<br/>
+- <font color='#00FFFF'>Secondary task 2</font>: *** Brief description ***.
+<br/><br/>
+<font color='#FF0000' size='18'>Execution</font>
+<br/>
+*** Description, using bullet points, of how to execute the mission. ***
 "]];
 
 //=======================================================================================================//
