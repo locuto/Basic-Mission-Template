@@ -24,7 +24,7 @@ Mission generated using the "Arma 3 Basic Mission Template" (A3-BMT).
 
 **Mission summary**: Brief description of the mission.
 
-**Arma 3 Basic Mission Template (A3-BMT)**: v1.0 (https://github.com/CavallersDelCel/1RA_Plantilla_Missio)
+**Arma 3 Basic Mission Template (A3-BMT)**: v1.0 (https://github.com/TheMagnetar/Basic-Mission-Template)
 by TheMagnetar.
 
 **Necessary or recommended addons**: List of necessary and/or recommended addons.
