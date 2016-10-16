@@ -24,11 +24,12 @@ Mission generated using the "Arma 3 Basic Mission Template" (A3-BMT).
 
 **Mission summary**: Brief description of the mission.
 
-**Arma 3 Basic Mission Template (A3-BMT)**: v1.0 (https://github.com/CavallersDelCel/1RA_Plantilla_Missio) by TheMagnetar.
+**Arma 3 Basic Mission Template (A3-BMT)**: v1.0 (https://github.com/CavallersDelCel/1RA_Plantilla_Missio)
+by TheMagnetar.
 
 **Necessary or recommended addons**: List of necessary and/or recommended addons.
 
-### Detailed mission description
+## Detailed mission description
 
 Detailed description of the mission. This text can be the same as the one posted on the forums.
 
@@ -45,13 +46,13 @@ work required when editing a mission for Arma 3. Although originally envisaged t
 "1er Regiment Aerotransportat (1RA)" of the Catalan community of simulation "Cavallers del Cel", its scope
 has broaden since its adoption by other communities.
 
-### Requirements:
+## Requirements:
 
 The "Arma 3 Basic Mission Template (A3-BMT) has been designed to be flexible and to be independent from
 external addons. Any contributer that wants to add an external script must include it with an option to
 deactivate it.
 
-### Structure:
+## Structure:
 
 The template has the following folder structure:
 
@@ -90,7 +91,7 @@ The template has the following folder structure:
   * "\src\tfar": Scripts and functions to configure TFAR.
   * "\src\zeus": Scripts and functions to configure Zeus.
 
-### Supported addons
+## Supported addons
 
 The following is a list showing the currently supported addons.
 
@@ -107,7 +108,7 @@ The following is a list showing the currently supported addons.
   * Advanced Combat Radio Environment 2 (ACRE2): http://forums.bistudio.com/showthread.php?191848-ACRE2-Stable-Release.
   * Task Force Arrowhead Radio (TFAR): https://github.com/michail-nikolaev/task-force-arma-3-radio.
 
-### Supported factions
+## Supported factions
 
 The following list shows the supported factions for those scripts that allow a greater control degree of
 equipment and tasks:

@@ -20,14 +20,14 @@ class Header {
 
 class bmt_config {
     bmt_config_testedAddons = "*** List of addons with the corresponding tested version number. ***<br/>*** Each addon must have its own line. ***";
-    bmt_config_templateVersion = "v1.0 (2016-05-14)";
-    bmt_config_missionVersion = "vX.Y (date)";
-    bmt_config_missionCollaborators = "TheMagnetar (BMT) and *** Possible collaborators ***";
-    bmt_config_missionDifficulty = "*** Expected mission difficulty ***";
-    bmt_config_missionSummary = "*** Mission summary for administrators ***";
+    bmt_config_templateVersion = "v1.0 (2016-05-14).";
+    bmt_config_missionVersion = "vX.Y (date).";
+    bmt_config_missionCollaborators = "TheMagnetar (BMT) and *** Possible collaborators ***.";
+    bmt_config_missionDifficulty = "*** Expected mission difficulty. ***";
+    bmt_config_missionSummary = "*** Mission summary for administrators. ***";
     bmt_config_missionNotesAndRemarks = "*** Additional notes and remarks from the mission author. ***";
-    
-    
+
+
     bmt_config_jipAllowedTime = 300;   // JIP players are enabled until the specified time (in seconds). To
                                        // enable always JIP players set to -1.
     bmt_config_numAllowedRespawns = -99; // Number of allowed respawns. Set to -1 to have unlimited respawns,
@@ -53,7 +53,7 @@ overviewText = "*** Text to show. ***";          // Text shown when selecting mi
 // Respawn Settings: https://community.bistudio.com/wiki/Arma_3_Respawn                                  //
 //=======================================================================================================//
 respawn             = "BASE";  // Respawn type BASE. Recommended. Allows JIP and the number of respawns
-                               // can be limited in "bmt_config_numAllowedRespawns" side wise or player wise. 
+                               // can be limited in "bmt_config_numAllowedRespawns" side wise or player wise.
 respawnDelay        = 10;      // Respawn delay in seconds.
 respawnVehicleDelay = 30;      // Vehicle respawn delay in seconds.
 RespawnDialog       = 0;       // Show (1) or hide (0) the scoreboard and respawn countdown timer for a

@@ -60,13 +60,13 @@ _briefingNotes = format ["
 <br/>
 <font color='#00FFFF'>Mission name:</font> %1.
 <br/>
-<font color='#00FFFF'>Version</font> %2.
+<font color='#00FFFF'>Version</font> %2
 <br/>
 <font color='#00FFFF'>Author:</font> %3.
 <br/>
-<font color='#00FFFF'>Collaborators:</font> %4.
+<font color='#00FFFF'>Collaborators:</font> %4
 <br/>
-<font color='#00FFFF'>Basic Mission Template (BMT) version:</font> %5.
+<font color='#00FFFF'>Basic Mission Template (BMT) version:</font> %5
 <br/>
 <font color='#00FFFF'>Game Type:</font> %6.
 <br/>
@@ -76,11 +76,11 @@ _briefingNotes = format ["
 <br/>
 <font color='#00FFFF'>Respawn:</font> %9. Spectator when dead.
 <br/>
-<font color='#00FFFF'>Difficulty:</font> %10.
+<font color='#00FFFF'>Difficulty:</font> %10
 <br/>
-<font color='#00FFFF'>Mission summary:</font> %11.
+<font color='#00FFFF'>Mission summary:</font> %11
 <br/>
-<font color='#00FFFF'>Additional notes and remarks:</font> %12.
+<font color='#00FFFF'>Additional notes and remarks:</font> %12
 <br/><br/>
 ", getText (missionConfigFile >> "onLoadName"),
 getText (missionConfigFile >> "bmt_config" >> "bmt_config_missionVersion"),
@@ -112,7 +112,7 @@ for [{ _x = 0 }, {_x < count _debriefingEntries}, { _x = _x + 1}] do {
     _endingTitle = getText (missionConfigFile >> "CfgDebriefing" >> format["%1",_endingEntry] >> "title");
     _endingDescription = getText (missionConfigFile >> "CfgDebriefing" >> format["%1",_endingEntry] >> "description");
     _briefingEndings = _briefingEndings + format [
-    "<execute expression=""['%1',true] remoteExec ['BIS_fnc_endMission', 0, true];"">- %2</execute>: %3.<br/>", _endingEntry, _endingTitle, _endingDescription
+    "<execute expression=""['%1',true] remoteExec ['BIS_fnc_endMission', 0, true];"">- %2</execute>: %3<br/>", _endingEntry, _endingTitle, _endingDescription
     ];
 };
 

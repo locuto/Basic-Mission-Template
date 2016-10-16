@@ -81,7 +81,7 @@ _intel = player createDiaryRecord ["diary", ["Intel","
 //=======================================================================================================//
 // NOTES: EXECUTION.                                                                                     //
 //=======================================================================================================//
-_execution = player createDiaryRecord ["diary", ["Mission and Execution","
+_missionExecution = player createDiaryRecord ["diary", ["Mission and Execution","
 <font color='#FF0000' size='18'>Mission</font>
 <br/>
 *** Mission description. ***
