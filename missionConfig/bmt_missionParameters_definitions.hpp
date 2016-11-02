@@ -4,7 +4,7 @@
 // Version: 1.0                                                                                          //
 // File creation: 2015/11/26                                                                             //
 // Description: This file has the purpose to define the different mission parameters without requiring   //
-//              to change them in each of the module folders.                                            //
+//              to change them in each of the module folders. No entry should be manually deleted.       //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 

@@ -25,17 +25,20 @@
 //                  psg                     Platoon Sergeant                                             //
 //                  rto                     Platoon Radiotelephone Operator                              //
 //                  fo                      Forward Observer                                             //
+//                  jtac                    Joint Terminal Attack Controller                             //
 //                  me                      Platoon Medic                                                //
 //                  sl                      Squad Leader                                                 //
 //                  tl                      Team Leader                                                  //
 //                  rfl                     Rifleman                                                     //
 //                  rflat                   Rifleman with AT4                                            //
+//                  rfluav                  Rifleman with UAV (Raven)                                    //
 //                  gr                      Grenadier                                                    //
 //                  ar                      Automatic Rifleman                                           //
+//                  aar                     Assitant Automatic Rifleman                                  //
 //                  dm                      Designated Marksman                                          //
 //                  mg                      Machine Gunner                                               //
 //                  amg                     Assitant Machine Gunner                                      //
-//                  at                      Anti-Tank)                                                   //
+//                  at                      Anti-Tank                                                    //
 //                  aat                     AT Ammo handler                                              //
 //                  aa                      Anti-Aircraft gunner                                         //
 //                  aaa                     Anti-Aircraft Assitant                                       //
@@ -49,8 +52,7 @@
 //                  div                     Diver                                                        //
 //                  hplt                    Helicopter pilot                                             //
 //                  jplt                    Jet pilot                                                    //
-//                                                                                                       //
-//                  hmmwv                   Equipment for HMMWVs                                         //
+//                  ccrw                    Combat Crew                                                  //
 //                                                                                                       //
 //              while the list of supported factions is:                                                 //
 //                                                                                                       //

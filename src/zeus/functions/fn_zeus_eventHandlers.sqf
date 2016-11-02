@@ -9,8 +9,8 @@
 //=======================================================================================================//
 
 {
-    _x addEventHandler ["CuratorGroupPlaced",{ _this remoteExecCall ["bmt_fnc_zeus_addGroups", 2, false] }];
-    _x addEventHandler ["CuratorObjectPlaced",{ _this remoteExecCall ["bmt_fnc_zeus_adObjects", 2, false] }];
+    _x addEventHandler ["CuratorGroupPlaced",  { _this remoteExecCall ["bmt_fnc_zeus_addGroups", 2, false] }];
+    _x addEventHandler ["CuratorObjectPlaced", { _this remoteExecCall ["bmt_fnc_zeus_adObjects", 2, false] }];
 } forEach allCurators;
 
 //============================================= END OF FILE =============================================//

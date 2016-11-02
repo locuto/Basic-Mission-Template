@@ -61,9 +61,9 @@ bmt_array_longRangeRadio = ["rto", "fo", "jtac"];
 //=======================================================================================================//
 
 bmt_array_groups = [
-    ["Alpha", "Alpha 1", "Alpha 2", "Alpha 3"],
-    ["Bravo", "Bravo 1", "Bravo 2", "Bravo 3"],
-    ["Charlie", "Charlie 1", "Charlie 2", "Charlie  3"],
+    ["Alpha 1", "Alpha 1-1", "Alpha 1-2", "Alpha 1-3"],
+    ["Alpha 2", "Alpha 2-1", "Alpha 2-2", "Alpha 2-3"],
+    ["Alpha 3", "Alpha 3-1", "Alpha 3-2", "Alpha 3-3"],
     ["Command"],
     ["Support"],
     ["Artillery"]

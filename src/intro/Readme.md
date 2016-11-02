@@ -1,4 +1,4 @@
-## scripts/intro
+## /src/intro
 
 En aquesta carpeta es troben els diferents fitxers per crear una introducció a la partida. El fitxer `bmt_intro.sqf` és el fitxer al qual s'ha d'accedir desde `init.sqf`
 i per norma general no s'ha de modificar.
