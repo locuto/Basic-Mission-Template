@@ -15,7 +15,7 @@ private ["_unitOptions"];
 
 // End the mission if there are no alive units and respawn of type "NONE" or "BIRD".
 if (_respawn <= 1) then {
-    _unit setVariable ["bmt_var__unitAlive", false, true];
+    _unit setVariable ["bmt_var_unitAlive", false, true];
     sleep 5;
     cutText ["You are dead! Entering spectator mode.", "PLAIN DOWN"];
     sleep 5;
