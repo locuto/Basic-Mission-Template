@@ -48,7 +48,7 @@
 // RESPAWN                                                                                               //
 //=======================================================================================================//
 #define BMT_RESPAWN_NUMTICKETS_CONFIG    2 // 0 = Unlimited, 1 = No tickets, 2 = Mission based.
-#define BMT_RESPAWN_SAVEGEAR             0 // 0 = Gear is not saved, 1 gear is saved.
+#define BMT_RESPAWN_SAVEGEAR             1 // 0 = Gear is not saved, 1 gear is saved.
 #define BMT_RESPAWN_TICKETS              1 // 0 = per side, 1 = on a player basis.
 
 //=======================================================================================================//
