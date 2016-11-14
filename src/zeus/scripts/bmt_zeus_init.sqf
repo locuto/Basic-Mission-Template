@@ -2,12 +2,12 @@
 // File: bmt_zeus_init.sqf                                                                               //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
-// File creation: 2015/06/04                                                                      //
-// Description: Aquest document serveix per afegir al Zeus els diferents objectes, vehicles, i unitats    //
+// File creation: 2015/06/04                                                                             //
+// Description: Aquest document serveix per afegir al Zeus els diferents objectes, vehicles, i unitats   //
 //             que s'han posat utilitzant l'editor. Els jugadors també estan inclosos. D'aquesta manera  //
 //             tots aquests els objectes seran editables.                                                //
 // Changes: 0.1 (2015/06/04) Initial version.                                                            //
-//         1.0 (2015/11/26) First public version.                                                        //
+//          1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
 // Surt si no és un servidor.

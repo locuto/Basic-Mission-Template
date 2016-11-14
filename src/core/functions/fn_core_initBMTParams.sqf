@@ -4,8 +4,10 @@
 // Version: 1.0                                                                                          //
 // File creation: 2015/03/08                                                                             //
 // Description: This function initalises all bmt_param* variables.                                       //
+//                                                                                                       //
 //              Arguments:                                                                               //
 //               - none                                                                                  //
+//                                                                                                       //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 // ToDo: Replace entries with getMissionConfigValue.                                                     //
 //=======================================================================================================//
