@@ -19,6 +19,29 @@ modules.
   example, if the Bundeswehr faction can speak German and English, it can be accomplished by setting
   `bmt_acre2_language_bwa3 = ["german", "english"];`. If more faction variables are added, the function
   defined in `src/acre2/functions/fn_acre2_configureLanguages.sqf` should be modified as well.
+
+  | **Faction**        | **Code**          | **Controlling Babel variable** |
+  | ------------- | ------------- | ------------- |
+  | Blue Force                                                       | `blu_f`                            | `bmt_acre2_language_blufor`  |
+  | Blue Force Pacific                                               | `blu_t_f`                          | `bmt_acre2_language_blufor`  |
+  | CTRG                                                             | `blu_ctrg_f`                       | `bmt_acre2_language_blufor`  |
+  | Gendarmerie                                                      | `blu_gen_f`                        | `bmt_acre2_language_blufor`  |
+  | Civilians                                                        | `civ_f`                            | `bmt_acre2_language_civ`     |
+  | FIA                                                              | `blu_g_f`, `ind_g_f` and `opf_g_f` | `bmt_acre2_language_fia`     |
+  | Independent Force                                                | `ind_f`                            | `bmt_acre2_language_indfor`  |
+  | Syndikat                                                         | `ind_c_f`                          | `bmt_acre2_language_indfor`  |
+  | Opposing Force                                                   | `opf_f`                            | `bmt_acre2_language_opfor`   |
+  | Opposing Force Pacific                                           | `opf_t_f`                          | `bmt_acre2_language_opfor`   |
+  | Bundeswehr                                                       | `bwa3_faction`                     | `bmt_acre2_language_bwa3`    |
+  | RHS Insurgents                                                   | `rhs_faction_insurgents`           | `bmt_acre2_language_rhsins`  |
+  | RHS Russian Airborne Troops (Vozdushno-desantnye voyska)         | `rhs_faction_vdv`                  | `bmt_acre2_language_rhsafrf` |
+  | RHS Soviet Air Defense Troops (Voyska protivovozdushnoy oborony) | `rhs_faction_vpvo`                 | `bmt_acre2_language_rhsafrf` |
+  | RHS United States Army (Desert)                                  | `rhs_faction_usarmy_d`             | `bmt_acre2_language_rhsusaf` |
+  | RHS United States Army (Woodland)                                | `rhs_faction_usarmy_wd`            | `bmt_acre2_language_rhsusaf` |
+  | RHS United States Marine Corps (Desert)                          | `rhs_faction_usmc_d`               | `bmt_acre2_language_rhsusaf` |
+  | RHS United States Marine Corps (Woodland)                        | `rhs_faction_usmc_wd`              | `bmt_acre2_language_rhsusaf` |
+  | RHS United States Navy                                           | `rhs_faction_usn`                  | `bmt_acre2_language_rhsusaf` |
+
   * **Difficulty parameters**: Loss model configuration, full/half duplex radios, interference simulation,
   and antena direction can be configured on a mission basis.
   * **Basic mission Template parameters**: allow to configure if radio presets (channels and frequencies)

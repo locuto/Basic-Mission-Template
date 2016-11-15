@@ -35,10 +35,11 @@
 // Babel functionality configuration.                                                                    //
 //=======================================================================================================//
 
-bmt_acre2_languages = [["english","English"],["russian","Russian"],["farsi","Farsi"],["greek","Greek"], ["german", "German"]];
+bmt_acre2_languages = [["english","English"],["russian","Russian"],["arabic","Arabic"],["farsi","Farsi"],["greek","Greek"], ["german", "German"]];
 
 bmt_acre2_language_rhsusaf = ["english"];
 bmt_acre2_language_rhsafrf = ["russian"];
+bmt_acre2_language_rhsins  = ["arabic"];
 bmt_acre2_language_blufor  = ["english"];
 bmt_acre2_language_opfor   = ["farsi"];
 bmt_acre2_language_indfor  = ["greek"];

@@ -94,11 +94,22 @@ if (_unitFaction in ["rhs_faction_usarmy_wd", "rhs_faction_usarmy_d", "rhs_facti
 // Languages for RHS: AFRF "Armed Forces of the Russian Federation" faction.
 if (_unitFaction in ["rhs_faction_vpvo", "rhs_faction_vdv"] ) exitWith {
 
-    bmt_acre2_language_rhsusaf call acre_api_fnc_babelSetSpokenLanguages;
-    [bmt_acre2_language_rhsusaf select 0] call acre_api_fnc_babelSetSpeakingLanguage;
+    bmt_acre2_language_rhsafrf call acre_api_fnc_babelSetSpokenLanguages;
+    [bmt_acre2_language_rhsafrf select 0] call acre_api_fnc_babelSetSpeakingLanguage;
     // DEBUG OUTPUT
     if ( bmt_param_debugOutput == 1 ) then {
         _unit sideChat format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_rhsafrf, _unitFaction];
+    };
+};
+
+// Languages for RHS: Insurgents faction.
+if (_unitFaction  == "rhs_faction_insurgents" ) exitWith {
+
+    bmt_acre2_language_rhsins call acre_api_fnc_babelSetSpokenLanguages;
+    [bmt_acre2_language_rhsins select 0] call acre_api_fnc_babelSetSpeakingLanguage;
+    // DEBUG OUTPUT
+    if ( bmt_param_debugOutput == 1 ) then {
+        _unit sideChat format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_rhsins, _unitFaction];
     };
 };
 
