@@ -5,6 +5,10 @@
 // File creation: 2015/10/02                                                                             //
 // Description: This function enters spectator mode. The spectator mode that is used, ACE3 spectator or  //
 //              BI's End Game Spectator, depends on mission parameters.                                  //
+//                                                                                                       //
+//              Arguments:                                                                               //
+//               - none                                                                                  //
+//                                                                                                       //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 

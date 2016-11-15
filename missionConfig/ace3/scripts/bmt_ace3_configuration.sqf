@@ -6,6 +6,9 @@
 // Description: This document is used for configuring ACE3 variables that affect units like medics,      //
 //              repair specialists, explosive specialists, etc.                                          //
 //                                                                                                       //
+//              Arguments:                                                                               //
+//               - none                                                                                  //
+//                                                                                                       //
 //              Examples:                                                                                //
 //               - Unit `bmt_alpha1_1` and `bmt_alpha2_3` are medics and `bmt_medevac_1` is a medical    //
 //                 helicopter equipped with FRIES.                                                       //

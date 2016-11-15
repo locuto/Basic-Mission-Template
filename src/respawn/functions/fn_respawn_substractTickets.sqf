@@ -5,6 +5,10 @@
 // File creation: 2015/10/02                                                                             //
 // Description: This function substracts tickets depending on the mission parameters: from the player    //
 //              pool of from the side pool.                                                              //
+//                                                                                                       //
+//              Arguments:                                                                               //
+//               - none                                                                                  //
+//                                                                                                       //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 

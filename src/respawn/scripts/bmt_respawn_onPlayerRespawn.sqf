@@ -6,6 +6,13 @@
 // Description: This document configures the onPlayerRespawn event. For the moment ACE3 spectator mode   //
 //              (http://ace3mod.com/wiki/feature/spectator.html) in case it is available, defaulting to  //
 //              the vanila one if ACE3 is not loaded.                                                    //
+//                                                                                                       //
+//              Arguments:                                                                               //
+//               - 0: unit to be respawned <OBJECT>.                                                     //
+//               - 1: old unit that was killed <OBJECT>.                                                 //
+//               - 2: respawn type <SCALAR>.                                                             //
+//               - 3: number of seconds until respawn <SCALAR>.                                          //
+//                                                                                                       //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 

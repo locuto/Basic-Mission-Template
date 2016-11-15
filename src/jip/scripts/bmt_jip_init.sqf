@@ -5,6 +5,10 @@
 // File creation: 2015/04/03                                                                             //
 // Description: This script checks whether JIP players are supported or not. If JIP is not allowed after //
 //              a certain amount of time, the player is killed.                                          //
+//                                                                                                       //
+//              Arguments:                                                                               //
+//               - none                                                                                  //
+//                                                                                                       //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 

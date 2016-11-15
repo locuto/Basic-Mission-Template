@@ -5,6 +5,10 @@
 // File creation: 2015/06/04                                                                             //
 // Description: This eventhandler adds the added units, groups or objects dynamically spawned by other   //
 //              curators so that they are ediable by all curators.                                       //
+//                                                                                                       //
+//              Arguments:                                                                               //
+//               - none                                                                                  //
+//                                                                                                       //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
