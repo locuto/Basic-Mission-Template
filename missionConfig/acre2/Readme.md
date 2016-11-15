@@ -5,8 +5,11 @@ scripts instead of making use of the modules and functions in the editor is to h
 of the addon. In this way, the mission can be played with and without ACRE 2 without requiring any editing
 changes.
 
-* `bmt_acre2_configuration.sqf`: This script is where ACRE 2 mission dependent variables can be configured.
-It allows the editor to configure the following aspects of ACRE 2 without having to place modules.
+### Files
+
+* `scripts/bmt_acre2_configuration.sqf`: This script is where ACRE 2 mission dependent variables can be
+configured. It allows the editor to configure the following aspects of ACRE 2 without having to place
+modules.
   * **General ACRE 2**: Is Babel used? Do each side gets its own radio channels?
   * **Reveal to AI**: Is AI detecting players when they speak?
   * **Babel languages**: The mission editor can configure in the variable `bmt_acre2_languages` which
@@ -26,3 +29,13 @@ It allows the editor to configure the following aspects of ACRE 2 without having
     * *Rifleman radio* (`bmt_acre2_riflemanRadio`) given to the units in `bmt_array_riflemanRadio`.
     * *Short range radio* (`bmt_acre2_shortRangeRadio`) given to the units in `bmt_array_shortRangeRadio`.
     * *Long range radio* (`bmt_acre2_longRangeRadio`) given to the units in `bmt_array_longRangeRadio`.
+
+### Mission parameters
+
+Activating the ACRE 2 component in `missionConfig/bmt_components_addons.hpp` adds the following mission
+parameters:
+
+* `bmt_param_acre2_configureChannels`: Configure radio channels and frequencies (1) or leave them as
+is (0).
+* `bmt_param_acre2_distributeRadios`: Redistribute radios (1) or simply remove all radios from the
+players (0).
