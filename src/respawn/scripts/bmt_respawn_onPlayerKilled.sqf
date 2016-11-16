@@ -42,6 +42,9 @@ if ((_respawn == 3) and ({_x getVariable ["bmt_var_playerAlive", true]} count al
 
 if (bmt_param_respawn_saveGear == 1) then {
     _unit setVariable["bmt_array_savedLoadout",getUnitLoadout _unit];
+    if (bmt_mod_ace3) then {
+        _unit setVariable ["bmt_var_hasEarPlugs", _unit getVariable ["ACE_hasEarPlugsin", false]];
+    };
 };
 
 //  Do not enter spectator mode if respawn time is less than 1 second.

@@ -46,6 +46,10 @@ if (_respawn == 1) then {
     // Assign equipment before death or default one depending on the role
     if (bmt_param_respawn_saveGear == 1) then {
         _unit setUnitLoadout(_unit getVariable["bmt_array_savedLoadout",[]]);
+        if (bmt_mod_ace3) then {
+            _unit setVariable ["ACE_hasEarPlugsin", _unit getVariable ["bmt_var_hasEarPlugs", false]];
+            _unit setVariable ["bmt_var_hasEarPlugs", nil];
+        };
     } else {
         _unitOptions = _unit getVariable "bmt_var_configEquipment";
         [_unitOptions, _unit] call bmt_fnc_configEquipment;
