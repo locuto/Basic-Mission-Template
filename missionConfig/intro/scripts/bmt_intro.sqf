@@ -8,6 +8,10 @@
 //                                                                                                       //
 //              Note: the _uavMarkerType variable is the sixth parameter of the function                 //
 //              BIS_fnc_establishingShot (https://community.bistudio.com/wiki/BIS_fnc_establishingShot). //
+//                                                                                                       //
+//              Arguments:                                                                               //
+//               - none                                                                                  //
+//                                                                                                       //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 

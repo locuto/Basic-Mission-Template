@@ -1,10 +1,18 @@
 ## /src/intro
 
-En aquesta carpeta es troben els diferents fitxers per crear una introducció a la partida. El fitxer `bmt_intro.sqf` és el fitxer al qual s'ha d'accedir desde `init.sqf`
-i per norma general no s'ha de modificar.
+This folder contains the different types of introduction screen that can be used directly with this template. These scripts are called directly from
+`missionConfig/intro/scripts/bmt_intro.sqf`. It is advisable to always use an introduction screen in order to give time for the several scripts included in the template
+to properly execute without player intervention. For the moment, the introduction screens included are:
 
-Cada una de les faccions suportades té un fitxer propi que s'ha de customitzar si algun dels jugadors forma part d'aquesta facció i l'efecte que de moment està configurat
-és el d'una pantalla en negre on hi van apareixen les següents entrades:
-
-* Una frase de benvinguda d'un dels membres del grup sobre un fons negre (línia 26). Per defecte: `Relaxar-se mata! Estigueu alerta!\nViper - Capità dels cavallers del Cel`.
-* Nom de la missió (línia 38), hora (línia 39) i localització (línia 40) a la dreta de la pantalla amb un efecte blur.
+* **Black screen**: A black screen that fades into view is used before giving control to the players. It displays on the bottom right side the mission name, date and
+location. Text, usually a quote, is displayed in the centre of the screen. It has three parameters:
+  * *Mission name*: First parameter is a string detailing the mission name.
+  * *Mission location*: initial position of the player.
+  * *Introductory text*: the text shown in the middle of the screen.
+* **UAV Feed**: It uses a UAV feedback as introduction that blurs into player view. The parameters that are passed allow for a full customisation of the information
+displayed in this introduction screen:
+  * *Marker name* is the argument detailing where the camera is centered.
+  * *Text* displayed on the upper left corner.
+  * *UAV movement* is an array where the movement of the UAV can be configured: altitude, radius of rotation, viewing angle, and directon of rotationa direction (clockwise,
+    counterclockwise and random).
+  * *Markers* array specifying the markers that are being displayed: color, marker text, shape, ... (sixth parameter of the function `BIS_fnc_establishingShot` (https://community.bistudio.com/wiki/BIS_fnc_establishingShot).

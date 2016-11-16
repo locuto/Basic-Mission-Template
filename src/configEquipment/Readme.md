@@ -27,7 +27,7 @@ equipment defined using `bmt_fnc_configEquipment` and it cannot be applied to AI
 ### The `bmt_fnc_configEquipment_*` functions
 
 These functions are defined in `/missionConfig/configEquipment/functions` and they contain the entries for
-the different roles. Medical equipment depends on the loaded mods (ACE 3, AGM or Vanila) and some options
+the different roles. Medical equipment depends on the loaded mods (ACE 3, AGM or Vanilla) and some options
 can be  further customised modifying the
 `/missionConfig/configEquipment/scripts/bmt_configEquipment_options.sqf` file. For more detailed
 information, refer to the Readme file in `/missionConfig/configEquipment/`.

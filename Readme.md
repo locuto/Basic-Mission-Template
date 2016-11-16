@@ -168,3 +168,4 @@ equipment and tasks:
 | RHS United States Army (Woodland)                                | `rhs_faction_usarmy_wd`            |
 | RHS United States Marine Corps (Desert)                          | `rhs_faction_usmc_d`               |
 | RHS United States Marine Corps (Woodland)                        | `rhs_faction_usmc_wd`              |
+| RHS United States Navy                                           | `rhs_faction_usn`                  |

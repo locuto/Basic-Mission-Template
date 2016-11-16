@@ -5,6 +5,10 @@
 // File creation: 2015/02/22                                                                             //
 // Description: This document provides additional information to the administrator. Since only the       //
 //              administrator can view this additional remarks, advices and notes can be given.          //
+//                                                                                                       //
+//              Arguments:                                                                               //
+//               - none                                                                                  //
+//                                                                                                       //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 

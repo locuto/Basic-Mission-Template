@@ -3,7 +3,12 @@
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
 // File creation: 2015/04/01                                                                             //
-// Description: This document declares common variables.                                                 //
+// Description: This document declares common variables used in the Arma 3 Basic Mission Template        //
+//              (A3-BMT) scripts and functions         .                                                 //
+//                                                                                                       //
+//              Arguments:                                                                               //
+//               - none                                                                                  //
+//                                                                                                       //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 

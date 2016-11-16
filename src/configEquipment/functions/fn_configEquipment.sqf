@@ -5,10 +5,12 @@
 // File creation: 2015/04/02                                                                             //
 // Description: This function equips the unit according to a specified role and depending on the faction //
 //              it belongs to.                                                                           //
+//                                                                                                       //
 //              Arguments:                                                                               //
 //               - 0: unit role <STRING> or unit role with additional options <ARRAY>.                   //
 //               - 1: unit <OBJECT>.                                                                     //
 //               - 2: unit faction <STRING><OPTIONAL>.                                                   //
+//                                                                                                       //
 //              Examples:                                                                                //
 //               - Unit is a Fire Team Leader.                                                           //
 //                   ["tl", this] call bmt_fnc_configEquipment;                                          //
@@ -73,6 +75,7 @@
 //                  rhs_faction_usarmy_d    United States Army (Desert)                                  //
 //                  rhs_faction_usmc_wd     United States Marine Corps (Woodland)                        //
 //                  rhs_faction_usmc_d      United States Marine Corps (Desert)                          //
+//                  rhs_faction_usn         United States Navy                                           //
 //                  rhs_faction_insurgents  Insurgents                                                   //
 //                  rhs_faction_vpvo        Soviet Air Defense Forces (Voyska protivovozdushnoy oborony) //
 //                  rhs_faction_vdv         Russian Airborne Troops (Vozdushno-desantnye voyska)         //

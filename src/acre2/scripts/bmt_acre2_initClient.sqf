@@ -5,7 +5,11 @@
 // File creation: 2015/04/28                                                                             //
 // Description: This script configures the client specific side of Advanced Combat Radio Environment 2   //
 //              (ACRE2) http://gitlab.idi-systems.com/idi-systems/acre2-public/wikis/home                //
-// Changes: 1.0 (2015/11/26) First public version.                                                        //
+//                                                                                                       //
+//              Arguments:                                                                               //
+//               - none                                                                                  //
+//                                                                                                       //
+// Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
 private["_presetName"];
