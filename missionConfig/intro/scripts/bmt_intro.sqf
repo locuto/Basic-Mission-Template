@@ -11,7 +11,7 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-if (!hasInterface) exitWith {};
+if (!hasInterface || !alive player) exitWith {};
 
 private ["_unitFaction", "_quotes", "_recognised"];
 private ["_missionName", "_missionLocation", "_introText", "_introType"];

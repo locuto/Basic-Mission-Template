@@ -46,14 +46,15 @@ if ((bmt_param_useVAProfiles == 1) && hasInterface) then {
 
 // Wait until player is initalised in order to execute the rest of the script.
 if (!isDedicated && (isNull player)) then {
-    waitUntil {sleep 0.1; !isNull player};
+    waitUntil {sleep 0.1; !isNull player && player == player && time > 1};
 };
 
 //=======================================================================================================//
 // JIP supprt.                                                                                           //
 //=======================================================================================================//
 if (bmt_param_jip_enabled == 1) then {
-    #include "src\jip\scripts\bmt_jip_init.sqf"
+    bmt_script_jip = [] execVM "src\jip\scripts\bmt_jip_init.sqf";
+    waitUntil { scriptDone bmt_script_jip };
 };
 
 //=======================================================================================================//

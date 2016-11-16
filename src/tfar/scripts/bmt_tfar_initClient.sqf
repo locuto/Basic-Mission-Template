@@ -26,6 +26,12 @@ if (alive player) then {
     };
 
     sleep 3;
+
+    if (didJIP) then {
+        // Add more time in case of JIP. To be checked upon new releases of TFAR.
+        sleep 7;
+    };
+
     // Configure active channels.
     if (bmt_param_tfar_configureChannels == 1) then {
         [player] call bmt_fnc_tfar_configureChannels;

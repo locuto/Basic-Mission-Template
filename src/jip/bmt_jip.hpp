@@ -13,6 +13,19 @@
     class jip {};
 #endif
 
+// Define the functions of this component.
+#ifdef BMT_FUNCTIONS_INTERNAL
+    class jip {
+        file = "src\jip\functions";
+        class jip_addTo_allowedJIPPlayerList { };
+        class jip_check_allowedJIPPlayerList { };
+        class jip_init_allowedJIPPlayerList  { };
+        class jip_retrieveGear               { };
+        class jip_saveGear                   { };
+        class jip_teleport                   { };
+    };
+#endif
+
 // Define configurable parameters at mission start.
 #ifdef BMT_PARAMETERS
     //===================================================================================================//
@@ -35,6 +48,22 @@
         texts[] = {"Disabled", "Enabled"};
         default = BMT_JIP_ENABLED;
     };
+
+    //===================================================================================================//
+    // JIP Save Gear: Save the gear every minute in order to keep it if JIP?                             //
+    // Default option: Enabled.                                                                          //
+    //===================================================================================================//
+    class bmt_param_jip_saveGear {
+        title = "JIP Save Gear";
+        values[] = {0, 1};
+        texts[] = {"Disabled", "Enabled"};
+        default = BMT_JIP_SAVEGEAR;
+    };
+#endif
+
+// Define function scope in multiplayer.
+#ifdef BMT_FUNCTIONS_REMOTEEXEC
+    class jip_init_allowedJIPPlayerList  { allowedTargets = 2; }; // This function can only target servers.
 #endif
 
 //============================================= END OF FILE =============================================//
