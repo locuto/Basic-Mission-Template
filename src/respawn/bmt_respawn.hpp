@@ -22,7 +22,7 @@
         class respawn_exitSpectator    { };
         class respawn_moveToMarker     { };
         class respawn_respawnCounter   { };
-        class respawn_substractTickets { };
+        class respawn_manageTickets { };
     };
 #endif
 

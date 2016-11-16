@@ -17,11 +17,15 @@
 #ifdef BMT_FUNCTIONS_INTERNAL
     class jip {
         file = "src\jip\functions";
+        class jip_retrieveACE3Variables      { };
+        class jip_saveACE3Variables          { };
         class jip_addTo_allowedJIPPlayerList { };
         class jip_check_allowedJIPPlayerList { };
         class jip_init_allowedJIPPlayerList  { };
-        class jip_retrieveGear               { };
-        class jip_saveGear                   { };
+        class jip_retrieveBMTVariables       { };
+        class jip_retrieveStatus             { };
+        class jip_saveBMTVariables           { };
+        class jip_saveStatus                 { };
         class jip_teleport                   { };
     };
 #endif
@@ -50,14 +54,14 @@
     };
 
     //===================================================================================================//
-    // JIP Save Gear: Save the gear every minute in order to keep it if JIP?                             //
+    // JIP Save Status: Save the gear and status if player disconnects in order to keep it if JIP?       //
     // Default option: Enabled.                                                                          //
     //===================================================================================================//
-    class bmt_param_jip_saveGear {
-        title = "JIP Save Gear";
+    class bmt_param_jip_saveStatus {
+        title = "JIP Save Status (Gear, medical)";
         values[] = {0, 1};
         texts[] = {"Disabled", "Enabled"};
-        default = BMT_JIP_SAVEGEAR;
+        default = BMT_JIP_SAVESTATUS;
     };
 #endif
 

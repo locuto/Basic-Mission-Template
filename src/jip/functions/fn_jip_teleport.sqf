@@ -1,5 +1,5 @@
 //=======================================================================================================//
-// File: fn_jip_retrieveGear.sqf                                                                         //
+// File: fn_jip_teleport.sqf                                                                             //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
 // File creation: 2016/11/12                                                                             //

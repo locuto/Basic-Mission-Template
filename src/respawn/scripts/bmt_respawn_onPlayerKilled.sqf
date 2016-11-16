@@ -26,7 +26,7 @@ if ((_respawn <= 1) and ({alive _x} count allPlayers <= 0)) exitWith {
 };
 
 // Substract tickets from player's pool or player's side pool.
-_numRespawns = [] call bmt_fnc_respawn_substractTickets;
+_numRespawns = [player, "substract"] call bmt_fnc_respawn_manageTickets;
 
 if ((_numRespawns == -1) or (_respawn <= 1)) then {
     player setVariable ["bmt_var_playerAlive", false, true];

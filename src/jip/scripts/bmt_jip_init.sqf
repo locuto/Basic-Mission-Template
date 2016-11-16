@@ -35,8 +35,8 @@ if (isServer) then {
             };
         };
 
-        if (bmt_param_jip_saveGear == 1) then {
-            bmt_missionEH_jip = addMissionEventHandler ["HandleDisconnect", {[_this select 0, _this select 2, _this select 3] call bmt_fnc_jip_saveGear;}];
+        if (bmt_param_jip_saveStatus == 1) then {
+            bmt_missionEH_jip = addMissionEventHandler ["HandleDisconnect", {[_this select 0, _this select 2, _this select 3] call bmt_fnc_jip_saveStatus;}];
         };
 
     } else {
@@ -75,15 +75,23 @@ if (hasInterface) then {
 
         // Teleport to squad. Thanks to Columndrum for the elegant KeyDown concept. Enhanced by TheMagnetar.
         player setVariable ["bmt_var_jipTeleport_enabled", true];
-        hint "Press F11 to teleport to your squad or any other friendly unit";
+        hint "Press F11 to teleport to your squad or any other friendly unit. You have 5 minutes.";
 
         [] spawn {
             waituntil{!(isNull (findDisplay 46))};
             bmt_displayEventHandler_jipTeleport = (findDisplay 46) displayAddEventHandler ["KeyDown","[_this, player] call bmt_fnc_jip_teleport"];
+
+            sleep 300;
+            hint "5 minutes have passed. You cannot teleport to your squad anymore.";
+
+            // Forbid possibility to teleport by deleting the displayRemoveEventHandler
+            if (!isNil "bmt_displayEventHandler_jipTeleport" ) then {
+                (findDisplay 46) displayRemoveEventHandler ["KeyDown", bmt_displayEventHandler_jipTeleport];
+            };
         };
 
-        if (bmt_param_jip_saveGear == 1) then {
-            [player] call bmt_fnc_jip_retrieveGear;
+        if (bmt_param_jip_saveStatus == 1) then {
+            [player] call bmt_fnc_jip_retrieveStatus;
         };
     } else {
         // Initialise a list of all players that initially connect.

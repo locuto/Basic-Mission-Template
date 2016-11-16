@@ -43,7 +43,7 @@
 // JIP support                                                                                           //
 //=======================================================================================================//
 #define BMT_JIP_ENABLED      1    // 0 = JIP disabled, 1 = JIP enabled.
-#define BMT_JIP_SAVEGEAR     1    // 0 = Disabled, 1 = Enabled.
+#define BMT_JIP_SAVESTATUS     1    // 0 = Disabled, 1 = Enabled.
 
 //=======================================================================================================//
 // RESPAWN                                                                                               //
