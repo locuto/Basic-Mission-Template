@@ -1,5 +1,5 @@
 //=======================================================================================================//
-// File: fn_jip_retrieveStatis.sqf                                                                       //
+// File: fn_jip_retrieveStatus.sqf                                                                       //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
 // File creation: 2016/11/12                                                                             //
@@ -24,13 +24,10 @@ if (isNil "_jipInformation") exitWith {
 _found = false;
 
 {
-    if ((_x select 0 == getPlayerUID _unit) AND (_x select 1 == profileName)) then {
-        [_unit, _x select 2] call bmt_fnc_jip_retrieveBMTVariables;
+    if ((_x select 0 == getPlayerUID _unit) AND (_x select 1 == profileName)) exitWith {
+        [_unit, _x select 2] call bmt_fnc_jip_retrievePlayerVariables;
         if (_unit getVariable["bmt_var_playerAlive", true]) then {
             _unit setUnitLoadout [_x select 3, false];
-            if (bmt_mod_ace3) then {
-                [_unit, _x select 4] call bmt_fnc_jip_retrieveACE3Variables;
-            };
         } else {
             _unit setDamage 1;
 

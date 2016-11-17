@@ -70,7 +70,7 @@ _jipACE3Variables set [26, _unit getVariable ["ace_medical_hasLostBlood", 0]];
 _jipACE3Variables set [27, _unit getVariable ["ace_medical_isBleeding", false]];
 _jipACE3Variables set [28, _unit getVariable ["ace_medical_hasPain", false]];
 _jipACE3Variables set [29, _unit getVariable ["ace_medical_painSuppress", 0]];
-_jipACE3Variables set [30, _unit getVariable ["ace_medical_bleedingCoefficient", 0]];
+_jipACE3Variables set [30, _unit getVariable ["ace_medical_amountOfReviveLives", 0]];
 
 // Medical Advanced: medication
 _jipACE3Variables set [31, _unit getVariable ["ace_medical_allUsedMedication", []]];

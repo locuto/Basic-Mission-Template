@@ -1,15 +1,11 @@
 
 params ["_unit", "_uid", "_name"];
-private ["_bmtVariables", "_loadout", "_jipInformation", "_jipACE3Info", "_jipInformation_List", "_found"];
+private ["_jipPlayerVariables", "_loadout", "_jipInformation", "_jipACE3Info", "_jipInformation_List", "_found"];
 
-_bmtVariables = [_unit] call bmt_fnc_jip_saveBMTVariables;
+_jipPlayerVariables = [_unit] call bmt_fnc_jip_savePlayerVariables;
 _loadout = getUnitLoadout _unit;
-_jipInformation =  [_uid, _name, _bmtVariables, _loadout];
+_jipInformation =  [_uid, _name, _jipPlayerVariables, _loadout];
 
-if (bmt_mod_ace3) then {
-    _jipACE3Info = [_unit] call bmt_fnc_jip_saveACE3Variables;
-    _jipInformation set [4, _jipACE3Info];
-};
 _jipInformation_List = missionNamespace getVariable ["bmt_arrayMission_jipInformation", nil];
 
 if (isNil "_jipInformation_List") then {
@@ -20,9 +16,9 @@ if (isNil "_jipInformation_List") then {
     // Check first if an entry for the player already exists.
     _found = false;
     {
-        if ((_x select 0 == _uid) AND (_x select 1 == _name)) then {
+        if ((_x select 0 == _uid) AND (_x select 1 == _name)) exitWith {
             _found = true;
-            _x set [2, _loadout];
+            _jipInformation_List set [_forEachIndex, _jipInformation];
             if (bmt_param_debugOutput == 1) then {
                 player sidechat format ["DEBUG (fn_jip_saveStatus.sqf): Gear of player %1 with UID %2 already exists. Overwriting it.", _name, _uid];
             };
@@ -30,7 +26,7 @@ if (isNil "_jipInformation_List") then {
     } forEach _jipInformation_List;
 
     if (!_found) then {
-        _jipInformation_List set [count _jipInformation_List, _jipInformation];
+        _jipInformation_List pushBack _jipInformation;
     };
 };
 

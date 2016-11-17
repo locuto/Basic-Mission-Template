@@ -69,7 +69,7 @@ _unit setvariable ["ace_medical_hasLostBlood", _jipACE3Variables select 26, true
 _unit setvariable ["ace_medical_isBleeding", _jipACE3Variables select 27, true];
 _unit setvariable ["ace_medical_hasPain", _jipACE3Variables select 28, true];
 _unit setvariable ["ace_medical_painSuppress", _jipACE3Variables select 29, true];
-_unit setvariable ["ace_medical_bleedingCoefficient", _jipACE3Variables select 30, true];
+_unit setvariable ["ace_medical_amountOfReviveLives", _jipACE3Variables select 30, true];
 
 // Medical Advanced: medication
 _unit setvariable ["ace_medical_allUsedMedication", _jipACE3Variables select 31, true];
