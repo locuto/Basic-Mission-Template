@@ -30,7 +30,7 @@ if (!isNull _targetUnit) then {
     if ((vehicle _targetUnit) != _targetUnit) then {
         _unit moveInAny (vehicle _targetUnit);
     } else {
-        _unit setPos [getPos _targetUnit];
+        _unit setPos (getPos _targetUnit);
     };
     _couldTeleport = true;
 };
