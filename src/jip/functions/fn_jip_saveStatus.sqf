@@ -1,15 +1,14 @@
 
 params ["_unit", "_uid", "_name"];
-private ["_bmtVariables", "_loadout", "_jipInformation", "_jipMedicalInfo", "_jipInformation_List", "_found"];
+private ["_bmtVariables", "_loadout", "_jipInformation", "_jipACE3Info", "_jipInformation_List", "_found"];
 
 _bmtVariables = [_unit] call bmt_fnc_jip_saveBMTVariables;
 _loadout = getUnitLoadout _unit;
 _jipInformation =  [_uid, _name, _bmtVariables, _loadout];
 
 if (bmt_mod_ace3) then {
-    _jipMedicalInfo = [_unit] call bmt_fnc_jip_saveACE3Variables;
-    _jipInformation set [4, _unit getVariable ["ACE_hasEarPlugsin", false]];
-    _jipInformation set [5, _jipMedicalInfo];
+    _jipACE3Info = [_unit] call bmt_fnc_jip_saveACE3Variables;
+    _jipInformation set [4, _jipACE3Info];
 };
 _jipInformation_List = missionNamespace getVariable ["bmt_arrayMission_jipInformation", nil];
 

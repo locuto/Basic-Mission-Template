@@ -29,8 +29,7 @@ _found = false;
         if (_unit getVariable["bmt_var_playerAlive", true]) then {
             _unit setUnitLoadout [_x select 3, false];
             if (bmt_mod_ace3) then {
-                _unit setVariable ["ACE_hasEarPlugsin", _x select 4];
-                [_unit, _x select 5] call bmt_fnc_jip_retrieveACE3Variables;
+                [_unit, _x select 4] call bmt_fnc_jip_retrieveACE3Variables;
             };
         } else {
             _unit setDamage 1;
