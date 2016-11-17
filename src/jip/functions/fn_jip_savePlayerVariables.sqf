@@ -19,7 +19,7 @@ private ["_jipPlayerVariables"];
 _jipPlayerVariables = [];
 
 {
-    if ((_x select [0,3] isEqualTo "ace") OR (_x select [0,3] isEqualTo "bmt") OR ((_x select [0,3] isEqualTo "cba"))) then {
+    if ((_x select [0,3] isEqualTo "ace") OR (_x select [0,3] isEqualTo "bmt") OR (_x select [0,3] isEqualTo "cba")) then {
         _jipPlayerVariables pushBack [_x, _unit getVariable _x];
     };
     //diag_log _jipPlayerVariables;
