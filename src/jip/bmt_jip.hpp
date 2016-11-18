@@ -17,16 +17,12 @@
 #ifdef BMT_FUNCTIONS_INTERNAL
     class jip {
         file = "src\jip\functions";
-        class jip_retrieveACE3Variables      { };
-        class jip_saveACE3Variables          { };
         class jip_addTo_allowedJIPPlayerList { };
         class jip_check_allowedJIPPlayerList { };
         class jip_init_allowedJIPPlayerList  { };
-        class jip_retrieveBMTVariables       { };
         class jip_retrievePlayerVariables    { };
         class jip_retrieveStatus             { };
         class jip_savePlayerVariables        { };
-        class jip_saveBMTVariables           { };
         class jip_saveStatus                 { };
         class jip_teleport                   { };
     };
