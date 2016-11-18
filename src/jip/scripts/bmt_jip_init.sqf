@@ -71,6 +71,11 @@ if (hasInterface) then {
         // Since JIP is still allowed, add the new player to the list of allowed players.
         if (!_initialPlayer) then {
             [player] call bmt_fnc_jip_addTo_allowedJIPPlayerList;
+        } else {
+            // Player is already defined. Therefore, he is reconnecting.
+            if (bmt_param_jip_saveStatus == 1) then {
+                [player] call bmt_fnc_jip_retrieveStatus;
+            };
         };
 
         // Teleport to squad. Thanks to Columndrum for the elegant KeyDown concept. Enhanced by TheMagnetar.
@@ -88,10 +93,6 @@ if (hasInterface) then {
             if (!isNil "bmt_displayEventHandler_jipTeleport" ) then {
                 (findDisplay 46) displayRemoveEventHandler ["KeyDown", bmt_displayEventHandler_jipTeleport];
             };
-        };
-
-        if (bmt_param_jip_saveStatus == 1) then {
-            [player] call bmt_fnc_jip_retrieveStatus;
         };
     } else {
         // Initialise a list of all players that initially connect.

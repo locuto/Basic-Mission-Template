@@ -19,7 +19,7 @@ private ["_jipPlayerVariables", "_variablesToStore"];
 _jipPlayerVariables = [];
 _variablesToStore = ["bmt", "ace"];
 {
-    if ((_x select [0, 3] in _variablesToStore) then {
+    if (_x select [0, 3] in _variablesToStore) then {
         // Hack for ace medical
         if (_x select [0, 11] isEqualTo "ace_medical") then {
             if (_x isEqualTo "ace_medical_medicClass") then {
