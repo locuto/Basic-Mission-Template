@@ -14,15 +14,21 @@
 //=======================================================================================================//
 
 params["_unit"];
-private ["_jipPlayerVariables"];
+private ["_jipPlayerVariables", "_variablesToStore"];
 
 _jipPlayerVariables = [];
-
+_variablesToStore = ["bmt", "ace"];
 {
-    if ((_x select [0,3] isEqualTo "ace") OR (_x select [0,3] isEqualTo "bmt") OR (_x select [0,3] isEqualTo "cba")) then {
-        _jipPlayerVariables pushBack [_x, _unit getVariable _x];
+    if ((_x select [0, 3] in _variablesToStore) then {
+        // Hack for ace medical
+        if (_x select [0, 11] isEqualTo "ace_medical") then {
+            if (_x isEqualTo "ace_medical_medicClass") then {
+                _jipPlayerVariables pushBack [_x, _unit getVariable _x];
+            };
+        } else {
+            _jipPlayerVariables pushBack [_x, _unit getVariable _x];
+        };
     };
-    //diag_log _jipPlayerVariables;
 } forEach  (allVariables _unit);
 
 _jipPlayerVariables
