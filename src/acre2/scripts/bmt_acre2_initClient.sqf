@@ -38,7 +38,7 @@ sleep 0.1;
 
 if (alive player) then {
     // Wait until gear assignement is finished.
-    waitUntil{(player getVariable ["bmt_var_configEquipment_Ready", false])};
+    waitUntil{(player getVariable ["bmt_var_init_configEquipmentReady", false])};
 
     // Wait until ACRE 2 is initialised.
     waitUntil {
@@ -65,12 +65,16 @@ if (alive player) then {
     // Make sure that the player is not in spectator mode.
     [false] call acre_api_fnc_setSpectator;
 
-    if ( bmt_param_debugOutput == 1) then {
-        player sideChat format ["DEBUG (fn_acre2_initClient.sqf): Radios configured."];
-    };
 } else {
     // Player is dead. Make sure it enters the spectator mode.
     [true] call acre_api_fnc_setSpectator;
+};
+
+player setVariable ["bmt_var_init_configRadiosReady", true, true];
+
+// DEBUG OUTPUT
+if ( bmt_param_debugOutput == 1) then {
+    player sideChat format ["DEBUG (fn_acre2_initClient.sqf): Radios configured."];
 };
 
 //============================================= END OF FILE =============================================//

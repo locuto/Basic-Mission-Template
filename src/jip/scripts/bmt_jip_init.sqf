@@ -47,7 +47,7 @@ if (isServer) then {
 
 if (hasInterface) then {
     if (bmt_param_debugOutput == 1) then {
-        player sideChat format ["DEBUG (bmt_jip_init.sqf): player is JIP: %1. JIP is enabled: %2.", didJip, missionnamespace getVariable ["bmt_var_jip_allowed", true]];
+        player sideChat format ["DEBUG (bmt_jip_init.sqf): player is JIP: %1. JIP is enabled: %2.", didJip, missionNamespace getVariable ["bmt_var_jip_allowed", true]];
     };
 
     if (didJiP) then {
@@ -56,7 +56,7 @@ if (hasInterface) then {
         _initialPlayer = [player] call bmt_fnc_jip_check_allowedJIPPlayerList;
 
         // Kill the player if JIP is not allowed and exit.
-        if (!(missionNamespace getVariable ["bmt_var_jip_allowed", true]) AND !_initialPlayer) exitWith {
+        if (!(missionNamespace getVariable ["bmt_var_jip_allowed", true]) AND !_initialPlayer) then {
             // Wait a little before killing the player.
             sleep 1;
 
@@ -66,38 +66,41 @@ if (hasInterface) then {
 
             sleep 5;
             "normal" cutText ["This mission does not support JIP. Be punctual next time!", "PLAIN"];
-        };
-
-        // Since JIP is still allowed, add the new player to the list of allowed players.
-        if (!_initialPlayer) then {
-            [player] call bmt_fnc_jip_addTo_allowedJIPPlayerList;
         } else {
-            // Player is already defined. Therefore, he is reconnecting.
-            if (bmt_param_jip_saveStatus == 1) then {
-                [player] call bmt_fnc_jip_retrieveStatus;
+
+            // Since JIP is still allowed, add the new player to the list of allowed players.
+            if (!_initialPlayer) then {
+                [player] call bmt_fnc_jip_addTo_allowedJIPPlayerList;
+            } else {
+                // Player is already defined. Therefore, he is reconnecting.
+                if (bmt_param_jip_saveStatus == 1) then {
+                    [player] call bmt_fnc_jip_retrieveStatus;
+                };
             };
-        };
 
-        // Teleport to squad. Thanks to Columndrum for the elegant KeyDown concept. Enhanced by TheMagnetar.
-        player setVariable ["bmt_var_jipTeleport_enabled", true];
-        hint "Press F11 to teleport to your squad or any other friendly unit. You have 5 minutes.";
+            bmt_script_jipTeleport = [] spawn {
+                waituntil{!(isNull (findDisplay 46)) && player getVariable ["bmt_var_init_introFinished", false] };
+                // Teleport to squad. Thanks to Columndrum for the elegant KeyDown concept. Enhanced by TheMagnetar.
+                player setVariable ["bmt_var_jipTeleport_enabled", true];
+                hint "Press F11 to teleport to your squad or any other friendly unit. You have 5 minutes.";
+                
+                bmt_displayEventHandler_jipTeleport = (findDisplay 46) displayAddEventHandler ["KeyDown","[_this, player] call bmt_fnc_jip_teleport"];
 
-        [] spawn {
-            waituntil{!(isNull (findDisplay 46))};
-            bmt_displayEventHandler_jipTeleport = (findDisplay 46) displayAddEventHandler ["KeyDown","[_this, player] call bmt_fnc_jip_teleport"];
+                sleep 300;
+                hint "5 minutes have passed. You cannot teleport to your squad anymore.";
 
-            sleep 300;
-            hint "5 minutes have passed. You cannot teleport to your squad anymore.";
-
-            // Forbid possibility to teleport by deleting the displayRemoveEventHandler
-            if (!isNil "bmt_displayEventHandler_jipTeleport" ) then {
-                (findDisplay 46) displayRemoveEventHandler ["KeyDown", bmt_displayEventHandler_jipTeleport];
+                // Forbid possibility to teleport by deleting the displayRemoveEventHandler
+                if (!isNil "bmt_displayEventHandler_jipTeleport" ) then {
+                    (findDisplay 46) displayRemoveEventHandler ["KeyDown", bmt_displayEventHandler_jipTeleport];
+                };
             };
         };
     } else {
         // Initialise a list of all players that initially connect.
         [player] remoteExecCall ["bmt_fnc_jip_init_allowedJIPPlayerList", 2, false];
     };
+
+    player setVariable ["bmt_var_init_configJIPReady", true, true];
 };
 
 //============================================= END OF FILE =============================================//

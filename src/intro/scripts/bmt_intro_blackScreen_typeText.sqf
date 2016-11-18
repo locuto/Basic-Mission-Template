@@ -26,8 +26,6 @@ params ["_missionName", "_missionLocation", "_introText"];
 // Show a black screen.
 titleCut ["", "BLACK FADED", 999];
 
-waitUntil{!(isNil "bmt_preload_completed")};
-
 // Disable simulation for all units during the black screen.
 {
     _x enableSimulation false;
@@ -35,8 +33,9 @@ waitUntil{!(isNil "bmt_preload_completed")};
 
 // Citation display.
 titleText [_introText,"PLAIN"];
-titleFadeOut 7;
-sleep 5;
+
+waitUntil {missionNamespace getVariable ["bmt_var_init_preloadCompleted", false];};
+titleFadeOut 5;
 
 // Reenable simulation for all units.
 {
@@ -60,5 +59,7 @@ sleep 5;
 "dynamicBlur" ppEffectCommit 5;
 
 titleCut ["", "BLACK IN", 5];
+
+player setVariable ["bmt_var_init_introFinished", true, true];
 
 //============================================= END OF FILE =============================================//

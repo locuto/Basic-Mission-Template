@@ -19,7 +19,7 @@
 if (alive player) then {
 
     // Wait until gear assignement is finished.
-    waitUntil{(player getVariable ["bmt_var_configEquipment_Ready", false])};
+    waitUntil{(player getVariable ["bmt_var_init_configEquipmentReady", false])};
 
     // Remove all radios.
     [player] call bmt_fnc_tfar_removeRadios;
@@ -49,13 +49,15 @@ if (alive player) then {
     // Make sure that the player is not in spectator mode.
     [player, false] call TFAR_fnc_forceSpectator;
 
-    // DEBUG OUTPUT
-    if (bmt_param_debugOutput == 1) then {
-        player sideChat format ["DEBUG (bmt_tfar_initClient.sqf): Radios configured."];
-    };
 } else {
     // Player is dead. Make sure it enters the spectator mode.
     [player, true] call TFAR_fnc_forceSpectator;
 };
 
+player setVariable ["bmt_var_init_configRadiosReady", true, true];
+
+// DEBUG OUTPUT
+if (bmt_param_debugOutput == 1) then {
+    player sideChat format ["DEBUG (bmt_tfar_initClient.sqf): Radios configured."];
+};
 //============================================= END OF FILE =============================================//

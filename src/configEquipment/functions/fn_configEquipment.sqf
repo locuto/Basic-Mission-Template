@@ -104,7 +104,7 @@ if (isNil "_unitFaction") then {
 _unit setVariable ["bmt_var_configEquipment", _unitOptions, true];
 
 // Begin gear assignement depending on unit's role.
-_unit setVariable ["bmt_var_configEquipment_Ready", false, true];
+_unit setVariable ["bmt_var_init_configEquipmentReady", false, true];
 
 // Include file for equipment configuration.
 #include "..\..\..\missionConfig\configEquipment\scripts\bmt_configEquipment_options.sqf";
@@ -191,7 +191,7 @@ switch (_unitFaction) do {
 
 if (_recognised) then {
     // DEBUG OUTPUT.
-    _unit setVariable ["bmt_var_configEquipment_Ready", true, true];
+    _unit setVariable ["bmt_var_init_configEquipmentReady", true, true];
     if (bmt_param_debugOutput == 1) then {
         _unit sideChat format ["DEBUG (fn_configEquipment.sqf): unit equiped with gear of faction: %1", _unitFaction];
     };

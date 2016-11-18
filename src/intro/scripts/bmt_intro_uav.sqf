@@ -30,8 +30,6 @@
 
 params ["_markerName", "_text", "_uavMovement", "_markers"];
 
-waitUntil{!(isNil "bmt_preload_completed")};
-
 // Disable simulation for all units during the UAV feed.
 {
     _x enableSimulation false;
@@ -56,6 +54,7 @@ waitUntil { !isNil { BIS_missionStarted } };
 titleCut ["", "BLACK FADED", 5];
 
 // Reenable simulation for all units.
+waitUntil {missionNamespace getVariable ["bmt_var_init_preloadCompleted", false];};
 {
     _x enableSimulation true;
 } forEach allUnits;

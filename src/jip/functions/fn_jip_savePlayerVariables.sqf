@@ -22,11 +22,14 @@ _variablesToStore = ["bmt", "ace"];
     if (_x select [0, 3] in _variablesToStore) then {
         // Hack for ace medical
         if (_x select [0, 11] isEqualTo "ace_medical") then {
-            if (_x isEqualTo "ace_medical_medicClass") then {
+            if (_x isEqualTo "ace_medical_medicclass") then {
                 _jipPlayerVariables pushBack [_x, _unit getVariable _x];
             };
         } else {
-            _jipPlayerVariables pushBack [_x, _unit getVariable _x];
+            // Do not save initialisation variables
+            if (!(_x select [0, 12] isEqualTo "bmt_var_init")) then {
+                _jipPlayerVariables pushBack [_x, _unit getVariable _x];
+            };
         };
     };
 } forEach  (allVariables _unit);
