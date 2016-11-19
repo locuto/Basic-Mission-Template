@@ -83,7 +83,7 @@ if (hasInterface) then {
                 // Teleport to squad. Thanks to Columndrum for the elegant KeyDown concept. Enhanced by TheMagnetar.
                 player setVariable ["bmt_var_jipTeleport_enabled", true];
                 hint "Press F11 to teleport to your squad or any other friendly unit. You have 5 minutes.";
-                
+
                 bmt_displayEventHandler_jipTeleport = (findDisplay 46) displayAddEventHandler ["KeyDown","[_this, player] call bmt_fnc_jip_teleport"];
 
                 sleep 300;

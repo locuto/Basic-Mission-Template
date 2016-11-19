@@ -22,4 +22,6 @@ params["_unit", "_jipPlayerVariables"];
     _unit setVariable [_x select 0, _x select 1, true];
 } forEach _jipPlayerVariables;
 
+player setVariable ["bmt_var_jip_StatusRetrieved", true];
+
 //============================================= END OF FILE =============================================//

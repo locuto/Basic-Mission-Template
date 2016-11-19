@@ -48,13 +48,16 @@ if (alive player) then {
     // Define languages per side.
     [player] call bmt_fnc_acre2_configureLanguages;
 
-    // Remove all radios.
-    [player] call bmt_fnc_acre2_removeRadios;
+    // Do not redistribute radios if the previous status has been retrieved.
+    if ( !(player getVariable ["bmt_var_jip_StatusRetrieved", false]) ) then {
+        // Remove all radios.
+        [player] call bmt_fnc_acre2_removeRadios;
 
-    // Add radios depending on the role.
-    // If radios distribution is enabled, they must be added.
-    if (bmt_param_acre2_distributeRadios == 1) then {
-        [player] call bmt_fnc_acre2_addRadios;
+        // Add radios depending on the role.
+        // If radios distribution is enabled, they must be added.
+        if (bmt_param_acre2_distributeRadios == 1) then {
+            [player] call bmt_fnc_acre2_addRadios;
+        };
     };
 
     // Configure active channels.

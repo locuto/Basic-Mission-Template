@@ -21,12 +21,15 @@ if (alive player) then {
     // Wait until gear assignement is finished.
     waitUntil{(player getVariable ["bmt_var_init_configEquipmentReady", false])};
 
-    // Remove all radios.
-    [player] call bmt_fnc_tfar_removeRadios;
+    // Do not redistribute radios if the previous status has been retrieved.
+    if ( !(player getVariable ["bmt_var_jip_StatusRetrieved", false]) ) then {
+        // Remove all radios.
+        [player] call bmt_fnc_tfar_removeRadios;
 
-    // If radios distribution is enabled, they must be added.
-    if (bmt_param_tfar_distributeRadios == 1) then {
-        [player] call bmt_fnc_tfar_addRadios;
+        // If radios distribution is enabled, they must be added.
+        if (bmt_param_tfar_distributeRadios == 1) then {
+            [player] call bmt_fnc_tfar_addRadios;
+        };
     };
 
     sleep 3;

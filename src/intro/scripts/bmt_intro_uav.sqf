@@ -49,12 +49,12 @@ enableEnvironment false;
 ] spawn BIS_fnc_establishingShot;
 
 waitUntil { !isNil { BIS_missionStarted } };
+waitUntil {missionNamespace getVariable ["bmt_var_init_preloadCompleted", false];};
 
 // Screen starts.
 titleCut ["", "BLACK FADED", 5];
 
 // Reenable simulation for all units.
-waitUntil {missionNamespace getVariable ["bmt_var_init_preloadCompleted", false];};
 {
     _x enableSimulation true;
 } forEach allUnits;
@@ -71,4 +71,5 @@ waitUntil {missionNamespace getVariable ["bmt_var_init_preloadCompleted", false]
     5 fadeSound 1;
 };
 
+player setVariable ["bmt_var_init_introFinished", true, true];
 //============================================= END OF FILE =============================================//
