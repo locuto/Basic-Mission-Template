@@ -27,7 +27,15 @@ waitUntil {!isNil "bmt_param_debugOutput"};
 // Type of introduction: "blackScreen", "uavFeed"
 _introType = "blackScreen";
 
-_quotes = ["Whoever said the pen is mightier than the sword obviously never encountered automatic weapons.\nDouglas MacArthur."];
+_quotes = [
+    "Whoever said the pen is mightier than the sword obviously never encountered automatic weapons.\nDouglas MacArthur.",
+    "Soldiers Live. And wonder why.\nGlen Cook.",
+    "People sleep peaceably in their beds at night only because rough men stand ready to do violence on their behalf.\nGeorge Orwell.",
+    "Theirs not to reason why, Theirs but to do and die.\nAlfred Tennyson",
+    "I'm fed up to the ears with old men dreaming up wars for young men to die in.\nGeorge S. McGovern",
+    "War does not determine who is right - only who is left.\nBertrand Russell",
+    "The two most powerful warriors are patience and time.\nLeo Tolstoy"
+];
 
 _missionName = getText (missionConfigFile >> "onLoadName");
 _introText = selectRandom _quotes;
