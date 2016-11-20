@@ -35,6 +35,7 @@ if (isServer) then {
             };
         };
 
+        // Handle JIP persistence (disconnect/reconnect).
         if (bmt_param_jip_saveStatus == 1) then {
             bmt_missionEH_jip = addMissionEventHandler ["HandleDisconnect", {[_this select 0, _this select 2, _this select 3] call bmt_fnc_jip_saveStatus;}];
         };
@@ -101,6 +102,7 @@ if (hasInterface) then {
         [player] remoteExecCall ["bmt_fnc_jip_init_allowedJIPPlayerList", 2, false];
     };
 
+    // Handle JIP persistence (disconnect/reconnect).
     if ((bmt_param_jip_saveStatus == 1) && (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue"))) then {
         bmt_script_saveAdvancedFatigue = [] spawn {
             while {true} do {
