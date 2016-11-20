@@ -17,6 +17,7 @@
 #ifdef BMT_FUNCTIONS_INTERNAL
     class jip {
         file = "src\jip\functions";
+        class jip_saveStatus_AdvancedFatigue { };
         class jip_addTo_allowedJIPPlayerList { };
         class jip_check_allowedJIPPlayerList { };
         class jip_init_allowedJIPPlayerList  { };

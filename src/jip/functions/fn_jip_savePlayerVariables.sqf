@@ -21,7 +21,7 @@ _variablesToStore = ["bmt", "ace"];
 {
     if (_x select [0, 3] in _variablesToStore) then {
         // Hack for ace medical
-        if (_x select [0, 11] isEqualTo "ace_medical") then {
+        if ((_x select [0, 11] isEqualTo "ace_medical") or (_x select [0, 20] isEqualTo "ace_advanced_fatigue")) then {
             if (_x isEqualTo "ace_medical_medicclass") then {
                 _jipPlayerVariables pushBack [_x, _unit getVariable _x];
             };

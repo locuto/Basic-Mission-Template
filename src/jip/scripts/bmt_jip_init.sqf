@@ -46,6 +46,7 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
+
     if (bmt_param_debugOutput == 1) then {
         player sideChat format ["DEBUG (bmt_jip_init.sqf): player is JIP: %1. JIP is enabled: %2.", didJip, missionNamespace getVariable ["bmt_var_jip_allowed", true]];
     };
@@ -98,6 +99,15 @@ if (hasInterface) then {
     } else {
         // Initialise a list of all players that initially connect.
         [player] remoteExecCall ["bmt_fnc_jip_init_allowedJIPPlayerList", 2, false];
+    };
+
+    if ((bmt_param_jip_saveStatus == 1) && (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue"))) then {
+        bmt_script_saveAdvancedFatigue = [] spawn {
+            while {true} do {
+                sleep 1;
+                [player] call bmt_fnc_jip_saveStatus_AdvancedFatigue;
+            };
+        };
     };
 
     player setVariable ["bmt_var_init_configJIPReady", true, true];
