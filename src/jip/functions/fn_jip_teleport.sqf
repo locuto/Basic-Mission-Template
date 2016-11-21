@@ -52,6 +52,7 @@ if (_canTeleport and (_displayEvent select 1 == 87)) then {
     if (_couldTeleport) then {
         _unit setVariable ["bmt_var_jipTeleport_enabled", false];
         (findDisplay 46) displayRemoveEventHandler ["KeyDown", bmt_displayEventHandler_jipTeleport];
+        terminate bmt_script_jipTeleport;
     } else {
         "normal" cutText ["It was not possible to teleport. Everybody is dead and/or all vehicles are occupied! Try again later.", "PLAIN"];
     };
