@@ -28,7 +28,7 @@ _unit setVariable ["bmt_var_unitGroup", [_groupName, _subgroupIndex], true];
 if (!isNil "_groupName") then {
     _group = group _unit;
     if (_subgroupIndex != -1) then {
-        _group setGroupId [format["%1 %2", _groupName, _subgroupIndex], "GroupColor0"];
+        _group setGroupId [format["%1-%2", _groupName, _subgroupIndex], "GroupColor0"];
     } else {
       _group setGroupId [format["%1", _groupName], "GroupColor0"];
     };

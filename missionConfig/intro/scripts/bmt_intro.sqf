@@ -19,13 +19,15 @@ if (!hasInterface || !alive player) exitWith {};
 
 private ["_unitFaction", "_quotes", "_recognised"];
 private ["_missionName", "_missionLocation", "_introText", "_introType"];
+private ["_vehicleName", "_animationList"];
 private ["_uavMarker", "_uavMarkerType", "_uavMarkerColor"];
 
 // Wait until the variable that activates/deactivates debug output is initialised.
 waitUntil {!isNil "bmt_param_debugOutput"};
+waitUntil {time > 0};
 
-// Type of introduction: "blackScreen", "uavFeed"
-_introType = "blackScreen";
+// Type of introduction: "blackScreen", "uavFeed" and "playerCamera"
+_introType = "playerCamera";
 
 _quotes = [
     "Whoever said the pen is mightier than the sword obviously never encountered automatic weapons.\nDouglas MacArthur.",
@@ -39,6 +41,8 @@ _quotes = [
 
 _missionName = getText (missionConfigFile >> "onLoadName");
 _introText = selectRandom _quotes;
+_vehicleName = groupID (group player) + ": " + name player;
+_animationList = nil;
 
 // Identify which faction the unit belongs to.
 _unitFaction = toLower (faction player);
@@ -198,6 +202,14 @@ if (_recognised) then {
 
             case "uavFeed": {
                 [_uavMarker, _missionName + " - " + _missionLocation, [400,200,0,1], _uavMarkerType] execVM "src\intro\scripts\bmt_intro_uav.sqf";
+            };
+
+            case "playerCamera": {
+                [_missionName, _missionLocation, _vehicleName, false] execVM "src\intro\scripts\bmt_intro_playerCamera.sqf";
+            };
+
+            default {
+                player sideChat format ["ERROR (intro.sqf): Undefined intro type %1. It must be: blackScreen, uavFeed or playerCamera", _introType];
             };
         };
 
