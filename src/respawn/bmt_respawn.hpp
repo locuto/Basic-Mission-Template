@@ -70,6 +70,13 @@
         texts[] = {"Unlimited", "None", "Mission defined"};
         default = BMT_RESPAWN_NUMTICKETS_CONFIG;
     };
+
+    class bmt_param_respawn_killCam {
+        title = "Kill camera";
+        values[] = {0, 1};
+        texts[] = {"Disabled", "Enabled"};
+        default = BMT_RESPAWN_KILLCAM;
+    };
 #endif
 
 //============================================= END OF FILE =============================================//

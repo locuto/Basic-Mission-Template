@@ -36,8 +36,9 @@ if (_respawn == 1) then {
     [_oldUnit] call bmt_fnc_respawn_enterSpectator;
 } else {
 
-    // Hide custom respawn counter.
+    // Hide custom respawn counter and terminate camera.
     [false] call bmt_fnc_respawn_respawnCounter;
+    bmt_respawn_camera = false;
 
     [] call bmt_fnc_respawn_exitSpectator;
 

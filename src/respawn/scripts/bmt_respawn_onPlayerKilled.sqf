@@ -47,6 +47,15 @@ if (bmt_param_respawn_saveGear == 1) then {
     };
 };
 
+// Execute the respawn effects.
+if (bmt_param_respawn_killCam == 1) then {
+    bmt_script_respawnCamera = [_killer] execVM "src\respawn\scripts\bmt_respawn_effects.sqf";
+} else {
+    bmt_script_respawnCamera = [_unit] execVM "src\respawn\scripts\bmt_respawn_effects.sqf";
+};
+
+sleep  1;
+
 //  Do not enter spectator mode if respawn time is less than 1 second.
 if (playerRespawnTime <= 1) exitWith {};
 
