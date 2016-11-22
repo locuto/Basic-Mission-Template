@@ -48,7 +48,7 @@ if (bmt_param_respawn_saveGear == 1) then {
 };
 
 // Execute the respawn effects.
-if (bmt_param_respawn_killCam == 1) then {
+if ((bmt_param_respawn_killCam == 1) && (!isNull _killer)) then {
     bmt_script_respawnCamera = [_killer] execVM "src\respawn\scripts\bmt_respawn_effects.sqf";
 } else {
     bmt_script_respawnCamera = [_unit] execVM "src\respawn\scripts\bmt_respawn_effects.sqf";
