@@ -15,9 +15,6 @@
 
 params [["_respawnUnit",objNull], ["_spectableUnit",objNull]];
 
-// Stop the respawn camera.
-bmt_respawn_camera = false;
-
 // Hide seagull body.
 if (_respawnUnit isKindOf "seagull") then {
     if (bmt_mod_ace3 && (bmt_param_ace3_spectator ==  1)) then {

@@ -33,6 +33,7 @@ if (_respawn <= 1) then {
 
 // If there is respawn of type BIRD.
 if (_respawn == 1) then {
+    bmt_respawn_camera = false;
     [_oldUnit] call bmt_fnc_respawn_enterSpectator;
 } else {
 

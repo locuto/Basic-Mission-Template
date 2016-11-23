@@ -31,9 +31,7 @@ _numRespawns = [player, "substract"] call bmt_fnc_respawn_manageTickets;
 if ((_numRespawns == -1) or (_respawn <= 1)) then {
     player setVariable ["bmt_var_playerAlive", false, true];
     setPlayerRespawnTime 1e10;
-    sleep 5;
-    cutText ["You are dead! Entering spectator mode.", "PLAIN DOWN"];
-    sleep 5;
+    sleep 2;
 };
 
 if ((_respawn == 3) and ({_x getVariable ["bmt_var_playerAlive", true]} count allPlayers <= 0)) then {
@@ -47,6 +45,9 @@ if (bmt_param_respawn_saveGear == 1) then {
     };
 };
 
+//  Do not enter spectator mode if respawn time is less than 1 second.
+if (playerRespawnTime <= 1) exitWith {};
+
 // Execute the respawn effects.
 if ((bmt_param_respawn_killCam == 1) && (!isNull _killer)) then {
     bmt_script_respawnCamera = [_killer] execVM "src\respawn\scripts\bmt_respawn_effects.sqf";
@@ -54,22 +55,22 @@ if ((bmt_param_respawn_killCam == 1) && (!isNull _killer)) then {
     bmt_script_respawnCamera = [_unit] execVM "src\respawn\scripts\bmt_respawn_effects.sqf";
 };
 
-sleep  1;
-
-//  Do not enter spectator mode if respawn time is less than 1 second.
-if (playerRespawnTime <= 1) exitWith {};
+sleep 1;
 
 // Do not enter spectator mode if there are still tickets available.
-if ((_numRespawns >= 0) or (_numRespawns == -99)) exitWith {
+if ((_numRespawns >= 0) or (_numRespawns == -99)) then {
     [true] call bmt_fnc_respawn_respawnCounter;
-};
+} else {
+    cutText ["You are dead! Entering spectator mode.", "PLAIN DOWN"];
 
-// If there was no killer then pass it as a random playable unit.
-if (isNull _killer) then {
-    _killer = selectRandom playableUnits;
-};
+    // If there was no killer then pass it as a random playable unit.
+    if (isNull _killer) then {
+        _killer = selectRandom playableUnits;
+    };
 
-// Enter spectator mode.
-[_unit, _killer] call bmt_fnc_respawn_enterSpectator;
+    // Enter spectator mode.
+    bmt_respawn_camera = false;
+    [_unit, _killer] call bmt_fnc_respawn_enterSpectator;
+};
 
 //============================================= END OF FILE =============================================//

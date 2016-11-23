@@ -126,9 +126,9 @@ sleep 4;
 
 // Terminate animation and music
 // Stop music and animations
-player playMove "AmovPercMstpSlowWrflDnon";
 2 fadeMusic 0;
 sleep 2;
+player switchMove "AmovPercMstpSlowWrflDnon";
 playMusic "";
 
 // Restore music and ace_hearing.
