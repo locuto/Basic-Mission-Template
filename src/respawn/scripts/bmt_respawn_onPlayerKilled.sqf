@@ -28,10 +28,9 @@ if ((_respawn <= 1) and ({alive _x} count allPlayers <= 0)) exitWith {
 // Substract tickets from player's pool or player's side pool.
 _numRespawns = [player, "substract"] call bmt_fnc_respawn_manageTickets;
 
-if ((_numRespawns == -1) or (_respawn <= 1)) then {
+if ((_numRespawns == -1) or (_respawn == 0)) then {
     player setVariable ["bmt_var_playerAlive", false, true];
     setPlayerRespawnTime 1e10;
-    sleep 2;
 };
 
 if ((_respawn == 3) and ({_x getVariable ["bmt_var_playerAlive", true]} count allPlayers <= 0)) then {
@@ -61,15 +60,21 @@ sleep 1;
 if ((_numRespawns >= 0) or (_numRespawns == -99)) then {
     [true] call bmt_fnc_respawn_respawnCounter;
 } else {
-    cutText ["You are dead! Entering spectator mode.", "PLAIN DOWN"];
 
-    // If there was no killer then pass it as a random playable unit.
-    if (isNull _killer) then {
+    sleep 5;
+    cutText ["You are dead! Entering spectator mode.", "PLAIN DOWN"];
+    sleep 5;
+
+    // If there was no killer or the kill cam is disabled then pass it as a random playable unit.
+    if (isNull _killer || (bmt_param_respawn_killCam == 0)) then {
         _killer = selectRandom playableUnits;
     };
 
     // Enter spectator mode.
     bmt_respawn_camera = false;
+
+    sleep 0.5;
+
     [_unit, _killer] call bmt_fnc_respawn_enterSpectator;
 };
 

@@ -34,6 +34,9 @@ if (_respawn <= 1) then {
 // If there is respawn of type BIRD.
 if (_respawn == 1) then {
     bmt_respawn_camera = false;
+
+    sleep 0.5;
+
     [_oldUnit] call bmt_fnc_respawn_enterSpectator;
 } else {
 
@@ -60,19 +63,42 @@ if (_respawn == 1) then {
 
         // Remove and distribute ACRE 2 radios.
         if (bmt_mod_acre2) then {
+            // Remove radios
             [_unit] call bmt_fnc_acre2_removeRadios;
+
             sleep 0.5;
+            
+            // Distribute radios
             if (bmt_param_acre2_distributeRadios == 1) then {
                 [_unit] call bmt_fnc_acre2_addRadios;
+            };
+
+            // Configure active channels.
+            if (bmt_param_acre2_configureChannels == 1) then {
+                [player] call bmt_fnc_acre2_configureChannels;
             };
         };
 
         // Remove and distribute TFAR radios.
         if (bmt_mod_tfar) then {
+            // Remove radios
             [_unit] call bmt_fnc_tfar_removeRadios;
+
             sleep 0.5;
+
+            // Distribute radios
             if (bmt_param_tfar_distributeRadios == 1) then {
                 [_unit] call bmt_fnc_tfar_addRadios;
+            };
+
+            // Configure active channels.
+            if (bmt_param_tfar_configureChannels == 1) then {
+                [player] call bmt_fnc_tfar_configureChannels;
+            };
+
+            // Configure stereo.
+            if (bmt_param_tfar_configureStereo == 1) then {
+                [player] call bmt_fnc_tfar_configureStereo;
             };
         };
     };
