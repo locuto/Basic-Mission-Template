@@ -20,24 +20,25 @@
 params [["_unit",objNull], ["_oldUnit",objNull], ["_respawn",0], ["_respawnDelay",0]];
 private ["_unitOptions"];
 
-// End the mission if there are no alive units and respawn of type "NONE" or "BIRD".
-if (_respawn <= 1) then {
-    _unit setVariable ["bmt_var_playerAlive", false, true];
-    sleep 5;
-    cutText ["You are dead! Entering spectator mode.", "PLAIN DOWN"];
-    sleep 5;
-    if ({alive _x} count all_units <= 0) exitWith {
-        [] remoteExecCall ["bmt_fnc_endMission", 0, true];
-    };
-};
-
 // If there is respawn of type BIRD.
 if (_respawn == 1) then {
-    bmt_respawn_camera = false;
+    player setVariable ["bmt_var_playerAlive", false, true];
 
-    sleep 0.5;
+    sleep 1;
 
-    [_oldUnit] call bmt_fnc_respawn_enterSpectator;
+    bmt_script_respawnCamera = [_oldUnit] execVM "src\respawn\scripts\bmt_respawn_effects.sqf";
+    sleep 6;
+    if ({_x getVariable ["bmt_var_playerAlive", true]} count allPlayers <= 0) then {
+        // End the mission if there are no alive units and respawn of type "BIRD".
+        [] remoteExecCall ["bmt_fnc_endMission", 0, true];
+    } else {
+        cutText ["You are dead! Entering spectator mode.", "PLAIN DOWN"];
+        sleep 5;
+
+        bmt_respawn_camera = false;
+        sleep 0.2;
+        [_oldUnit] call bmt_fnc_respawn_enterSpectator;
+    };
 } else {
 
     // Hide custom respawn counter and terminate camera.
@@ -67,7 +68,7 @@ if (_respawn == 1) then {
             [_unit] call bmt_fnc_acre2_removeRadios;
 
             sleep 0.5;
-            
+
             // Distribute radios
             if (bmt_param_acre2_distributeRadios == 1) then {
                 [_unit] call bmt_fnc_acre2_addRadios;
