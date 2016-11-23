@@ -12,10 +12,10 @@
 //               - 1: Mission location <STRING>.                                                         //
 //               - 2: name of the unit or vehicle <STRING>.                                              //
 //               - 3: Use night vision in camera <BOOL>.                                                 //
-//               - 3: Animation <STRING> or list of animations to be played <ARRAY> to randonly play.    //
-//                    If not defined, the unit will play a random animation selected from:               //
+//               - 4: Animation List of animations to be played <ARRAY> to randonly play. If not         //
+//                    defined, the unit will play a random animation selected from:                      //
 //                    "AmovPercMstpSrasWrflDnon_Salute", "c4coming2cdf_genericstani1",                   //
-//                    "c4coming2cdf_genericstani2", "c4coming2cdf_genericstani3", and                    //
+//                    "c4coming2cdf_genericstani2", "c4coming2cdf_genericstani3" and                     //
 //                    "c4coming2cdf_genericstani4". <OPTIONAL>                                           //
 //                                                                                                       //
 //              Example:                                                                                 //
@@ -27,11 +27,6 @@
 //                   [                                                                                   //
 //                     "Operation Desert Fox", "Iran", "Alpha 1" + name player, true,                    //
 //                     ["c4coming2cdf_genericstani1", "c4coming2cdf_genericstani2"]                      //
-//                   ] execVM "src/intro/scripts/bmt_intro_playerCamera.sqf";                            //
-//                - The generic animation "c4coming2cdf_genericstani1" is selected (with night vision):  //
-//                   [                                                                                   //
-//                     "Operation Desert Fox", "Iran", "Alpha 1" + name player, true,                    //
-//                     "c4coming2cdf_genericstani1"                                                      //
 //                   ] execVM "src/intro/scripts/bmt_intro_playerCamera.sqf";                            //
 //                                                                                                       //
 // Changes: 1.0 (2016/11/22) First public version.                                                       //
@@ -101,11 +96,7 @@ if (bmt_mod_ace3) then {
 } forEach allUnits - [player];
 
 if (!isNil "_animation") then {
-    switch (typeName _animation) do {
-        case "STRING": { _selectedAnimation = _animation; };
-        case "ARRAY":  { _selectedAnimation = selectRandom _animation; };
-        default { player sideChat format ["DEBUG (bmt_intro_playerCamera.sqf): anmiation option has invalid type %1. It supports only string or array.", typeName _animation]; };
-    };
+    _selectedAnimation = selectRandom _animation;
 } else {
     _selectedAnimation = selectRandom _animationList;
 };
