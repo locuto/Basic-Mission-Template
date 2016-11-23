@@ -20,21 +20,25 @@
 params [["_unit",objNull], ["_oldUnit",objNull], ["_respawn",0], ["_respawnDelay",0]];
 private ["_unitOptions"];
 
-// End the mission if there are no alive units and respawn of type "NONE" or "BIRD".
-if (_respawn <= 1) then {
-    _unit setVariable ["bmt_var_playerAlive", false, true];
-    sleep 5;
-    cutText ["You are dead! Entering spectator mode.", "PLAIN DOWN"];
-    sleep 5;
-    if ({alive _x} count all_units <= 0) exitWith {
-        [] remoteExecCall ["bmt_fnc_endMission", 0, true];
-    };
-};
-
 // If there is respawn of type BIRD.
 if (_respawn == 1) then {
-    bmt_respawn_camera = false;
-    [_oldUnit] call bmt_fnc_respawn_enterSpectator;
+    player setVariable ["bmt_var_playerAlive", false, true];
+
+    sleep 1;
+
+    bmt_script_respawnCamera = [_oldUnit] execVM "src\respawn\scripts\bmt_respawn_effects.sqf";
+    sleep 6;
+    if ({_x getVariable ["bmt_var_playerAlive", true]} count allPlayers <= 0) then {
+        // End the mission if there are no alive units and respawn of type "BIRD".
+        [] remoteExecCall ["bmt_fnc_endMission", 0, true];
+    } else {
+        cutText ["You are dead! Entering spectator mode.", "PLAIN DOWN"];
+        sleep 5;
+
+        bmt_respawn_camera = false;
+        sleep 0.2;
+        [_oldUnit] call bmt_fnc_respawn_enterSpectator;
+    };
 } else {
 
     // Hide custom respawn counter and terminate camera.
@@ -60,19 +64,42 @@ if (_respawn == 1) then {
 
         // Remove and distribute ACRE 2 radios.
         if (bmt_mod_acre2) then {
+            // Remove radios
             [_unit] call bmt_fnc_acre2_removeRadios;
+
             sleep 0.5;
+
+            // Distribute radios
             if (bmt_param_acre2_distributeRadios == 1) then {
                 [_unit] call bmt_fnc_acre2_addRadios;
+            };
+
+            // Configure active channels.
+            if (bmt_param_acre2_configureChannels == 1) then {
+                [player] call bmt_fnc_acre2_configureChannels;
             };
         };
 
         // Remove and distribute TFAR radios.
         if (bmt_mod_tfar) then {
+            // Remove radios
             [_unit] call bmt_fnc_tfar_removeRadios;
+
             sleep 0.5;
+
+            // Distribute radios
             if (bmt_param_tfar_distributeRadios == 1) then {
                 [_unit] call bmt_fnc_tfar_addRadios;
+            };
+
+            // Configure active channels.
+            if (bmt_param_tfar_configureChannels == 1) then {
+                [player] call bmt_fnc_tfar_configureChannels;
+            };
+
+            // Configure stereo.
+            if (bmt_param_tfar_configureStereo == 1) then {
+                [player] call bmt_fnc_tfar_configureStereo;
             };
         };
     };
