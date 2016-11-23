@@ -1,9 +1,14 @@
 ## /missionConfig/briefing
 
+### Files
+
+* The player briefing files are named using the convention `missionConfig/bmt_briefing_XXX.sqf` where `XXX` is the faction identifier.
+* The administrator briefing is named `missionConfig/bmt_briefing_admin.sqf`.
+
 ### Player briefing
 
 Each player sees the briefing belonging to the playable unit's faction. This is useful for TvT missions or missions in which two allied factions have different
-objectives. The briefing files are named using the convention `bmt_briefing_XXX.sqf` where `XXX` is the faction name. Each file has the following briefing
+objectives. T Each file has the following briefing
 template.
 
 * **SITREP:** Serves as a background for the mission and it sets its tone.
