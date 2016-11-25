@@ -15,16 +15,16 @@
 
 params [["_respawnUnit",objNull], ["_spectableUnit",objNull]];
 
-// Hide seagull body.
-if (_respawnUnit isKindOf "seagull") then {
-    if (bmt_mod_ace3 && (bmt_param_ace3_spectator ==  1)) then {
-        _spectableUnit = selectRandom playableUnits;
-        [_respawnUnit] call ace_spectator_fnc_stageSpectator;
-    };
-};
+
 
 // If ACE 3 is loaded use the spectator mode of ACE3. Use the vanila one otherwise (End Game Spectator).
 if (bmt_mod_ace3 && (bmt_param_ace3_spectator ==  1)) then {
+
+    // Hide seagull body.
+    if (_respawnUnit isKindOf "seagull") then {
+        [_respawnUnit] call ace_spectator_fnc_stageSpectator;
+    };
+
     if ( bmt_param_debugOutput == 1) then {
         player sideChat format ["DEBUG (bmt_respawn_onPlayerRespawn.sqf): Using ACE3 spectator mode."];
     };
@@ -52,7 +52,7 @@ if (bmt_mod_ace3 && (bmt_param_ace3_spectator ==  1)) then {
     // Start the End Game Spectator.
     // - All sides can be viewed.
     // - The AI cannot be observed.
-    ["Initialize", [player, [], false]] call BIS_fnc_EGSpectator;
+    ["Initialize", [player, [], false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
 };
 
 //============================================= END OF FILE =============================================//
