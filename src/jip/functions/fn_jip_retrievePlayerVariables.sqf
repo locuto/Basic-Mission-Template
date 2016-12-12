@@ -24,15 +24,13 @@ params["_unit", "_jipPlayerVariables"];
 
 // Handle advanced fatigue
 if (bmt_mod_ace3) then {
-    ace_advanced_fatigue_ae1Reserve = _unit getVariable ["bmt_var_ace_advancedfatigue_ae1Reserve", nil];
-    ace_advanced_fatigue_ae2Reserve = _unit getVariable ["bmt_var_ace_advancedfatigue_ae2Reserve", nil];
-    ace_advanced_fatigue_anReserve = _unit getVariable ["bmt_var_ace_advancedfatigue_anReserve", nil];
-    ace_advanced_fatigue_anFatigue = _unit getVariable ["bmt_var_ace_advancedfatigue_anFatigue", nil];
-    ace_advanced_fatigue_muscleDamage = _unit getVariable ["bmt_var_ace_advancedfatigue_muscleDamage", nil];
+    {
+        call compile format ["%1 = %2;", _x select 0, _x select 1];
+    } forEach (_unit getVariable ["bmt_var_ace_advancedfatigue", nil]);
 };
 
 if (bmt_param_debugOutput == 1) then {
-    diag_log  format ["DEBUG (fn_jip_retrievePlayerVariables.sqf): Previous status successfully restored %1, %2, %3, %4", _unit getVariable ["bmt_var_ace_advancedfatigue_ae1Reserve", nil], _unit getVariable ["bmt_var_ace_advancedfatigue_ae2Reserve", nil], _unit getVariable ["bmt_var_ace_advancedfatigue_anReserve", nil], _unit getVariable ["bmt_var_ace_advancedfatigue_anFatigue", nil]];
+    diag_log  format ["DEBUG (fn_jip_retrievePlayerVariables.sqf): Previous status successfully restored."];
 };
 
 player setVariable ["bmt_var_jip_StatusRetrieved", true];

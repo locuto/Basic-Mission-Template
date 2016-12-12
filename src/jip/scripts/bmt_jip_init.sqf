@@ -76,6 +76,9 @@ if (hasInterface) then {
             } else {
                 // Player is already defined. Therefore, he is reconnecting.
                 if (bmt_param_jip_saveStatus == 1) then {
+                    if (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")) then {
+                        waitUntil {!isNil "ace_advanced_fatigue_ae1Reserve"};
+                    };
                     [player] call bmt_fnc_jip_retrieveStatus;
                 };
             };
