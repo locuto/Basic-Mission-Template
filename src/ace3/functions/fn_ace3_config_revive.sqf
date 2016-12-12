@@ -40,10 +40,14 @@ if (bmt_param_ace3_reviveSystem > 0) then {
     // Set the number of ACE Revives to be equal to the original respawn tickets
     if (_numRevives > 0) then {
         player setVariable ["ace_medical_amountOfReviveLives", _numRevives, true];
-        player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Player has %1 ACE 3 Revives.", _numRevives];
+        if (bmt_param_debugOutput == 1) then {
+            player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Player has %1 ACE 3 Revives.", _numRevives];
+        };
     } else {
         player setVariable ["ace_medical_amountOfReviveLives", -1, true]; // Unlimited revives.
-        player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Player has unlimited ACE 3 Revives."];
+        if (bmt_param_debugOutput == 1) then {
+            player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Player has unlimited ACE 3 Revives."];
+        };
     };
 };
 
