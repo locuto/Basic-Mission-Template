@@ -26,7 +26,7 @@ if ((typeName _unitOptions) == "STRING") then {
     _unitRole = _unitOptions select 0; // First entry must always be the unit role
 };
 
-if ((_unitGroup select 0 != "nil") and (_unitGroup select 1 != -1)) then {
+if (_unitGroup select 0 != "nil") then {
 
     // Configure the frequencies of short range radios.
     if ((_unitRole in bmt_array_shortRangeRadio) or (_unitRole in bmt_array_riflemanRadio)) then {
@@ -57,8 +57,10 @@ if ((_unitGroup select 0 != "nil") and (_unitGroup select 1 != -1)) then {
 
         // Units with a radio superior to the "Rifleman Radio" have the additional channel configured. It
         // defaults to the squad channel.
-        if (_unitRole in bmt_array_shortRangeRadio) then {
-            [(call TFAR_fnc_activeSwRadio), _squadChannel] call TFAR_fnc_setAdditionalSwChannel;
+        if (_unitGroup select 1 != 0) then{
+            if (_unitRole in bmt_array_shortRangeRadio) then {
+                [(call TFAR_fnc_activeSwRadio), _squadChannel] call TFAR_fnc_setAdditionalSwChannel;
+            };
         };
     };
 
