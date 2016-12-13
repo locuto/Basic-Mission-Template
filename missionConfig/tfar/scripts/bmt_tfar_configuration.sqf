@@ -25,6 +25,9 @@ tf_same_lr_frequencies_for_side = true;
 // Assign watch (false) or microDAGR (true).
 tf_give_microdagr_to_soldier = true;
 
+// Commanding group.
+bmt_var_tfar_commandingGroup = "Command";
+
 // Radios to be distributed among the units.
 // [Long range radio, short range radio, rifleman radio]
 bmt_list_tfar_radiosWest = ["tf_rt1523g_big_rhs", TF_defaultWestPersonalRadio, TF_defaultWestRiflemanRadio];

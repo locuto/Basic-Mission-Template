@@ -73,7 +73,7 @@ if (_unitGroup select 0 != "nil") then {
         {
             _frequencies = bmt_array_frequenciesLongRange select _forEachIndex;
             [(call TFAR_fnc_activeLrRadio), _channel + 1, format ["%1",_frequencies select 0]] call TFAR_fnc_SetChannelFrequency;
-            if ("Command" in _x) then {
+            if (bmt_var_tfar_commandingGroup in _x) then {
                 _commandChannel = _channel;
             };
             _channel = _channel + 1;
