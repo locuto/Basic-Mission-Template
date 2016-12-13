@@ -17,26 +17,26 @@
 
 if (!bmt_mod_dac OR (bmt_param_dac_enabled == 0)) exitWith {};
 
-if (isServer) then {
-    // Create DAC necessary "DAC_Source_Extern" logic module.
-    if (isNil "bmt_var_centreSideLogic") then {
-        bmt_var_centreSideLogic = createCenter sideLogic;
-        bmt_var_groupSideLogic = createGroup bmt_var_centreSideLogic;
-    };
-    bmt_var_dacModule = bmt_var_groupSideLogic createUnit ["DAC_Source_Extern", [0,0,0],[], 1,"NONE"];
-    publicVariable "bmt_var_dacModule";
+if (!isServer) exitWith { };
 
-    // Initialise the variable "DAC_STRPlayers" with the names of all playable units. It is necessary that
-    // all playable units have an associated name.
-    DAC_STRPlayers = [];
-    {
-        DAC_STRPlayers pushBack format ["%1",_x];
-    } forEach playableUnits;
-    publicVariable "DAC_STRPlayers";
+// Create DAC necessary "DAC_Source_Extern" logic module.
+if (isNil "bmt_var_centreSideLogic") then {
+    bmt_var_centreSideLogic = createCenter sideLogic;
+    bmt_var_groupSideLogic = createGroup bmt_var_centreSideLogic;
+};
+bmt_var_dacModule = bmt_var_groupSideLogic createUnit ["DAC_Source_Extern", [0,0,0],[], 1,"NONE"];
+publicVariable "bmt_var_dacModule";
 
-    if (bmt_param_debugOutput == 1) then {
-        player sideChat format ["DEBUG (fn_dac_init.sqf): %1", DAC_STRPlayers];
-    };
+// Initialise the variable "DAC_STRPlayers" with the names of all playable units. It is necessary that
+// all playable units have an associated name.
+DAC_STRPlayers = [];
+{
+    DAC_STRPlayers pushBack format ["%1",_x];
+} forEach playableUnits;
+publicVariable "DAC_STRPlayers";
+
+if (bmt_param_debugOutput == 1) then {
+    player sideChat format ["DEBUG (fn_dac_init.sqf): %1", DAC_STRPlayers];
 };
 
 // Modify DAC output depending whether the debug is activated or not.
@@ -63,5 +63,9 @@ switch (bmt_param_dac_debug) do {
         player sideChat format ["DEBUG (fn_dac_init.sqf): Unrecognised DAC parameter."];
     };
 };
+
+// Make the variables public
+publicVariable "DAC_Com_Values";
+publicVariable "DAC_Marker";
 
 //============================================= END OF FILE =============================================//
