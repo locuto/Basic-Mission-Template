@@ -54,18 +54,13 @@ _channel = 1;
 _radioList = call acre_api_fnc_getCurrentRadioList;
 {
 
-    // PRC343 radios active channel defaults to the one associated to the fireteam.
-    if ([_x, "ACRE_PRC343"] call acre_api_fnc_isKindOf) then {
+    // PRC343 or SEM 52 SL radios active channel defaults to the one associated to the fireteam.
+    if ([_x, "ACRE_PRC343"] call acre_api_fnc_isKindOf || [_x, "ACRE_SEM52SL"] call acre_api_fnc_isKindOf) then {
         [_x, _fireteamChannel] call acre_api_fnc_setRadioChannel;
     };
 
-    // PRC148 radios active channel defaults to the squad net.
-    if ([_x, "ACRE_PRC148"] call acre_api_fnc_isKindOf) then {
-        [_x, _squadChannel] call acre_api_fnc_setRadioChannel;
-    };
-
-    // PRC152 radios active channel defaults to the squad net.
-    if ([_x, "ACRE_PRC152"] call acre_api_fnc_isKindOf) then {
+    // PRC148 and PRC152 radios active channel defaults to the squad net.
+    if ([_x, "ACRE_PRC148"] call acre_api_fnc_isKindOf || [_x, "ACRE_PRC152"] call acre_api_fnc_isKindOf) then {
         [_x, _squadChannel] call acre_api_fnc_setRadioChannel;
     };
 

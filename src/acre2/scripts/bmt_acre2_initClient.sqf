@@ -30,6 +30,7 @@ if (bmt_acre2_differentPresets) then {
 ["ACRE_PRC148", _presetName] call acre_api_fnc_setPreset;
 ["ACRE_PRC152", _presetName] call acre_api_fnc_setPreset;
 ["ACRE_PRC117F", _presetName] call acre_api_fnc_setPreset;
+["ACRE_SEM52SL", _presetName] call acre_api_fnc_setPreset;
 
 // Configure ACRE2. If player is alive then radios will be removed to be added later depending on the role
 // as defined in "bmt_acre2_configuracio.sqf". Spectator chat will be force if unit is not alive.
