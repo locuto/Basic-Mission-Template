@@ -25,7 +25,6 @@ _channel = 1; _block = 1;
         _team = _teamList select _forEachIndex;
         if (_forEachIndex == 0) then {
             _shortRangeFrequencies = _shortRangeFrequencies + format ["<font color='#00FFFF'>%1:</font> %2 MHz.", _team, _frequency];
-            player sideChat format ["F; %1", _shortRangeFrequencies];
         } else {
             _shortRangeFrequencies = _shortRangeFrequencies + format ["     <font color='#00FFFF'>%1:</font> %2 MHz.", _team, _frequency];
         };
