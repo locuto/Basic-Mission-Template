@@ -12,6 +12,7 @@
 
 // Genaral functions and scripts.
 #include "src\core\bmt_core.hpp"                       // Core and essential functions for the correct execution of scripts.
+#include "src\briefing\bmt_briefing.hpp"               // Briefing related functions.
 #include "src\configEquipment\bmt_configEquipment.hpp" // Loadout and equipment related functions.
 #include "src\configGroup\bmt_configGroup.hpp"         // Group configuration functions.
 #include "src\configUnit\bmt_configUnit.hpp"           // Unit configuration functions.

@@ -26,33 +26,7 @@ With the collaboration of Magnetar (A3-BMT template) and *** possible collaborat
 //=======================================================================================================//
 // NOTES: RADIO.                                                                                         //
 //=======================================================================================================//
-_radio = player createDiaryRecord ["diary", ["Radio frequencies","
-<font color='#FF0000' size='18'>Command</font>: 41 kHz.
-<br/><br/>
-<font color='#FF0000' size='18'>CAS</font>: 51 kHz.
-<br/><br/>
-<font color='#FF0000' size='18'>Artillery</font>: 61 kHz.
-<br/><br/>
-<font color='#FF0000' size='18'>Alpha</font>
-<br/>
-- Squad ""Alpha 1"": 200 kHz.
-<br/>
-- Fireteam ""Alpha 1-1"": 201 kHz.
-<br/>
-- Fireteam ""Alpha 1-2"": 202 kHz.
-<br/>
-- Fireteam ""Alpha 1-3"": 203 kHz.
-<br/><br/>
-<font color='#FF0000' size='18'>Bravo</font>
-<br/>
-- Squad ""Bravo 1"": 210 kHz.
-<br/>
-- Fireteam ""Bravo 1-1"": 211 kHz.
-<br/>
-- Fireteam ""Bravo 1-2"": 212 kHz.
-<br/>
-- Fireteam ""Bravo 1-3"": 213 kHz.
-"]];
+_radio = player createDiaryRecord ["diary", ["Radio frequencies", [] call bmt_fnc_briefing_listRadioFrequencies]];
 
 //=======================================================================================================//
 // NOTES: ADMINISTRATION/LOGISTICS.                                                                       //
