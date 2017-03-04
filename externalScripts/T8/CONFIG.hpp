@@ -57,24 +57,29 @@
 
 class cfgT8Units
 {
+	// ------------------------------------------------------------------------------
 	// DEBUG Settings
+
 	class debug
 	{
 		// general debug switch
-		enable				= true;
+		enable				= false;
 
 		// show debug Hints
-		allow_hints			= true;
+		allow_hints			= false;
 
 		// create debug markers
-		allow_marker		= true;
+		allow_marker		= false;
 
 		// send debug messages to Killzone Kids console instead of RPT file
 		// http://killzonekid.com/arma-console-extension-debug_console-dll-v3-0/
-		allow_console		= true;	
+		allow_console		= false;	
 	};
 
+
+	// ------------------------------------------------------------------------------
 	// MAIN configuration
+
 	class main
 	{
 		// run the script on headless client and not on the Server
@@ -153,11 +158,13 @@ class cfgT8Units
 		};
 
 		// a group will go RED when in combat, then go GREEN after some time ( T8_UnitsEngageAtWillTime ), and then return to T8U_fnc_SpawnCombatMode
-		enable_CBM			= true;
+		enable_CBM			= false;
 	};
-	
-	
+
+
+	// ------------------------------------------------------------------------------
 	// options to work with DAC by Silola
+	
 	class dac
 	{
 		// allow T8U to send a "call for help" to DAC
@@ -168,7 +175,9 @@ class cfgT8Units
 	};
 
 
+	// ------------------------------------------------------------------------------
 	// MAIN behavior and skills configuration
+	
 	class behaviorAndSkills
 	{
 /*
@@ -278,7 +287,9 @@ class cfgT8Units
 	};
 
 
+	// ------------------------------------------------------------------------------
 	// custom group settings
+
 	class groupSettings
 	{
 		// some base classes
@@ -357,8 +368,11 @@ class cfgT8Units
 			teleport = true;
 		};
 	};
-	
+
+
+	// ------------------------------------------------------------------------------
 	// configuration for fixed unit containers	
+
 	class groupCompilations
 	{
 		class vanilla
@@ -397,12 +411,15 @@ class cfgT8Units
 		};
 	};
 
+
+	// ------------------------------------------------------------------------------
 	// configuration for randomized unit containers
 	//
 	// if you want a randomized selection of units you can use the following function in your units array:
 	//    [ "east", "infantry", 5, 3 ] call T8U_fnc_createUnitContainer
 	// units selected by this function are defined below
 	// if you add your custom selections (as example for different mods), please share them with me!
+
 	class groupRandomCompilations
 	{
 		class vanilla

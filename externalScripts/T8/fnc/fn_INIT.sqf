@@ -6,7 +6,7 @@
 	File:		fn_INIT.sqf
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
-
+	
 	Open < T8\CONFIG.hpp > to change basic variables !
 
  =======================================================================================================================
@@ -21,11 +21,9 @@ if ( !isNil "T8U_var_INIT" ) exitWith {};
 T8U_var_INIT = true;
 
 
-// loading main configuration from missionConfigFile / configFile
+// loading main configuration from missionConfigFile / configFile 
 [] call T8U_fnc_loadConfig;
 
-// Configuration for the BMT template
-[] call bmt_fnc_t8units_config;
 
 __DEBUG( "INIT", "======================================================================================", "" );
 __DEBUG( "INIT", "T8 Units", "INIT STARTED" );
@@ -35,11 +33,11 @@ __DEBUG( "INIT", "T8 Units", "INIT STARTED" );
 __allowEXEC(__FILE__);
 
 
-if ( T8U_var_DEBUG ) then
+if ( T8U_var_DEBUG ) then 
 {
 	// per unit tracking on Debug (only in SP editor or when player = server )
 	[] spawn T8U_fnc_TrackAllUnits;
-
+	
 	// delete debug markers (checks every 30s for markers older than 180s)
 	[] spawn T8U_fnc_DebugMarkerDelete;
 };
@@ -50,8 +48,9 @@ if ( T8U_var_DEBUG ) then
 
 
 // we are good to go!
-// only used for missionEXEC.sqf!
+// only used for missionEXEC.sqf! 
 T8U_var_InitDONE = true;
 
 __DEBUG( "INIT", "T8 Units", "INIT FINISHED" );
 __DEBUG( "INIT", "======================================================================================", "" );
+
