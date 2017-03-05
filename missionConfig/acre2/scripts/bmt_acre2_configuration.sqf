@@ -11,6 +11,7 @@
 //               - none                                                                                  //
 //                                                                                                       //
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
+// Todo: Remove second argument after ACRE2 v2.7.0                                                       //
 //=======================================================================================================//
 
 //=======================================================================================================//
@@ -29,7 +30,7 @@
 // ACRE2: Allow AI detect players when they speak.
 //        - false: AI cannot listen to players.
 //        - true: AI can listen to, and therefore detect players using a inverse quadratic model.
-[true] call acre_api_fnc_setRevealToAI;
+[true, true] call acre_api_fnc_setRevealToAI;
 
 //=======================================================================================================//
 // Babel functionality configuration.                                                                    //
@@ -54,22 +55,22 @@ bmt_acre2_language_bwa3    = ["german"];
 // ACRE2: Loss of signal due to terrain. Value between 0 and 1.
 //        - 0: Deactivates loss of signal due to terrain.
 //        - 1: Loss of signal totally simulated.
-[1] call acre_api_fnc_setLossModelScale;
+[1, true] call acre_api_fnc_setLossModelScale;
 
 // ACRE2: Duplex
 //        - false: Transmissions will not be received when radio is transmitting.
 //        - true: Transmission will be received when transmitting.
-[false] call acre_api_fnc_setFullDuplex;
+[false, true] call acre_api_fnc_setFullDuplex;
 
 // ACRE2: Interference.
 //        - false: radio interference will not be modelled when two players transmit on the same frequency.
 //        - true: interferences will be modelled when simultaneously transmitting on the same frequency.
-[true] call acre_api_fnc_setInterference;
+[true, true] call acre_api_fnc_setInterference;
 
 // ACRE2: Antena direction
 //        - false: antena direction is simulated.
 //        - true: the signal simulation model ignores antena direction.
-[false] call acre_api_fnc_ignoreAntennaDirection;
+[false, true] call acre_api_fnc_ignoreAntennaDirection;
 
 //=======================================================================================================//
 // Configuration of radio assignement depending on role.                                                 //
