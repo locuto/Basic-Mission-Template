@@ -56,6 +56,7 @@ bmt_acre2_language_bwa3    = ["german"];
 //        - 0: Deactivates loss of signal due to terrain.
 //        - 1: Loss of signal totally simulated.
 [1, true] call acre_api_fnc_setLossModelScale;
+acre_sys_signal_terrainScaling = 1;  // @todo: This is a temporary hack until proper CBA settings.
 
 // ACRE2: Duplex
 //        - false: Transmissions will not be received when radio is transmitting.
@@ -71,6 +72,7 @@ bmt_acre2_language_bwa3    = ["german"];
 //        - false: antena direction is simulated.
 //        - true: the signal simulation model ignores antena direction.
 [false, true] call acre_api_fnc_ignoreAntennaDirection;
+acre_sys_signal_omnidirectionalRadios = false; // @todo: This is a temporary hack until proper CBA settings.
 
 //=======================================================================================================//
 // Configuration of radio assignement depending on role.                                                 //
