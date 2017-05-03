@@ -21,7 +21,7 @@ if (isServer) then {
     if (bmt_param_asrai3_enabled == 1) then {
         asr_ai3_main_setskills = true;
         asr_ai3_main_seekcover = true;
-        asr_ai3_main_usebuildings = 0.9;
+        asr_ai3_main_usebuildings = 0.8;
         asr_ai3_main_getinweapons = 0.5;
         asr_ai3_main_rearm = 40;
         asr_ai3_main_rearm_mags = 3;
