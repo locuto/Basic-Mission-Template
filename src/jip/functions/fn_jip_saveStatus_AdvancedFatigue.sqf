@@ -21,11 +21,12 @@ _ace_advancedFatigue pushback ["ace_advanced_fatigue_anReserve", ace_advanced_fa
 _ace_advancedFatigue pushback ["ace_advanced_fatigue_anFatigue", ace_advanced_fatigue_anFatigue];
 _ace_advancedFatigue pushback ["ace_advanced_fatigue_muscleDamage", ace_advanced_fatigue_muscleDamage];
 
-private _position = bmt_array_advancedFatige_players select bmt_var_advancedFatige_index;
-if (_position select 0 == _unit) then {
+private _position = bmt_array_advancedFatiguePlayers select bmt_var_advancedFatigueIndex;
+if (_position select 0 == name _unit) then {
     _position set [1, _ace_advancedFatigue];
+    publicVariableServer "bmt_array_advancedFatiguePlayers";
 } else {
-    systemChat format ["WARNING: Trying to save advanced fatigue status on a different player (%1). Local player: %2", _position select 0, _unit];
+    diag_log format ["WARNING (fn_jip_saveStatus_AdvancedFatigue.sqf): Trying to save advanced fatigue status on a different player (%1). Local player: %2", _position select 0, name _unit];
 };
 
 //============================================= END OF FILE =============================================//

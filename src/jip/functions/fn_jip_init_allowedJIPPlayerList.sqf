@@ -15,11 +15,10 @@
 //=======================================================================================================//
 
 params ["_unit"];
-private ["_playerIDs"];
 
-_playerIDs = missionNamespace getVariable ["bmt_arrayMission_allowedJIPPlayerList", [] ];
+private _playerIDs = missionNamespace getVariable ["bmt_arrayMission_allowedJIPPlayerList", []];
 
-_playerIDs = _playerIDS pushBack [getPlayerUID _unit, name _unit];
+_playerIDS pushBackUnique [getPlayerUID _unit, name _unit];
 
 missionNamespace setVariable ["bmt_arrayMission_allowedJIPPlayerList", _playerIDs, true];
 
