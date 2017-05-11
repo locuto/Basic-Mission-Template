@@ -19,7 +19,7 @@ private ["_playerIDs"];
 
 _playerIDs = missionNamespace getVariable ["bmt_arrayMission_allowedJIPPlayerList", [] ];
 
-_playerIDs = _playerIDS + [[getPlayerUID _unit, name _unit]];
+_playerIDs = _playerIDS pushBack [getPlayerUID _unit, name _unit];
 
 missionNamespace setVariable ["bmt_arrayMission_allowedJIPPlayerList", _playerIDs, true];
 

@@ -13,14 +13,19 @@
 //=======================================================================================================//
 
 params ["_unit"];
-private ["_ace_advancedfatigue"];
 
-_ace_advancedfatigue = [];
-_ace_advancedfatigue pushback ["ace_advanced_fatigue_ae1Reserve", ace_advanced_fatigue_ae1Reserve];
-_ace_advancedfatigue pushback ["ace_advanced_fatigue_ae2Reserve", ace_advanced_fatigue_ae2Reserve];
-_ace_advancedfatigue pushback ["ace_advanced_fatigue_anReserve", ace_advanced_fatigue_anReserve];
-_ace_advancedfatigue pushback ["ace_advanced_fatigue_anFatigue", ace_advanced_fatigue_anFatigue];
-_ace_advancedfatigue pushback ["ace_advanced_fatigue_muscleDamage", ace_advanced_fatigue_muscleDamage];
+private _ace_advancedFatigue = [];
+_ace_advancedFatigue pushback ["ace_advanced_fatigue_ae1Reserve", ace_advanced_fatigue_ae1Reserve];
+_ace_advancedFatigue pushback ["ace_advanced_fatigue_ae2Reserve", ace_advanced_fatigue_ae2Reserve];
+_ace_advancedFatigue pushback ["ace_advanced_fatigue_anReserve", ace_advanced_fatigue_anReserve];
+_ace_advancedFatigue pushback ["ace_advanced_fatigue_anFatigue", ace_advanced_fatigue_anFatigue];
+_ace_advancedFatigue pushback ["ace_advanced_fatigue_muscleDamage", ace_advanced_fatigue_muscleDamage];
 
-_unit setVariable ["bmt_var_ace_advancedfatigue", _ace_advancedfatigue, true];
+private _position = bmt_array_advancedFatige_players select bmt_var_advancedFatige_index;
+if (_position select 0 == _unit) then {
+    _position set [1, _ace_advancedFatigue];
+} else {
+    systemChat format ["WARNING: Trying to save advanced fatigue status on a different player (%1). Local player: %2", _position select 0, _unit];
+};
+
 //============================================= END OF FILE =============================================//

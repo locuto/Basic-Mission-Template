@@ -24,9 +24,14 @@ params["_unit", "_jipPlayerVariables"];
 
 // Handle advanced fatigue
 if (bmt_mod_ace3) then {
-    {
-        call compile format ["%1 = %2;", _x select 0, _x select 1];
-    } forEach (_unit getVariable ["bmt_var_ace_advancedfatigue", nil]);
+    private _position = bmt_array_advancedFatige_players select bmt_var_advancedFatige_index;
+    if (_position select 0 == _unit) then {
+        {
+            call compile format ["%1 = %2;", _x select 0, _x select 1];
+        } forEach _position select 1;
+    } else {
+        systemChat format ["WARNING: Trying to retrieve advanced fatigue status on a different player (%1). Local player: %2", _position select 0, _unit];
+    };
 };
 
 if (bmt_param_debugOutput == 1) then {
