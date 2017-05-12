@@ -3,7 +3,6 @@ class ace_medical_blood_enabledFor {
     typeName = "SCALAR";
     force = 1;
 };
-
 class ace_common_forceAllSettings {
     value = 0;
     typeName = "BOOL";
@@ -27,6 +26,21 @@ class ace_common_checkPBOsWhitelist {
 class ace_cookoff_enable {
     value = 1;
     typeName = "BOOL";
+    force = 1;
+};
+class ace_cookoff_enableAmmobox {
+    value = 1;
+    typeName = "BOOL";
+    force = 1;
+};
+class ace_cookoff_enableAmmoCookoff {
+    value = 1;
+    typeName = "BOOL";
+    force = 1;
+};
+class ace_cookoff_ammoCookoffDuration {
+    value = 1;
+    typeName = "SCALAR";
     force = 1;
 };
 class ace_finger_enabled {
@@ -87,6 +101,11 @@ class ace_hitreactions_minDamageToTrigger {
 class ace_interaction_enableTeamManagement {
     value = 1;
     typeName = "BOOL";
+    force = 1;
+};
+class ace_laser_dispersionCount {
+    value = 2;
+    typeName = "SCALAR";
     force = 1;
 };
 class ace_laserpointer_enabled {
@@ -172,16 +191,6 @@ class ace_map_gestures_maxRange {
 class ace_map_gestures_interval {
     value = 0.03;
     typeName = "SCALAR";
-    force = 1;
-};
-class ace_map_gestures_groupColorConfigurations {
-
-    typeName = "ARRAY";
-    force = 1;
-};
-class ace_map_gestures_groupColorConfigurationMapping {
-
-    typeName = "ARRAY";
     force = 1;
 };
 class ace_medical_level {
@@ -404,6 +413,11 @@ class ace_microdagr_mapDataAvailable {
     typeName = "SCALAR";
     force = 1;
 };
+class ace_missileguidance_enabled {
+    value = 2;
+    typeName = "SCALAR";
+    force = 1;
+};
 class ace_mk6mortar_airResistanceEnabled {
     value = 1;
     typeName = "BOOL";
@@ -462,6 +476,11 @@ class ace_overheating_unJamFailChance {
 class ace_overheating_enabled {
     value = 1;
     typeName = "BOOL";
+    force = 1;
+};
+class ace_overpressure_distanceCoefficient {
+    value = 1;
+    typeName = "SCALAR";
     force = 1;
 };
 class ace_rearm_level {
@@ -537,6 +556,51 @@ class ace_respawn_removeDeadBodiesDisconnected {
 class ace_respawn_bodyRemoveTimer {
     value = 0;
     typeName = "SCALAR";
+    force = 1;
+};
+class ace_scopes_enabled {
+    value = 1;
+    typeName = "BOOL";
+    force = 1;
+};
+class ace_scopes_forceUseOfAdjustmentTurrets {
+    value = 1;
+    typeName = "BOOL";
+    force = 1;
+};
+class ace_scopes_correctZeroing {
+    value = 1;
+    typeName = "BOOL";
+    force = 1;
+};
+class ace_scopes_overwriteZeroRange {
+    value = 1;
+    typeName = "BOOL";
+    force = 1;
+};
+class ace_scopes_defaultZeroRange {
+    value = 100;
+    typeName = "SCALAR";
+    force = 1;
+};
+class ace_scopes_zeroReferenceTemperature {
+    value = 55;
+    typeName = "SCALAR";
+    force = 1;
+};
+class ace_scopes_zeroReferenceBarometricPressure {
+    value = 1013.25;
+    typeName = "SCALAR";
+    force = 1;
+};
+class ace_scopes_zeroReferenceHumidity {
+    value = 0.5;
+    typeName = "SCALAR";
+    force = 1;
+};
+class ace_scopes_deduceBarometricPressureFromTerrainAltitude {
+    value = 1;
+    typeName = "BOOL";
     force = 1;
 };
 class ace_spectator_filterUnits {
@@ -836,6 +900,11 @@ class acex_headless_Enabled {
 };
 class acex_headless_Delay {
     value = 15;
+    typeName = "SCALAR";
+    force = 1;
+};
+class acex_headless_endMission {
+    value = 0;
     typeName = "SCALAR";
     force = 1;
 };
