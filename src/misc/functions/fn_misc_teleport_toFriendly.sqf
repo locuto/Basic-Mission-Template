@@ -13,11 +13,10 @@
 //=======================================================================================================//
 
 params["_unit", "_groupUnits"];
-private ["_targetUnit", "_rank", "_couldTeleport"];
 
-_targetUnit = objNull;
-_rank = -1;
-_couldTeleport = false;
+private _targetUnit = objNull;
+private _rank = -1;
+private _couldTeleport = false;
 
 {
     if (alive _x and (rankId _x > _rank) and ((vehicle _x == _x) or ([vehicle _x] call bmt_fnc_misc_checkEmptyPosition))) then {

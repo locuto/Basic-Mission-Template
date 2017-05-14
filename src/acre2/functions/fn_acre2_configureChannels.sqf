@@ -15,14 +15,13 @@
 
 // Variable declarations.
 params [["_unit", objNull]];
-private ["_unitGroup", "_unitOptions", "_unitRole", "_channel", "_squadChannel", "_fireteamChannel", "_commandChannel"];
-private ["_radioList"];
 
 sleep 3;
 
-_unitGroup = _unit getVariable ["bmt_var_unitGroup", ["nil", -1]];
-_unitOptions = _unit getVariable ["bmt_var_configEquipment", "NIL"];
+private _unitGroup = _unit getVariable ["bmt_var_unitGroup", ["nil", -1]];
+private _unitOptions = _unit getVariable ["bmt_var_configEquipment", "NIL"];
 
+private _unitRole = "";
 if ((typeName _unitOptions) == "STRING") then {
     _unitRole = _unitOptions;
 } else {
@@ -33,7 +32,11 @@ if ((_unitGroup select 0 == "nil") or (_unitGroup select 1 == -1)) exitWith {
     _unit sideChat format ["ERROR (fn_acre2_configureChannels.sqf): Channels cannot be configured since variable ""bmt_var_unitGroup"" is not correctly defined: [%1,%2].", _unitGroup select 0, _unitGroup select 1];
 };
 
-_channel = 1;
+private _channel = 1;
+private _fireteamChannel = 1;
+private _squadChannel = 1;
+private _commandChannel = 1;
+
 // Get squad channel
 {
     if (_unitGroup select 0 in _x) then {
@@ -51,7 +54,7 @@ _channel = 1;
 } forEach bmt_array_groups;
 
 // Get unit's radios.
-_radioList = call acre_api_fnc_getCurrentRadioList;
+private _radioList = call acre_api_fnc_getCurrentRadioList;
 {
 
     // PRC343 or SEM 52 SL radios active channel defaults to the one associated to the fireteam.

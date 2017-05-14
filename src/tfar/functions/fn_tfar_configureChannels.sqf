@@ -15,11 +15,11 @@
 
 // Variable declarations.
 params [["_unit", objNull]];
-private["_unitGroup", "_unitOptions", "_unitRole", "_frequencies", "_channel", "_squadChannel", "_fireteamChannel", "_commandChannel"];
 
-_unitGroup = _unit getVariable ["bmt_var_unitGroup", ["nil", -1]];
-_unitOptions = _unit getVariable ["bmt_var_configEquipment", "nil"];
+private _unitGroup = _unit getVariable ["bmt_var_unitGroup", ["nil", -1]];
+private _unitOptions = _unit getVariable ["bmt_var_configEquipment", "nil"];
 
+private _unitRole = "";
 if ((typeName _unitOptions) == "STRING") then {
     _unitRole = _unitOptions;
 } else {
@@ -27,12 +27,14 @@ if ((typeName _unitOptions) == "STRING") then {
 };
 
 if (_unitGroup select 0 != "nil") then {
+    private _squadChannel = 0;
 
     // Configure the frequencies of short range radios.
     if ((_unitRole in bmt_array_shortRangeRadio) or (_unitRole in bmt_array_riflemanRadio)) then {
-        _channel = 0;
+        private _channel = 0;
+        private _fireteamChannel = 0;
         {
-            _frequencies = bmt_array_frequenciesShortRange select _forEachIndex;
+            private _frequencies = bmt_array_frequenciesShortRange select _forEachIndex;
             if (_unitGroup select 0 in _x) then {
                 _squadChannel = _channel;
                 _fireteamChannel = _squadChannel + (_unitGroup select 1);
@@ -68,10 +70,10 @@ if (_unitGroup select 0 != "nil") then {
     // Active channel defaults to squad channel while additional channel defaults to command channel.
     // assignats i amb comandament al canal alternatiu.
     if (_unitRole in bmt_array_longRangeRadio) then {
-
-        _channel = 0;
+        private _commandChannel = 0;
+        private _channel = 0;
         {
-            _frequencies = bmt_array_frequenciesLongRange select _forEachIndex;
+            private _frequencies = bmt_array_frequenciesLongRange select _forEachIndex;
             [(call TFAR_fnc_activeLrRadio), _channel + 1, format ["%1",_frequencies select 0]] call TFAR_fnc_SetChannelFrequency;
             if (bmt_var_tfar_commandingGroup in _x) then {
                 _commandChannel = _channel;

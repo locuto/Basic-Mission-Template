@@ -12,23 +12,21 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-private ["_unitFaction", "_unitGroup", "_unitSide", "_respawnMarkerName", "_couldRespawn"];
-
-_unitGroup = tolower (groupId (group player));
-_unitFaction = tolower (faction player);
+private _unitGroup = tolower (groupId (group player));
+private _unitFaction = tolower (faction player);
 
 // Use leader faction if unit's faction is different.
 if (_unitFaction != toLower (faction (leader group player))) then {
     _unitFaction = toLower (faction (leader group player));
 };
 
-_unitSide = tolower format ["%1", side player];
+private _unitSide = tolower format ["%1", side player];
 
 // Try first if there is a specific marker for respawning the group, next try if there is a specific
 // faction marker for respawning, and last try if there is a side marker (respawn_west, respawn_east, ...)
-_couldRespawn = false;
+private _couldRespawn = false;
 {
-    _respawnMarkerName = format ["respawn_%1", _x];
+    private _respawnMarkerName = format ["respawn_%1", _x];
     if (getMarkerColor _respawnMarkerName != "") exitWith {
         player setPosATL [getMarkerPos _respawnMarkerName select 0, getMarkerPos _respawnMarkerName select 1, 0];
         _couldRespawn = true;

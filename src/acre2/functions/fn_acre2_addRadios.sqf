@@ -15,10 +15,10 @@
 
 // Variable declarations.
 params [["_unit", objNull]];
-private["_unit", "_unitOptions", "_unitRole"];
 
-_unitOptions = _unit getVariable ["bmt_var_configEquipment", "nil"];
+private _unitOptions = _unit getVariable ["bmt_var_configEquipment", "nil"];
 
+private _unitRole = "";
 if ((typeName _unitOptions) == "STRING") then {
     _unitRole = _unitOptions;
 } else {
@@ -26,7 +26,7 @@ if ((typeName _unitOptions) == "STRING") then {
 };
 
 // Assign radios depending on the unit role (fn_configEquipment).
-if (!isNil "_unitRole") then {
+if (!(_unitRole isEqualTo "")) then {
 
     // Check if it is necessary to assign the radio defined in "bmt_acre2_riflemanRadio" to all units.
     if (bmt_acre2_riflemanRadioEverybody) then {

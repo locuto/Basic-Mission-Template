@@ -16,11 +16,10 @@
 //=======================================================================================================//
 
 params ["_unit", "_partdelCos", "_assignarFerida", "_projectil", ["_actualitzar", false]];
-private ["_estatActual"];
 
 if (_actualitzar) then {
     // Obtenir l'estat de les diferents parts del cos.
-    _estatActual = player getvariable ["ace_medical_bodyPartStatus", [0,0,0,0,0,0]];
+    private _estatActual = player getvariable ["ace_medical_bodyPartStatus", [0,0,0,0,0,0]];
     // Actualitzar la quantitat de mal a una determinada part del cos.
     _assignarFerida = _assignarFerida + _estatActual select ([_partdelCos] call ace_medical_fnc_selectionNameToNumber);
 };

@@ -15,9 +15,7 @@
 
 params ["_unit"];
 
-private ["_allowedJIP_List"];
-
-_allowedJIP_List = missionNamespace  getVariable ["bmt_arrayMission_allowedJIPPlayerList", nil];
+private _allowedJIP_List = missionNamespace  getVariable ["bmt_arrayMission_allowedJIPPlayerList", nil];
 
 if (isNil "_allowedJIP_List") exitWith {
     player sideChat format ["ERROR (fn_jip_addTo_initialPlayerList.sqf): Variable bmt_arrayMission_allowedJIPPlayerList is not defined."];

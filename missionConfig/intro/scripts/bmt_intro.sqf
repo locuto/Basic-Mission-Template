@@ -17,19 +17,14 @@
 
 if (!hasInterface || !alive player) exitWith {};
 
-private ["_unitFaction", "_quotes", "_recognised"];
-private ["_missionName", "_missionLocation", "_introText", "_introType"];
-private ["_vehicleName", "_animationList"];
-private ["_uavMarker", "_uavMarkerType", "_uavMarkerColor"];
-
 // Wait until the variable that activates/deactivates debug output is initialised.
 waitUntil {!isNil "bmt_param_debugOutput"};
 waitUntil {time > 0};
 
 // Type of introduction: "blackScreen", "uavFeed" and "playerCamera"
-_introType = "playerCamera";
+private _introType = "playerCamera";
 
-_quotes = [
+private _quotes = [
     "Whoever said the pen is mightier than the sword obviously never encountered automatic weapons.\nDouglas MacArthur.",
     "Soldiers Live. And wonder why.\nGlen Cook.",
     "People sleep peaceably in their beds at night only because rough men stand ready to do violence on their behalf.\nGeorge Orwell.",
@@ -39,13 +34,13 @@ _quotes = [
     "The two most powerful warriors are patience and time.\nLeo Tolstoy"
 ];
 
-_missionName = getText (missionConfigFile >> "onLoadName");
-_introText = selectRandom _quotes;
-_vehicleName = groupID (group player) + ": " + name player;
-_animationList = nil;
+private _missionName = getText (missionConfigFile >> "onLoadName");
+private _introText = selectRandom _quotes;
+private _vehicleName = groupID (group player) + ": " + name player;
+private _animationList = nil;
 
 // Identify which faction the unit belongs to.
-_unitFaction = toLower (faction player);
+private _unitFaction = toLower (faction player);
 
 // Use leader faction if unit's faction is different.
 if (_unitFaction != toLower (faction (leader group player))) then {
@@ -53,7 +48,9 @@ if (_unitFaction != toLower (faction (leader group player))) then {
 };
 
 // All factions are initially recognised
-_recognised = true;
+private _recognised = true;
+private _missionLocation = "Location";
+private _uavMarker = "marker"; private _uavMarkerType = [];
 
 switch (_unitFaction) do {
     //====================================================================================================//

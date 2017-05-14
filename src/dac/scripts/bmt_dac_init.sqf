@@ -16,8 +16,7 @@
 //=======================================================================================================//
 
 // Wait unit the degub variables are initialised.
-waitUntil {(!isNil "bmt_param_debugOutput")};
-waitUntil {(!isNil "bmt_param_dac_debug")};
+waitUntil {(!isNil "bmt_param_debugOutput") && {!(isNil "bmt_param_dac_debug")}};
 
 DAC_Basic_Value = 0;
 

@@ -16,7 +16,7 @@
 // Surt si no és un servidor
 if( !isServer ) exitWith{};
 
-params["_zeus", "_newObject"];
+params ["_zeus", "_newObject"];
 
 {
     _x addCuratorEditableObjects [[_newObject],true]

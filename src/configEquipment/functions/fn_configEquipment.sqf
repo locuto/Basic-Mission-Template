@@ -86,13 +86,12 @@
 
 // Variable declaration.
 params ["_unitOptions", "_unit", ["_unitFaction", nil]];
-private ["_recognised"];
 
 // Only execute if unit is local.
 if !(local _unit) exitWith {};
 
 // Assume faction is recognised.
-_recognised = true;
+private _recognised = true;
 
 if (isNil "_unitFaction") then {
     _unitFaction = toLower (faction _unit);

@@ -17,7 +17,7 @@
 // Changes: 1.0 (2015/07/19) First public version.                                                       //
 //=======================================================================================================//
 
-params["_unitsArray", ["_amountDamage", "medium"], ["_typeDamage", "bullet"], ["_isUnconscious", false]];
+params ["_unitsArray", ["_amountDamage", "medium"], ["_typeDamage", "bullet"], ["_isUnconscious", false]];
 
 if (!isServer) exitWith {};
 

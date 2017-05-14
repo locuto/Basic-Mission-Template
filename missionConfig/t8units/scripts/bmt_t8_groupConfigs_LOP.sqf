@@ -26,7 +26,7 @@
 //=======================================================================================================//
 
 // Antiarmor (Infantry)
-_groupArray_LOP_AM_infantry_antiarmor = [
+private _groupArray_LOP_AM_infantry_antiarmor = [
     "LOP_AM_Infantry_SL",
     "LOP_AM_Infantry_TL",
     "LOP_AM_Infantry_Rifleman", "LOP_AM_Infantry_Rifleman", "LOP_AM_Infantry_Rifleman",
@@ -35,7 +35,7 @@ _groupArray_LOP_AM_infantry_antiarmor = [
 ];
 
 //Rifle Squad (Infantry)
-_groupArray_LOP_AM_infantry_rifleSquad = [
+private _groupArray_LOP_AM_infantry_rifleSquad = [
     "LOP_AM_Infantry_SL",
     "LOP_AM_Infantry_TL",
     "LOP_AM_Infantry_Rifleman", "LOP_AM_Infantry_Rifleman",
@@ -47,12 +47,12 @@ _groupArray_LOP_AM_infantry_rifleSquad = [
 ];
 
 // Sentry (Infantry)
-_groupArray_LOP_AM_infantry_sentry = [
+private _groupArray_LOP_AM_infantry_sentry = [
     "LOP_AM_Infantry_Rifleman", "LOP_AM_Infantry_Rifleman"
 ];
 
 // Support Team (Infantry)
-_groupArray_LOP_AM_infantry_supportTeam = [
+private _groupArray_LOP_AM_infantry_supportTeam = [
     "LOP_AM_Infantry_SL",
     "LOP_AM_Infantry_TL",
     "LOP_AM_Infantry_Rifleman",
@@ -63,7 +63,7 @@ _groupArray_LOP_AM_infantry_supportTeam = [
 ];
 
 // Mechanised Infantry (Mechanised)
-_groupArray_LOP_AM_mechInfantry_landroverM2 = [
+private _groupArray_LOP_AM_mechInfantry_landroverM2 = [
     "LOP_AM_Infantry_SL",
     "LOP_AM_Infantry_TL",
     "LOP_AM_Infantry_GL", "LOP_AM_Infantry_GL",
@@ -73,7 +73,7 @@ _groupArray_LOP_AM_mechInfantry_landroverM2 = [
 ];
 
 // T-72 Platoon (Armored)
-_groupArray_LOP_AM_armored_T72Platoon = [
+private _groupArray_LOP_AM_armored_T72Platoon = [
     "LOP_AM_T72BA", "LOP_AM_T72BA", "LOP_AM_T72BA"
 ];
 

@@ -13,9 +13,8 @@
 //=======================================================================================================//
 
 if (!isServer) exitWith { };
-private ["_paramNames"];
 
-_paramNames = [];
+private _paramNames = [];
 
 _paramNames = _paramNames + ["bmt_param_ace3_ballistics", "bmt_param_ace3_medicalSystem", "bmt_param_ace3_reviveSystem", "bmt_param_ace3_spectator"];  // ACE 3
 _paramNames = _paramNames + ["bmt_param_acre2_configureChannels", "bmt_param_acre2_distributeRadios"];                                                 // ACRE 2

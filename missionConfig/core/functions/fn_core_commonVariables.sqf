@@ -12,9 +12,6 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-// Private variables.
-private ["_length_groups", "_length_frequencies", "_length_frequenciesLR"];
-
 //=======================================================================================================//
 // Configuration of mods and scripts required by the mission. Each and every of the following variables  //
 // can have the following values:                                                                        //
@@ -93,9 +90,9 @@ bmt_array_frequenciesLongRange = [
 ];
 
 // Check that both arrays have the same length.
-_length_groups = count bmt_array_groups;
-_length_frequencies = count bmt_array_frequenciesShortRange;
-_length_frequenciesLR = count bmt_array_frequenciesLongRange;
+private _length_groups = count bmt_array_groups;
+private _length_frequencies = count bmt_array_frequenciesShortRange;
+private _length_frequenciesLR = count bmt_array_frequenciesLongRange;
 
 if (_length_groups != _length_frequencies) then {
     player sideChat format ["ERROR (fn_core_commonVariables.sqf): Variables ""_length_groups"" and ""_length_frequencies"" do not have the same length."];

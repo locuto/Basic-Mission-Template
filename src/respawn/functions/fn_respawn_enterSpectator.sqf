@@ -15,8 +15,6 @@
 
 params [["_respawnUnit",objNull], ["_spectableUnit",objNull]];
 
-
-
 // If ACE 3 is loaded use the spectator mode of ACE3. Use the vanila one otherwise (End Game Spectator).
 if (bmt_mod_ace3 && (bmt_param_ace3_spectator ==  1)) then {
 

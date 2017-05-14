@@ -12,8 +12,6 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-private ["_initialPlayer"];
-
 // If time limit is a positive value check until when JIP players are allowed. With a negative value, JIP
 // players are allowed to enter the game at any time.
 if (bmt_param_jip_enabled == 1) then {
@@ -59,7 +57,7 @@ if (hasInterface) then {
     if (didJiP) then {
 
         // Check if the player is in the initial player list
-        _initialPlayer = [player] call bmt_fnc_jip_check_allowedJIPPlayerList;
+        private _initialPlayer = [player] call bmt_fnc_jip_check_allowedJIPPlayerList;
 
         // Kill the player if JIP is not allowed and exit.
         if (!(missionNamespace getVariable ["bmt_var_jip_allowed", true]) AND !_initialPlayer) then {

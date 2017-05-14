@@ -34,31 +34,28 @@
 
 params ["_missionName", "_missionLocation", "_vehicleName", "_useNVG", ["_animation", nil]];
 
-private ["_camera", "_selectedAnimation", "_animationList", "_date", "_ppColor", "_ppGrain"];
-private ["_month", "_day", "_hour", "_minute"];
-
 // Get date and time
-_month = str (date select 1);
-_day = str (date select 2);
-_hour = str (date select 3);
-_minute = str (date select 4);
+private _month = str (date select 1);
+private _day = str (date select 2);
+private _hour = str (date select 3);
+private _minute = str (date select 4);
 
 if (date select 1 < 10) then {_month = format ["0%1", str (date select 1)]};
 if (date select 2 < 10) then {_day = format ["0%1", str (date select 2)]};
 if (date select 3 < 10) then {_hour = format ["0%1", str (date select 3)]};
 if (date select 4 < 10) then {_minute = format ["0%1", str (date select 4)]};
 
-_date = format ["%1:%2 - %3-%4-%5", _hour, _minute,  _day, _month, str (date select 0)];
+private _date = format ["%1:%2 - %3-%4-%5", _hour, _minute,  _day, _month, str (date select 0)];
 
-_animationList = ["AmovPercMstpSrasWrflDnon_Salute", "c4coming2cdf_genericstani1", "c4coming2cdf_genericstani2", "c4coming2cdf_genericstani3", "c4coming2cdf_genericstani4"];
+private _animationList = ["AmovPercMstpSrasWrflDnon_Salute", "c4coming2cdf_genericstani1", "c4coming2cdf_genericstani2", "c4coming2cdf_genericstani3", "c4coming2cdf_genericstani4"];
 
 // Create the effects
-_ppColor = ppEffectCreate ["colorCorrections", 1999];
+private _ppColor = ppEffectCreate ["colorCorrections", 1999];
 _ppColor ppEffectEnable true;
 _ppColor ppEffectAdjust [1, 1, 0, [1, 1, 1, 0], [0.8, 0.8, 0.8, 0.65], [1, 1, 1, 1.0]];
 _ppColor ppEffectCommit 0;
 
-_ppGrain = ppEffectCreate ["filmGrain", 2012];
+private _ppGrain = ppEffectCreate ["filmGrain", 2012];
 _ppGrain ppEffectEnable true;
 _ppGrain ppEffectAdjust [0.1, 1, 1, 0, 1];
 _ppGrain ppEffectCommit 0;
@@ -76,7 +73,7 @@ sleep 0.2;
 ("BIS_fnc_blackOut" call BIS_fnc_rscLayer) cutText ["","PLAIN",10e10];
 
 // Create the camera
-_camera = "camera" camCreate (position player);
+private _camera = "camera" camCreate (position player);
 _camera camSetTarget player;
 _camera camSetRelPos [0.0, 5.0, 1.5];
 _camera camSetFov 0.5;
@@ -95,6 +92,7 @@ if (bmt_mod_ace3) then {
     _x enableSimulation false;
 } forEach allUnits - [player];
 
+private "_selectedAnimation";
 if (!isNil "_animation") then {
     _selectedAnimation = selectRandom _animation;
 } else {

@@ -13,15 +13,14 @@
 //=======================================================================================================//
 
 params ["_unit"];
-private ["_jipInformation", "_uid", "_name", "_found"];
 
-_jipInformation = missionNamespace getVariable ["bmt_arrayMission_jipInformation", nil];
+private _jipInformation = missionNamespace getVariable ["bmt_arrayMission_jipInformation", nil];
 
 if (isNil "_jipInformation") exitWith {
     player sideChat format ["ERROR (fn_jip_retrieveStatus): Variable bmt_arrayMission_jipInformation is not defined."];
 };
 
-_found = false;
+private _found = false;
 
 {
     if ((_x select 0 == getPlayerUID _unit) AND (_x select 1 == profileName)) exitWith {

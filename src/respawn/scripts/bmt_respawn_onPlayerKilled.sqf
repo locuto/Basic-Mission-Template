@@ -18,10 +18,9 @@
 
 // Parameters passed when onPlayerKilled.
 params [["_unit",objNull], ["_killer",objNull], ["_respawn",0], ["_respawnDelay",0]];
-private ["_numRespawns"];
 
 // Substract tickets from player's pool or player's side pool.
-_numRespawns = [player, "substract"] call bmt_fnc_respawn_manageTickets;
+private _numRespawns = [player, "substract"] call bmt_fnc_respawn_manageTickets;
 
 if ((_numRespawns == -1) or (_respawn == 0)) then {
     player setVariable ["bmt_var_playerAlive", false, true];

@@ -14,15 +14,14 @@
 //=======================================================================================================//
 
 params ["_unit"];
-private ["_allowedJIP_List", "_uid", "_name", "_found"];
 
-_allowedJIP_List = missionNamespace getVariable ["bmt_arrayMission_allowedJIPPlayerList", nil];
+private _allowedJIP_List = missionNamespace getVariable ["bmt_arrayMission_allowedJIPPlayerList", nil];
 
 if (isNil "_allowedJIP_List") exitWith {
     player sideChat format ["ERROR (fn_jip_addTo_initialPlayerList.sqf): Variable bmt_arrayMission_allowedJIPPlayerList is not defined."];
 };
 
-_found = false;
+private _found = false;
 {
     if ((_x select 0 == getPlayerUID _unit) AND (_x select 1 == name _unit)) then {
         _found =  true;

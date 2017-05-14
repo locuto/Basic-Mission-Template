@@ -13,15 +13,14 @@
 //=======================================================================================================//
 
 params ["_target"];
-private ["_camera", "_ppColor", "_ppGrain"];
 
 // Create the effects
-_ppColor = ppEffectCreate ["colorCorrections", 1999];
+private _ppColor = ppEffectCreate ["colorCorrections", 1999];
 _ppColor ppEffectEnable true;
 _ppColor ppEffectAdjust [1, 1, 0, [1, 1, 1, 0], [0.8, 0.8, 0.8, 0.65], [1, 1, 1, 1.0]];
 _ppColor ppEffectCommit 0;
 
-_ppGrain = ppEffectCreate ["filmGrain", 2012];
+private _ppGrain = ppEffectCreate ["filmGrain", 2012];
 _ppGrain ppEffectEnable true;
 _ppGrain ppEffectAdjust [0.1, 1, 1, 0, 1];
 _ppGrain ppEffectCommit 0;
@@ -39,15 +38,15 @@ sleep 0.2;
 bmt_respawn_camera = true;
 
 // Camera set-up
-_radius = 4;
-_angle = 180;
-_altitude = 5;
-_dir = 0;
-_speed = 0.2;
+private _radius = 4;
+private _angle = 180;
+private _altitude = 5;
+private _dir = 0;
+private _speed = 0.2;
 
-_coords = [_target, _radius, _angle] call BIS_fnc_relPos;
+private _coords = [_target, _radius, _angle] call BIS_fnc_relPos;
 _coords set [2, _altitude];
-_camera = "camera" camCreate _coords;
+private _camera = "camera" camCreate _coords;
 _camera cameraEffect ["internal", "back"];
 _camera camPrepareFOV 0.700;
 _camera camPrepareTarget _target;

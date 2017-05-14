@@ -14,19 +14,17 @@
 
 params ["_displayEvent", "_unit"];
 
-private ["_canTeleport", "_unitList"];
-
-_canTeleport = _unit getVariable ["bmt_var_jipTeleport_enabled", false];
+private _canTeleport = _unit getVariable ["bmt_var_jipTeleport_enabled", false];
 
 if (_canTeleport and (_displayEvent select 1 == 87)) then {
 
     // Try first, teleporting to the other members of the squad.
-    _unitList = [];
+    private _unitList = [];
     {
         if (isPlayer  _x) then { _unitList pushBack _x; };
     } forEach (units group _unit) - [_unit];
 
-    _couldTeleport = [_unit, _unitList] call bmt_fnc_misc_teleport_toFriendly;
+    private _couldTeleport = [_unit, _unitList] call bmt_fnc_misc_teleport_toFriendly;
 
     // If not, try with any unit of the same faction.
     if (!_couldTeleport) then {

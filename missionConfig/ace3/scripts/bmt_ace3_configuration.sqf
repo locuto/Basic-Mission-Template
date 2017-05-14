@@ -19,32 +19,27 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-private ["_medics", "_doctors", "_medicVehicles", "_medicFacilities"];
-private ["_expSpecialists", "_engineers", "_repairVehicles", "_repairFacilities"];
-private ["_surrenderedUnits", "_handcuffedUnits"];
-private ["_heliFRIES"];
-
 // Unit name variables must be declared as string.
 
 // Medical
-_medics = [];
-_medicVehicles = [];
-_medicFacilities = [];
-_doctors = [];
+private _medics = [];
+private _medicVehicles = [];
+private _medicFacilities = [];
+private _doctors = [];
 
 // Explosives
-_expSpecialists = [];
+private _expSpecialists = [];
 
 // Repair
-_engineers = [];
-_repairVehicles = [];
-_repairFacilities = [];
+private _engineers = [];
+private _repairVehicles = [];
+private _repairFacilities = [];
 
 // Captives
-_surrenderedUnits = [];
-_handcuffedUnits = [];
+private _surrenderedUnits = [];
+private _handcuffedUnits = [];
 
 // Fastroping
-_heliFRIES = [];
+private _heliFRIES = [];
 
 //============================================= END OF FILE =============================================//

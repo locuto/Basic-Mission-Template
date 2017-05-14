@@ -13,11 +13,10 @@
 // Changes: 1.0 (2016/11/12) First public version.                                                       //
 //=======================================================================================================//
 
-params["_unit"];
-private ["_jipPlayerVariables", "_variablesToStore"];
+params ["_unit"];
 
-_jipPlayerVariables = [];
-_variablesToStore = ["bmt", "ace"];
+private _jipPlayerVariables = [];
+private _variablesToStore = ["bmt", "ace"];
 {
     if (_x select [0, 3] in _variablesToStore) then {
         // Hack for ace medical

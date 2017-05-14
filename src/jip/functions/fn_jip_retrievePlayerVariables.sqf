@@ -16,7 +16,7 @@
 // Changes: 1.0 (2016/11/12) First public version.                                                       //
 //=======================================================================================================//
 
-params["_unit", "_jipPlayerVariables"];
+params ["_unit", "_jipPlayerVariables"];
 
 {
     _unit setVariable [_x select 0, _x select 1, true];

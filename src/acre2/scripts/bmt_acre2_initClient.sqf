@@ -12,7 +12,7 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-private["_presetName"];
+private "_presetName";
 
 // Configure the radio presets depending on the side the unit belongs to.
 if (bmt_acre2_differentPresets) then {

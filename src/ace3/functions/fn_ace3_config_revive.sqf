@@ -20,6 +20,7 @@ if (bmt_param_ace3_reviveSystem > 0) then {
             if (bmt_param_debugOutput == 1) then {
                 player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Disabling respawning per side in favour of ACE3 revive system."];
             };
+            private _pos = 0;
             switch (side player) do {
                 case west: { _pos = 0; };
                 case east: { _pos = 1; };

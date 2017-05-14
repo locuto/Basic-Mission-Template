@@ -12,17 +12,15 @@
 // ToDo: Replace entries with getMissionConfigValue.                                                     //
 //=======================================================================================================//
 
-private ["_paramName", "_paramValue"];
-
 // First initialise all parameters to zero.
 [] call bmt_fnc_core_initBMTParams;
 
 {
-    _paramName = (configName ((missionConfigFile >> "Params") select _forEachIndex));
+    private _paramName = (configName ((missionConfigFile >> "Params") select _forEachIndex));
 
     // Avoid lines starting with "paramLine"
     if (!(["paramLine", _paramName, true] call BIS_fnc_inString)) then {
-        _paramValue = _paramName call BIS_fnc_getParamValue;
+        private _paramValue = _paramName call BIS_fnc_getParamValue;
 
         // If it is an ACE3 setting, use the variable in bmt_paramID instead.
         if (["ace_", _paramName, true] call BIS_fnc_inString) then {

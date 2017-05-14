@@ -12,9 +12,8 @@
 //=======================================================================================================//
 
 params ["_vehicle"];
-private ["_isFree"];
 
-_isFree = false;
+private _isFree = false;
 
 {
     if ((_vehicle emptyPositions _x) != 0) exitWith {

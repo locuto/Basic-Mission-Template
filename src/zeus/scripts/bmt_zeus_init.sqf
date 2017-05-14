@@ -14,7 +14,7 @@
 //=======================================================================================================//
 
 // Only execute on server.
-if( !isServer ) exitWith{};
+if (!isServer) exitWith{};
 
 // Add units, vehicles and objects to all curators.
 {

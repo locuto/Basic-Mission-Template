@@ -11,9 +11,9 @@
 //=======================================================================================================//
 if (!bmt_mod_ace3) exitWith {};
 
-private["_moduleError", "_object"];
+private["_object"];
 
-_moduleError = false;
+private _moduleError = false;
 
 // Include variables that define which units, vehicles or buildings have especial roles assigned (medics, engineers, ...)
 #include "..\..\..\missionConfig\ace3\scripts\bmt_ace3_configuration.sqf"

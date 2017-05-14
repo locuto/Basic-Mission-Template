@@ -12,10 +12,9 @@
 //=======================================================================================================//
 
 params [["_enter", true]];
-private ["_layer"];
 
 if (_enter) then {
-    _layer = "BIS_fnc_respawnCounter" call bis_fnc_rscLayer;
+    private _layer = "BIS_fnc_respawnCounter" call bis_fnc_rscLayer;
     _layer cutText ["", "plain"];
 
     missionnamespace setvariable ["RscRespawnCounter_description", format ["<t size='1' align='center'>%1</t>","Respawning. Be more careful next time!"]];
@@ -23,6 +22,6 @@ if (_enter) then {
     missionnamespace setvariable ["RscRespawnCounter_Custom", playerRespawnTime];
     _layer cutRsc ["RscRespawnCounter", "plain"];
 } else {
-    _layer = "BIS_fnc_respawnCounter" call bis_fnc_rscLayer;
+    private _layer = "BIS_fnc_respawnCounter" call bis_fnc_rscLayer;
     _layer cutText ["", "plain"];
 };

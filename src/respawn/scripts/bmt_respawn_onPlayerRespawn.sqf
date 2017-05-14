@@ -18,7 +18,6 @@
 
 // Parameters passed when onPlayerRespawn.
 params [["_unit",objNull], ["_oldUnit",objNull], ["_respawn",0], ["_respawnDelay",0]];
-private ["_unitOptions"];
 
 // If there is respawn of type BIRD.
 if (_respawn == 1) then {
@@ -57,7 +56,7 @@ if (_respawn == 1) then {
             _unit setVariable ["bmt_var_hasEarPlugs", nil];
         };
     } else {
-        _unitOptions = _unit getVariable "bmt_var_configEquipment";
+        private _unitOptions = _unit getVariable "bmt_var_configEquipment";
         [_unitOptions, _unit] call bmt_fnc_configEquipment;
 
         sleep 1;

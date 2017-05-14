@@ -11,7 +11,7 @@
 //               - none                                                                                  //
 //                                                                                                       //
 //              Defined group configurations:                                                            //
-//                    Group                             Array name                                       //
+//                    Group                              Array name                                      //
 //                    Air-defense Team (Infantry)        _groupArray_OPF_F_OIA_InfTeam_AA                //
 //                    Anti-armor Team (Infantry)         _groupArray_OPF_F_OIA_InfTeam_AT                //
 //                    Assault Squad (Infantry)           _groupArray_OPF_F_OIA_InfAssault                //
@@ -43,7 +43,7 @@
 //=======================================================================================================//
 
 // Air-defense Team (Infantry)
-_groupArray_OPF_F_OIA_InfTeam_AA = [
+private _groupArray_OPF_F_OIA_InfTeam_AA = [
     "O_soldier_TL_F",
     "O_soldier_AA_F",
     "O_soldier_AA_F",
@@ -51,7 +51,7 @@ _groupArray_OPF_F_OIA_InfTeam_AA = [
 ];
 
 // Anti-armor Team (Infantry)
-_groupArray_OPF_F_OIA_InfTeam_AT = [
+private _groupArray_OPF_F_OIA_InfTeam_AT = [
     "O_soldier_TL_F",
     "O_soldier_AT_F",
     "O_soldier_AT_F",
@@ -59,7 +59,7 @@ _groupArray_OPF_F_OIA_InfTeam_AT = [
 ];
 
 // Assault Squad (Infantry)
-_groupArray_OPF_F_OIA_InfAssault = [
+private _groupArray_OPF_F_OIA_InfAssault = [
     "O_soldier_SL_F",
     "O_soldier_AR_F",
     "O_HeavyGunner_F",
@@ -71,7 +71,7 @@ _groupArray_OPF_F_OIA_InfAssault = [
 ];
 
 // Fire Team (Infantry)
-_groupArray_OPF_F_OIA_InfTeam = [
+private _groupArray_OPF_F_OIA_InfTeam = [
     "O_soldier_TL_F",
     "O_soldier_AR_F",
     "O_soldier_GL_F",
@@ -79,7 +79,7 @@ _groupArray_OPF_F_OIA_InfTeam = [
 ];
 
 // Rifle Squad (Infantry)
-_groupArray_OPF_F_OIA_InfSquad = [
+private _groupArray_OPF_F_OIA_InfSquad = [
     "O_soldier_SL_F",
     "O_soldier_F",
     "O_soldier_LAT_F",
@@ -92,19 +92,19 @@ _groupArray_OPF_F_OIA_InfSquad = [
 ];
 
 // Sentry (Infantry)
-_groupArray_OPF_F_OIA_InfSentry = [
+private _groupArray_OPF_F_OIA_InfSentry = [
     "O_soldier_GL_F",
     "O_soldier_F"
 ];
 
 // Sniper Team (Infantry)
-_groupArray_OPF_F_OI_SniperTeam = [
+private _groupArray_OPF_F_OI_SniperTeam = [
     "O_sniper_F",
     "O_spotter_F"
 ];
 
 // Weapons Squad
-_groupArray_OPF_F_OIA_InfSquad_Weapons = [
+private _groupArray_OPF_F_OIA_InfSquad_Weapons = [
     "O_soldier_SL_F",
     "O_soldier_AR_F",
     "O_soldier_GL_F",
@@ -120,26 +120,26 @@ _groupArray_OPF_F_OIA_InfSquad_Weapons = [
 //=======================================================================================================//
 
 // GMG Team (Infantry)
-_groupArray_OPF_F_OI_support_GMG = [
+private _groupArray_OPF_F_OI_support_GMG = [
     "O_soldier_TL_F",
     "O_support_GMG_F",
     "O_support_AMG_F"    //same for both GMG and HMG
 ];
 // HMG Team (Infantry)
-_groupArray_OPF_F_OI_support_MG = [
+private _groupArray_OPF_F_OI_support_MG = [
     "O_soldier_TL_F",
     "O_support_MG_F",
     "O_support_AMG_F"    //same for both GMG and HMG
 ];
 // Mortar Team (Infantry)
-_groupArray_OPF_F_OI_support_Mort = [
+private _groupArray_OPF_F_OI_support_Mort = [
     "O_soldier_TL_F",
     "O_support_Mort_F",
     "O_support_AMort_F"
 ];
 
 // Support Team (CLS, Infantry)
-_groupArray_OPF_F_OI_support_CLS = [
+private _groupArray_OPF_F_OI_support_CLS = [
     "O_soldier_TL_F",
     "O_soldier_AR_F",
     "O_medic_F",
@@ -147,14 +147,14 @@ _groupArray_OPF_F_OI_support_CLS = [
 ];
 
 // Support Team (Engineer, Infantry)
-_groupArray_OPF_F_OI_support_ENG = [
+private _groupArray_OPF_F_OI_support_ENG = [
     "O_soldier_TL_F",
     "O_engineer_F",
     "O_engineer_F",
     "O_soldier_repair_F"
 ];
 // Support Team (EOD, Infantry)
-_groupArray_OPF_F_OI_support_EOD = [
+private _groupArray_OPF_F_OI_support_EOD = [
     "O_soldier_TL_F",
     "O_engineer_F",
     "O_soldier_exp_F",
@@ -166,20 +166,20 @@ _groupArray_OPF_F_OI_support_EOD = [
 //=======================================================================================================//
 
 // Recon Patrol (Infantry)
-_groupArray_OPF_F_OI_reconPatrol = [
+private _groupArray_OPF_F_OI_reconPatrol = [
     "O_recon_TL_F",
     "O_recon_M_F",
     "O_recon_medic_F",
     "O_recon_F"
 ];
 // Recon Sentry (Infantry)
-_groupArray_OPF_F_OI_reconSentry = [
+private _groupArray_OPF_F_OI_reconSentry = [
     "O_recon_M_F",
     "O_recon_F"
 ];
 
 // Recon Squad (Infantry)
-_groupArray_OPF_F_OI_reconSquad = [
+private _groupArray_OPF_F_OI_reconSquad = [
     "O_recon_TL_F",
     "O_recon_M_F",
     "O_recon_medic_F",
@@ -191,7 +191,7 @@ _groupArray_OPF_F_OI_reconSquad = [
 ];
 
 // Recon Team (Infantry)
-_groupArray_OPF_F_OI_reconTeam = [
+private _groupArray_OPF_F_OI_reconTeam = [
     "O_recon_TL_F",
     "O_recon_M_F",
     "O_recon_medic_F",
@@ -206,7 +206,7 @@ _groupArray_OPF_F_OI_reconTeam = [
 //=======================================================================================================//
 
 // Recon Support Team (EOD, Infantry)
-_groupArray_OPF_F_OI_recon_EOD = [
+private _groupArray_OPF_F_OI_recon_EOD = [
     "O_recon_TL_F",
     "O_recon_exp_F",
     "O_recon_exp_F",
@@ -218,12 +218,12 @@ _groupArray_OPF_F_OI_recon_EOD = [
 //=======================================================================================================//
 
 // Guard Sentry (Infantry)
-_groupArray_OPF_F_OIA_GuardSentry = [
+private _groupArray_OPF_F_OIA_GuardSentry = [
     "O_soldierU_GL_F",
     "O_soldierU_F"
 ];
 // Guard Squad (Infantry)
-_groupArray_OPF_F_OIA_GuardSquad = [
+private _groupArray_OPF_F_OIA_GuardSquad = [
     "O_soldierU_SL_F",
     "O_soldierU_F",
     "O_soldierU_LAT_F",
@@ -235,7 +235,7 @@ _groupArray_OPF_F_OIA_GuardSquad = [
 ];
 
 // Guard Team (Infantry)
-_groupArray_OPF_F_OIA_GuardTeam = [
+private _groupArray_OPF_F_OIA_GuardTeam = [
     "O_soldierU_TL_F",
     "O_soldierU_AR_F",
     "O_soldierU_GL_F",

@@ -15,10 +15,9 @@
 
 // Variable declarations.
 params [["_unit", objNull]];
-private["_unitFaction"];
 
 // Identificar la facció de la unitat.
-_unitFaction = toLower (faction _unit);
+private _unitFaction = toLower (faction _unit);
 
 // DEBUG OUTPUT.
 if ( bmt_param_debugOutput == 1 ) then {

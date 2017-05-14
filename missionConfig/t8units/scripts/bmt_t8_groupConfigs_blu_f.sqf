@@ -11,7 +11,7 @@
 //               - none                                                                                  //
 //                                                                                                       //
 //              Defined group configurations:                                                            //
-//                    Group                             Array name                                       //
+//                    Group                              Array name                                      //
 //                    Air-defense Team (Infantry)        _groupArray_BLU_F_BUS_InfTeam_AA                //
 //                    Anti-armor Team (Infantry)         _groupArray_BLU_F_BUS_InfTeam_AT                //
 //                    Assault Squad (Infantry)           _groupArray_BLU_F_BUS_InfAssault                //
@@ -40,7 +40,7 @@
 //=======================================================================================================//
 
 // Air-defense Team (Infantry)
-_groupArray_BLU_F_BUS_InfTeam_AA = [
+private _groupArray_BLU_F_BUS_InfTeam_AA = [
     "B_soldier_TL_F",
     "B_soldier_AA_F",
     "B_soldier_AA_F",
@@ -48,7 +48,7 @@ _groupArray_BLU_F_BUS_InfTeam_AA = [
 ];
 
 // Anti-armor Team (Infantry)
-_groupArray_BLU_F_BUS_InfTeam_AT = [
+private _groupArray_BLU_F_BUS_InfTeam_AT = [
     "B_soldier_TL_F",
     "B_soldier_AT_F",
     "B_soldier_AT_F",
@@ -56,7 +56,7 @@ _groupArray_BLU_F_BUS_InfTeam_AT = [
 ];
 
 // Assault Squad (Infantry)
-_groupArray_BLU_F_BUS_InfAssault = [
+private _groupArray_BLU_F_BUS_InfAssault = [
     "B_soldier_SL_F",
     "B_soldier_AR_F",
     "B_HeavyGunner_F",
@@ -68,7 +68,7 @@ _groupArray_BLU_F_BUS_InfAssault = [
 ];
 
 // Fire Team (Infantry)
-_groupArray_BLU_F_BUS_InfTeam = [
+private _groupArray_BLU_F_BUS_InfTeam = [
     "B_soldier_TL_F",
     "B_soldier_AR_F",
     "B_soldier_GL_F",
@@ -76,7 +76,7 @@ _groupArray_BLU_F_BUS_InfTeam = [
 ];
 
 // Rifle Squad (Infantry)
-_groupArray_BLU_F_BUS_InfSquad = [
+private _groupArray_BLU_F_BUS_InfSquad = [
     "B_soldier_SL_F",
     "B_soldier_F",
     "B_soldier_LAT_F",
@@ -89,19 +89,19 @@ _groupArray_BLU_F_BUS_InfSquad = [
 ];
 
 // Sentry (Infantry)
-_groupArray_BLU_F_BUS_InfSentry = [
+private _groupArray_BLU_F_BUS_InfSentry = [
     "B_soldier_GL_F",
     "B_soldier_F"
 ];
 
 // Sniper Team (Infantry)
-_groupArray_BLU_F_BUS_SniperTeam = [
+private _groupArray_BLU_F_BUS_SniperTeam = [
     "B_sniper_F",
     "B_spotter_F"
 ];
 
 // Weapons Squad (Infantry)
-_groupArray_BLU_F_BUS_InfSquad_Weapons = [
+private _groupArray_BLU_F_BUS_InfSquad_Weapons = [
     "B_soldier_SL_F",
     "B_soldier_AR_F",
     "B_soldier_GL_F",
@@ -117,28 +117,28 @@ _groupArray_BLU_F_BUS_InfSquad_Weapons = [
 //=======================================================================================================//
 
 // GMG Team (Infantry)
-_groupArray_BLU_F_BUS_support_GMG = [
+private _groupArray_BLU_F_BUS_support_GMG = [
     "B_soldier_TL_F",
     "B_support_GMG_F",
     "B_support_AMG_F"
 ];
 
 // HMG Team (Infantry)
-_groupArray_BLU_F_BUS_support_MG = [
+private _groupArray_BLU_F_BUS_support_MG = [
     "B_soldier_TL_F",
     "B_support_MG_F",
     "B_support_AMG_F"
 ];
 
 // Mortar Team (Infantry)
-_groupArray_BLU_F_BUS_support_Mort = [
+private _groupArray_BLU_F_BUS_support_Mort = [
     "B_soldier_TL_F",
     "B_support_Mort_F",
     "B_support_AMort_F"
 ];
 
 // Support Team (CLS, Infantry)
-_groupArray_BLU_F_BUS_support_CLS = [
+private _groupArray_BLU_F_BUS_support_CLS = [
     "B_soldier_TL_F",
     "B_soldier_AR_F",
     "B_medic_F",
@@ -146,7 +146,7 @@ _groupArray_BLU_F_BUS_support_CLS = [
 ];
 
 // Support Team (EOD, Infantry)
-_groupArray_BLU_F_BUS_support_EOD = [
+private _groupArray_BLU_F_BUS_support_EOD = [
     "B_soldier_TL_F",
     "B_engineer_F",
     "B_soldier_exp_F",
@@ -154,7 +154,7 @@ _groupArray_BLU_F_BUS_support_EOD = [
 ];
 
 // Support Team (Engineer, Infantry)
-_groupArray_BLU_F_BUS_support_ENG = [
+private _groupArray_BLU_F_BUS_support_ENG = [
     "B_soldier_TL_F",
     "B_engineer_F",
     "B_engineer_F",
@@ -166,7 +166,7 @@ _groupArray_BLU_F_BUS_support_ENG = [
 //=======================================================================================================//
 
 // Recon Patrol (Infantry)
-_groupArray_BLU_F_BUS_reconPatrol = [
+private _groupArray_BLU_F_BUS_reconPatrol = [
     "B_recon_TL_F",
     "B_recon_M_F",
     "B_recon_medic_F",
@@ -174,13 +174,13 @@ _groupArray_BLU_F_BUS_reconPatrol = [
 ];
 
 // Recon Sentry (Infantry)
-_groupArray_BLU_F_BUS_reconSentry = [
+private _groupArray_BLU_F_BUS_reconSentry = [
     "B_recon_M_F",
     "B_recon_F"
 ];
 
 // Recon Squad (Infantry)
-_groupArray_BLU_F_BUS_reconSquad = [
+private _groupArray_BLU_F_BUS_reconSquad = [
     "B_recon_TL_F",
     "B_recon_M_F",
     "B_recon_medic_F",
@@ -192,7 +192,7 @@ _groupArray_BLU_F_BUS_reconSquad = [
 ];
 
 // Recon Team (Infantry)
-_groupArray_BLU_F_BUS_reconTeam = [
+private _groupArray_BLU_F_BUS_reconTeam = [
     "B_recon_TL_F",
     "B_recon_M_F",
     "B_recon_medic_F",
@@ -206,7 +206,7 @@ _groupArray_BLU_F_BUS_reconTeam = [
 //=======================================================================================================//
 
 // Recon Support Team (EOD, Infantry)
-_groupArray_BLU_F_BUS_recon_EOD = [
+private _groupArray_BLU_F_BUS_recon_EOD = [
     "B_recon_TL_F",
     "B_recon_exp_F",
     "B_recon_exp_F",

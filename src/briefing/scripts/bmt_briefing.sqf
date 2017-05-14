@@ -21,21 +21,18 @@ if (!isDedicated && (isNull player)) then {
     waitUntil {sleep 0.1; !isNull player};
 };
 
-// Variable declarations.
-private ["_unitFaction", "_recognised"];
-
 // Wait until output debug control variable is initialised.
 waitUntil {!isNil "bmt_param_debugOutput"};
 
 // Identify which faction the unit belongs to.
-_unitFaction = toLower (faction player);
+private _unitFaction = toLower (faction player);
 
 // Use leader faction if unit's faction is different.
 if (_unitFaction != toLower (faction (leader group player))) then {
     _unitFaction = toLower (faction (leader group player));
 };
 
-_recognised = true;
+private _recognised = true;
 
 // Briefing for the Administrator.
 if (serverCommandAvailable "#kick") then {

@@ -15,15 +15,19 @@
 
 // Variable declarations.
 params [["_unit", objNull]];
-private["_unitOptions", "_unitRole", "_longRangeRadio", "_shortRangeRadio", "_riflemanRadio", "_objectsBackpack"];
 
-_unitOptions = _unit getVariable ["bmt_var_configEquipment", "nil"];
+private _unitOptions = _unit getVariable ["bmt_var_configEquipment", "nil"];
 
+private _unitRole = "";
 if ((typeName _unitOptions) == "STRING") then {
     _unitRole = _unitOptions;
 } else {
     _unitRole = _unitOptions select 0; // First entry must always be the unit role
 };
+
+private _longRangeRadio = objNull;
+private _shortRangeRadio = objNull;
+private _riflemanRadio = objNull;
 
 // Assign radios depending on unit's side.
 switch ((side _unit)) do {
@@ -65,7 +69,7 @@ if (!isNil "_unitRole") then {
 
     // Add long range radios and all the objects that where originally in the backpack.
     if( _unitRole in bmt_array_longRangeRadio ) then {
-        _objectsBackpack = backpackItems player;
+        private  _objectsBackpack = backpackItems player;
         removeBackpack _unit;
         _unit addBackpack _longRangeRadio;
         {

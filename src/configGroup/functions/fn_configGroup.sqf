@@ -19,14 +19,13 @@
 //=======================================================================================================//
 
 params [["_groupName", nil], ["_subgroupIndex", -1], "_unit"];
-private["_group"];
 
 // Save unit's group in order to being able to reference it later.
 _unit setVariable ["bmt_var_unitGroup", [_groupName, _subgroupIndex], true];
 
 // Configure chat if the group is defined.
 if (!isNil "_groupName") then {
-    _group = group _unit;
+    private _group = group _unit;
     if (_subgroupIndex != 0) then {
         _group setGroupId [format["%1-%2", _groupName, _subgroupIndex], "GroupColor0"];
     } else {

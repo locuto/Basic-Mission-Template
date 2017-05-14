@@ -14,8 +14,9 @@
 //=======================================================================================================//
 
 params ["_unit", "_operation", ["_amount", 1]];
-private ["_numRespawns", "_pos"];
 
+private "_pos";
+private _numRespawns = 0;
 switch (bmt_param_respawn_tickets) do {
     case 0: {
         switch (side _unit): {

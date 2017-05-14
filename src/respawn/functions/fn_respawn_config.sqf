@@ -12,11 +12,10 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-private ["_numRespawns", "_pos"];
-
 // The player is not dead.
 player setVariable ["bmt_var_playerAlive", true, true];
 
+private "_numRespawns";
 switch (bmt_param_respawn_numRespawns) do {
 
     // Unlimited amount of respawns.
@@ -40,6 +39,7 @@ switch (bmt_param_respawn_tickets) do {
         if (bmt_param_debugOutput == 1) then {
             player sidechat format ["DEBUG (fn_respawn_config.sqf): Assigning respawn for side %1.", side player];
         };
+        private "_pos";
         switch (side player) do {
             case west:       { _pos = 0; };
             case east:       { _pos = 1; };

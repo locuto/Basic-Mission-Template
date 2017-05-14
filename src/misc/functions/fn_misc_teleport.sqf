@@ -14,7 +14,7 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-params["_object","_marker", ["_altitude",0.0], "_direction"];
+params ["_object","_marker", ["_altitude",0.0], "_direction"];
 
 _object setposatl [getmarkerpos _marker select 0,getmarkerpos _marker select 1, _altitude];
 

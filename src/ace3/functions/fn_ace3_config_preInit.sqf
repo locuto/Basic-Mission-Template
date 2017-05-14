@@ -13,9 +13,7 @@
 if (!bmt_mod_ace3) exitWith {};
 if (!isServer) exitWith {};
 
-private["_moduleError"];
-
-_moduleError = false;
+private _moduleError = false;
 
 // Define ACE variables manually using ACE_common_fnc_setSetting function:
 //  ["setting_name"], Value, forceSetting(bool), broadcastSetting(bool)] ACE_common_fnc_setSetting

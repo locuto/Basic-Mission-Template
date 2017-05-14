@@ -12,27 +12,25 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-private["_radioList", "_nameList", "_presetList", "_frequencyList", "_radio", "_presetName", "_name", "_channelName", "_channel", "_presetData"];
-
-_radioList = ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"];
-_nameList = ["label", "description", "name"];
-_presetList = ["default2","default3","default4"];
+private _radioList = ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"];
+private _nameList = ["label", "description", "name"];
+private _presetList = ["default2","default3","default4"];
 
 if (bmt_acre2_riflemanRadio == "ACRE_SEM52SL" || bmt_acre2_shortRangeRadio == "ACRE_SEM52SL" || bmt_acre2_longRangeRadio == "ACRE_SEM52SL") then {
     _radioList pushBack "ACRE_SEM52SL";
 };
 
 {
-    _radio = _x;
-    _name = _nameList select _forEachIndex;
+    private _radio = _x;
+    private _name = _nameList select _forEachIndex;
     {
-        _presetName = _x;
-        _channel = 1;
+        private _presetName = _x;
+        private _channel = 1;
         {
-            _channelName = _x;
-            _frequencyList = bmt_array_frequenciesShortRange select _forEachIndex;
+            private _channelName = _x;
+            private _frequencyList = bmt_array_frequenciesShortRange select _forEachIndex;
             {
-                _channelFrequency = _frequencyList select _forEachIndex;
+                private _channelFrequency = _frequencyList select _forEachIndex;
                 if (_radio == "ACRE_SEM52SL") then {
                     if (_channel < 12) then {
                         if ((_channelFrequency < 46.000) OR (_channelFrequency > 65.975)) then {
