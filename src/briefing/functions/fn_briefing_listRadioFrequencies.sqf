@@ -11,38 +11,43 @@
 // Changes:  1.0 (2016/12/17) First public version.                                                      //
 //=======================================================================================================//
 
-private _shortRangeFrequencies = ""; private _longRangeFrequencies = "";
-private _channel = 1; private _block = 1;
-{
-    private _teamList = _x;
-    private _frequencySRList = bmt_array_frequenciesShortRange select _forEachIndex;
-    private _frequencyLRList = bmt_array_frequenciesLongRange select _forEachIndex;
-
+private _radioFrequencies = "";
+if (bmt_param_acre2_distributeRadios == 1) then {
+    private _shortRangeFrequencies = ""; private _longRangeFrequencies = "";
+    private _channel = 1; private _block = 1;
     {
-        private _frequency = _frequencySRList select _forEachIndex;
-        private _team = _teamList select _forEachIndex;
-        if (_forEachIndex == 0) then {
-            _shortRangeFrequencies = _shortRangeFrequencies + format ["<font color='#00FFFF'>%1:</font> %2 MHz.", _team, _frequency];
-        } else {
-            _shortRangeFrequencies = _shortRangeFrequencies + format ["     <font color='#00FFFF'>%1:</font> %2 MHz.", _team, _frequency];
-        };
+        private _teamList = _x;
+        private _frequencySRList = bmt_array_frequenciesShortRange select _forEachIndex;
+        private _frequencyLRList = bmt_array_frequenciesLongRange select _forEachIndex;
 
-        if (bmt_mod_acre2) then {
-            _shortRangeFrequencies =  _shortRangeFrequencies + format [" AN/PRC 343 on block %1 channel %2.<br/>", _block, _channel];
-        } else {
-            _shortRangeFrequencies =  _shortRangeFrequencies + ".<br/>";
-        };
+        {
+            private _frequency = _frequencySRList select _forEachIndex;
+            private _team = _teamList select _forEachIndex;
+            if (_forEachIndex == 0) then {
+                _shortRangeFrequencies = _shortRangeFrequencies + format ["<font color='#00FFFF'>%1:</font> %2 MHz.", _team, _frequency];
+            } else {
+                _shortRangeFrequencies = _shortRangeFrequencies + format ["     <font color='#00FFFF'>%1:</font> %2 MHz.", _team, _frequency];
+            };
 
-        _channel = _channel + 1;
-        if (_channel > 16) then {
-            _channel = 1; _block = _block + 1;
-        };
-    } forEach _teamList;
-    _shortRangeFrequencies = _shortRangeFrequencies + "<br/>";
+            if (bmt_mod_acre2) then {
+                _shortRangeFrequencies =  _shortRangeFrequencies + format [" AN/PRC 343 on block %1 channel %2.<br/>", _block, _channel];
+            } else {
+                _shortRangeFrequencies =  _shortRangeFrequencies + ".<br/>";
+            };
 
-    _longRangeFrequencies = _longRangeFrequencies + format ["<font color='#00FFFF'>%1:</font> %2 MHz.<br/>", _teamList select 0, _frequencyLRList select 0];
-} forEach bmt_array_groups;
+            _channel = _channel + 1;
+            if (_channel > 16) then {
+                _channel = 1; _block = _block + 1;
+            };
+        } forEach _teamList;
+        _shortRangeFrequencies = _shortRangeFrequencies + "<br/>";
 
-private _radioFrequencies = format ["<font color='#FF0000' size='18'>Short Range Radios</font><br/><br/>%1<font color='#FF0000' size='18'>Long Range Radios</font><br/><br/>%2", _shortRangeFrequencies, _longRangeFrequencies];
+        _longRangeFrequencies = _longRangeFrequencies + format ["<font color='#00FFFF'>%1:</font> %2 MHz.<br/>", _teamList select 0, _frequencyLRList select 0];
+    } forEach bmt_array_groups;
+
+    _radioFrequencies = format ["<font color='#FF0000' size='18'>Short Range Radios</font><br/><br/>%1<font color='#FF0000' size='18'>Long Range Radios</font><br/><br/>%2", _shortRangeFrequencies, _longRangeFrequencies];
+} else {
+    _radioFrequencies = format ["No radios are assigned"];
+};
 
 _radioFrequencies

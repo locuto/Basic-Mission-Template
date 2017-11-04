@@ -37,7 +37,9 @@ private _quotes = [
 private _missionName = getText (missionConfigFile >> "onLoadName");
 private _introText = selectRandom _quotes;
 private _vehicleName = groupID (group player) + ": " + name player;
-private _animationList = nil;
+private _dateAndTime = "default";  // Date and time will be taken from mission configuration. This is only useful
+                                   // for Vietnam or WWII missions.
+private _animationList = [];
 
 // Identify which faction the unit belongs to.
 private _unitFaction = toLower (faction player);
@@ -181,6 +183,15 @@ switch (_unitFaction) do {
         _missionLocation = "Location"; _uavMarker = "marker"; _uavMarkerType = [];
     };
 
+    //====================================================================================================//
+    // Faces of War.                                                                                      //
+    //====================================================================================================//
+
+    // Briefing for United States Marine Corps faction.
+    case "fow_usmc": {
+        _missionLocation = "Location"; _uavMarker = "marker"; _uavMarkerType = [];
+    };
+
     // Unrecognised faction.
     default {
         _recognised = false;
@@ -194,7 +205,7 @@ if (_recognised) then {
     if (alive player) then {
         switch (_introType) do {
             case "blackScreen": {
-                [_missionName, _missionLocation, _introText] execVM "src\intro\scripts\bmt_intro_blackScreen_typeText.sqf";
+                [_missionName, _missionLocation, _introText, _dateAndTime] execVM "src\intro\scripts\bmt_intro_blackScreen_typeText.sqf";
             };
 
             case "uavFeed": {
@@ -202,7 +213,7 @@ if (_recognised) then {
             };
 
             case "playerCamera": {
-                [_missionName, _missionLocation, _vehicleName, false] execVM "src\intro\scripts\bmt_intro_playerCamera.sqf";
+                [_missionName, _missionLocation, _vehicleName, false, _animationList, _dateAndTime] execVM "src\intro\scripts\bmt_intro_playerCamera.sqf";
             };
 
             default {

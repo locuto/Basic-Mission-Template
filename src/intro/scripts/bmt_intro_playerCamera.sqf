@@ -32,7 +32,7 @@
 // Changes: 1.0 (2016/11/22) First public version.                                                       //
 //=======================================================================================================//
 
-params ["_missionName", "_missionLocation", "_vehicleName", "_useNVG", ["_animation", nil]];
+params ["_missionName", "_missionLocation", "_vehicleName", "_useNVG", ["_animation", []], ["_date", "default"]];
 
 // Get date and time
 private _month = str (date select 1);
@@ -45,7 +45,9 @@ if (date select 2 < 10) then {_day = format ["0%1", str (date select 2)]};
 if (date select 3 < 10) then {_hour = format ["0%1", str (date select 3)]};
 if (date select 4 < 10) then {_minute = format ["0%1", str (date select 4)]};
 
-private _date = format ["%1:%2 - %3-%4-%5", _hour, _minute,  _day, _month, str (date select 0)];
+if (_date isEqualTo "default") then {
+    _date = format ["%1:%2 - %3-%4-%5", _hour, _minute,  _day, _month, str (date select 0)];
+};
 
 private _animationList = ["AmovPercMstpSrasWrflDnon_Salute", "c4coming2cdf_genericstani1", "c4coming2cdf_genericstani2", "c4coming2cdf_genericstani3", "c4coming2cdf_genericstani4"];
 
@@ -70,12 +72,17 @@ sleep 0.2;
 
 ("BIS_layerStatic" call BIS_fnc_rscLayer) cutRsc ["RscStatic", "PLAIN"];
 ("BIS_layerInterlacing" call BIS_fnc_rscLayer) cutRsc ["RscInterlacing", "PLAIN"];
-("BIS_fnc_blackOut" call BIS_fnc_rscLayer) cutText ["","PLAIN",10e10];
+("BIS_fnc_blackOut" call BIS_fnc_rscLayer) cutText ["", "PLAIN", 10e10];
 
 // Create the camera
-private _camera = "camera" camCreate (position player);
-_camera camSetTarget player;
-_camera camSetRelPos [0.0, 5.0, 1.5];
+private _target = vehicle player;
+private _camera = "camera" camCreate (position _target);
+_camera camSetTarget _target;
+if (_target == player) then {
+    _camera camSetRelPos [0.0, 5.0, 1.5];
+} else {
+    _camera camSetRelPos [10.0, 10.0, 5.0];
+};
 _camera camSetFov 0.5;
 showCinemaBorder false;
 camUseNVG _useNVG;
@@ -90,16 +97,20 @@ if (bmt_mod_ace3) then {
 // Disable simulation for all units during the black screen.
 {
     _x enableSimulation false;
-} forEach allUnits - [player];
+} forEach (allUnits - [player]);
 
-private "_selectedAnimation";
-if (!isNil "_animation") then {
-    _selectedAnimation = selectRandom _animation;
-} else {
-    _selectedAnimation = selectRandom _animationList;
+if (vehicle player == player) then {
+    private "_selectedAnimation";
+
+    if (_animation isEqualTo []) then {
+        _selectedAnimation = selectRandom _animationList;
+    } else {
+       _selectedAnimation = selectRandom _animation;
+    };
+
+    player switchMove _selectedAnimation;
 };
 
-player switchMove _selectedAnimation;
 
 // Vehicle name, mission location and, mission location, mission date and mission name.
 [
@@ -110,14 +121,18 @@ player switchMove _selectedAnimation;
     0, 0.83, 5, 3
 ] spawn BIS_fnc_dynamicText;
 
-waitUntil {missionNamespace getVariable ["bmt_var_init_preloadCompleted", false];};
+waitUntil {missionNamespace getVariable ["bmt_var_init_preloadCompleted", false]};
 sleep 4;
 
 // Terminate animation and music
 // Stop music and animations
 2 fadeMusic 0;
 sleep 2;
-player switchMove "AmovPercMstpSlowWrflDnon";
+
+if (vehicle player == player) then {
+    player switchMove "AmovPercMstpSlowWrflDnon";
+};
+
 playMusic "";
 
 // Restore music and ace_hearing.

@@ -69,18 +69,13 @@ class ace_frag_reflectionsEnabled {
     force = 1;
 };
 class ace_frag_maxTrack {
-    value = 500;
+    value = 10;
     typeName = "SCALAR";
     force = 1;
 };
 class ace_frag_maxTrackPerFrame {
-    value = 50;
+    value = 10;
     typeName = "SCALAR";
-    force = 1;
-};
-class ace_frag_enableDebugTrace {
-    value = 0;
-    typeName = "BOOL";
     force = 1;
 };
 class ace_gforces_enabledFor {
@@ -174,7 +169,7 @@ class ace_map_mapShowCursorCoordinates {
     force = 1;
 };
 class ace_map_defaultChannel {
-    value = 1;
+    value = -1;
     typeName = "SCALAR";
     force = 1;
 };
@@ -209,7 +204,7 @@ class ace_medical_increaseTrainingInLocations {
     force = 1;
 };
 class ace_medical_enableFor {
-    value = 1;
+    value = 0;
     typeName = "SCALAR";
     force = 1;
 };
@@ -349,7 +344,7 @@ class ace_medical_useLocation_PAK {
     force = 1;
 };
 class ace_medical_useLocation_SurgicalKit {
-    value = 3;
+    value = 0;
     typeName = "SCALAR";
     force = 1;
 };
@@ -399,7 +394,7 @@ class ace_medical_ai_enabledFor {
     force = 1;
 };
 class ace_medical_menu_allow {
-    value = 2;
+    value = 1;
     typeName = "SCALAR";
     force = 1;
 };
@@ -483,13 +478,33 @@ class ace_overpressure_distanceCoefficient {
     typeName = "SCALAR";
     force = 1;
 };
+class ace_quickmount_distance {
+    value = 3;
+    typeName = "SCALAR";
+    force = 1;
+};
+class ace_quickmount_speed {
+    value = 18;
+    typeName = "SCALAR";
+    force = 1;
+};
 class ace_rearm_level {
     value = 2;
     typeName = "SCALAR";
     force = 1;
 };
+class ace_rearm_supply {
+    value = 0;
+    typeName = "SCALAR";
+    force = 1;
+};
 class ace_refuel_rate {
     value = 10;
+    typeName = "SCALAR";
+    force = 1;
+};
+class ace_refuel_hoseLength {
+    value = 12;
     typeName = "SCALAR";
     force = 1;
 };
@@ -549,7 +564,7 @@ class ace_respawn_savePreDeathGear {
     force = 1;
 };
 class ace_respawn_removeDeadBodiesDisconnected {
-    value = 0;
+    value = 1;
     typeName = "BOOL";
     force = 1;
 };
@@ -574,7 +589,7 @@ class ace_scopes_correctZeroing {
     force = 1;
 };
 class ace_scopes_overwriteZeroRange {
-    value = 1;
+    value = 0;
     typeName = "BOOL";
     force = 1;
 };
@@ -604,7 +619,7 @@ class ace_scopes_deduceBarometricPressureFromTerrainAltitude {
     force = 1;
 };
 class ace_spectator_filterUnits {
-    value = 1;
+    value = 2;
     typeName = "SCALAR";
     force = 1;
 };
@@ -624,7 +639,7 @@ class ace_spectator_restrictVisions {
     force = 1;
 };
 class ace_switchunits_enableSwitchUnits {
-    value = 1;
+    value = 0;
     typeName = "BOOL";
     force = 1;
 };
@@ -669,7 +684,7 @@ class ace_vehiclelock_defaultLockpickStrength {
     force = 1;
 };
 class ace_vehiclelock_lockVehicleInventory {
-    value = 1;
+    value = 0;
     typeName = "BOOL";
     force = 1;
 };
@@ -853,6 +868,11 @@ class ace_cargo_enable {
     typeName = "BOOL";
     force = 1;
 };
+class ace_cargo_paradropTimeCoefficent {
+    value = 2.5;
+    typeName = "SCALAR";
+    force = 1;
+};
 class ace_explosives_requireSpecialist {
     value = 1;
     typeName = "BOOL";
@@ -893,12 +913,12 @@ class ace_hearing_autoAddEarplugsToUnits {
     typeName = "BOOL";
     force = 1;
 };
-class acex_headless_Enabled {
+class acex_headless_enabled {
     value = 0;
     typeName = "BOOL";
     force = 1;
 };
-class acex_headless_Delay {
+class acex_headless_delay {
     value = 15;
     typeName = "SCALAR";
     force = 1;
@@ -908,7 +928,7 @@ class acex_headless_endMission {
     typeName = "SCALAR";
     force = 1;
 };
-class acex_headless_Log {
+class acex_headless_log {
     value = 0;
     typeName = "BOOL";
     force = 1;
@@ -929,7 +949,7 @@ class ace_advanced_ballistics_simulateForGroupMembers {
     force = 1;
 };
 class ace_advanced_ballistics_simulateForEveryone {
-    value = 1;
+    value = 0;
     typeName = "BOOL";
     force = 1;
 };
@@ -954,7 +974,7 @@ class ace_advanced_ballistics_bulletTraceEnabled {
     force = 1;
 };
 class ace_advanced_ballistics_simulationInterval {
-    value = 0;
+    value = 0.05;
     typeName = "SCALAR";
     force = 1;
 };

@@ -18,7 +18,7 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-params [["_groupName", nil], ["_subgroupIndex", -1], "_unit"];
+params [["_groupName", nil], ["_subgroupIndex", 0], "_unit"];
 
 // Save unit's group in order to being able to reference it later.
 _unit setVariable ["bmt_var_unitGroup", [_groupName, _subgroupIndex], true];
@@ -26,11 +26,11 @@ _unit setVariable ["bmt_var_unitGroup", [_groupName, _subgroupIndex], true];
 // Configure chat if the group is defined.
 if (!isNil "_groupName") then {
     private _group = group _unit;
-    if (_subgroupIndex != 0) then {
-        _group setGroupId [format["%1-%2", _groupName, _subgroupIndex], "GroupColor0"];
-    } else {
-      _group setGroupId [format["%1", _groupName], "GroupColor0"];
-    };
+    {
+        if (_groupName isEqualTo (_x select 0)) exitWith {
+            _group setGroupId [_x select _subgroupIndex, "GroupColor0"];
+        };
+    } forEach bmt_array_groups;
 };
 
 //============================================= END OF FILE =============================================//

@@ -123,4 +123,15 @@ if (_unitFaction == "bwa3_faction" ) exitWith {
     };
 };
 
+// Languages for Faces of War: United States Marine Corps.
+if (_unitFaction == "fow_usmc" ) exitWith {
+
+    bmt_acre2_language_fow_usmc call acre_api_fnc_babelSetSpokenLanguages;
+    [bmt_acre2_language_fow_usmc select 0] call acre_api_fnc_babelSetSpeakingLanguage;
+    // DEBUG OUTPUT
+    if ( bmt_param_debugOutput == 1 ) then {
+        _unit sideChat format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_fow_usmc, _unitFaction];
+    };
+};
+
 //============================================= END OF FILE =============================================//

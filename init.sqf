@@ -44,7 +44,7 @@ if ((bmt_param_useVAProfiles == 1) && hasInterface) then {
 };
 
 // Wait until player is initalised in order to execute the rest of the script.
-if (!isDedicated && (isNull player)) then {
+if (hasInterface && (isNull player)) then {
     waitUntil {sleep 0.1; !isNull player && player == player && time > 1};
 };
 
@@ -64,7 +64,6 @@ if (bmt_param_jip_enabled == 1) then {
 //    - Advanced Combat Radio Environment 2 (ACRE 2).                                                    //
 //    - Task Force Arrowhead Radio (TFAR).                                                               //
 //=======================================================================================================//
-
 // Configure TFAR if it is loaded (see file fn_core_processMods.sqf).
 if (bmt_mod_tfar) then {
     bmt_script_radio = [] execVM "src\tfar\scripts\bmt_tfar_init.sqf";
@@ -77,7 +76,9 @@ if (bmt_mod_acre2) then {
 
 if (hasInterface) then {
     bmt_script_preloadCompleted = [] spawn {
-        waitUntil { player getVariable ["bmt_var_init_configRadiosReady", false] };
+        if (bmt_mod_acre2 || bmt_mod_tfar) then {
+            waitUntil { player getVariable ["bmt_var_init_configRadiosReady", false] };
+        };
         missionNamespace setVariable ["bmt_var_init_preloadCompleted", true, false];
     };
 };

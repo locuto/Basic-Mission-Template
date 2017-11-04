@@ -21,7 +21,7 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-params ["_missionName", "_missionLocation", "_introText"];
+params ["_missionName", "_missionLocation", "_introText", ["_dateAndTime", "default"]];
 
 // Show a black screen.
 titleCut ["", "BLACK FADED", 999];
@@ -42,11 +42,15 @@ titleFadeOut 5;
     _x enableSimulation true;
 } forEach allUnits;
 
+if (_dateAndTime isEqualTo "default") then {
+    _dateAndTime = ([([daytime] call BIS_fnc_TimeToString),0,4] call BIS_fnc_trimString) + " " + str(date select 2) + "." + str(date select 1) + "." + str(date select 0)
+};
+
 // Mision name, mission location and mission date.
 [
     [
         [_missionName,"<t color = '#F70D1A' align = 'right' shadow = '1' size = '1.2'>%1</t><br/>"],
-        [([([daytime] call BIS_fnc_TimeToString),0,4] call BIS_fnc_trimString) + " " + str(date select 2) + "." + str(date select 1) + "." + str(date select 0),"<t align = 'right' shadow = '1' size = '1.0'>%1</t><br/>"],
+        [_dateAndTime,"<t align = 'right' shadow = '1' size = '1.0'>%1</t><br/>"],
         [_missionLocation,"<t align = 'right' shadow = '1' size = '1.0'>%1</t>"]
     ],-safeZoneX,-safeZoneY
 ] spawn BIS_fnc_typeText;

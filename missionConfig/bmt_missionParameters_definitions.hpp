@@ -18,7 +18,7 @@
 //=======================================================================================================//
 #define BMT_ACE3_BALLISTICS 1 // 0 = Basic, 1 = Advanced ballistics.
 #define BMT_ACE3_MEDICAL    2 // 0 = Disabled, 1 = Basic medical system, 2 = Advanced medical system.
-#define BMT_ACE3_SPECTATOR  0 // 0 = BI (End Game), 1 = ACE 3 Spectator mode.
+#define BMT_ACE3_SPECTATOR  1 // 0 = BI (End Game), 1 = ACE 3 Spectator mode.
 #define BMT_ACE3_REVIVE     0 // 0 = Disabled, 1 = Players only, 2 = Players and AI.
 
 //=======================================================================================================//

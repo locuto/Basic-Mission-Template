@@ -185,6 +185,13 @@ switch (_unitFaction) do {
     // Equipment for German army "Bundeswehr" faction.
     case "bwa3_faction": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_bwa3_faction; };
 
+    //====================================================================================================//
+    // Faces of War.                                                                                      //
+    //====================================================================================================//
+
+    // Equipment for United States Marine Corps
+    case "fow_usmc": {  [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_fow_usmc; };
+
     default { _recognised = false; };
 };
 

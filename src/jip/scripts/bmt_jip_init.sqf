@@ -136,7 +136,7 @@ if (hasInterface) then {
                 if (local _x) then {
                     bmt_var_advancedFatigueIndex = _forEachIndex;
                 };
-            } forEach allPlayers - entities "HeadlessClient_F";
+            } forEach (allPlayers - entities "HeadlessClient_F");
         };
     };
 

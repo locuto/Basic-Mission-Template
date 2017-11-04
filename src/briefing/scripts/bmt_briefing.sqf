@@ -163,6 +163,15 @@ switch (_unitFaction) do {
         #include "..\..\..\missionConfig\briefing\scripts\bmt_briefing_bwa3_faction.sqf"
     };
 
+    //====================================================================================================//
+    // Faces of War.                                                                                      //
+    //====================================================================================================//
+
+    // Briefing for United States Marine Corps faction.
+    case "fow_usmc": {
+        #include "..\..\..\missionConfig\briefing\scripts\bmt_briefing_fow_usmc.sqf"
+    };
+
     default { _recognised = false; };
 };
 
