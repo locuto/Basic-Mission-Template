@@ -22,7 +22,6 @@
 //                  psg                     Platoon Sergeant                                             //
 //                  rto                     Platoon Radiotelephone Operator                              //
 //                  fo                      Forward Observer                                             //
-//                  jtac                    Joint Terminal Attack Controller                             //
 //                  me                      Platoon Medic                                                //
 //                  sl                      Squad Leader                                                 //
 //                  tl                      Team Leader                                                  //
@@ -118,6 +117,15 @@ if (_unitFaction == "fow_usmc") then {
     _unitInsignia = "";
 };
 
+// ACE 3 objects.
+if (bmt_mod_ace3) then {
+    #include "common\bmt_configEquipment_common_definitionsACE3.hpp"
+};
+
+// AGM objects.
+if (bmt_mod_agm) then {
+    #include "common\bmt_configEquipment_common_definitionsAGM.hpp"
+};
 
 // Remove all gear from a infantry unit.
 if (_isInfantry) then {
@@ -133,366 +141,158 @@ switch (_unitRole) do
 {
     // Platoon Leader.
     case "pl": {
-        _unit addHeadgear "fow_h_usmc_m1";
-        _unit forceAddUniform "fow_u_usmc_p41_01_private";
-        _unit addVest "fow_v_usmc_thompson_nco";
-        _unit addbackpack "fow_b_usmc_m1928";
-
-        _unit linkItem "fow_i_whistle";
-        _unit addweapon "LIB_Binocular_GER";
-        _unit linkItem "ItemMap";
-        _unit linkItem "ItemCompass";
-        _unit linkItem "ItemWatch";
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_Flashlight_MX991",1];
-        (uniformContainer _unit) addItemCargoGlobal ["fow_i_whistle",1];
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_EarPlugs",1];
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_quikclot",8];
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_tourniquet", 2];
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_30Rnd_45acp",4];
-
-        _unit addWeapon "fow_w_m1a1_thompson";
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_e_mk2",1];
-
-        (vestContainer _unit) addMagazineCargoGlobal ["ACE_HandFlare_Red",1];
-
-        (vestContainer _unit) addMagazineCargoGlobal ["SmokeShellRed",2];
-        (vestContainer _unit) addMagazineCargoGlobal ["LIB_1Rnd_flare_white",4];
-        (uniformContainer _unit) addMagazineCargoGlobal ["fow_7Rnd_45acp",3];
-        _unit addWeapon "fow_w_m1911";
-		
-		(unitBackpack _unit) addItemCargoGlobal ["ACE_EntrenchingTool",1];
-        (unitBackpack _unit) addItemCargoGlobal ["fow_30Rnd_45acp_T",3];
-		(unitBackpack _unit) addItemCargoGlobal ["LIB_FLARE_PISTOL",1];
+        #include "fow_usmc\bmt_pl_platoonLeader.sqf"
     };
 
     // Platoon Sergeant.
     case "psg": {
-
+         #include "fow_usmc\bmt_psg_platoonSergeant.sqf"
     };
 
     // Platoon Radiotelephone Operator.
     case "rto": {
-
+       #include "fow_usmc\bmt_rto_platoonRadiotelephoneOperator.sqf"
     };
 
     // Forward Observer.
     case "fo": {
-
-    };
-
-    // Forward Observer.
-    case "jtac": {
-
+        #include "fow_usmc\bmt_fo_forwardObserver.sqf"
     };
 
     // Platoon Medic.
     case "me": {
-        _unit addHeadgear "fow_h_usmc_m1";
-        _unit forceAddUniform "fow_u_usmc_p41_01_private";
-        _unit addVest "fow_v_us_medic";
-        _unit addbackpack "csa38_GeMedicbag";
-
-        //_unit addGoggles "G_LIB_GER_Gloves1";
-        _unit linkItem "ItemWatch";
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_EarPlugs", 1];
-		
-		(vestContainer _unit) addMagazineCargoGlobal ["fow_15Rnd_762x33", 6];
-        _unit addWeapon "fow_w_m1_carbine";
-
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_BodyBag", 2];
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_packingbandage", 15];
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_elasticBandage", 15];
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_quikclot", 15];
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_morphine", 10];
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_epinephrine", 10];
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_tourniquet", 5];
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_salineiv_500", 15];
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_plasmaiv_500", 15];
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_atropine", 10];
-
-        (vestContainer _unit) addMagazineCargoGlobal ["SmokeShell", 2];
-        (vestContainer _unit) addMagazineCargoGlobal ["SmokeShellGreen", 2];
+        #include "fow_usmc\bmt_me_platoonMedic.sqf"
     };
 
     // Squad Leader.
     case "sl": {
-        _unit addHeadgear "fow_h_usmc_m1";
-        _unit forceAddUniform "fow_u_usmc_p41_01_private";
-        _unit addVest "fow_v_usmc_thompson_nco";
-        _unit addbackpack "fow_b_usmc_m1928";
-
-        _unit linkItem "fow_i_whistle";
-        _unit addweapon "LIB_Binocular_GER";
-        _unit linkItem "ItemMap";
-        _unit linkItem "ItemCompass";
-        _unit linkItem "ItemWatch";
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_Flashlight_MX991", 1];
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_EarPlugs", 1];
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_quikclot", 8];
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_tourniquet", 2];
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_30Rnd_45acp", 4];
-        _unit addWeapon "fow_w_m1a1_thompson";
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_e_mk2", 2];
-        (vestContainer _unit) addMagazineCargoGlobal ["SmokeShell", 2];
-
-        (uniformContainer _unit) addMagazineCargoGlobal ["fow_7Rnd_45acp",3];
-        _unit addWeapon "fow_w_m1911";
-
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_EntrenchingTool",1];
-        (unitBackpack _unit) addItemCargoGlobal ["fow_30Rnd_45acp_T",3];
+        #include "fow_usmc\bmt_sl_squadLeader.sqf"
     };
 
     // Team leader.
     case "tl": {
-        _unit addHeadgear "fow_h_usmc_m1";
-        _unit forceAddUniform "fow_u_usmc_p41_01_private";
-        _unit addVest "fow_v_usmc_garand";
-        _unit addbackpack "fow_b_usmc_m1928";
-
-        _unit linkItem "fow_i_whistle";
-        _unit addweapon "LIB_Binocular_GER";
-        _unit linkItem "ItemCompass";
-        _unit linkItem "ItemWatch";
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_LIB_LadungPM", 1];
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_EarPlugs", 1];
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_quikclot", 8];
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_8Rnd_762x63", 6];
-        _unit addWeapon "fow_w_m1_garand";
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_e_mk2", 2];
-        (vestContainer _unit) addMagazineCargoGlobal ["SmokeShellRed", 2];
-
-        (uniformContainer _unit) addMagazineCargoGlobal ["fow_7Rnd_45acp",3];
-        _unit addWeapon "fow_w_m1911";
-
-        (unitBackpack _unit) addItemCargoGlobal ["LIB_Ladung_Small_MINE_mag",2];
-        (unitBackpack _unit) addItemCargoGlobal ["LIB_Ladung_Big_MINE_mag",3];
-        (unitBackpack _unit) addItemCargoGlobal ["fow_8Rnd_762x63",3];
+        #include "fow_usmc\bmt_tl_teamLeader.sqf"
     };
 
     // Rifleman.
     case "rfl": {
-        _unit addHeadgear "fow_h_usmc_m1";
-        _unit forceAddUniform "fow_u_usmc_p41_01_private";
-        _unit addVest "fow_v_usmc_garand";
-        _unit addbackpack "fow_b_usmc_m1928";
-
-        _unit linkItem "ItemCompass";
-        _unit linkItem "ItemWatch";
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_EarPlugs", 1];
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_quikclot", 8];
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_tourniquet", 2];
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_8Rnd_762x63", 6];
-        _unit addWeapon "fow_w_m1_garand";
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_e_mk2", 2];
-
-        (uniformContainer _unit) addMagazineCargoGlobal ["fow_7Rnd_45acp", 3];
-        _unit addWeapon "fow_w_m1911";
-
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_EntrenchingTool", 1];
-        (unitBackpack _unit) addItemCargoGlobal ["fow_8Rnd_762x63", 6];
+        #include "fow_usmc\bmt_rfl_rifleman.sqf"
     };
 
     // Rifleman with AT4.
     case "rflat": {
-
+        #include "fow_usmc\bmt_rflat_riflemanAntiTank.sqf"
     };
 
     // Grenadier.
     case "gr": {
-
+        #include "fow_usmc\bmt_gr_grenadier.sqf"
     };
 
     // Automatic Rifleman.
     case "ar": {
-        _unit addHeadgear "fow_h_usmc_m1";
-        _unit forceAddUniform "fow_u_usmc_p41_01_private";
-        _unit addVest "fow_v_usmc_garand";
-        _unit addbackpack "fow_b_usmc_m1928";
-
-        _unit linkItem "ItemCompass";
-        _unit linkItem "ItemWatch";
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_EarPlugs", 1];
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_quikclot", 8];
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_tourniquet", 2];
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_20Rnd_762x63", 6];
-        _unit addWeapon "fow_w_m1918a2_bak";
-		_unit addPrimaryWeaponItem "fow_w_acc_m1918a2_handle";
-        _unit addPrimaryWeaponItem "fow_w_acc_m1918a2_bipod";
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_e_mk2", 2];
-
-        (uniformContainer _unit) addMagazineCargoGlobal ["fow_7Rnd_45acp", 3];
-        _unit addWeapon "fow_w_m1911";
-
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_EntrenchingTool", 1];
-        (unitBackpack _unit) addItemCargoGlobal ["fow_20Rnd_762x63", 4];
+        #include "fow_usmc\bmt_ar_automaticRifleman.sqf"
     };
 
     // Assitant Automatic Rifleman.
     case "aar": {
-        _unit addHeadgear "fow_h_usmc_m1";
-        _unit forceAddUniform "fow_u_usmc_p41_01_private";
-        _unit addVest "fow_v_usmc_garand";
-        _unit addbackpack "fow_b_usmc_m1928";
-
-        _unit linkItem "ItemCompass";
-        _unit linkItem "ItemWatch";
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_EarPlugs", 1];
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_quikclot", 8];
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_tourniquet", 2];
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_8Rnd_762x63", 4];
-        _unit addWeapon "fow_w_m1_garand";
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_e_mk2", 2];
-        (vestContainer _unit) addMagazineCargoGlobal ["SmokeShell",2];
-
-        (uniformContainer _unit) addMagazineCargoGlobal ["fow_7Rnd_45acp", 3];
-        _unit addWeapon "fow_w_m1911";
-
-        (unitBackpack _unit) addMagazineCargoGlobal ["fow_20Rnd_762x63", 10];
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_EntrenchingTool", 1];
-        (unitBackpack _unit) addItemCargoGlobal ["fow_8Rnd_762x63", 6];
+        #include "fow_usmc\bmt_aar_assistantAutomaticRifleman.sqf"
     };
 
     // Designated Marksman.
     case "dm": {
-
+        #include "fow_usmc\bmt_dm_designatedMarksman.sqf"
     };
-
 
     // Machine Gunner.
     case "mg": {
-
+        #include "fow_usmc\bmt_mg_machineGunner.sqf"
     };
 
     // Assitant Machine Gunner.
     case "amg": {
-
+        #include "fow_usmc\bmt_amg_assistantMachineGunner.sqf"
     };
 
     // Anti-Tank.
     case "at": {
-
+        #include "fow_usmc\bmt_at_antiTank.sqf"
     };
 
     // AT Ammo handler.
     case "aat": {
-
+        #include "fow_usmc\bmt_aat_assistantAntiTank.sqf"
     };
 
     // Anti-Aircraft gunner.
     case "aa": {
-
+        #include "fow_usmc\bmt_aa_antiAircraftGunner.sqf"
     };
 
     // Anti-Aircraft Assitant.
     case "aaa": {
-
+        #include "fow_usmc\bmt_aaa_assistantAntiAircraftGunner.sqf"
     };
 
     // Engineer.
     case "en": {
-
+        #include "fow_usmc\bmt_en_engineer.sqf"
     };
 
     // Explosives Specialist.
     case "exp": {
-
+        #include "fow_usmc\bmt_exp_explosivesSpecialist.sqf"
     };
 
     // Sniper.
     case "sn": {
-
+        #include "fow_usmc\bmt_sn_sniper.sqf"
     };
 
     // Spotter.
     case "sp": {
-
+        #include "fow_usmc\bmt_sp_spotter.sqf"
     };
 
     // Diver Squad Leader.
     case "divsl": {
-
+        #include "fow_usmc\bmt_divsl_diverSquadLeader.sqf"
     };
 
     // Diver Medic.
     case "divme": {
-
+        #include "fow_usmc\bmt_divme_diverMedic.sqf"
     };
 
     // Diver Explosives Specialist.
     case "divexp": {
+        #include "fow_usmc\bmt_divexp_diverExplosivesSpecialist.sqf"
     };
 
     // Diver.
     case "div": {
+        #include "fow_usmc\bmt_div_diver.sqf"
     };
 
     // Helicopter pilot.
     case "hplt": {
-
+        #include "fow_usmc\bmt_hplt_helicopterPilot.sqf"
     };
 
     // Jet pilot.
     case "jplt": {
-
+        #include "fow_usmc\bmt_jplt_jetPilot.sqf"
     };
 
     // Combat crew
     case "ccrw": {
-
+        #include "fow_usmc\bmt_ccrw_combatCrew.sqf"
     };
 
 
     default {
         _unit sideChat format ["DEBUG (bmt_configEquipment_fow_usmc.sqf): unit role %1 is not defined. Defaulting to rifleman.", _unitRole];
-
-        _unit addHeadgear "fow_h_usmc_m1";
-        _unit forceAddUniform "fow_u_usmc_p41_01_private";
-        _unit addVest "fow_v_usmc_garand";
-        _unit addbackpack "fow_b_usmc_m1928";
-
-        _unit linkItem "ItemCompass";
-        _unit linkItem "ItemWatch";
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_EarPlugs", 1];
-
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_quikclot", 8];
-        (uniformContainer _unit) addItemCargoGlobal ["ACE_tourniquet", 2];
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_8Rnd_762x63", 6];
-        _unit addWeapon "fow_w_m1_garand";
-
-        (vestContainer _unit) addMagazineCargoGlobal ["fow_e_mk2", 2];
-
-        (uniformContainer _unit) addMagazineCargoGlobal ["fow_7Rnd_45acp", 3];
-        _unit addWeapon "fow_w_m1911";
-
-        (unitBackpack _unit) addItemCargoGlobal ["ACE_EntrenchingTool", 1];
-        (unitBackpack _unit) addItemCargoGlobal ["fow_8Rnd_762x63", 6];
+        #include "fow_usmc\bmt_rfl_rifleman.sqf"
     };
 };
 

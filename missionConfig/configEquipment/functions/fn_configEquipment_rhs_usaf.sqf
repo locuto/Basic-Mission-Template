@@ -204,154 +204,88 @@ if (_unitFaction == "rhs_faction_usmc_wd") then {
 };
 
 // Common uniforms.
-_uniformSN = "U_B_GhillieSuit";
-_uniformDIV = "U_B_Wetsuit";
-_uniformHPLT = "U_B_HeliPilotCoveralls";
-_uniformJPLT = "U_B_HeliPilotCoveralls";
+private _uniformSN = "U_B_GhillieSuit";
+private _uniformDIV = "U_B_Wetsuit";
+private _uniformHPLT = "U_B_HeliPilotCoveralls";
+private _uniformJPLT = "U_B_HeliPilotCoveralls";
 
 // Common vests.
-_vestDIV = "V_RebreatherB";
+private _vestDIV = "V_RebreatherB";
 
 // Common helmets.
-_helmetHPLT = "rhsusf_hgu56p_mask";
-_helmetJPLT = "rhs_jetpilot_usaf";
+private _helmetHPLT = "rhsusf_hgu56p_mask";
+private _helmetJPLT = "rhs_jetpilot_usaf";
 
 // Glasses.
-_glasses = "G_Tactical_Clear";
-_glassesDIV = "G_Diving";
+private _glasses = "G_Tactical_Clear";
+private _glassesDIV = "G_Diving";
 
 // Common backpacks.
-_backpackDIV = "B_AssaultPack_blk";
-_parachuteHPLT = "B_Parachute";
-_parachuteJPLT = "B_Parachute";
-_uavBackpack = "B_rhsusf_B_BACKPACK";
+private _backpackDIV = "B_AssaultPack_blk";
+private _parachuteHPLT = "B_Parachute";
+private _parachuteJPLT = "B_Parachute";
+private _uavBackpack = "B_rhsusf_B_BACKPACK";
 
 // Primary weapon.
-_pweapon = "rhs_weap_m4a1";
-_pweapon320 = "rhs_weap_m4a1_m320";
-_pweaponAR = "rhs_weap_m249_pip_S";
-_pweaponMG = "rhs_weap_m240B_CAP";
-_pweaponDM = "rhs_weap_m14ebrri";
-_pweaponSN = "rhs_weap_XM2010_sa";
-_pweaponDIV = "arifle_SDAR_F";
+private _pweapon = "rhs_weap_m4a1";
+private _pweapon320 = "rhs_weap_m4a1_m320";
+private _pweaponAR = "rhs_weap_m249_pip_S";
+private _pweaponMG = "rhs_weap_m240B_CAP";
+private _pweaponDM = "rhs_weap_m14ebrri";
+private _pweaponSN = "rhs_weap_XM2010_sa";
+private _pweaponDIV = "arifle_SDAR_F";
 
 // Silencers.
-_pweaponSilencer = "rhsusf_acc_rotex5_grey";
-_pweaponSurefire = "rhsusf_acc_SF3P556";
-_pweaponSilencerSN = "rhsusf_acc_M2010S";
+private _pweaponSilencer = "rhsusf_acc_rotex5_grey";
+private _pweaponSurefire = "rhsusf_acc_SF3P556";
+private _pweaponSilencerSN = "rhsusf_acc_M2010S";
 
 // Accessories.
-_pweaponLaserLantern = "rhsusf_acc_anpeq15";
-_pweaponLaserLanternAR = "rhsusf_acc_anpeq15A";
-_pweaponLaserLanternSN = "rhsusf_acc_anpeq15side";
+private _pweaponLaserLantern = "rhsusf_acc_anpeq15";
+private _pweaponLaserLanternAR = "rhsusf_acc_anpeq15A";
+private _pweaponLaserLanternSN = "rhsusf_acc_anpeq15side";
 
 // Scopes.
-_pweaponScope = "rhsusf_acc_ACOG";
-_pweaponScopeAR = "rhsusf_acc_ELCAN";
-_pweaponScopeDM = "rhsusf_acc_LEUPOLDMK4";
-_pweaponScopeSN = "rhsusf_acc_LEUPOLDMK4_2";
+private _pweaponScope = "rhsusf_acc_ACOG";
+private _pweaponScopeAR = "rhsusf_acc_ELCAN";
+private _pweaponScopeDM = "rhsusf_acc_LEUPOLDMK4";
+private _pweaponScopeSN = "rhsusf_acc_LEUPOLDMK4_2";
 
 // Bipods.
-_pweaponBipodDM = "rhsusf_acc_harris_bipod";
-_pweaponBipodSN = "rhsusf_acc_harris_bipod";
+private _pweaponBipodDM = "rhsusf_acc_harris_bipod";
+private _pweaponBipodSN = "rhsusf_acc_harris_bipod";
 
 // AT/AA Launchers
-_pweaponLauncherRF = "rhs_weap_M136_hedp";
-_pweaponLauncherAT = "rhs_weap_fgm148";
-_pweaponLauncherAA = "rhs_weap_fim92";
+private _pweaponLauncherRF = "rhs_weap_M136_hedp";
+private _pweaponLauncherAT = "rhs_weap_fgm148";
+private _pweaponLauncherAA = "rhs_weap_fim92";
 
 // Pistols.
-_pistol = "rhsusf_weap_m1911a1";
+private _pistol = "rhsusf_weap_m1911a1";
 
 // Objects.
-_gps = "ItemGPS";
-_watch = "ItemWatch";
-_map = "ItemMap";
-_compass = "ItemCompass";
-_radio = "ItemRadio";
-_uavTerminal = "B_UavTerminal";
+private _gps = "ItemGPS";
+private _watch = "ItemWatch";
+private _map = "ItemMap";
+private _compass = "ItemCompass";
+private _radio = "ItemRadio";
+private _uavTerminal = "B_UavTerminal";
 
 // Binoculars.
-_binoculars = "lerca_1200_tan";
+private _binoculars = "lerca_1200_tan";
 
 // Night vision.
-_nightVision = "rhsusf_ANPVS_14";
+private _nightVision = "rhsusf_ANPVS_14";
 
+// ACE 3 objects.
 if (bmt_mod_ace3) then {
-    //===================================================================================================//
-    // ACE 3 objects.                                                                                    //
-    //===================================================================================================//
-
-    // General.
-    _uavBattery = "ACE_UAVBattery";
-    _cableTie = "ACE_CableTie";
-    _mapTools = "ACE_MapTools";
-    _microDAGR = "ACE_microDAGR";
-    _earPlugs = "ACE_EarPlugs";
-    _vectorIV = "ACE_Vector";
-    _flashlight = selectRandom ["ACE_Flashlight_MX991", "ACE_Flashlight_KSF1", "ACE_Flashlight_XL50"];
-
-    // Objects for designated marksman/sniper/observer.
-    _atragmx = "ACE_ATragMX";
-    _kestrel = "ACE_Kestrel4500";
-
-    // Explosives related objects.
-    _clacker = "ACE_Clacker";
-    _clackerm26 = "ACE_M26_Clacker";
-    _defusalKit = "ACE_DefusalKit";
-    _cellphone = "ACE_Cellphone";
-
-    // Medical ojects: Drugs.
-    _atropine = "ACE_atropine";
-    _epinephrine = "ACE_epinephrine";
-    _morphine = "ACE_morphine";
-
-    // Medical ojects: Bandages.
-    _bandage = "ACE_fieldDressing";
-    _elasticBandage = "ACE_elasticBandage";
-    _quickClot = "ACE_quikclot";
-    _packingBandage = "ACE_packingBandage";
-
-    // Medical ojects: Bags.
-    _bloodBag250 = "ACE_bloodIV_250";
-    _bloodBag500 = "ACE_bloodIV_250";
-    _bloodBag1000 = "ACE_bloodIV_250";
-    _plasmaBag250 = "ACE_plasmaIV_250";
-    _plasmaBag500 = "ACE_plasmaIV_500";
-    _plasmaBag1000 = "ACE_plasmaIV";
-    _salineBag250 = "ACE_salineIV_250";
-    _salineBag500 = "ACE_salineIV_500";
-    _salineBag1000 = "ACE_salineIV_1000";
-
-    // Medical ojects: Kits.
-    _personalAidKid= "ACE_personalAidKit";
-    _surgicalKit = "ACE_surgicalKit";
-
-    // Medical ojects: Tourniquets.
-    _tourniquet = "ACE_tourniquet";
-
-    // Parachutes.
-    _parachuteJPLT = "ACE_NonSteerableParachute";
+    #include "common\bmt_configEquipment_common_definitionsACE3.hpp"
 };
 
+// AGM objects.
 if (bmt_mod_agm) then {
-
-    //===================================================================================================//
-    // AGM objects.                                                                                      //
-    //===================================================================================================//
-    _earPlugs = "AGM_EarBuds";
-    _morphine = "AGM_Morphine";
-    _epinephrine = "AGM_Epipen";
-    _bandage = "AGM_Bandage";
-    _bloodBag500 = "AGM_Bloodbag";
-    _cableTie = "AGM_CableTie";
-    _vectorIV = "AGM_Vector";
-    _mapTools = "AGM_MapTools";
-    _kestrel = "AGM_ItemKestrel";
-    _clacker = "AGM_Clacker";
-    _defusalKit = "AGM_DefusalKit";
+    #include "common\bmt_configEquipment_common_definitionsAGM.hpp"
 };
-
 
 // Remove all gear from a infantry unit.
 if (_isInfantry) then {
@@ -367,14 +301,14 @@ if (_isInfantry) then {
     _unit addGoggles _glasses;
 
     if (bmt_mod_ace3 or bmt_mod_agm) then {
-        (uniformContainer _unit) addItemCargoGlobal [_earPlugs,1];
-        (uniformContainer _unit) addItemCargoGlobal [_morphine,1];
-        (uniformContainer _unit) addItemCargoGlobal [_epinephrine,1];
+        (uniformContainer _unit) addItemCargoGlobal [_earPlugs, 1];
+        (uniformContainer _unit) addItemCargoGlobal [_morphine, 1];
+        (uniformContainer _unit) addItemCargoGlobal [_epinephrine, 1];
         if (bmt_var_equipFlashlight) then {
             (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
         };
     };
-    (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP",2];
+    (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP", 2];
 
     // Secondary weapon.
     _unit addWeapon _pistol;
@@ -392,1846 +326,175 @@ switch (_unitRole) do
 {
     // Platoon Leader.
     case "pl": {
-        // Vest and Backpack.
-        _unit addVest _vestSL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-            (vestContainer _unit) addItemCargoGlobal [_mapTools,1];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_M433_HEDP",2];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",2];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m714_White",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-
-        // Primary weapon
-        _unit addWeapon _pweapon320;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Objects.
-        if (bmt_mod_ace3) then {
-            (vestContainer _unit) addItemCargoGlobal [_microDAGR,1];
-        } else {
-            _unit linkItem _gps;
-        };
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
-
-        // Binoculars.
-        _unit addWeapon _vectorIV;
+        #include "rhs_usaf\bmt_pl_platoonLeader.sqf"
     };
 
     // Platoon Sergeant.
     case "psg": {
-        // Vest and Backpack.
-        _unit addVest _vestSL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-            (vestContainer _unit) addItemCargoGlobal [_mapTools,1];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_M433_HEDP",2];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",2];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m714_White",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-
-        // Primary weapon
-        _unit addWeapon _pweapon320;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
-
-        // Objects.
-        if (bmt_mod_ace3) then {
-            (vestContainer _unit) addItemCargoGlobal [_microDAGR,1];
-        } else {
-            _unit linkItem _gps;
-        };
-
-        // Binoculars.
-        _unit addWeapon _vectorIV;
+         #include "rhs_usaf\bmt_psg_platoonSergeant.sqf"
     };
 
     // Platoon Radiotelephone Operator.
     case "rto": {
-        // Vest and Backpack.
-        _unit addVest _vestSL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-            (vestContainer _unit) addItemCargoGlobal [_mapTools,1];
-            if (bmt_mod_ace3) then {
-                (vestContainer _unit) addItemCargoGlobal [_microDAGR,1];
-            };
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_M433_HEDP",2];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",2];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m714_White",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+       #include "rhs_usaf\bmt_rto_platoonRadiotelephoneOperator.sqf"
     };
 
     // Forward Observer.
     case "fo": {
-        // Vest and Backpack.
-        _unit addVest _vestSL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-            (vestContainer _unit) addItemCargoGlobal [_mapTools,1];
-            if (bmt_mod_ace3) then {
-                (vestContainer _unit) addItemCargoGlobal [_microDAGR,1];
-            };
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_M433_HEDP",2];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",2];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m714_White",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
-
-        // Objects.
-        _unit linkItem _uavTerminal;
+        #include "rhs_usaf\bmt_fo_forwardObserver.sqf"
     };
 
     // Joint Terminal Attack Controller.
-        case "jtac": {
-            // Vest and Backpack.
-            _unit addVest _vestSL;
-            _unit addBackpack _backpack;
-
-            // Items in the uniform.
-            (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-            (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-            (uniformContainer _unit) addMagazineCargoGlobal ["Laserbatteries",1];
-
-            // Items in the vest.
-            if (bmt_mod_ace3 or bmt_mod_agm) then {
-                (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-                (vestContainer _unit) addItemCargoGlobal [_mapTools,1];
-                if (bmt_mod_ace3) then {
-                    (vestContainer _unit) addItemCargoGlobal [_microDAGR,1];
-                };
-            };
-            (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-            (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-            (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m714_White",2];
-            (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-            (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",2];
-
-            // Items in the backpack.
-            if (bmt_mod_ace3 or bmt_mod_agm) then {
-                (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-                if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                    (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                    (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                    (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                    (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-                };
-            };
-
-            // Primary weapon
-            _unit addWeapon _pweapon;
-            _unit addPrimaryWeaponItem _pweaponSurefire;
-            _unit addPrimaryWeaponItem _pweaponLaserLantern;
-            _unit addPrimaryWeaponItem _pweaponScope;
-
-            // Night vision.
-            if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-                if (bmt_var_equipNightVision == 1) then {
-                    (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-                } else {
-                    _unit linkItem _nightVision;
-                };
-            };
-
-            // Objects.
-            _unit addWeapon "Laserdesignator";
-        };
+    case "jtac": {
+        #include "rhs_usaf\bmt_jtac_jointTerminalAttachController.sqf"
+    };
 
     // Platoon Medic.
     case "me": {
-        // Vest and Backpack.
-        _unit addVest _vestME;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3) then{
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",3];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_morphine,8];
-            (unitBackpack _unit) addItemCargoGlobal [_epinephrine,8];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_bandage,10];
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,10];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,10];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,8];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,5];
-                (unitBackpack _unit) addItemCargoGlobal [_atropine,8];
-                (unitBackpack _unit) addItemCargoGlobal [_surgicalKit,2];
-                (unitBackpack _unit) addItemCargoGlobal [_personalAidKid,2];
-                (unitBackpack _unit) addItemCargoGlobal [_salineBag500,6];
-            };
-
-            if( bmt_mod_agm or (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 1))) then {
-                (unitBackpack _unit) addItemCargoGlobal [_bandage,20];
-                (unitBackpack _unit) addItemCargoGlobal [_bloodBag500,2];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",2];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_me_platoonMedic.sqf"
     };
 
     // Squad Leader.
     case "sl": {
-        // Vest and Backpack.
-        _unit addVest _vestSL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-            (vestContainer _unit) addItemCargoGlobal [_mapTools,1];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_M433_HEDP",2];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",2];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m714_White",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-
-        // Primary weapon
-        _unit addWeapon _pweapon320;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Objects.
-        if (bmt_mod_ace3) then {
-            (vestContainer _unit) addItemCargoGlobal [_microDAGR,1];
-        } else {
-            _unit linkItem _gps;
-        };
-
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
-
-        // Binoculars.
-        _unit addWeapon _vectorIV;
+        #include "rhs_usaf\bmt_sl_squadLeader.sqf"
     };
 
     // Team leader.
     case "tl": {
-        // Vest and Backpack.
-        _unit addVest _vestTL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-            (vestContainer _unit) addItemCargoGlobal [_mapTools,1];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_M433_HEDP",2];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",2];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m714_White",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-
-        // Primary weapon
-        _unit addWeapon _pweapon320;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
-
-        // Binoculars.
-        _unit addWeapon _vectorIV;
+        #include "rhs_usaf\bmt_tl_teamLeader.sqf"
     };
 
     // Rifleman.
     case "rfl": {
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
+        #include "rhs_usaf\bmt_rfl_rifleman.sqf"
     };
 
     // Rifleman with AT4.
     case "rflat": {
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",2];
-        (unitBackpack _unit) addItemCargoGlobal ["rhs_m136_hedp_mag",1];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // AT4 launcher
-        _unit addWeapon _pweaponLauncherRF;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_rflat_riflemanAntiTank.sqf"
     };
 
     // Rifleman with UAV.
     case "rfluav": {
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _uavBackpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",2];
-        (unitBackpack _unit) addItemCargoGlobal ["rhs_m136_hedp_mag",1];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // AT4 launcher
-        _unit addWeapon _pweaponLauncherRF;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_rfluav_riflemanUAV.sqf"
     };
 
     // Grenadier.
     case "gr": {
-        // Vest and Backpack.
-        _unit addVest _vestGR;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_M433_HEDP",4];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",6];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_M433_HEDP",6];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m714_White",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_M433_HEDP",5];
-
-        // Primary weapon
-        _unit addWeapon _pweapon320;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_gr_grenadier.sqf"
     };
 
     // Automatic Rifleman.
     case "ar": {
-        // Vest and Backpack.
-        _unit addVest _vestAR;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_100Rnd_556x45_soft_pouch",2];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhsusf_100Rnd_556x45_soft_pouch",3];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",3];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhsusf_200Rnd_556x45_soft_pouch",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",1];
-
-        // Primary weapon
-        _unit addWeapon _pweaponAR;
-        _unit addPrimaryWeaponItem _pweaponLaserLanternAR;
-        _unit addPrimaryWeaponItem _pweaponScopeAR;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_ar_automaticRifleman.sqf"
     };
 
     // Assitant Automatic Rifleman.
     case "aar": {
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhsusf_200Rnd_556x45_soft_pouch",2];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
-
-        // Binoculars.
-        _unit addWeapon _binoculars;
+        #include "rhs_usaf\bmt_aar_assistantAutomaticRifleman.sqf"
     };
 
     // Designated Marksman.
     case "dm": {
-        // Vest and Backpack.
-        _unit addVest _vestDM;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_20Rnd_762x51_m118_special_Mag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-            (vestContainer _unit) addItemCargoGlobal [_kestrel,1];
-            if (bmt_mod_ace3) then {
-                (vestContainer _unit) addItemCargoGlobal [_atragmx,1];
-            };
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",3];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhsusf_20Rnd_762x51_m118_special_Mag",6];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhsusf_20Rnd_762x51_m118_special_Mag",5];
-
-        // Primary weapon
-        // Missing muzzle attachment
-        _unit addWeapon _pweaponDM;
-        _unit addPrimaryWeaponItem _pweaponLaserLanternSN;
-        _unit addPrimaryWeaponItem _pweaponScopeDM;
-        _unit addPrimaryWeaponItem _pweaponBipodDM;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_dm_designatedMarksman.sqf"
     };
-
 
     // Machine Gunner.
     case "mg": {
-        // Vest and Backpack.
-        _unit addVest _vestMG;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_100Rnd_762x51",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",3];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhsusf_100Rnd_762x51",2];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhsusf_100Rnd_762x51",2];
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
-
-        // Primary weapon
-        _unit addWeapon _pweaponMG;
-        _unit addPrimaryWeaponItem _pweaponScopeAR;
+        #include "rhs_usaf\bmt_mg_machineGunner.sqf"
     };
 
     // Assitant Machine Gunner.
     case "amg": {
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhsusf_100Rnd_762x51",2];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
-
-        // Binoculars.
-        _unit addWeapon _binoculars;
+        #include "rhs_usaf\bmt_amg_assistantMachineGunner.sqf"
     };
 
     // Anti-Tank.
     case "at": {
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_fgm148_magazine_AT",1];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Javelin.
-        _unit addWeapon _pweaponLauncherAT;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_at_antiTank.sqf"
     };
 
     // AT Ammo handler.
     case "aat": {
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_fgm148_magazine_AT",1];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_aat_assistantAntiTank.sqf"
     };
 
     // Anti-Aircraft gunner.
     case "aa": {
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_fim92_mag",1];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Stinger.
-        _unit addWeapon _pweaponLauncherAA;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_aa_antiAircraftGunner.sqf"
     };
 
     // Anti-Aircraft Assitant.
     case "aaa": {
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_fim92_mag",1];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_aaa_assistantAntiAircraftGunner.sqf"
     };
 
     // Engineer.
     case "en": {
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-        if (bmt_mod_ace3 or bmt_mod_agm) then{
-            (uniformContainer _unit) addItemCargoGlobal [_clacker,1];
-        };
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84", 1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 4];
-        (unitBackpack _unit) addItemCargoGlobal ["ToolKit", 1];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_en_engineer.sqf"
     };
 
     // Explosives Specialist.
     case "exp": {
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer, 1];
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (uniformContainer _unit) addItemCargoGlobal [_clacker, 1];
-        };
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage, 2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67", 2];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage, 2];
-            (unitBackpack _unit) addItemCargoGlobal [_defusalKit, 1];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage, 3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot, 3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage, 3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet, 1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84", 1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 4];
-        (unitBackpack _unit) addMagazineCargoGlobal ["DemoCharge_Remote_Mag", 3];
-        (unitBackpack _unit) addMagazineCargoGlobal ["SLAMDirectionalMine_Wire_Mag", 1];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_exp_explosivesSpecialist.sqf"
     };
 
     // Sniper.
     case "sn": {
-        // Uniforme, armilla i motxilla
-        removeUniform _unit;
-        _unit forceAddUniform _uniformSN;
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Helmet.
-        removeHeadgear _unit;
-        _unit addHeadgear _helmetSN;
-
-        // Items in the uniform.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (uniformContainer _unit) addItemCargoGlobal [_earPlugs,1];
-            (uniformContainer _unit) addItemCargoGlobal [_morphine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_epinephrine,1];
-            if (bmt_var_equipFlashlight) then {
-                (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
-            };
-        };
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencerSN,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_5Rnd_300winmag_xm2010",2];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP",2];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3) then {
-                (vestContainer _unit) addItemCargoGlobal [_microDAGR,1];
-                (vestContainer _unit) addItemCargoGlobal [_atragmx,1];
-            };
-            (vestContainer _unit) addItemCargoGlobal [_mapTools,1];
-            (vestContainer _unit) addItemCargoGlobal [_kestrel,1];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhsusf_5Rnd_300winmag_xm2010",5];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhsusf_5Rnd_300winmag_xm2010",5];
-
-        // Primary weapon
-        _unit addWeapon _pweaponSN;
-        _unit addPrimaryWeaponItem _pweaponLaserLanternSN;
-        _unit addPrimaryWeaponItem _pweaponScopeSN;
-        _unit addPrimaryWeaponItem _pweaponBipodSN;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_sn_sniper.sqf"
     };
 
     // Spotter.
     case "sp": {
-        // Uniforme, armilla i motxilla
-        removeUniform _unit;
-        _unit forceAddUniform _uniformSN;
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Helmet.
-        removeHeadgear _unit;
-        _unit addHeadgear _helmetSN;
-
-        // Items in the uniform.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (uniformContainer _unit) addItemCargoGlobal [_earPlugs,1];
-            (uniformContainer _unit) addItemCargoGlobal [_morphine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_epinephrine,1];
-            if (bmt_var_equipFlashlight) then {
-                (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
-            };
-        };
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP",2];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3) then {
-                (vestContainer _unit) addItemCargoGlobal [_microDAGR,1];
-                (vestContainer _unit) addItemCargoGlobal [_atragmx,1];
-            };
-            (vestContainer _unit) addItemCargoGlobal [_mapTools,1];
-            (vestContainer _unit) addItemCargoGlobal [_kestrel,1];
-        };
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Objects.
-        //_unit linkItem _gps;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
-
-        // Binoculars.
-        _unit addWeapon _vectorIV;
-
-
+        #include "rhs_usaf\bmt_sp_spotter.sqf"
     };
 
     // Diver Squad Leader.
     case "divsl": {
-        // Remove uniform, helmet and vest.
-        removeUniform _unit;
-        removeHeadgear _unit;
-        removeGoggles _unit;
-
-        // Uniform, vest and backpack.
-        _unit forceAddUniform _uniformDIV;
-        _unit addVest _vestDIV;
-        _unit addBackpack _backpackDIV;
-
-        // Items in the uniform.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (uniformContainer _unit) addItemCargoGlobal [_earPlugs,1];
-            (uniformContainer _unit) addItemCargoGlobal [_morphine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_epinephrine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_var_equipFlashlight) then {
-                (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
-            };
-        };
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP",4];
-        (uniformContainer _unit) addMagazineCargoGlobal ["20Rnd_556x45_UW_mag",3];
-
-        // Items in the vest.
-        // Items cannot be added to diving rebreather.
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-        (unitBackpack _unit) addMagazineCargoGlobal ["30Rnd_556x45_Stanag",7];
-        (unitBackpack _unit) addMagazineCargoGlobal ["20Rnd_556x45_UW_mag",4];
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-        };
-
-        // Glasses.
-        _unit addGoggles _glassesDIV;
-
-        // Primary weapon
-        _unit addWeapon _pweaponDIV;
-
-        // Objects.
-        if (bmt_mod_ace3) then {
-            (uniformContainer _unit) addItemCargoGlobal [_microDAGR,1];
-        } else {
-            _unit linkItem _gps;
-        };
-
-        // Binoculars.
-        _unit addWeapon _vectorIV;
+        #include "rhs_usaf\bmt_divsl_diverSquadLeader.sqf"
     };
 
     // Diver Medic.
     case "divme": {
-        // Remove uniform, helmet and vest.
-        removeUniform _unit;
-        removeHeadgear _unit;
-        removeGoggles _unit;
-
-        // Uniform, vest and backpack.
-        _unit forceAddUniform _uniformDIV;
-        _unit addVest _vestDIV;
-        _unit addBackpack _backpackDIV;
-
-        // Items in the uniform.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (uniformContainer _unit) addItemCargoGlobal [_earPlugs,1];
-            (uniformContainer _unit) addItemCargoGlobal [_morphine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_epinephrine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_var_equipFlashlight) then {
-                (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
-            };
-        };
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP",4];
-        (uniformContainer _unit) addMagazineCargoGlobal ["20Rnd_556x45_UW_mag",3];
-
-        // Items in the vest.
-        // Items cannot be added to diving rebreather.
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_morphine,8];
-            (unitBackpack _unit) addItemCargoGlobal [_epinephrine,8];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_bandage,8];
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,8];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,8];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,6];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,3];
-                (unitBackpack _unit) addItemCargoGlobal [_atropine,8];
-                (unitBackpack _unit) addItemCargoGlobal [_surgicalKit,2];
-                (unitBackpack _unit) addItemCargoGlobal [_personalAidKid,2];
-                (unitBackpack _unit) addItemCargoGlobal [_salineBag500,3];
-            };
-            if( bmt_mod_agm or (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 1))) then {
-                (unitBackpack _unit) addItemCargoGlobal [_bandage,15];
-                (unitBackpack _unit) addItemCargoGlobal [_bloodBag500,2];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m67",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["30Rnd_556x45_Stanag",3];
-        (unitBackpack _unit) addMagazineCargoGlobal ["20Rnd_556x45_UW_mag",3];
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-        };
-
-        // Glasses.
-        _unit addGoggles _glassesDIV;
-
-        // Primary weapon
-        _unit addWeapon _pweaponDIV;
+        #include "rhs_usaf\bmt_divme_diverMedic.sqf"
     };
 
     // Diver Explosives Specialist.
     case "divexp": {
-        // Remove uniform, helmet and vest.
-        removeUniform _unit;
-        removeHeadgear _unit;
-        removeGoggles _unit;
-
-        // Uniform, vest and backpack.
-        _unit forceAddUniform _uniformDIV;
-        _unit addVest _vestDIV;
-        _unit addBackpack _backpackDIV;
-
-        // Items in the uniform.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (uniformContainer _unit) addItemCargoGlobal [_earPlugs,1];
-            (uniformContainer _unit) addItemCargoGlobal [_morphine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_epinephrine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_var_equipFlashlight) then {
-                (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
-            };
-        };
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP",4];
-        (uniformContainer _unit) addMagazineCargoGlobal ["20Rnd_556x45_UW_mag",3];
-
-        // Items in the vest.
-        // Items cannot be added to diving rebreather.
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["DemoCharge_Remote_Mag",3];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-        (unitBackpack _unit) addMagazineCargoGlobal ["30Rnd_556x45_Stanag",7];
-        (unitBackpack _unit) addMagazineCargoGlobal ["20Rnd_556x45_UW_mag",4];
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-        };
-
-        // Glasses.
-        _unit addGoggles _glassesDIV;
-
-        // Primary weapon
-        _unit addWeapon _pweaponDIV;
+        #include "rhs_usaf\bmt_divexp_diverExplosivesSpecialist.sqf"
     };
 
     // Diver.
     case "div": {
-        // Remove uniform, helmet and vest.
-        removeUniform _unit;
-        removeHeadgear _unit;
-        removeGoggles _unit;
-
-        // Uniform, vest and backpack.
-        _unit forceAddUniform _uniformDIV;
-        _unit addVest _vestDIV;
-        _unit addBackpack _backpackDIV;
-
-        // Items in the uniform.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (uniformContainer _unit) addItemCargoGlobal [_earPlugs,1];
-            (uniformContainer _unit) addItemCargoGlobal [_morphine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_epinephrine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_var_equipFlashlight) then {
-                (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
-            };
-        };
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP",4];
-        (uniformContainer _unit) addMagazineCargoGlobal ["20Rnd_556x45_UW_mag",3];
-
-        // Items in the vest.
-        // Items cannot be added to diving rebreather.
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-        (unitBackpack _unit) addMagazineCargoGlobal ["30Rnd_556x45_Stanag",7];
-        (unitBackpack _unit) addMagazineCargoGlobal ["20Rnd_556x45_UW_mag",4];
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-        };
-
-        // Glasses.
-        _unit addGoggles _glassesDIV;
-
-        // Primary weapon
-        _unit addWeapon _pweaponDIV;
+        #include "rhs_usaf\bmt_div_diver.sqf"
     };
 
     // Helicopter pilot.
     case "hplt": {
-        // Remove uniform, helmet and vest.
-        removeUniform _unit;
-        removeHeadgear _unit;
-        removeGoggles _unit;
-
-        // Uniform and parachute.
-        _unit forceAddUniform _uniformHPLT;
-        _unit addBackpack _parachuteHPLT;
-        _unit addHeadgear _helmetHPLT;
-
-        // Items in the uniform.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (uniformContainer _unit) addItemCargoGlobal [_earPlugs,1];
-            (uniformContainer _unit) addItemCargoGlobal [_morphine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_epinephrine,1];
-            if (bmt_var_equipFlashlight) then {
-                (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
-            };
-        };
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP",2];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",4];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
+        #include "rhs_usaf\bmt_hplt_helicopterPilot.sqf"
     };
 
     // Jet pilot.
     case "jplt": {
-        // Remove uniform, helmet and vest.
-        removeUniform _unit;
-        removeHeadgear _unit;
-        removeGoggles _unit;
-
-        // Uniform and parachute.
-        _unit forceAddUniform _uniformJPLT;
-        _unit addBackpack _parachuteJPLT;
-        _unit addHeadgear _helmetJPLT;
-
-        // Items in the uniform.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (uniformContainer _unit) addItemCargoGlobal [_earPlugs,1];
-            (uniformContainer _unit) addItemCargoGlobal [_morphine,1];
-            (uniformContainer _unit) addItemCargoGlobal [_epinephrine,1];
-            if (bmt_var_equipFlashlight) then {
-                (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
-            };
-        };
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP",2];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",4];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
+        #include "rhs_usaf\bmt_jplt_jetPilot.sqf"
     };
 
     // Combat crew
     case "ccrw": {
-        // Vest and Backpack.
-        _unit addVest _vestCRW;
-        _unit addBackpack _backpack;
-
-        // Helmet.
-        removeHeadgear _unit;
-        _unit addHeadgear _helmetCRW;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-        if (bmt_mod_ace3 or bmt_mod_agm) then{
-            (uniformContainer _unit) addItemCargoGlobal [_clacker,1];
-        };
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84", 1];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 4];
-        (unitBackpack _unit) addItemCargoGlobal ["ToolKit", 1];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_ccrw_combatCrew.sqf"
     };
 
     case "hmmwv": {
-        clearWeaponCargoGlobal _unit;
-        clearMagazineCargoGlobal _unit;
-        clearItemCargoGlobal _unit;
-        clearBackpackCargoGlobal _unit;
-
-        _unit addWeaponCargoGlobal [_pweaponDM,1];
-        _unit addItemCargoGlobal [_pweaponScopeDM, 1];
-        _unit addItemCargoGlobal [_pweaponBipodDM, 1];
-        _unit addWeaponCargoGlobal [_pweaponLauncherAT,2];
-        _unit addMagazineCargoGlobal ["rhs_fgm148_magazine_AT",2];
-        _unit addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",10];
-        _unit addMagazineCargoGlobal ["rhs_mag_m67",5];
-        _unit addMagazineCargoGlobal ["rhsusf_100Rnd_556x45_soft_pouch",5];
-        _unit addMagazineCargoGlobal ["SatchelCharge_Remote_Mag",2];
-        _unit addMagazineCargoGlobal ["rhs_mag_M433_HEDP",8];
-        _unit addMagazineCargoGlobal ["rhsusf_20Rnd_762x51_m118_special_Mag",6];
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            _unit addItemCargoGlobal [_clacker,1];
-            _unit addItemCargoGlobal [_morphine,10];
-            _unit addItemCargoGlobal [_epinephrine,10];
-            _unit addItemCargoGlobal [_bandage,10];
-            _unit addItemCargoGlobal [_bloodBag500,5];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                _unit addItemCargoGlobal [_atropine,10];
-                _unit addItemCargoGlobal [_elasticBandage,10];
-                _unit addItemCargoGlobal [_quickClot,10];
-                _unit addItemCargoGlobal [_packingBandage,10];
-                _unit addItemCargoGlobal [_salineBag500,5];
-
-                _unit addItemCargoGlobal [_plasmaBag500,5];
-
-                _unit addItemCargoGlobal [_surgicalKit,3];
-                _unit addItemCargoGlobal [_personalAidKid,3];
-            };
-        };
+        #include "rhs_usaf\bmt_hmmwv.sqf"
     };
 
     case "abrams": {
-        clearWeaponCargoGlobal _unit;
-        clearMagazineCargoGlobal _unit;
-        clearItemCargoGlobal _unit;
-        clearBackpackCargoGlobal _unit;
-
-        _unit addWeaponCargoGlobal ["rhs_weap_M136", 2];
-        _unit addMagazineCargoGlobal ["rhs_m136_mag", 2];
-        _unit addItemCargoGlobal ["ToolKit", 1];
-        _unit addItemCargoGlobal ["rhs_mine_M19_mag",3];
-        _unit addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 20];
-        _unit addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10];
-        _unit addMagazineCargoGlobal ["rhs_mag_m67", 10];
-        _unit addMagazineCargoGlobal ["rhs_mag_m714_White",3];
-        _unit addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-        _unit addMagazineCargoGlobal ["rhs_mag_M433_HEDP",5];
-
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            _unit addItemCargoGlobal [_clacker,1];
-            _unit addItemCargoGlobal [_morphine,10];
-            _unit addItemCargoGlobal [_epinephrine,10];
-            _unit addItemCargoGlobal [_bandage,10];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                _unit addItemCargoGlobal [_atropine,10];
-                _unit addItemCargoGlobal [_elasticBandage,10];
-                _unit addItemCargoGlobal [_quickClot,10];
-                _unit addItemCargoGlobal [_packingBandage,10];
-                _unit addItemCargoGlobal [_salineBag500,5];
-            };
-        };
+        #include "rhs_usaf\bmt_abrahams.sqf"
     };
 
     default {
         _unit sideChat format ["DEBUG (bmt_configEquipment_rhs_usaf.sqf): unit role %1 is not defined. Defaulting to rifleman.", _unitRole];
-
-        // Vest and Backpack.
-        _unit addVest _vestRFL;
-        _unit addBackpack _backpack;
-
-        // Items in the uniform.
-        (uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer,1];
-        (uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",1];
-
-        // Items in the vest.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (vestContainer _unit) addItemCargoGlobal [_bandage,2];
-        };
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",8];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",1];
-        (vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67",4];
-
-        // Items in the backpack.
-        if (bmt_mod_ace3 or bmt_mod_agm) then {
-            (unitBackpack _unit) addItemCargoGlobal [_bandage,2];
-            if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-                (unitBackpack _unit) addItemCargoGlobal [_elasticBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_quickClot,3];
-                (unitBackpack _unit) addItemCargoGlobal [_packingBandage,3];
-                (unitBackpack _unit) addItemCargoGlobal [_tourniquet,1];
-            };
-        };
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84",2];
-        (unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc",2];
-
-        // Primary weapon
-        _unit addWeapon _pweapon;
-        _unit addPrimaryWeaponItem _pweaponSurefire;
-        _unit addPrimaryWeaponItem _pweaponLaserLantern;
-        _unit addPrimaryWeaponItem _pweaponScope;
-
-        // Night vision.
-        if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-            if (bmt_var_equipNightVision == 1) then {
-                (unitBackpack _unit) addItemCargoGlobal [_nightVision,1];
-            } else {
-                _unit linkItem _nightVision;
-            };
-        };
+        #include "rhs_usaf\bmt_rfl_rifleman.sqf"
     };
 };
 
