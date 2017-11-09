@@ -43,6 +43,7 @@ bmt_acre2_language_fia      = ["english","greek"];
 bmt_acre2_language_civ      = ["greek"];
 bmt_acre2_language_bwa3     = ["german"];
 bmt_acre2_language_fow_usmc = ["english"];
+bmt_acre2_language_fallback = ["english"];
 
 //=======================================================================================================//
 // Configuration of radio assignement depending on role.                                                 //

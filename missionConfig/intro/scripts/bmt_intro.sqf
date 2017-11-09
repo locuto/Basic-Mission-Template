@@ -194,39 +194,41 @@ switch (_unitFaction) do {
 
     // Unrecognised faction.
     default {
+        _missionLocation = "Location"; _uavMarker = "marker"; _uavMarkerType = [];
         _recognised = false;
+    };
+};
+
+// Only execute if the player is alive.
+if (alive player) then {
+    switch (_introType) do {
+        case "blackScreen": {
+            [_missionName, _missionLocation, _introText, _dateAndTime] execVM "src\intro\scripts\bmt_intro_blackScreen_typeText.sqf";
+        };
+
+        case "uavFeed": {
+            [_uavMarker, _missionName + " - " + _missionLocation, [400,200,0,1], _uavMarkerType] execVM "src\intro\scripts\bmt_intro_uav.sqf";
+        };
+
+        case "playerCamera": {
+            [_missionName, _missionLocation, _vehicleName, false, _animationList, _dateAndTime] execVM "src\intro\scripts\bmt_intro_playerCamera.sqf";
+        };
+
+        default {
+            player sideChat format ["ERROR (intro.sqf): Undefined intro type %1. It must be: blackScreen, uavFeed or playerCamera", _introType];
+        };
     };
 };
 
 // Check wether a faction is recognised or not.
 if (_recognised) then {
-
-    // Only execute if the player is alive.
-    if (alive player) then {
-        switch (_introType) do {
-            case "blackScreen": {
-                [_missionName, _missionLocation, _introText, _dateAndTime] execVM "src\intro\scripts\bmt_intro_blackScreen_typeText.sqf";
-            };
-
-            case "uavFeed": {
-                [_uavMarker, _missionName + " - " + _missionLocation, [400,200,0,1], _uavMarkerType] execVM "src\intro\scripts\bmt_intro_uav.sqf";
-            };
-
-            case "playerCamera": {
-                [_missionName, _missionLocation, _vehicleName, false, _animationList, _dateAndTime] execVM "src\intro\scripts\bmt_intro_playerCamera.sqf";
-            };
-
-            default {
-                player sideChat format ["ERROR (intro.sqf): Undefined intro type %1. It must be: blackScreen, uavFeed or playerCamera", _introType];
-            };
-        };
-
-        if (bmt_param_debugOutput == 1) then {
-            player sideChat format ["DEBUG (intro.sqf): Using introductory text for faction %1.", _unitFaction];
-        };
+    if (bmt_param_debugOutput == 1) then {
+        player sideChat format ["DEBUG (intro.sqf): Using introductory text for faction %1.", _unitFaction];
     };
 } else {
-    player globalchat format ["ERROR (bmt_intro.sqf): Faction %1 is not defined.", _unitFaction];
+    player globalchat format ["ERROR (bmt_intro.sqf): Faction %1 is not defined. Using fallback faction.", _unitFaction];
 };
+
+
 
 //============================================= END OF FILE =============================================//

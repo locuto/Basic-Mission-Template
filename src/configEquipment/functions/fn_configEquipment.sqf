@@ -80,6 +80,7 @@
 //                  rhs_faction_vpvo        Soviet Air Defense Forces (Voyska protivovozdushnoy oborony) //
 //                  rhs_faction_vdv         Russian Airborne Troops (Vozdushno-desantnye voyska)         //
 //                  bwa3_faction            Bundeswehr                                                   //
+//                  generic_faction         Generic faction (fallback faction)                           //
 //                                                                                                       //
 // Changes: 1.0  (2015/11/26) First public version.                                                      //
 //=======================================================================================================//
@@ -192,7 +193,7 @@ switch (_unitFaction) do {
     // Equipment for United States Marine Corps
     case "fow_usmc": {  [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_fow_usmc; };
 
-    default { _recognised = false; };
+    default { _recognised = false; [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_fallback_faction;};
 };
 
 if (_recognised) then {
@@ -202,7 +203,7 @@ if (_recognised) then {
         _unit sideChat format ["DEBUG (fn_configEquipment.sqf): unit equiped with gear of faction: %1", _unitFaction];
     };
 } else {
-    player globalchat format ["ERROR (fn_configEquipment.sqf): Faction %1 is not defined.", _unitFaction];
+    player globalchat format ["ERROR (fn_configEquipment.sqf): Faction %1 is not defined. Using fallback faction.", _unitFaction];
 };
 
 //============================================= END OF FILE =============================================//

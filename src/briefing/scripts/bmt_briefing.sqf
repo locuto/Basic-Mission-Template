@@ -172,7 +172,10 @@ switch (_unitFaction) do {
         #include "..\..\..\missionConfig\briefing\scripts\bmt_briefing_fow_usmc.sqf"
     };
 
-    default { _recognised = false; };
+    default {
+        _recognised = false;
+        #include "..\..\..\missionConfig\briefing\scripts\bmt_briefing_fallback_faction.sqf"
+    };
 };
 
 if (_recognised) then {
@@ -181,7 +184,7 @@ if (_recognised) then {
         player sideChat format ["DEBUG (bmt_briefing.sqf): Using briefing for faction: %1", _unitFaction];
     };
 } else {
-    player globalchat format ["ERROR (bmt_briefing.sqf): Faction %1 is not defined.", _unitFaction];
+    player globalchat format ["ERROR (bmt_briefing.sqf): Faction %1 is not defined. Using fallback faction.", _unitFaction];
 };
 
 //============================================= END OF FILE =============================================//
