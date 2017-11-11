@@ -16,7 +16,13 @@ if (!isServer) exitWith { };
 
 private _paramNames = [];
 
-_paramNames = _paramNames + ["bmt_param_ace3_ballistics", "bmt_param_ace3_medicalSystem", "bmt_param_ace3_reviveSystem", "bmt_param_ace3_spectator"];  // ACE 3
+_paramNames = _paramNames + [
+                                "bmt_param_ace3_ballistics",
+                                "bmt_param_ace3_medicalSystem",
+                                "bmt_param_ace3_reviveSystem",
+                                "bmt_param_ace3_spectator",
+                                "bmt_param_ace3_preventInstaDeath"
+                            ];  // ACE 3
 _paramNames = _paramNames + ["bmt_param_acre2_configureChannels", "bmt_param_acre2_distributeRadios"];                                                 // ACRE 2
 _paramNames = _paramNames + ["bmt_param_asrai3_enabled", "bmt_param_asrai3_debug"];                                                                    // ASR AI 3
 _paramNames = _paramNames + ["bmt_param_dac_enabled", "bmt_param_dac_debug"];                                                                          // DAC

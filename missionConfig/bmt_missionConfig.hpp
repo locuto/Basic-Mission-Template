@@ -31,6 +31,7 @@ class bmt_config {
     bmt_config_missionSummary = "*** Mission summary for administrators. ***";
     bmt_config_missionNotesAndRemarks = "*** Additional notes and remarks from the mission author. ***";
 
+    bmt_config_preventInstaDeathTime = 300;
 
     bmt_config_jipAllowedTime = 300;     // JIP players are enabled until the specified time (in seconds).
                                          // To enable always JIP players set to -1.

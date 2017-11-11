@@ -20,8 +20,9 @@
         file = "src\ace3\functions";
         class ace3_assignWounds    { };
         //class ace3_config_preInit  { PreInit = 1; };
-        class ace3_config_postInit { PostInit = 1; };
-        class ace3_config_revive   { PostInit = 1; };
+        class ace3_config_postInit   { PostInit = 1; };
+        class ace3_config_revive     { PostInit = 1; };
+        class ace3_config_instaDeath { PostInit = 1; };
     };
 #endif
 
@@ -85,6 +86,17 @@
         values[] = {0,1};
         texts[] = {"BI (End Game)", "ACE 3 Spectator"};
         default = BMT_ACE3_SPECTATOR;
+    };
+
+    //===================================================================================================//
+    // Prevent Instant Death: Prevent ACE3 Instant Death                                                 //
+    // Default option: ACE 3 Spectator.                                                                  //
+    //===================================================================================================//
+    class bmt_param_ace3_preventInstaDeath {
+        title = "ACE 3 Prevent Instant Death";
+        values[] = {0,1,2,3};
+        texts[] = {"Disabled", "Mission dependant", "Enabled", "Time dependant"};
+        default = BMT_ACE3_PREVENT_INSTANT_DEATH;
     };
 #endif
 
