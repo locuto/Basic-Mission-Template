@@ -29,6 +29,7 @@ _paramNames = _paramNames + ["bmt_param_dac_enabled", "bmt_param_dac_debug"];   
 _paramNames = _paramNames + ["bmt_param_jip_enabled", "bmt_param_jip_saveStatus"];                                                                     // Join-in-Progress (JIP)
 _paramNames = _paramNames + ["bmt_param_debugOutput"];                                                                                                 // Debug
 _paramNames = _paramNames + ["bmt_param_respawn_numRespawns", "bmt_param_respawn_saveGear", "bmt_param_respawn_tickets", "bmt_param_respawn_killCam"]; // Respawn (A3-BMT Template)
+_paramNames = _paramNames + ["bmt_param_safeStart"];                                                                                                   // Safe start
 _paramNames = _paramNames + ["bmt_param_t8units_enabled", "bmt_param_t8units_dac", "bmt_param_t8units_debug"];                                         // T8-UNITS
 _paramNames = _paramNames + ["bmt_param_tfar_distributeRadios", "bmt_param_tfar_configureChannels", "bmt_param_tfar_configureStereo"];                 // TFAR
 _paramNames = _paramNames + ["bmt_param_useVAProfiles"];                                                                                               // VA Profiles

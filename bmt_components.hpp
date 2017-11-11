@@ -19,6 +19,7 @@
 #include "src\jip\bmt_jip.hpp"                         // JIP support.
 #include "src\misc\bmt_misc.hpp"                       // Miscellaneous functions.
 #include "src\respawn\bmt_respawn.hpp"                 // Respawn tickets configuration.
+#include "src\safeStart\bmt_safeStart.hpp"             // Safe start scripts.
 #include "src\zeus\bmt_zeus.hpp"                       // Zeus related functions.
 
 // Mission especific function declarations.

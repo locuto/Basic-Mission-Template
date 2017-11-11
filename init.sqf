@@ -60,6 +60,13 @@ if (bmt_param_jip_enabled == 1) then {
 };
 
 //=======================================================================================================//
+// Safe start.                                                                                           //
+//=======================================================================================================//
+if (bmt_param_safeStart == 1) then {
+    bmt_safeStart_script = [] execVM "src\safeStart\scripts\bmt_safeStart_init.sqf";
+};
+
+//=======================================================================================================//
 // Initialialise radio mods. These mods are supported:                                                   //
 //    - Advanced Combat Radio Environment 2 (ACRE 2).                                                    //
 //    - Task Force Arrowhead Radio (TFAR).                                                               //

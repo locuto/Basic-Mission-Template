@@ -51,16 +51,6 @@ class CfgComponents {
 //                     screen. Only the administrator can modify them.                                   //
 //=======================================================================================================//
 class Params {
-    //===================================================================================================//
-    // Debug: Variable to control the level of debug output. Activated by default.                       //
-    //===================================================================================================//
-    class bmt_param_debugOutput {
-        title = "Debug Mode";
-        values[] = {0,1};
-        texts[] = {"Deactivated","Activated"};
-        default = BMT_DEBUG;
-    };
-
     #define BMT_PARAMETERS
         #include "bmt_components.hpp"
     #undef BMT_PARAMETERS

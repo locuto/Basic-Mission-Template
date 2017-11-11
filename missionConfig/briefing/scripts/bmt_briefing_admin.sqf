@@ -133,6 +133,19 @@ private _briefingJip = "
 ";
 
 //=======================================================================================================//
+// NOTES: SAFE START.                                                                                    //
+//=======================================================================================================//
+private _briefingSafeStart = "
+<br/>
+<font color='#FF0000' size='18'>Safe start control:</font>
+<br/>
+- <execute expression=""{if (hasInterface) then {player allowDamage false;};} remoteExecCall ['bis_fnc_call', 0, true];"">Prevent player damage</execute>.
+<br/>
+- <execute expression=""{if (hasInterface) then {player allowDamage true;};} remoteExecCall ['bis_fnc_call', 0, true];"">Allow player damage</execute>.
+";
+
+
+//=======================================================================================================//
 // NOTES: ACE3 PREVENT INSTA DEATH.                                                                      //
 //=======================================================================================================//
 
@@ -142,12 +155,12 @@ private _briefingInstaDeath = "
 <br/>
 - <execute expression=""{if (isNil 'bmt_script_ace3PreventInstantDeath' || {scriptDone bmt_script_ace3PreventInstantDeath}) then { bmt_script_ace3PreventInstantDeath = [] execVM 'src/ace3/scripts/bmt_ace3_handleInstaDeath';} else { bmt_var_instaDeathPreventedTime = bmt_var_instaDeathPreventedTime + 600;};} remoteExecCall ['bis_fnc_call', 2, true];"">Increase ACE3 Prevent Insta Death allowed time by 5 minutes</execute>.
 <br/>
-- <execute expression=""{ace_medical_preventInstaDeath = true;} remoteExecCall ['bis_fnc_call', 0, true];"">Disable Insta Death</execute>.
+- <execute expression=""{if (hasInterface) then {ace_medical_preventInstaDeath = false;};} remoteExecCall ['bis_fnc_call', 0, true];"">Disable Insta Death</execute>.
 <br/>
-- <execute expression=""{ace_medical_preventInstaDeath = false;} remoteExecCall ['bis_fnc_call', 0, true];"">Enable Insta Death</execute>.
+- <execute expression=""{if (hasInterface) then {ace_medical_preventInstaDeath = true;};} remoteExecCall ['bis_fnc_call', 0, true];"">Enable Insta Death</execute>.
 ";
 
-private _briefing = _briefingAdmin + _briefingNotes + _briefingEndings + _briefingJIP;
+private _briefing = _briefingAdmin + _briefingNotes + _briefingEndings + _briefingJIP + _briefingSafeStart;
 
 if (bmt_mod_ace3) then {
     _briefing = _briefing + _briefingInstaDeath;
