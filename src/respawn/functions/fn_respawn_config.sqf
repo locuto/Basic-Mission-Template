@@ -37,7 +37,7 @@ switch (bmt_param_respawn_numRespawns) do {
 switch (bmt_param_respawn_tickets) do {
     case 0: {
         if (bmt_param_debugOutput == 1) then {
-            player sidechat format ["DEBUG (fn_respawn_config.sqf): Assigning respawn for side %1.", side player];
+            diag_log format ["DEBUG (fn_respawn_config.sqf): Assigning respawn for side %1.", side player];
         };
         private "_pos";
         switch (side player) do {
@@ -51,7 +51,7 @@ switch (bmt_param_respawn_tickets) do {
     };
     case 1: {
         if (bmt_param_debugOutput == 1) then {
-            player sidechat format ["DEBUG (fn_respawn_config.sqf): Assigning respawn for players."];
+            diag_log format ["DEBUG (fn_respawn_config.sqf): Assigning respawn for players."];
         };
         player setVariable ["bmt_var_numRespawns", _numRespawns, true];
     };

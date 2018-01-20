@@ -78,7 +78,7 @@ player setVariable ["bmt_var_init_configRadiosReady", true, true];
 
 // DEBUG OUTPUT
 if ( bmt_param_debugOutput == 1) then {
-    player sideChat format ["DEBUG (fn_acre2_initClient.sqf): Radios configured."];
+    diag_log format ["DEBUG (fn_acre2_initClient.sqf): Radios configured."];
 };
 
 //============================================= END OF FILE =============================================//

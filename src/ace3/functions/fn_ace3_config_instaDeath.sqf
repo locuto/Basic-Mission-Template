@@ -20,7 +20,7 @@ if (bmt_param_ace3_preventInstaDeath >= 2) then {
     bmt_var_instaDeathPreventedTime = getNumber (missionConfigFile >> "bmt_config" >> "bmt_config_preventInstaDeathTime");
 
     if (bmt_var_instaDeathPreventedTime <= 0 && bmt_param_ace3_preventInstaDeath == 3) then {
-        systemChat format ["ERROR (bmt_ace3_handleInstaDeath.sqf): prevent instant death is enabled but the time is equal or less than 0."];
+        diag_log format ["ERROR (bmt_ace3_handleInstaDeath.sqf): prevent instant death is enabled but the time is equal or less than 0."];
     } else {
         // Enable the prevent instant death ACE 3 option.
         if (hasInterface) then {

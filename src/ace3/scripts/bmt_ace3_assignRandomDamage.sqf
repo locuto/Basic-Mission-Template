@@ -22,11 +22,11 @@ params ["_unitsArray", ["_amountDamage", "medium"], ["_typeDamage", "bullet"], [
 if (!isServer) exitWith {};
 
 if !( (toLower _amountdamage) in ["low", "medium", "high"]) exitwith {
-    player sideChat format ["DEBUG (bmt_ace3_assignRandomDamage.sqf): Unrecognised amount of damage %1. Valid options are low, medium or high.", _amountDamage];
+    diag_log format ["DEBUG (bmt_ace3_assignRandomDamage.sqf): Unrecognised amount of damage %1. Valid options are low, medium or high.", _amountDamage];
 };
 
 if !( (toLower _typeDamage) in ["bullet", "vehiclecrash", "explosion"]) exitwith {
-    player sideChat format ["DEBUG (bmt_ace3_assignRandomDamage.sqf): Unrecognised type of damage %1. Valid options are bullet, vehiclecrash or explosive.", _typeDamage];
+    diag_log format ["DEBUG (bmt_ace3_assignRandomDamage.sqf): Unrecognised type of damage %1. Valid options are bullet, vehiclecrash or explosive.", _typeDamage];
 };
 
 private ["_countArray","_unitWound","_arrayProjectile","_randomParts","_countFor"];

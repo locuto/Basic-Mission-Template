@@ -116,7 +116,7 @@ switch (_unitRole) do
     default {
         _VAProfile = "";
         _recognised = false;
-        _unit sideChat format ["ERROR (bmt_configEquipment_VAProfiles.sqf): VA profile for unit role %1 is not defined. Using instead VA profile %2", _unitRole, _VAProfile];
+        diag_log format ["ERROR (bmt_configEquipment_VAProfiles.sqf): VA profile for unit role %1 is not defined. Using instead VA profile %2", _unitRole, _VAProfile];
     };
 };
 
@@ -126,7 +126,7 @@ if (_VAProfile != "") then {
 };
 
 if ((bmt_param_debugOutput == 1) and _recognised) then {
-    _unit sideChat format ["DEBUG (bmt_configEquipment_VAProfiles.sqf): Using VA profile %1 for unit role %2.", _VAProfile, _unitRole];
+    diag_log format ["DEBUG (bmt_configEquipment_VAProfiles.sqf): Using VA profile %1 for unit role %2.", _VAProfile, _unitRole];
 };
 
 //============================================= END OF FILE =============================================//

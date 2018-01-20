@@ -17,7 +17,7 @@ params ["_unit"];
 private _jipInformation = missionNamespace getVariable ["bmt_arrayMission_jipInformation", nil];
 
 if (isNil "_jipInformation") exitWith {
-    player sideChat format ["ERROR (fn_jip_retrieveStatus): Variable bmt_arrayMission_jipInformation is not defined."];
+    diag_log format ["ERROR (fn_jip_retrieveStatus): Variable bmt_arrayMission_jipInformation is not defined."];
 };
 
 private _found = false;
@@ -38,10 +38,10 @@ private _found = false;
 } forEach _jipInformation;
 
 if (!_found) then {
-    player sideChat format ["ERROR (fn_jip_retrieveStatus): Could not find your previous gear!!"];
+    diag_log format ["ERROR (fn_jip_retrieveStatus): Could not find your previous gear!!"];
 } else {
     if (bmt_param_debugOutput == 1) then {
-        player sidechat format ["DEBUG (fn_jip_saveStatus.sqf): Gear of player %1 with UID %2 retrieved.", profileName, getPlayerUID _unit];
+        diag_log format ["DEBUG (fn_jip_saveStatus.sqf): Gear of player %1 with UID %2 retrieved.", profileName, getPlayerUID _unit];
     };
 };
 

@@ -29,7 +29,7 @@ if ((typeName _unitOptions) == "STRING") then {
 };
 
 if ((_unitGroup select 0 == "nil") or (_unitGroup select 1 == -1)) exitWith {
-    _unit sideChat format ["ERROR (fn_acre2_configureChannels.sqf): Channels cannot be configured since variable ""bmt_var_unitGroup"" is not correctly defined: [%1,%2].", _unitGroup select 0, _unitGroup select 1];
+    diag_log format ["ERROR (fn_acre2_configureChannels.sqf): Channels cannot be configured since variable ""bmt_var_unitGroup"" is not correctly defined: [%1,%2].", _unitGroup select 0, _unitGroup select 1];
 };
 
 private _channel = 1;
@@ -42,7 +42,7 @@ private _commandChannel = 1;
     if (_unitGroup select 0 in _x) then {
         _squadChannel = _channel;
         if (_unitGroup select 1 >= count _x) exitWith {
-            _unit sideChat format ["ERROR (fn_acre2_configureChannels.sqf): Fire team %1-%2 is not defined.", _unitGroup select 0, _unitGroup select 1];
+            diag_log format ["ERROR (fn_acre2_configureChannels.sqf): Fire team %1-%2 is not defined.", _unitGroup select 0, _unitGroup select 1];
         };
         _fireteamChannel = _squadChannel + (_unitGroup select 1);
     };

@@ -580,9 +580,9 @@ if (isClass (configFile >> "CfgPatches" >> "ace_advanced_ballistics")) then {
 if (bmt_param_debugOutput == 1) then {
 
     if (_moduleError) then {
-        player sideChat format ["DEBUG (fn_ace3_config.sqf): ACE 3 cannot be completely configured since some required files are not loaded."];
+        diag_log format ["DEBUG (fn_ace3_config.sqf): ACE 3 cannot be completely configured since some required files are not loaded."];
     } else {
-        player sideChat format ["DEBUG (fn_ace3_config.sqf): ACE 3 configured."];
+        diag_log format ["DEBUG (fn_ace3_config.sqf): ACE 3 configured."];
     };
 };
 

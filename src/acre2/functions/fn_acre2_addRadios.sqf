@@ -33,14 +33,14 @@ if (!(_unitRole isEqualTo "")) then {
             if( _unit canAdd bmt_acre2_riflemanRadio ) then {
             _unit addItem bmt_acre2_riflemanRadio;
         } else {
-            _unit sideChat format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_riflemanRadio];
+            diag_log format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_riflemanRadio];
         };
     } else {
         if (_unitRole in bmt_array_riflemanRadio) then {
             if( _unit canAdd bmt_acre2_riflemanRadio ) then {
                 _unit addItem bmt_acre2_riflemanRadio;
             } else {
-                _unit sideChat format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_riflemanRadio];
+                diag_log format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_riflemanRadio];
             };
         };
     };
@@ -50,7 +50,7 @@ if (!(_unitRole isEqualTo "")) then {
         if( _unit canAdd bmt_acre2_shortRangeRadio ) then {
             _unit addItem bmt_acre2_shortRangeRadio;
         } else {
-            _unit sideChat format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_shortRangeRadio];
+            diag_log format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_shortRangeRadio];
         };
     };
 
@@ -59,11 +59,11 @@ if (!(_unitRole isEqualTo "")) then {
         if( _unit canAdd bmt_acre2_longRangeRadio ) then {
             _unit addItemToBackPack bmt_acre2_longRangeRadio;
         } else {
-            _unit sideChat format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_longRangeRadio];
+            diag_log format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_longRangeRadio];
         };
     };
 } else {
-    _unit sideChat format ["ERROR (fn_acre2_addRadios.sqf): Undefined unit role."];
+    diag_log format ["ERROR (fn_acre2_addRadios.sqf): Undefined unit role."];
 };
 
 //============================================= END OF FILE =============================================//

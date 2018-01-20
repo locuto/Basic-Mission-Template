@@ -40,7 +40,7 @@ if (serverCommandAvailable "#kick") then {
 
     // DEBUG OUTPUT
     if (bmt_param_debugOutput == 1) then {
-        player sideChat format ["DEBUG (bmt_briefing.sqf): Using briefings for the Administrator."];
+        diag_log format ["DEBUG (bmt_briefing.sqf): Using briefings for the Administrator."];
     };
 };
 
@@ -181,7 +181,7 @@ switch (_unitFaction) do {
 if (_recognised) then {
     // DEBUG OUTPUT.
     if (bmt_param_debugOutput == 1) then {
-        player sideChat format ["DEBUG (bmt_briefing.sqf): Using briefing for faction: %1", _unitFaction];
+        diag_log format ["DEBUG (bmt_briefing.sqf): Using briefing for faction: %1", _unitFaction];
     };
 } else {
     player globalchat format ["ERROR (bmt_briefing.sqf): Faction %1 is not defined. Using fallback faction.", _unitFaction];

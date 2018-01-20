@@ -20,7 +20,7 @@ if (isNil "bmt_var_centreSideLogic_Zeus") then {
     bmt_var_groupSideLogic_Zeus = createGroup bmt_var_centreSideLogic_Zeus; publicVariable "bmt_var_groupSideLogic_Zeus";
 };
 
-bmt_var_zeusModule = bmt_var_groupSideLogic_Zeus createUnit ["ModuleCurator_F",[0,0,0] , [], 0, ""];
+bmt_var_zeusModule = bmt_var_groupSideLogic_Zeus createUnit ["ModuleCurator_F",[0,0,0] , [], 0, "NONE"];
 bmt_var_zeusModule setVariable ["showNotification", false, true];
 bmt_var_zeusModule setVariable ["birdType", "", true];
 bmt_var_zeusModule setVariable ["Owner", "#adminLogged", true];

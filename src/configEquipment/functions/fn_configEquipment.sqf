@@ -200,7 +200,7 @@ if (_recognised) then {
     // DEBUG OUTPUT.
     _unit setVariable ["bmt_var_init_configEquipmentReady", true, true];
     if (bmt_param_debugOutput == 1) then {
-        _unit sideChat format ["DEBUG (fn_configEquipment.sqf): unit equiped with gear of faction: %1", _unitFaction];
+        diag_log format ["DEBUG (fn_configEquipment.sqf): unit equiped with gear of faction: %1", _unitFaction];
     };
 } else {
     player globalchat format ["ERROR (fn_configEquipment.sqf): Faction %1 is not defined. Using fallback faction.", _unitFaction];

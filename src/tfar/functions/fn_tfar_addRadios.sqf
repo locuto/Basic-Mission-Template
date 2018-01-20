@@ -77,7 +77,7 @@ if (!isNil "_unitRole") then {
         } forEach _objectsBackpack;
     };
 } else {
-    _unit sideChat format ["ERROR (fn_tfar_addRadios.sqf): Undefined unit role."];
+    diag_log format ["ERROR (fn_tfar_addRadios.sqf): Undefined unit role."];
 };
 
 //============================================= END OF FILE =============================================//

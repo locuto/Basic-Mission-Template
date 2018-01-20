@@ -279,7 +279,7 @@ switch (_unitRole) do
     };
 
     default {
-        _unit sideChat format ["DEBUG (bmt_configEquipment_fallback_faction.sqf): unit role %1 is not defined. Defaulting to rifleman.", _unitRole];
+        diag_log format ["DEBUG (bmt_configEquipment_fallback_faction.sqf): unit role %1 is not defined. Defaulting to rifleman.", _unitRole];
         #include "fallback_faction\bmt_rfl_rifleman.sqf"
     };
 };

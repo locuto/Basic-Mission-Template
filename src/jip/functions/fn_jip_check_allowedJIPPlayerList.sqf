@@ -18,7 +18,7 @@ params ["_unit"];
 private _allowedJIP_List = missionNamespace getVariable ["bmt_arrayMission_allowedJIPPlayerList", nil];
 
 if (isNil "_allowedJIP_List") exitWith {
-    player sideChat format ["ERROR (fn_jip_addTo_initialPlayerList.sqf): Variable bmt_arrayMission_allowedJIPPlayerList is not defined."];
+    diag_log format ["ERROR (fn_jip_addTo_initialPlayerList.sqf): Variable bmt_arrayMission_allowedJIPPlayerList is not defined."];
 };
 
 private _found = false;
@@ -29,7 +29,7 @@ private _found = false;
 } forEach _allowedJIP_List;
 
 if (bmt_param_debugOutput == 1) then {
-    player sidechat format ["DEBUG (fn_jip_check_initialPlayerList.sqf): Player named %1 with UID %2 is in the allowed JIP list: %3.", name _unit, getPlayerUID _unit, _found];
+    diag_log format ["DEBUG (fn_jip_check_initialPlayerList.sqf): Player named %1 with UID %2 is in the allowed JIP list: %3.", name _unit, getPlayerUID _unit, _found];
 };
 
 _found

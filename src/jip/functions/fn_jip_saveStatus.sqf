@@ -19,7 +19,7 @@ if (isNil "_jipInformation_List") then {
             _found = true;
             _jipInformation_List set [_forEachIndex, _jipInformation];
             if (bmt_param_debugOutput == 1) then {
-                player sidechat format ["DEBUG (fn_jip_saveStatus.sqf): Gear of player %1 with UID %2 already exists. Overwriting it.", _name, _uid];
+                diag_log format ["DEBUG (fn_jip_saveStatus.sqf): Gear of player %1 with UID %2 already exists. Overwriting it.", _name, _uid];
             };
         };
     } forEach _jipInformation_List;
@@ -32,9 +32,9 @@ if (isNil "_jipInformation_List") then {
 missionNamespace setVariable ["bmt_arrayMission_jipInformation", _jipInformation_List, true];
 
 if (bmt_param_debugOutput == 1) then {
-    player sidechat format ["DEBUG (fn_jip_saveStatus.sqf): Gear of player %1 with UID %2 saved.", _name, _uid];
-    player sidechat format ["DEBUG (fn_jip_saveStatus.sqf): Variable with UID %1 and profile name %2.", (_jipInformation_List select 0) select 0, (_jipInformation_List select 0) select 1];
-    player sideChat format ["DEBUG (fn_jip_saveStatus.sqf): Number of entries %1", count _jipInformation_List];
+    diag_log format ["DEBUG (fn_jip_saveStatus.sqf): Gear of player %1 with UID %2 saved.", _name, _uid];
+    diag_log format ["DEBUG (fn_jip_saveStatus.sqf): Variable with UID %1 and profile name %2.", (_jipInformation_List select 0) select 0, (_jipInformation_List select 0) select 1];
+    diag_log format ["DEBUG (fn_jip_saveStatus.sqf): Number of entries %1", count _jipInformation_List];
 };
 
 false

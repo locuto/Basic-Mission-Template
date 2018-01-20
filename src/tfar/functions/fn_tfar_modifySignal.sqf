@@ -24,7 +24,7 @@ if (_unit != objNull) then {
     _unit setVariable ["tf_receivingDistanceMultiplicator", _receivingFactor];
     _unit setVariable ["tf_sendingDistanceMultiplicator", _transmittingFactor];
 } else {
-    _unit sideChat format ["ERROR (bmt_fnc_tfar_modifySignal.sqf): invalid object (objNull) in thee third parameter."];
+    diag_log format ["ERROR (bmt_fnc_tfar_modifySignal.sqf): invalid object (objNull) in thee third parameter."];
 };
 
 //============================================= END OF FILE =============================================//

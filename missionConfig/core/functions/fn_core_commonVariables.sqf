@@ -95,17 +95,17 @@ private _length_frequencies = count bmt_array_frequenciesShortRange;
 private _length_frequenciesLR = count bmt_array_frequenciesLongRange;
 
 if (_length_groups != _length_frequencies) then {
-    player sideChat format ["ERROR (fn_core_commonVariables.sqf): Variables ""_length_groups"" and ""_length_frequencies"" do not have the same length."];
+    diag_log format ["ERROR (fn_core_commonVariables.sqf): Variables ""_length_groups"" and ""_length_frequencies"" do not have the same length."];
 } else {
     {
         if ( count _x != count (bmt_array_frequenciesShortRange select _forEachIndex) ) then {
-            player sideChat format ["ERROR (fn_core_commonVariables.sqf): subgroup %1 of the variables ""_length_groups"" and ""_length_frequencies"" do not have the same length.", _forEachIndex];
+            diag_log format ["ERROR (fn_core_commonVariables.sqf): subgroup %1 of the variables ""_length_groups"" and ""_length_frequencies"" do not have the same length.", _forEachIndex];
         };
     } forEach bmt_array_groups;
 };
 
 if (_length_groups != _length_frequenciesLR) then {
-    player sideChat format ["ERROR (fn_core_commonVariables.sqf): Variables ""_length_groups"" and ""_length_frequenciesLR"" do not have the same length."];
+    diag_log format ["ERROR (fn_core_commonVariables.sqf): Variables ""_length_groups"" and ""_length_frequenciesLR"" do not have the same length."];
 };
 
 //=======================================================================================================//
@@ -133,6 +133,6 @@ bmt_var_teleportPoints_Destination = [];
 bmt_var_teleportPoints_Start = [];
 
 if (count bmt_var_teleportPoints_Destination != count bmt_var_teleportPoints_Start) exitWith {
-    player sideChat format ["ERROR (fn_core_commonVariables.sqf): Variables ""bmt_var_teleportPoints_Destination"" and ""bmt_var_teleportPoints_Start"" do not have the same length."];
+    diag_log format ["ERROR (fn_core_commonVariables.sqf): Variables ""bmt_var_teleportPoints_Destination"" and ""bmt_var_teleportPoints_Start"" do not have the same length."];
 };
 //============================================= END OF FILE =============================================//

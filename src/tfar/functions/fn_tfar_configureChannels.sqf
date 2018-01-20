@@ -40,7 +40,7 @@ if (_unitGroup select 0 != "nil") then {
                 _fireteamChannel = _squadChannel + (_unitGroup select 1);
 
                 if (_unitGroup select 1 >= count _x) exitWith {
-                   _unit sideChat format ["ERROR (fn_tfar_configureChannels.sqf): Fire team %1-%2 is not defined.", _x select 0, _unitGroup select 1];
+                   diag_log format ["ERROR (fn_tfar_configureChannels.sqf): Fire team %1-%2 is not defined.", _x select 0, _unitGroup select 1];
                 };
 
                 {

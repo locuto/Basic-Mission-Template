@@ -32,7 +32,7 @@ switch (bmt_param_respawn_tickets) do {
             switch (_operation) do {
                 case "substract": { _numRespawns = _numRespawns - _amount; };
                 case "add": { _numRespawns = _numRespawns + _amount; };
-                default { _unit sidechat format ["ERROR (fn_respawn_manageTickets): Operation not recognised. It should be substract or add and not %1", _operation]; };
+                default { diag_log format ["ERROR (fn_respawn_manageTickets): Operation not recognised. It should be substract or add and not %1", _operation]; };
             };
             bmt_array_numRespawns set [_pos, _numRespawns];
             publicVariable "bmt_array_numRespawns";
@@ -44,7 +44,7 @@ switch (bmt_param_respawn_tickets) do {
             switch (_operation) do {
                 case "substract": { _numRespawns = _numRespawns - _amount; };
                 case "add": { _numRespawns = _numRespawns + _amount; };
-                default { _unit sidechat format ["ERROR (fn_respawn_manageTickets): Operation not recognised. It should be substract or add and not %1", _operation]; };
+                default { diag_log format ["ERROR (fn_respawn_manageTickets): Operation not recognised. It should be substract or add and not %1", _operation]; };
             };
             _unit setVariable ["bmt_var_numRespawns", _numRespawns, true];
         };

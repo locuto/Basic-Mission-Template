@@ -29,7 +29,7 @@ if (bmt_var_safeStartTime > 0) then {
         };
     };
 } else {
-    systemChat format ["ERROR (bmt_safeStart_configure.sqf): safe start is enabled but the time is equal or less than 0."];
+    diag_log format ["ERROR (bmt_safeStart_configure.sqf): safe start is enabled but the time is equal or less than 0."];
 };
 
 //============================================= END OF FILE =============================================//

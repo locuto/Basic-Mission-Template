@@ -61,7 +61,7 @@ if (_unitRole != "nil") then {
         [(call TFAR_fnc_activeLrRadio) select 0, (call TFAR_fnc_activeLrRadio) select 1, 2] call TFAR_fnc_setAdditionalLrStereo;
     };
 } else {
-    _unit sideChat format ["ERROR (fn_tfar_configureStereo.sqf): Undefined unit role."];
+    diag_log format ["ERROR (fn_tfar_configureStereo.sqf): Undefined unit role."];
 };
 
 //============================================= END OF FILE =============================================//

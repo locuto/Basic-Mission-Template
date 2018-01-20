@@ -30,7 +30,7 @@ if (isServer) then {
     publicVariable "DAC_STRPlayers";
 
     if ((bmt_param_debugOutput == 1)) then {
-        player sideChat format ["DEBUG (bmt_dac_init.sqf): %1", DAC_STRPlayers];
+        diag_log format ["DEBUG (bmt_dac_init.sqf): %1", DAC_STRPlayers];
     };
 };
 
@@ -55,7 +55,7 @@ switch (bmt_param_dac_debug) do {
     };
 
     default {
-        player sideChat format ["DEBUG (bmt_dac_init.sqf): Unrecognised DAC parameter."];
+        diag_log format ["DEBUG (bmt_dac_init.sqf): Unrecognised DAC parameter."];
     };
 };
 //============================================= END OF FILE =============================================//

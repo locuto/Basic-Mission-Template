@@ -11,11 +11,11 @@
 
 if (bmt_var_requires_tfar != 2) then {
     if (bmt_mod_tfar and (bmt_var_requires_tfar == 0)) then {
-        player sideChat format ["ERROR (bmt_core_checkConfiguration_tfar.sqf): TFAR is loaded but this mission does not support it."];
+        diag_log format ["ERROR (bmt_core_checkConfiguration_tfar.sqf): TFAR is loaded but this mission does not support it."];
     };
 
     if (!bmt_mod_tfar and (bmt_var_requires_tfar == 1)) then {
-        player sideChat format ["ERROR (bmt_core_checkConfiguration_tfar.sqf): TFAR is necessary for this mission but it is not loaded."];
+        diag_log format ["ERROR (bmt_core_checkConfiguration_tfar.sqf): TFAR is necessary for this mission but it is not loaded."];
     };
 };
 

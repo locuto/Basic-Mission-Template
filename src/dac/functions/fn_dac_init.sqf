@@ -36,7 +36,7 @@ DAC_STRPlayers = [];
 publicVariable "DAC_STRPlayers";
 
 if (bmt_param_debugOutput == 1) then {
-    player sideChat format ["DEBUG (fn_dac_init.sqf): %1", DAC_STRPlayers];
+    diag_log format ["DEBUG (fn_dac_init.sqf): %1", DAC_STRPlayers];
 };
 
 // Modify DAC output depending whether the debug is activated or not.
@@ -60,7 +60,7 @@ switch (bmt_param_dac_debug) do {
     };
 
     default {
-        player sideChat format ["DEBUG (fn_dac_init.sqf): Unrecognised DAC parameter."];
+        diag_log format ["DEBUG (fn_dac_init.sqf): Unrecognised DAC parameter."];
     };
 };
 

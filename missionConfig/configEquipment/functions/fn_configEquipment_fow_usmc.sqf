@@ -291,7 +291,7 @@ switch (_unitRole) do
 
 
     default {
-        _unit sideChat format ["DEBUG (bmt_configEquipment_fow_usmc.sqf): unit role %1 is not defined. Defaulting to rifleman.", _unitRole];
+        diag_log format ["DEBUG (bmt_configEquipment_fow_usmc.sqf): unit role %1 is not defined. Defaulting to rifleman.", _unitRole];
         #include "fow_usmc\bmt_rfl_rifleman.sqf"
     };
 };

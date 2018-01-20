@@ -18,7 +18,7 @@ if (bmt_param_jip_enabled == 1) then {
     bmt_var_jipAllowedTime = getNumber (missionConfigFile >> "bmt_config" >> "bmt_config_jipAllowedTime");
 
     if (bmt_var_jipAllowedTime == 0.0) then {
-        player sideChat format ["ERROR (bmt_jip_init.sqf): JIP is enabled but JIP allowed time is set to 0 in bmt_missionConfig.hpp!"];
+        diag_log format ["ERROR (bmt_jip_init.sqf): JIP is enabled but JIP allowed time is set to 0 in bmt_missionConfig.hpp!"];
     };
 } else {
     bmt_var_jipAllowedTime = 0.0;
@@ -51,7 +51,7 @@ if (isServer) then {
 if (hasInterface) then {
 
     if (bmt_param_debugOutput == 1) then {
-        player sideChat format ["DEBUG (bmt_jip_init.sqf): player is JIP: %1. JIP is enabled: %2.", didJip, missionNamespace getVariable ["bmt_var_jip_allowed", true]];
+        diag_log format ["DEBUG (bmt_jip_init.sqf): player is JIP: %1. JIP is enabled: %2.", didJip, missionNamespace getVariable ["bmt_var_jip_allowed", true]];
     };
 
     if (didJiP) then {

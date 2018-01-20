@@ -18,7 +18,7 @@ if (bmt_param_ace3_reviveSystem > 0) then {
     switch (bmt_param_respawn_tickets) do {
         case 0: {
             if (bmt_param_debugOutput == 1) then {
-                player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Disabling respawning per side in favour of ACE3 revive system."];
+                diag_log format ["DEBUG (fn_ace3_config_revive.sqf): Disabling respawning per side in favour of ACE3 revive system."];
             };
             private _pos = 0;
             switch (side player) do {
@@ -32,7 +32,7 @@ if (bmt_param_ace3_reviveSystem > 0) then {
         };
         case 1: {
             if (bmt_param_debugOutput == 1) then {
-                player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Disabling player respawn in favour of ACE3 revive system."];
+                diag_log format ["DEBUG (fn_ace3_config_revive.sqf): Disabling player respawn in favour of ACE3 revive system."];
             };
             player setVariable ["bmt_var_numRespawns", 0, true];
         };
@@ -42,12 +42,12 @@ if (bmt_param_ace3_reviveSystem > 0) then {
     if (_numRevives > 0) then {
         player setVariable ["ace_medical_amountOfReviveLives", _numRevives, true];
         if (bmt_param_debugOutput == 1) then {
-            player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Player has %1 ACE 3 Revives.", _numRevives];
+            diag_log format ["DEBUG (fn_ace3_config_revive.sqf): Player has %1 ACE 3 Revives.", _numRevives];
         };
     } else {
         player setVariable ["ace_medical_amountOfReviveLives", -1, true]; // Unlimited revives.
         if (bmt_param_debugOutput == 1) then {
-            player sidechat format ["DEBUG (fn_ace3_config_revive.sqf): Player has unlimited ACE 3 Revives."];
+            diag_log format ["DEBUG (fn_ace3_config_revive.sqf): Player has unlimited ACE 3 Revives."];
         };
     };
 };

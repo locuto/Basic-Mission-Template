@@ -24,7 +24,7 @@ if (bmt_mod_ace3 && (bmt_param_ace3_spectator ==  1)) then {
     };
 
     if ( bmt_param_debugOutput == 1) then {
-        player sideChat format ["DEBUG (bmt_respawn_onPlayerRespawn.sqf): Using ACE3 spectator mode."];
+        diag_log format ["DEBUG (bmt_respawn_onPlayerRespawn.sqf): Using ACE3 spectator mode."];
     };
 
     // Configure ACE3 spectator camera.
@@ -32,7 +32,7 @@ if (bmt_mod_ace3 && (bmt_param_ace3_spectator ==  1)) then {
     [true] call ace_spectator_fnc_setSpectator;
 } else {
     if (bmt_param_debugOutput == 1) then {
-        player sideChat format ["DEBUG (bmt_respawn_onPlayerRespawn.sqf): Using vanila spectator mode."];
+        diag_log format ["DEBUG (bmt_respawn_onPlayerRespawn.sqf): Using vanila spectator mode."];
     };
 
     // Put units into spectator mode depending on the radio system used.

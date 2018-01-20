@@ -34,13 +34,13 @@ if (bmt_acre2_riflemanRadio == "ACRE_SEM52SL" || bmt_acre2_shortRangeRadio == "A
                 if (_radio == "ACRE_SEM52SL") then {
                     if (_channel < 12) then {
                         if ((_channelFrequency < 46.000) OR (_channelFrequency > 65.975)) then {
-                            player sideChat format ["WARNING (fn_acre2_configurePresets.sqf): Channel frequency for channel %1 out of range for SEM-52SL. It should be between 46.000 and 65.975 but it is %2.", _channel, _channelFrequency];
+                            diag_log format ["WARNING (fn_acre2_configurePresets.sqf): Channel frequency for channel %1 out of range for SEM-52SL. It should be between 46.000 and 65.975 but it is %2.", _channel, _channelFrequency];
                         } else {
                             [_radio, _presetName, _channel, "frequencyTX", _channelFrequency] call acre_api_fnc_setPresetChannelField;
                             [_radio, _presetName, _channel, "frequencyRX", _channelFrequency] call acre_api_fnc_setPresetChannelField;
                         };
                     } else {
-                        player sideChat format ["WARNING (fn_acre2_configurePresets.sqf): Too many frequencies to configure for SEM-52SL radio."];
+                        diag_log format ["WARNING (fn_acre2_configurePresets.sqf): Too many frequencies to configure for SEM-52SL radio."];
                     };
                 } else {
                     [_radio, _presetName, _channel, _name, toUpper (_channelName select _forEachIndex)] call acre_api_fnc_setPresetChannelField;

@@ -215,7 +215,7 @@ if (alive player) then {
         };
 
         default {
-            player sideChat format ["ERROR (intro.sqf): Undefined intro type %1. It must be: blackScreen, uavFeed or playerCamera", _introType];
+            diag_log format ["ERROR (intro.sqf): Undefined intro type %1. It must be: blackScreen, uavFeed or playerCamera", _introType];
         };
     };
 };
@@ -223,7 +223,7 @@ if (alive player) then {
 // Check wether a faction is recognised or not.
 if (_recognised) then {
     if (bmt_param_debugOutput == 1) then {
-        player sideChat format ["DEBUG (intro.sqf): Using introductory text for faction %1.", _unitFaction];
+        diag_log format ["DEBUG (intro.sqf): Using introductory text for faction %1.", _unitFaction];
     };
 } else {
     player globalchat format ["ERROR (bmt_intro.sqf): Faction %1 is not defined. Using fallback faction.", _unitFaction];

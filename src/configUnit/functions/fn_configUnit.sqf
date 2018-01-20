@@ -28,7 +28,7 @@
 params [["_groupName", nil], ["_subgroupIndex", -1], ["_unitRole", nil], "_unit", ["_unitFaction", nil]];
 
 if (isNil "_unitRole") exitwith {
-    _unit sideChat format ["ERROR (fn_configUnit.sqf): unit role is not defined. Aborting."];
+    diag_log format ["ERROR (fn_configUnit.sqf): unit role is not defined. Aborting."];
 };
 
 // Configure squad and fire team.

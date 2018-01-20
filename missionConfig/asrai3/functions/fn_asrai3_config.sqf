@@ -55,7 +55,7 @@ if (isServer) then {
     };
 
     if ( bmt_param_debugOutput == 1 ) then {
-        player sideChat format ["DEBUG (fn_asrai_config.sqf): ASR AI configured."];
+        diag_log format ["DEBUG (fn_asrai_config.sqf): ASR AI configured."];
     };
 };
 

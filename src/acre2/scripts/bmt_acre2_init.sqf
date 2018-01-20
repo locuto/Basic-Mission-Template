@@ -25,6 +25,11 @@ if (hasInterface) then {
         _x call acre_api_fnc_babelAddLanguageType;
     } foreach bmt_acre2_languages;
 
+    if (didJIP) then {
+        uiSleep 5;
+        waitUntil {uiSleep 0.1; !isNull player};
+    };
+
     [] execVM "src\acre2\scripts\bmt_acre2_initClient.sqf";
 };
 
