@@ -10,13 +10,13 @@
 
 // Especifies that this component has been loaded.
 #ifdef BMT_COMPONENTS
-    class asrai3 {};
+    #define BMT_COMPONENTS_ACRE2
 #endif
 
 // Define the functions of this component.
 #ifdef BMT_FUNCTIONS_INTERNAL
     class asrai3 {
-        file = "missionConfig\asrai3\functions";
+        file = "src\asrai3\functions";
         class asrai3_config { PostInit = 1; };
     };
 #endif
@@ -54,6 +54,11 @@
         texts[] = {"Disabled", "Enabled"};
         default = 0;
     };
+#endif
+
+#ifdef BMT_CBA_SETTINGS
+    // ASR AI 3
+    #include "..\..\missionConfig\asrai3\cba_settings\bmt_asrai3_cba_settings.hpp"
 #endif
 
 //============================================= END OF FILE =============================================//

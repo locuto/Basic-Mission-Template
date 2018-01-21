@@ -21,11 +21,14 @@
 //=======================================================================================================//
 // Advanced Combat Environment 3 (ACE3)                                                                  //
 //=======================================================================================================//
-#define BMT_ACE3_BALLISTICS            1 // 0 = Basic, 1 = Advanced ballistics.
-#define BMT_ACE3_MEDICAL               2 // 0 = Disabled, 1 = Basic medical system, 2 = Advanced medical system.
-#define BMT_ACE3_SPECTATOR             1 // 0 = BI (End Game), 1 = ACE 3 Spectator mode.
-#define BMT_ACE3_REVIVE                0 // 0 = Disabled, 1 = Players only, 2 = Players and AI.
-#define BMT_ACE3_PREVENT_INSTANT_DEATH 0 // 0 = Disabled, 1 = Enabled, 2 = Time dependant.
+#define BMT_ACE3_BALLISTICS              true // false = Basic, true = Advanced ballistics.
+#define BMT_ACE3_MEDICAL                 2 // 0 = Disabled, 1 = Basic medical system, 2 = Advanced medical system.
+#define BMT_ACE3_SPECTATOR               1 // 0 = BI (End Game), 1 = ACE 3 Spectator mode.
+#define BMT_ACE3_REVIVE                  0 // 0 = Disabled, 1 = Players only, 2 = Players and AI.
+#define BMT_ACE3_PREVENT_INSTANT_DEATH   0 // 0 = Disabled, 1 = Mission dependant, 2 = Enabled, 3 = Time dependant.
+#define BMT_ACE3_PLAYER_DAMAGE_THRESHOLD 1.0
+#define BMT_ACE3_BLEEDING_COEFFICIENT    1.0
+
 //=======================================================================================================//
 // Advanced Combat Radio Environment 2 (ACRE2)                                                           //
 //=======================================================================================================//
@@ -47,7 +50,7 @@
 //=======================================================================================================//
 // JIP support                                                                                           //
 //=======================================================================================================//
-#define BMT_JIP_ENABLED      1    // 0 = JIP disabled, 1 = JIP enabled.
+#define BMT_JIP_ENABLED        1    // 0 = JIP disabled, 1 = JIP enabled.
 #define BMT_JIP_SAVESTATUS     1    // 0 = Disabled, 1 = Enabled.
 
 //=======================================================================================================//

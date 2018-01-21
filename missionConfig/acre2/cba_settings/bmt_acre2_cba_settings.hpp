@@ -1,5 +1,5 @@
 //=======================================================================================================//
-// File: bmt_acre2_cba_settings.sqf                                                                      //
+// File: bmt_acre2_cba_settings.hpp                                                                      //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
 // File creation: 2015/02/22                                                                             //
@@ -9,15 +9,17 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-force acre_sys_core_postmixGlobalVolume = 1;
-force acre_sys_core_premixGlobalVolume = 1;
-force acre_sys_core_spectatorVolume = 1;
-force acre_sys_core_unmuteClients = true;
+acre_sys_core_postmixGlobalVolume = 1;
+acre_sys_core_premixGlobalVolume = 1;
+acre_sys_core_spectatorVolume = 1;
+acre_sys_core_unmuteClients = true;
 
 // ACRE2: Switch to dedicated TS channel
 //        - false: players are not moved to a dedicated TS channel.
 //        - true: players are movede to a dedicated TS channel that best matches the server name.
-acre_sys_core_ts3ChannelSwitch = true;
+force acre_sys_core_ts3ChannelSwitch = true;
+force acre_sys_core_ts3ChannelName = "";
+force acre_sys_core_ts3ChannelPassword = "ustacre2";
 
 // ACRE2: Interference.
 //        - false: radio interference will not be modelled when two players transmit on the same frequency.
@@ -37,16 +39,11 @@ force acre_sys_core_ignoreAntennaDirection = false;
 // ACRE2: Loss of signal due to terrain. Value between 0 and 1.
 //        - 0: Deactivates loss of signal due to terrain.
 //        - 1: Loss of signal totally simulated.
-force acre_sys_core_terrainLoss = 0.7;
+force acre_sys_core_terrainLoss = 0.90;
 
 // ACRE2: Allow AI detect players when they speak.
 //        - false: AI cannot listen to players.
 //        - true: AI can listen to, and therefore detect players using a inverse quadratic model.
 force acre_sys_core_revealToAI = true;
-
-//ACRE2: Crew members auto-join passenger intercom?
-//        - false: Crew members must manually connect to passenger intercom.
-//        - true: Crew members automatically join passenger intercom.
-force acre_sys_core_crewAutoJoinPassengerIntercom = false;
 
 //============================================= END OF FILE =============================================//

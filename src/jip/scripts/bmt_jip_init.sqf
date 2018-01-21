@@ -38,7 +38,7 @@ if (isServer) then {
             bmt_missionEH_jip = addMissionEventHandler ["HandleDisconnect", {[_this select 0, _this select 2, _this select 3] call bmt_fnc_jip_saveStatus;}];
 
             if (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")) then {
-                bmt_array_advancedFatiguePlayers = [];
+                bmt_array_advancedFatigue = [];
             };
         };
 
@@ -74,33 +74,20 @@ if (hasInterface) then {
             // Since JIP is still allowed, add the new player to the list of allowed players.
             if (!_initialPlayer) then {
                 [player] call bmt_fnc_jip_addTo_allowedJIPPlayerList;
-
-                if ((bmt_param_jip_saveStatus == 1) && (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue"))) then {
-                    // Retrieve variable from the server
-                    bmt_array_advancedFatiguePlayers = [];
-
-                    [clientOwner, "bmt_array_advancedFatiguePlayers"] remoteExecCall ["publicVariableClient", 2, false];
-                    waitUntil {count bmt_array_advancedFatiguePlayers > 0};
-
-                    bmt_array_advancedFatiguePlayers pushBack [name player, []];
-                    bmt_var_advancedFatigueIndex = count bmt_array_advancedFatiguePlayers - 1;
-                };
+                bmt_array_advancedFatigue = [];
             } else {
                 // Player is already defined. Therefore, he is reconnecting.
                 if (bmt_param_jip_saveStatus == 1) then {
                     if (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")) then {
                         waitUntil {!isNil "ace_advanced_fatigue_ae1Reserve" && player == player};
-                        bmt_array_advancedFatiguePlayers = [];
+                        bmt_array_advancedFatigue = [];
 
                         // Retrieve variable from the server
-                        [clientOwner, "bmt_array_advancedFatiguePlayers"] remoteExecCall ["publicVariableClient", 2, false];
-                        waitUntil {count bmt_array_advancedFatiguePlayers > 0};
-
-                        {
-                            if (_x select 0 == name player) exitWith {
-                                bmt_var_advancedFatigueIndex = _forEachIndex;
-                            };
-                        } forEach bmt_array_advancedFatiguePlayers;
+                        [clientOwner, "bmt_array_advancedFatigue_" + (name player)] remoteExecCall ["publicVariableClient", 2, false];
+                        waitUntil {
+                            call compile format ["bmt_array_advancedFatigue = bmt_array_advancedFatigue_%1;", name player];
+                            count bmt_array_advancedFatigue > 0
+                        };
                     };
 
                     [player] call bmt_fnc_jip_retrieveStatus;
@@ -130,13 +117,7 @@ if (hasInterface) then {
 
         // Handle JIP persistence (disconnect/reconnect) for advanced fatigue.
         if ((bmt_param_jip_saveStatus == 1) && (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue"))) then {
-            bmt_array_advancedFatiguePlayers = [];
-            {
-                bmt_array_advancedFatiguePlayers pushBack [name _x, []];
-                if (local _x) then {
-                    bmt_var_advancedFatigueIndex = _forEachIndex;
-                };
-            } forEach (allPlayers - entities "HeadlessClient_F");
+            bmt_array_advancedFatigue = [];
         };
     };
 

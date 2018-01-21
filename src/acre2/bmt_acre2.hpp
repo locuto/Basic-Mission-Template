@@ -11,7 +11,7 @@
 
 // Especifies that this component has been loaded.
 #ifdef BMT_COMPONENTS
-    class acre2 {};
+    #define BMT_COMPONENTS_ACRE2
 #endif
 
 // Define the functions of this component.
@@ -68,6 +68,11 @@
         texts[] = {"No", "Yes"};
         default = BMT_ACRE2_CONFIGURE_CHANNELS;
     };
+#endif
+
+#ifdef BMT_CBA_SETTINGS
+    // Advanced Combat Radio Environment 2 (ACRE 2)
+    #include "..\..\missionConfig\acre2\cba_settings\bmt_acre2_cba_settings.hpp"
 #endif
 
 //============================================= END OF FILE =============================================//

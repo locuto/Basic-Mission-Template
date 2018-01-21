@@ -11,15 +11,15 @@
 
 // Especifies that this component has been loaded.
 #ifdef BMT_COMPONENTS
-    class ace3 {};
+    #define BMT_COMPONENTS_ACE3
 #endif
 
 // Define the functions of this component.
 #ifdef BMT_FUNCTIONS_INTERNAL
     class ace3 {
         file = "src\ace3\functions";
-        class ace3_assignWounds    { };
-        //class ace3_config_preInit  { PreInit = 1; };
+        class ace3_assignWounds      { };
+        class ace3_config_preInit    { PreInit = 1; };
         class ace3_config_postInit   { PostInit = 1; };
         class ace3_config_revive     { PostInit = 1; };
         class ace3_config_instaDeath { PostInit = 1; };
@@ -36,45 +36,6 @@
         values[] = {0};
         texts[] = {""};
         default = 0;
-    };
-
-    //===================================================================================================//
-    // Medical system: Level of detail of the ACE3 medical system.                                       //
-    // Default option: Advanced.                                                                         //
-    //===================================================================================================//
-    class ace_medical_level {
-        title = "Medical system";
-        ACE_setting = 1;                              // Marks param to be read as an ace setting.
-        bmt_paramID = "bmt_param_ace3_medicalSystem"; // Parameter for the A3-BMT template.
-        values[] = {0, 1, 2};
-        texts[] =  {"Disabled", "Basic", "Advanced"};
-        default = BMT_ACE3_MEDICAL;
-    };
-
-    //===================================================================================================//
-    // Revive system: Use ACE3 Revive system?                                                            //
-    // Default option: Disabled.                                                                         //
-    //===================================================================================================//
-    class ace_medical_enableRevive {
-        title = "Revive system";
-        ACE_setting = 1;                               // Marks param to be read as an ace setting.
-        bmt_paramID = "bmt_param_ace3_reviveSystem";   // Parameter for the A3-BMT template.
-        values[] = {0, 1};
-        texts[] = {"Disabled", "Enabled"};
-        default = BMT_ACE3_REVIVE;
-    };
-
-    //===================================================================================================//
-    // Ballistics: Level of detail of ballistic simulation of ACE3.                                      //
-    // Default option: Advanced.                                                                         //
-    //===================================================================================================//
-    class ace_advanced_ballistics_enabled {
-        title = "Ballistics";
-        ACE_setting = 1;                               // Marks param to be read as an ace setting.
-        bmt_paramID = "bmt_param_ace3_ballistics";     // Parameter for the A3-BMT template.
-        values[] = {0,1};
-        texts[] = {"Basic", "Advanced"};
-        default = BMT_ACE3_BALLISTICS;
     };
 
     //===================================================================================================//
@@ -100,10 +61,16 @@
     };
 #endif
 
-#ifdef BMT_EXTERNAL_DEFINITIONS
-    class ACE_Settings {
-        #include "bmt_ace3_settings.hpp"
-    };
+#ifdef BMT_CBA_SETTINGS
+    // Advanced Combat Environment 3 (ACE 3)
+    #include "..\..\missionConfig\ace3\cba_settings\bmt_ace3_cba_settings.hpp"
+    #include "..\..\missionConfig\ace3\cba_settings\bmt_ace3_cba_settings_advancedBallistics.hpp"
+    #include "..\..\missionConfig\ace3\cba_settings\bmt_ace3_cba_settings_advancedFatigue.hpp"
+    #include "..\..\missionConfig\ace3\cba_settings\bmt_ace3_cba_settings_medical.hpp"
+    #include "..\..\missionConfig\ace3\cba_settings\bmt_ace3_cba_settings_repair.hpp"
+    #include "..\..\missionConfig\ace3\cba_settings\bmt_ace3_cba_settings_scopes.hpp"
+    #include "..\..\missionConfig\ace3\cba_settings\bmt_ace3_cba_settings_ui.hpp"
+
 #endif
 
 //============================================= END OF FILE =============================================//

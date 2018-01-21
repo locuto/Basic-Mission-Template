@@ -8,6 +8,21 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-#include "missionConfig\bmt_cba_settings.sqf"
+//=======================================================================================================//
+// File: bmt_ace3_cba_settings.hpp                                                                       //
+// Author: TheMagnetar                                                                                   //
+// Version: 1.0                                                                                          //
+// File creation: 2015/02/22                                                                             //
+// Description: This file has contains the different cba settings for ACE 3. If the force keyword is     //
+//              present at the begining of the line, the setting will be forced on all clients. Server   //
+//              configuration can still be used in order to overwrite mission forced settings.           //
+// Changes: 1.0 (2015/11/26) First public version.                                                       //
+//=======================================================================================================//
+
+
+#define BMT_CBA_SETTINGS
+    #include "missionConfig\bmt_missionParameters_definitions.hpp"
+    #include "bmt_components.hpp"
+#undef BMT_CBA_SETTINGS
 
 //============================================= END OF FILE =============================================//

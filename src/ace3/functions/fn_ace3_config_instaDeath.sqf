@@ -12,11 +12,7 @@
 // Changes: 1.0 (2017/11/10) First public version.                                                       //
 //=======================================================================================================//
 
-if (bmt_param_ace3_preventInstaDeath == 0 && hasInterface) then {
-    ace3_medical_preventInstaDeath = false;
-};
-
-if (bmt_param_ace3_preventInstaDeath >= 2) then {
+if (bmt_param_ace3_preventInstaDeath == 1) then {
     bmt_var_instaDeathPreventedTime = getNumber (missionConfigFile >> "bmt_config" >> "bmt_config_preventInstaDeathTime");
 
     if (bmt_var_instaDeathPreventedTime <= 0 && bmt_param_ace3_preventInstaDeath == 3) then {
