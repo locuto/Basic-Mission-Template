@@ -83,9 +83,10 @@ if (hasInterface) then {
                         bmt_array_advancedFatigue = [];
 
                         // Retrieve variable from the server
-                        [clientOwner, "bmt_array_advancedFatigue_" + (name player)] remoteExecCall ["publicVariableClient", 2, false];
+                        [clientOwner, "bmt_array_advancedFatigue_" + (getPlayerUID player)] remoteExecCall ["publicVariableClient", 2, false];
                         waitUntil {
-                            call compile format ["bmt_array_advancedFatigue = bmt_array_advancedFatigue_%1;", name player];
+                            sleep 1.0;
+                            call compile format ["bmt_array_advancedFatigue = bmt_array_advancedFatigue_%1;", getPlayerUID player];
                             count bmt_array_advancedFatigue > 0
                         };
                     };

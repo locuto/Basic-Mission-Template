@@ -21,7 +21,7 @@ _aceAdvancedFatigue pushback ["ace_advanced_fatigue_anReserve", ace_advanced_fat
 _aceAdvancedFatigue pushback ["ace_advanced_fatigue_anFatigue", ace_advanced_fatigue_anFatigue];
 _aceAdvancedFatigue pushback ["ace_advanced_fatigue_muscleDamage", ace_advanced_fatigue_muscleDamage];
 
-call compile format ["bmt_array_advancedFatigue_%1 = +_aceAdvancedFatigue;", name _unit];
-publicVariableServer ("bmt_array_advancedFatigue_" + (name _unit));
+call compile format ["bmt_array_advancedFatigue_%1 = +_aceAdvancedFatigue;", getPlayerUID _unit];
+publicVariableServer ("bmt_array_advancedFatigue_" + (getPlayerUID _unit));
 
 //============================================= END OF FILE =============================================//
