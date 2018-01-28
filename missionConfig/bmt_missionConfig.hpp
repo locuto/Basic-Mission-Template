@@ -104,7 +104,7 @@ showWatch   = 1;             // Shows (1) or hides (0) the watch on the map scre
 showUAVFeed = 0;             // Shows (1) or hides (0) the UAV feed.
 forceRotorLibSimulation = 1; // Force enable or disable RotorLib: 0 = client options based,
                              // 1 = force enable, 2 = force disable.
-disableChannels[]={1,2,3,4}; // Disable channels. MOTD and admin say have exception and will show in global.
+disableChannels[]={1,2,4};   // Disable channels. MOTD and admin say have exception and will show in global.
                              // 0 = global, 1 = Side, 2 = Command, 3 = Group, 4 = Vehicle, 5 = Direct,
                              // 6 = System.
 

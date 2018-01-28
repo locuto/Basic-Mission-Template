@@ -70,7 +70,6 @@
     #include "..\..\missionConfig\ace3\cba_settings\bmt_ace3_cba_settings_repair.hpp"
     #include "..\..\missionConfig\ace3\cba_settings\bmt_ace3_cba_settings_scopes.hpp"
     #include "..\..\missionConfig\ace3\cba_settings\bmt_ace3_cba_settings_ui.hpp"
-
 #endif
 
 //============================================= END OF FILE =============================================//

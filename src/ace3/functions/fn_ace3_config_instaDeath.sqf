@@ -15,7 +15,7 @@
 if (bmt_param_ace3_preventInstaDeath == 1) then {
     bmt_var_instaDeathPreventedTime = getNumber (missionConfigFile >> "bmt_config" >> "bmt_config_preventInstaDeathTime");
 
-    if (bmt_var_instaDeathPreventedTime <= 0 && bmt_param_ace3_preventInstaDeath == 3) then {
+    if (bmt_var_instaDeathPreventedTime <= 0 && bmt_param_ace3_preventInstaDeath == 1) then {
         diag_log format ["ERROR (bmt_ace3_handleInstaDeath.sqf): prevent instant death is enabled but the time is equal or less than 0."];
     } else {
         // Enable the prevent instant death ACE 3 option.
@@ -24,7 +24,7 @@ if (bmt_param_ace3_preventInstaDeath == 1) then {
         };
 
         // Negative time values mean that instant death is prevented during the whole mission.
-        if (isServer && {bmt_var_instaDeathPreventedTime > 0} && {bmt_param_ace3_preventInstaDeath == 3}) then {
+        if (isServer && {bmt_var_instaDeathPreventedTime > 0} && {bmt_param_ace3_preventInstaDeath == 1}) then {
             bmt_script_ace3PreventInstantDeath = [] execVM "src/ace3/scripts/bmt_ace3_handleInstaDeath";
         };
     };
