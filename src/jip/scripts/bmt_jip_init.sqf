@@ -131,8 +131,7 @@ if (hasInterface) then {
         };
     };
 
-
-    player setVariable ["bmt_var_init_configJIPReady", true, true];
+    player setVariable ["bmt_var_init_configJIPReady", true];
 };
 
 //============================================= END OF FILE =============================================//

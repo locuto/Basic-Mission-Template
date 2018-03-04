@@ -14,10 +14,10 @@
 
 private _radioList = ["ACRE_PRC148","ACRE_PRC152","ACRE_PRC117F"];
 private _nameList = ["label", "description", "name"];
-private _presetList = ["default2","default3","default4"];
+private _presetList = ["default", "default2", "default3", "default4"];
 
 if (bmt_acre2_riflemanRadio == "ACRE_SEM52SL" || bmt_acre2_shortRangeRadio == "ACRE_SEM52SL" || bmt_acre2_longRangeRadio == "ACRE_SEM52SL") then {
-    _radioList pushBack "ACRE_SEM52SL";
+    _radioList pushBackUnique "ACRE_SEM52SL";
 };
 
 {

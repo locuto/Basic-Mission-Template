@@ -13,11 +13,23 @@
 //=======================================================================================================//
 
 private _unitGroup = tolower (groupId (group player));
-private _unitFaction = tolower (faction player);
+
+// Identify which faction the unit belongs to.
+private _unitFaction = player getVariable ["bmt_var_unitFaction", ""];
+
+if (_unitFaction isEqualTo "") then {
+    _unitFaction = toLower (faction player);
+};
 
 // Use leader faction if unit's faction is different.
-if (_unitFaction != toLower (faction (leader group player))) then {
-    _unitFaction = toLower (faction (leader group player));
+private _factionLeader = (leader group player) getVariable ["bmt_var_unitFaction", ""];
+
+if (_factionLeader isEqualTo "") then {
+    _factionLeader = toLower (faction (leader group player));
+};
+
+if !(_unitFaction isEqualTo _factionLeader) then {
+    _unitFaction = _factionLeader;
 };
 
 private _unitSide = tolower format ["%1", side player];

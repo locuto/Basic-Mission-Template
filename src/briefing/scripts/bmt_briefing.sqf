@@ -25,11 +25,28 @@ if (!isDedicated && (isNull player)) then {
 waitUntil {!isNil "bmt_param_debugOutput"};
 
 // Identify which faction the unit belongs to.
-private _unitFaction = toLower (faction player);
+private _unitFaction = "";
 
-// Use leader faction if unit's faction is different.
-if (_unitFaction != toLower (faction (leader group player))) then {
-    _unitFaction = toLower (faction (leader group player));
+// Identify which faction the unit belongs to.
+if (side player isEqualTo sideLogic) then {
+    _unitFaction = "logic";
+} else {
+    _unitFaction = player getVariable ["bmt_var_unitFaction", ""];
+
+    if (_unitFaction isEqualTo "") then {
+        _unitFaction = toLower (faction player);
+    };
+
+    // Use leader faction if unit's faction is different.
+    private _factionLeader = (leader group player) getVariable ["bmt_var_unitFaction", ""];
+
+    if (_factionLeader isEqualTo "") then {
+        _factionLeader = toLower (faction (leader group player));
+    };
+
+    if !(_unitFaction isEqualTo _factionLeader) then {
+        _unitFaction = _factionLeader;
+    };
 };
 
 private _recognised = true;
@@ -164,12 +181,25 @@ switch (_unitFaction) do {
     };
 
     //====================================================================================================//
+    // Fuerzas Armadas (ffaa).                                                                            //
+    //====================================================================================================//
+
+    // Briefing for German army "Bundeswehr" faction.
+    case "ffaa": {
+        #include "..\..\..\missionConfig\briefing\scripts\bmt_briefing_ffaa.sqf"
+    };
+
+    //====================================================================================================//
     // Faces of War.                                                                                      //
     //====================================================================================================//
 
     // Briefing for United States Marine Corps faction.
     case "fow_usmc": {
         #include "..\..\..\missionConfig\briefing\scripts\bmt_briefing_fow_usmc.sqf"
+    };
+
+    case "logic": {
+        #include "..\..\..\missionConfig\briefing\scripts\bmt_briefing_logic.sqf"
     };
 
     default {

@@ -16,12 +16,29 @@
 // Variable declarations.
 params [["_unit", objNull]];
 
-// Identificar la facció de la unitat.
-private _unitFaction = toLower (faction _unit);
+private _unitFaction = _unit getVariable ["bmt_var_unitFaction", ""];
+
+if (_unitFaction isEqualTo "") then {
+    _unitFaction = toLower (faction _unit);
+};
 
 // DEBUG OUTPUT.
-if ( bmt_param_debugOutput == 1 ) then {
+if (bmt_param_debugOutput == 1) then {
     diag_log format ["DEBUG (fn_acre2_determinarbmt_acre2_configureLanguages.sqf): unit faction: %1", _unitFaction];
+};
+
+if (side _unit isEqualTo sideLogic) exitWith {
+    private _allLanguages = [];
+    {
+        _allLanguages pushBackUnique (_x select 0);
+    } forEach bmt_acre2_languages;
+
+    [_allLanguages] call acre_api_fnc_babelSetSpokenLanguages;
+    [_allLanguages select 0] call acre_api_fnc_babelSetSpeakingLanguage;
+
+    if (bmt_param_debugOutput == 1) then {
+        diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for virtual unit.", _allLanguages];
+    };
 };
 
 // Languages for BLUFOR faction.
@@ -30,7 +47,7 @@ if (_unitFaction in ["blu_f", "blu_ctrg_f", "blu_gen_f", "blu_t_f"] ) exitWith {
     bmt_acre2_language_blufor call acre_api_fnc_babelSetSpokenLanguages;
     [bmt_acre2_language_blufor select 0] call acre_api_fnc_babelSetSpeakingLanguage;
     // DEBUG OUTPUT
-    if ( bmt_param_debugOutput == 1 ) then {
+    if (bmt_param_debugOutput == 1) then {
         diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_blufor, _unitFaction];
     };
 };
@@ -41,7 +58,7 @@ if (_unitFaction in ["blu_g_f","ind_g_f","opf_g_f"]) exitWith {
     bmt_acre2_language_fia call acre_api_fnc_babelSetSpokenLanguages;
     [bmt_acre2_language_fia select 0] call acre_api_fnc_babelSetSpeakingLanguage;
     // DEBUG OUTPUT
-    if ( bmt_param_debugOutput == 1 ) then {
+    if (bmt_param_debugOutput == 1) then {
         diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_fia, _unitFaction];
     };
 };
@@ -52,7 +69,7 @@ if (_unitFaction in ["opf_f", "opf_t_f"]) exitWith {
     bmt_acre2_language_opfor call acre_api_fnc_babelSetSpokenLanguages;
     [bmt_acre2_language_opfor select 0] call acre_api_fnc_babelSetSpeakingLanguage;
     // DEBUG OUTPUT
-    if ( bmt_param_debugOutput == 1 ) then {
+    if (bmt_param_debugOutput == 1) then {
         diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_opfor, _unitFaction];
     };
 };
@@ -63,7 +80,7 @@ if (_unitFaction in ["ind_f", "ind_c_f"]) exitWith {
     bmt_acre2_language_indfor call acre_api_fnc_babelSetSpokenLanguages;
     [bmt_acre2_language_indfor select 0] call acre_api_fnc_babelSetSpeakingLanguage;
     // DEBUG OUTPUT
-    if ( bmt_param_debugOutput == 1 ) then {
+    if (bmt_param_debugOutput == 1) then {
         diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_indfor, _unitFaction];
     };
 };
@@ -74,7 +91,7 @@ if (_unitFaction == "civ_f") exitWith {
     bmt_acre2_language_civ call acre_api_fnc_babelSetSpokenLanguages;
     [bmt_acre2_language_civ select 0] call acre_api_fnc_babelSetSpeakingLanguage;
     // DEBUG OUTPUT
-    if ( bmt_param_debugOutput == 1 ) then {
+    if (bmt_param_debugOutput == 1) then {
         diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_civ, _unitFaction];
     };
 };
@@ -85,7 +102,7 @@ if (_unitFaction in ["rhs_faction_usarmy_wd", "rhs_faction_usarmy_d", "rhs_facti
     bmt_acre2_language_rhsusaf call acre_api_fnc_babelSetSpokenLanguages;
     [bmt_acre2_language_rhsusaf select 0] call acre_api_fnc_babelSetSpeakingLanguage;
     // DEBUG OUTPUT
-    if ( bmt_param_debugOutput == 1 ) then {
+    if (bmt_param_debugOutput == 1) then {
         diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_rhsusaf, _unitFaction];
     };
 };
@@ -96,42 +113,69 @@ if (_unitFaction in ["rhs_faction_vpvo", "rhs_faction_vdv"] ) exitWith {
     bmt_acre2_language_rhsafrf call acre_api_fnc_babelSetSpokenLanguages;
     [bmt_acre2_language_rhsafrf select 0] call acre_api_fnc_babelSetSpeakingLanguage;
     // DEBUG OUTPUT
-    if ( bmt_param_debugOutput == 1 ) then {
+    if (bmt_param_debugOutput == 1) then {
         diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_rhsafrf, _unitFaction];
     };
 };
 
 // Languages for RHS: Insurgents faction.
-if (_unitFaction  == "rhs_faction_insurgents" ) exitWith {
+if (_unitFaction  == "rhs_faction_insurgents") exitWith {
 
     bmt_acre2_language_rhsins call acre_api_fnc_babelSetSpokenLanguages;
     [bmt_acre2_language_rhsins select 0] call acre_api_fnc_babelSetSpeakingLanguage;
     // DEBUG OUTPUT
-    if ( bmt_param_debugOutput == 1 ) then {
+    if (bmt_param_debugOutput == 1) then {
         diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_rhsins, _unitFaction];
     };
 };
 
 // Languages for Bundeswehr faction.
-if (_unitFaction == "bwa3_faction" ) exitWith {
+if (_unitFaction == "bwa3_faction") exitWith {
 
     bmt_acre2_language_bwa3 call acre_api_fnc_babelSetSpokenLanguages;
     [bmt_acre2_language_bwa3 select 0] call acre_api_fnc_babelSetSpeakingLanguage;
     // DEBUG OUTPUT
-    if ( bmt_param_debugOutput == 1 ) then {
+    if (bmt_param_debugOutput == 1) then {
         diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_bwa3, _unitFaction];
     };
 };
 
+// Languages for Fuerzas Armadas (ffaa) faction
+if (_unitFaction == "ffaa") exitWith {
+
+    bmt_acre2_language_ffaa call acre_api_fnc_babelSetSpokenLanguages;
+    [bmt_acre2_language_ffaa select 0] call acre_api_fnc_babelSetSpeakingLanguage;
+    // DEBUG OUTPUT
+    if (bmt_param_debugOutput == 1) then {
+        diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_ffaa, _unitFaction];
+    };
+};
+
 // Languages for Faces of War: United States Marine Corps.
-if (_unitFaction == "fow_usmc" ) exitWith {
+if (_unitFaction == "fow_usmc") exitWith {
 
     bmt_acre2_language_fow_usmc call acre_api_fnc_babelSetSpokenLanguages;
     [bmt_acre2_language_fow_usmc select 0] call acre_api_fnc_babelSetSpeakingLanguage;
     // DEBUG OUTPUT
-    if ( bmt_param_debugOutput == 1 ) then {
+    if (bmt_param_debugOutput == 1) then {
         diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for faction %2.", bmt_acre2_language_fow_usmc, _unitFaction];
     };
 };
+
+// Default
+private _defaultLanguage = [];
+switch (side _unit) do {
+    case west: { _defaultLanguage = bmt_acre2_language_blufor; };
+    case east: { _defaultLanguage = bmt_acre2_language_opfor; };
+    case civilian: { _defaultLanguage = bmt_acre2_language_civ; };
+    case independent: { _defaultLanguage = bmt_acre2_language_indfor; };
+    default { _defaultLanguage = bmt_acre2_language_blufor; }
+};
+
+_defaultLanguage call acre_api_fnc_babelSetSpokenLanguages;
+[_defaultLanguage select 0] call acre_api_fnc_babelSetSpeakingLanguage;
+
+// DEBUG OUTPUT
+diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): faction %1 not found. Using default language %2.", _unitFaction, _defaultLanguage];
 
 //============================================= END OF FILE =============================================//

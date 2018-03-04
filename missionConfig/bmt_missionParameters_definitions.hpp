@@ -34,6 +34,7 @@
 //=======================================================================================================//
 #define BMT_ACRE2_CONFIGURE_CHANNELS 1 // 0 = Do not configure radio channels, 1 = Configure radio channels
 #define BMT_ACRE2_DISTRIBUTE_RADIOS  1 // 0 = Do not distribute radios, 1 = Distribute radios
+#define BMT_ACRE2_CONFIGURE_BABEL    1 // 0 = Do not configure Babel, 1 = Configure Babel
 
 //=======================================================================================================//
 // ASR AI 3                                                                                              //

@@ -100,6 +100,9 @@ if (isNil "_unitFaction") then {
     _unitFaction = toLower _unitFaction;
 };
 
+// Save unit faction
+_unit setVariable ["bmt_var_unitFaction", _unitFaction, true];
+
 // Save unit type.
 _unit setVariable ["bmt_var_configEquipment", _unitOptions, true];
 
@@ -187,6 +190,11 @@ switch (_unitFaction) do {
     case "bwa3_faction": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_bwa3_faction; };
 
     //====================================================================================================//
+    // Fuerzas Armadas (ffaa).                                                                            //
+    //====================================================================================================//
+    case "ffaa": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_ffaa; };
+
+    //====================================================================================================//
     // Faces of War.                                                                                      //
     //====================================================================================================//
 
@@ -199,11 +207,12 @@ switch (_unitFaction) do {
 if (_recognised) then {
     // DEBUG OUTPUT.
     _unit setVariable ["bmt_var_init_configEquipmentReady", true, true];
+
     if (bmt_param_debugOutput == 1) then {
         diag_log format ["DEBUG (fn_configEquipment.sqf): unit equiped with gear of faction: %1", _unitFaction];
     };
 } else {
-    player globalchat format ["ERROR (fn_configEquipment.sqf): Faction %1 is not defined. Using fallback faction.", _unitFaction];
+    systemChat format ["ERROR (fn_configEquipment.sqf): Faction %1 is not defined. Using fallback faction.", _unitFaction];
 };
 
 //============================================= END OF FILE =============================================//

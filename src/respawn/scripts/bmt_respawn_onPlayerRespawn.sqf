@@ -56,7 +56,7 @@ if (_respawn == 1) then {
             _unit setVariable ["bmt_var_hasEarPlugs", nil];
         };
     } else {
-        private _unitOptions = _unit getVariable "bmt_var_configEquipment";
+        private _unitOptions = _unit getVariable ["bmt_var_configEquipment", "undefined"];
         [_unitOptions, _unit] call bmt_fnc_configEquipment;
 
         sleep 1;

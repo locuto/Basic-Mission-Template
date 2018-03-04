@@ -27,20 +27,17 @@ params ["_missionName", "_missionLocation", "_introText", ["_dateAndTime", "defa
 titleCut ["", "BLACK FADED", 999];
 
 // Disable simulation for all units during the black screen.
-{
-    _x enableSimulation false;
-} forEach allUnits;
+player enableSimulation false;
+
+if (vehicle player != player) then {
+    (vehicle player) enableSimulation false;
+};
 
 // Citation display.
 titleText [_introText,"PLAIN"];
 
 waitUntil {missionNamespace getVariable ["bmt_var_init_preloadCompleted", false];};
 titleFadeOut 5;
-
-// Reenable simulation for all units.
-{
-    _x enableSimulation true;
-} forEach allUnits;
 
 if (_dateAndTime isEqualTo "default") then {
     _dateAndTime = ([([daytime] call BIS_fnc_TimeToString),0,4] call BIS_fnc_trimString) + " " + str(date select 2) + "." + str(date select 1) + "." + str(date select 0)
@@ -64,6 +61,12 @@ sleep 5;
 
 titleCut ["", "BLACK IN", 5];
 
-player setVariable ["bmt_var_init_introFinished", true, true];
+player enableSimulation true;
+
+if (vehicle player != player) then {
+    (vehicle player) enableSimulation true;
+};
+
+player setVariable ["bmt_var_init_introFinished", true];
 
 //============================================= END OF FILE =============================================//

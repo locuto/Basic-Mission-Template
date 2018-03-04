@@ -6,57 +6,39 @@
 // Description: Configuration equipment for role "ccrw" (Combat Crew)                               //
 // Changes: 1.0 (2017/11/07) First public version.                                                       //
 //=======================================================================================================//
+comment "Exported from Arsenal by Cbo V.Arias";
 
-// Vest and Backpack.
-_unit addVest _vestCRW;
-_unit addBackpack _backpack;
-
-// Helmet.
+comment "Remove existing items";
+removeAllWeapons _unit;
+removeAllItems _unit;
+removeAllAssignedItems _unit;
+removeUniform _unit;
+removeVest _unit;
+removeBackpack _unit;
 removeHeadgear _unit;
-_unit addHeadgear _helmetCRW;
+removeGoggles _unit;
 
-// Items in the uniform.
-(uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer, 1];
-(uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 1];
-if (bmt_mod_ace3 or bmt_mod_agm) then{
-    (uniformContainer _unit) addItemCargoGlobal [_clacker, 1];
-};
+comment "Add containers";
+_unit forceAddUniform "rhs_uniform_g3_tan";
+for "_i" from 1 to 3 do {_unit addItemToUniform "rhs_mag_30Rnd_556x45_M855_Stanag";};
+_unit addVest "V_TacVest_khk";
+_unit addHeadgear "H_Beret_Colonel";
+_unit addGoggles "rhs_googles_black";
 
-// Items in the vest.
-if (bmt_mod_ace3 or bmt_mod_agm) then {
-    (vestContainer _unit) addItemCargoGlobal [_bandage, 2];
-};
-(vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8];
-(vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 1];
-(vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67", 4];
+comment "Add weapons";
+_unit addWeapon "rhs_weap_hk416d10_LMT_d";
+_unit addPrimaryWeaponItem "rhsusf_acc_nt4_tan";
+_unit addPrimaryWeaponItem "rhsusf_acc_anpeq16a";
+_unit addPrimaryWeaponItem "rhsusf_acc_eotech_552_d";
 
-// Items in the backpack.
-if (bmt_mod_ace3 or bmt_mod_agm) then {
-    (unitBackpack _unit) addItemCargoGlobal [_bandage, 2];
-    if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-        (unitBackpack _unit) addItemCargoGlobal [_elasticBandage, 3];
-        (unitBackpack _unit) addItemCargoGlobal [_quickClot, 3];
-        (unitBackpack _unit) addItemCargoGlobal [_packingBandage, 3];
-        (unitBackpack _unit) addItemCargoGlobal [_tourniquet, 1];
-    };
-};
-(unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84", 1];
-(unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 4];
-(unitBackpack _unit) addItemCargoGlobal ["ToolKit", 1];
+comment "Add items";
+_unit linkItem "ItemMap";
+_unit linkItem "ItemCompass";
+_unit linkItem "ItemWatch";
+_unit linkItem "ItemRadio";
 
-// Primary weapon.
-_unit addWeapon _pweapon;
-_unit addPrimaryWeaponItem _pweaponSurefire;
-_unit addPrimaryWeaponItem _pweaponLaserLantern;
-_unit addPrimaryWeaponItem _pweaponScope;
-
-// Night vision.
-if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-    if (bmt_var_equipNightVision == 1) then {
-        (unitBackpack _unit) addItemCargoGlobal [_nightVision, 1];
-    } else {
-        _unit linkItem _nightVision;
-    };
-};
+comment "Set identity";
+_unit setFace "Sturrock";
+_unit setSpeaker "ace_novoice";
 
 //============================================= END OF FILE =============================================//

@@ -28,7 +28,7 @@ if (bmt_param_ace3_reviveSystem > 0) then {
                 case civilian: { _pos = 3; };
             };
             bmt_array_numRespawns set [_pos, 0];
-            publicVariable bmt_array_numRespawns;
+            publicVariable "bmt_array_numRespawns";
         };
         case 1: {
             if (bmt_param_debugOutput == 1) then {

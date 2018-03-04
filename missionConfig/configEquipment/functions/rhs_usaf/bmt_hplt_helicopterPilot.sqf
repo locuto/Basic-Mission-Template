@@ -7,33 +7,36 @@
 // Changes: 1.0 (2017/11/07) First public version.                                                       //
 //=======================================================================================================//
 
-// Remove uniform, helmet and vest.
+comment "Exported from Arsenal by Cbo V.Arias";
+
+comment "Remove existing items";
+removeAllWeapons _unit;
+removeAllItems _unit;
+removeAllAssignedItems _unit;
 removeUniform _unit;
+removeVest _unit;
+removeBackpack _unit;
 removeHeadgear _unit;
 removeGoggles _unit;
 
-// Uniform and parachute.
-_unit forceAddUniform _uniformHPLT;
-_unit addBackpack _parachuteHPLT;
-_unit addHeadgear _helmetHPLT;
+comment "Add containers";
+_unit forceAddUniform "CUP_U_B_USArmy_PilotOverall";
+_unit addItemToUniform "ACE_microDAGR";
+_unit addItemToUniform "ACE_EarPlugs";
+_unit addHeadgear "rhsusf_hgu56p_black";
+_unit addGoggles "G_Aviator";
 
-// Items in the uniform.
-if (bmt_mod_ace3 or bmt_mod_agm) then {
-    (uniformContainer _unit) addItemCargoGlobal [_earPlugs, 1];
-    (uniformContainer _unit) addItemCargoGlobal [_morphine, 1];
-    (uniformContainer _unit) addItemCargoGlobal [_epinephrine, 1];
-    if (bmt_var_equipFlashlight) then {
-        (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
-    };
-};
-(uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer, 1];
-(uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP", 2];
-(uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 4];
+comment "Add weapons";
 
-// Primary weapon.
-_unit addWeapon _pweapon;
-_unit addPrimaryWeaponItem _pweaponSurefire;
-_unit addPrimaryWeaponItem _pweaponLaserLantern;
-_unit addPrimaryWeaponItem _pweaponScope;
+comment "Add items";
+this linkItem "ItemMap";
+this linkItem "ItemCompass";
+this linkItem "ItemWatch";
+this linkItem "ItemRadioAcreFlagged";
+
+comment "Set identity";
+_unit setFace "Sturrock";
+_unit setSpeaker "male01gre";
+
 
 //============================================= END OF FILE =============================================//

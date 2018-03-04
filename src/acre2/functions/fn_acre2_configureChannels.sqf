@@ -19,7 +19,7 @@ params [["_unit", objNull]];
 sleep 3;
 
 private _unitGroup = _unit getVariable ["bmt_var_unitGroup", ["nil", -1]];
-private _unitOptions = _unit getVariable ["bmt_var_configEquipment", "NIL"];
+private _unitOptions = _unit getVariable ["bmt_var_configEquipment", "undefined"];
 
 private _unitRole = "";
 if ((typeName _unitOptions) == "STRING") then {

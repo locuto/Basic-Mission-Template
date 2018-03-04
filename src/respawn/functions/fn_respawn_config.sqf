@@ -47,7 +47,7 @@ switch (bmt_param_respawn_tickets) do {
             case civilian:   { _pos = 3; };
         };
         bmt_array_numRespawns set [_pos, _numRespawns];
-        publicVariable bmt_array_numRespawns;
+        publicVariable "bmt_array_numRespawns";
     };
     case 1: {
         if (bmt_param_debugOutput == 1) then {

@@ -7,56 +7,46 @@
 // Changes: 1.0 (2017/11/07) First public version.                                                       //
 //=======================================================================================================//
 
-// Vest and Backpack.
-_unit addVest _vestTL;
-_unit addBackpack _backpack;
+comment "Exported from Arsenal by Cbo V.Arias";
 
-// Items in the uniform.
-(uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer, 1];
-(uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 1];
+comment "Remove existing items";
+removeAllWeapons this;
+removeAllItems this;
+removeAllAssignedItems this;
+removeUniform this;
+removeVest this;
+removeBackpack this;
+removeHeadgear this;
+removeGoggles this;
 
-// Items in the vest.
-if (bmt_mod_ace3 or bmt_mod_agm) then {
-    (vestContainer _unit) addItemCargoGlobal [_bandage, 2];
-    (vestContainer _unit) addItemCargoGlobal [_mapTools, 1];
-};
-(vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8];
-(vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 1];
-(vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_M433_HEDP", 2];
-(vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_mk84", 1];
-(vestContainer _unit) addMagazineCargoGlobal ["rhs_mag_m67", 2];
+comment "Add containers";
+this forceAddUniform "rhs_uniform_cu_ucp";
+for "_i" from 1 to 4 do {this addItemToUniform "ACE_packingBandage";};
+for "_i" from 1 to 5 do {this addItemToUniform "ACE_elasticBandage";};
+this addItemToUniform "ACE_EarPlugs";
+for "_i" from 1 to 5 do {this addItemToUniform "ACE_CableTie";};
+this addVest "rhsusf_iotv_ucp_Teamleader";
+for "_i" from 1 to 4 do {this addItemToVest "SmokeShell";};
+for "_i" from 1 to 9 do {this addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag";};
+for "_i" from 1 to 3 do {this addItemToVest "CUP_HandGrenade_M67";};
+this addHeadgear "rhsusf_ach_helmet_ESS_ucp";
+this addGoggles "rhs_googles_black";
 
-// Items in the backpack.
-if (bmt_mod_ace3 or bmt_mod_agm) then {
-    (unitBackpack _unit) addItemCargoGlobal [_bandage, 2];
-    if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-        (unitBackpack _unit) addItemCargoGlobal [_elasticBandage, 3];
-        (unitBackpack _unit) addItemCargoGlobal [_quickClot, 3];
-        (unitBackpack _unit) addItemCargoGlobal [_packingBandage, 3];
-        (unitBackpack _unit) addItemCargoGlobal [_tourniquet, 1];
-    };
-};
-(unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 5];
-(unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 2];
-(unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m714_White", 2];
-(unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc", 2];
+comment "Add weapons";
+this addWeapon "rhs_weap_m4a1_pmag";
+this addPrimaryWeaponItem "rhsusf_acc_compm4";
+this addWeapon "rhsusf_weap_m9";
+this addWeapon "Binocular";
 
-// Primary weapon.
-_unit addWeapon _pweapon320;
-_unit addPrimaryWeaponItem _pweaponSurefire;
-_unit addPrimaryWeaponItem _pweaponLaserLantern;
-_unit addPrimaryWeaponItem _pweaponScope;
+comment "Add items";
+this linkItem "ItemMap";
+this linkItem "ItemCompass";
+this linkItem "ItemWatch";
+this linkItem "ItemRadioAcreFlagged";
 
-// Night vision.
-if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-    if (bmt_var_equipNightVision == 1) then {
-        (unitBackpack _unit) addItemCargoGlobal [_nightVision, 1];
-    } else {
-        _unit linkItem _nightVision;
-    };
-};
+comment "Set identity";
+this setFace "Sturrock";
+this setSpeaker "male01gre";
 
-// Binoculars.
-_unit addWeapon _vectorIV;
 
 //============================================= END OF FILE =============================================//

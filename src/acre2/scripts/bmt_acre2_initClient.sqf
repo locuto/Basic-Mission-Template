@@ -36,45 +36,56 @@ if (bmt_acre2_differentPresets) then {
 // as defined in "bmt_acre2_configuracio.sqf". Spectator chat will be force if unit is not alive.
 
 sleep 0.1;
+private _isSideLogic = (side player) isEqualTo sideLogic;
 
 if (alive player) then {
     // Wait until gear assignement is finished.
-    waitUntil{(player getVariable ["bmt_var_init_configEquipmentReady", false])};
+    if (!_isSideLogic) then {
+        // Wait until ACRE 2 is initialised.
+        waitUntil {
+            sleep 0.1;
+            [] call acre_api_fnc_isInitialized;
+        };
 
-    // Wait until ACRE 2 is initialised.
-    waitUntil {
-        [] call acre_api_fnc_isInitialized;
-    };
+        waitUntil {
+            player getVariable ["bmt_var_init_configEquipmentReady", false]
+        };
 
-    // Define languages per side.
-    [player] call bmt_fnc_acre2_configureLanguages;
+        // Do not redistribute radios if the previous status has been retrieved.
+        if ( !(player getVariable ["bmt_var_jip_StatusRetrieved", false]) && {!_isSideLogic}) then {
+            // Remove all radios.
+            [player] call bmt_fnc_acre2_removeRadios;
 
-    // Do not redistribute radios if the previous status has been retrieved.
-    if ( !(player getVariable ["bmt_var_jip_StatusRetrieved", false]) ) then {
-        // Remove all radios.
-        [player] call bmt_fnc_acre2_removeRadios;
+            // Add radios depending on the role.
+            // If radios distribution is enabled, they must be added.
+            if (bmt_param_acre2_distributeRadios == 1) then {
+                [player] call bmt_fnc_acre2_addRadios;
+            };
+        };
 
-        // Add radios depending on the role.
-        // If radios distribution is enabled, they must be added.
-        if (bmt_param_acre2_distributeRadios == 1) then {
-            [player] call bmt_fnc_acre2_addRadios;
+        // Configure active channels.
+        if (bmt_param_acre2_configureChannels == 1) then {
+            [player] call bmt_fnc_acre2_configureChannels;
         };
     };
 
-    // Configure active channels.
-    if (bmt_param_acre2_configureChannels == 1) then {
-        [player] call bmt_fnc_acre2_configureChannels;
+    // Configure languages
+    if (bmt_param_acre2_configureBabel == 1) then {
+        ["unit", {
+            params ["_unit"];
+            // Define languages per faction.
+            [_unit] call bmt_fnc_acre2_configureLanguages;
+        }, true] call CBA_fnc_addPlayerEventHandler;
     };
 
     // Make sure that the player is not in spectator mode.
     [false] call acre_api_fnc_setSpectator;
-
 } else {
     // Player is dead. Make sure it enters the spectator mode.
     [true] call acre_api_fnc_setSpectator;
 };
 
-player setVariable ["bmt_var_init_configRadiosReady", true, true];
+player setVariable ["bmt_var_init_configRadiosReady", true];
 
 // DEBUG OUTPUT
 if ( bmt_param_debugOutput == 1) then {

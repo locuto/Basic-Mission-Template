@@ -15,7 +15,7 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-if (!bmt_mod_dac OR (bmt_param_dac_enabled == 0)) exitWith {};
+if (!bmt_mod_dac || {bmt_param_dac_enabled == 0}) exitWith {};
 
 if (!isServer) exitWith { };
 

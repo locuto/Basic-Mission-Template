@@ -12,15 +12,10 @@
 // ToDo: Replace entries with getMissionConfigValue.                                                     //
 //=======================================================================================================//
 
-if (!isServer) exitWith { };
-
 private _paramNames = [];
 
-_paramNames = _paramNames + [
-                                "bmt_param_ace3_spectator",
-                                "bmt_param_ace3_preventInstaDeath"
-                            ];  // ACE 3
-_paramNames = _paramNames + ["bmt_param_acre2_configureChannels", "bmt_param_acre2_distributeRadios"];                                                 // ACRE 2
+_paramNames = _paramNames + ["bmt_param_ace3_spectator","bmt_param_ace3_preventInstaDeath"];                                                           // ACE 3
+_paramNames = _paramNames + ["bmt_param_acre2_configureChannels", "bmt_param_acre2_distributeRadios", "bmt_param_acre2_configureBabel"];               // ACRE 2
 _paramNames = _paramNames + ["bmt_param_asrai3_enabled", "bmt_param_asrai3_debug"];                                                                    // ASR AI 3
 _paramNames = _paramNames + ["bmt_param_dac_enabled", "bmt_param_dac_debug"];                                                                          // DAC
 _paramNames = _paramNames + ["bmt_param_jip_enabled", "bmt_param_jip_saveStatus"];                                                                     // Join-in-Progress (JIP)
@@ -34,8 +29,7 @@ _paramNames = _paramNames + ["bmt_param_zeus_admin"];                           
 
 // Initialise all parameters to zero
 {
-    call compile format["%1 = %2", _paramNames select _forEachIndex, 0];
-    publicVariable _x;
+    call compile format ["%1 = %2", _paramNames select _forEachIndex, 0];
 } forEach _paramNames;
 
 //============================================= END OF FILE =============================================//

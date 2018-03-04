@@ -72,7 +72,7 @@ private["_flashlight"];
 // Get unit role and if it is an infantry unit.                                                          //
 //=======================================================================================================//
 
-params ["_unitOptions", "_unit", "_unitFaction"];
+params ["_unitOptions", "_unit", ["_unitFaction", ""]];
 
 if ((typeName _unitOptions) == "STRING") then {
     _unitRole = _unitOptions;
@@ -82,8 +82,13 @@ if ((typeName _unitOptions) == "STRING") then {
 
 _unitRole = toLower _unitRole;
 
-if ( isNil "_unitFaction") then {
-    _unitFaction = toLower (faction _unit);
+// Identify which faction the unit belongs to.
+if (_unitFaction isEqualTo "") then {
+    _unitFaction = _unit getVariable ["bmt_var_unitFaction", ""];
+
+    if (_unitFaction isEqualTo "") then {
+        _unitFaction = toLower (faction _unit);
+    };
 } else {
     _unitFaction = toLower _unitFaction;
 };
@@ -326,175 +331,175 @@ switch (_unitRole) do
 {
     // Platoon Leader.
     case "pl": {
-        #include "rhs_usaf\bmt_pl_platoonLeader.sqf"
+       #include "rhs_usaf\bmt_pl_platoonLeader.sqf"
     };
 
     // Platoon Sergeant.
     case "psg": {
-         #include "rhs_usaf\bmt_psg_platoonSergeant.sqf"
+        #include "rhs_usaf\bmt_psg_platoonSergeant.sqf"
     };
 
     // Platoon Radiotelephone Operator.
     case "rto": {
-       #include "rhs_usaf\bmt_rto_platoonRadiotelephoneOperator.sqf"
+      #include "rhs_usaf\bmt_rto_platoonRadiotelephoneOperator.sqf"
     };
 
     // Forward Observer.
     case "fo": {
-        #include "rhs_usaf\bmt_fo_forwardObserver.sqf"
+       #include "rhs_usaf\bmt_fo_forwardObserver.sqf"
     };
 
     // Joint Terminal Attack Controller.
     case "jtac": {
-        #include "rhs_usaf\bmt_jtac_jointTerminalAttachController.sqf"
+       #include "rhs_usaf\bmt_jtac_jointTerminalAttackController.sqf"
     };
 
     // Platoon Medic.
     case "me": {
-        #include "rhs_usaf\bmt_me_platoonMedic.sqf"
+       #include "rhs_usaf\bmt_me_platoonMedic.sqf"
     };
 
     // Squad Leader.
     case "sl": {
-        #include "rhs_usaf\bmt_sl_squadLeader.sqf"
+       #include "rhs_usaf\bmt_sl_squadLeader.sqf"
     };
 
     // Team leader.
     case "tl": {
-        #include "rhs_usaf\bmt_tl_teamLeader.sqf"
+       #include "rhs_usaf\bmt_tl_teamLeader.sqf"
     };
 
     // Rifleman.
     case "rfl": {
-        #include "rhs_usaf\bmt_rfl_rifleman.sqf"
+       #include "rhs_usaf\bmt_rfl_rifleman.sqf"
     };
 
     // Rifleman with AT4.
     case "rflat": {
-        #include "rhs_usaf\bmt_rflat_riflemanAntiTank.sqf"
+       #include "rhs_usaf\bmt_rflat_riflemanAntiTank.sqf"
     };
 
     // Rifleman with UAV.
     case "rfluav": {
-        #include "rhs_usaf\bmt_rfluav_riflemanUAV.sqf"
+       #include "rhs_usaf\bmt_rfluav_riflemanUAV.sqf"
     };
 
     // Grenadier.
     case "gr": {
-        #include "rhs_usaf\bmt_gr_grenadier.sqf"
+       #include "rhs_usaf\bmt_gr_grenadier.sqf"
     };
 
     // Automatic Rifleman.
     case "ar": {
-        #include "rhs_usaf\bmt_ar_automaticRifleman.sqf"
+       #include "rhs_usaf\bmt_ar_automaticRifleman.sqf"
     };
 
     // Assitant Automatic Rifleman.
     case "aar": {
-        #include "rhs_usaf\bmt_aar_assistantAutomaticRifleman.sqf"
+       #include "rhs_usaf\bmt_aar_assistantAutomaticRifleman.sqf"
     };
 
     // Designated Marksman.
     case "dm": {
-        #include "rhs_usaf\bmt_dm_designatedMarksman.sqf"
+       #include "rhs_usaf\bmt_dm_designatedMarksman.sqf"
     };
 
     // Machine Gunner.
     case "mg": {
-        #include "rhs_usaf\bmt_mg_machineGunner.sqf"
+       #include "rhs_usaf\bmt_mg_machineGunner.sqf"
     };
 
     // Assitant Machine Gunner.
     case "amg": {
-        #include "rhs_usaf\bmt_amg_assistantMachineGunner.sqf"
+       #include "rhs_usaf\bmt_amg_assistantMachineGunner.sqf"
     };
 
     // Anti-Tank.
     case "at": {
-        #include "rhs_usaf\bmt_at_antiTank.sqf"
+       #include "rhs_usaf\bmt_at_antiTank.sqf"
     };
 
     // AT Ammo handler.
     case "aat": {
-        #include "rhs_usaf\bmt_aat_assistantAntiTank.sqf"
+       #include "rhs_usaf\bmt_aat_assistantAntiTank.sqf"
     };
 
     // Anti-Aircraft gunner.
     case "aa": {
-        #include "rhs_usaf\bmt_aa_antiAircraftGunner.sqf"
+       #include "rhs_usaf\bmt_aa_antiAircraftGunner.sqf"
     };
 
     // Anti-Aircraft Assitant.
     case "aaa": {
-        #include "rhs_usaf\bmt_aaa_assistantAntiAircraftGunner.sqf"
+       #include "rhs_usaf\bmt_aaa_assistantAntiAircraftGunner.sqf"
     };
 
     // Engineer.
     case "en": {
-        #include "rhs_usaf\bmt_en_engineer.sqf"
+       #include "rhs_usaf\bmt_en_engineer.sqf"
     };
 
     // Explosives Specialist.
     case "exp": {
-        #include "rhs_usaf\bmt_exp_explosivesSpecialist.sqf"
+       #include "rhs_usaf\bmt_exp_explosivesSpecialist.sqf"
     };
 
     // Sniper.
     case "sn": {
-        #include "rhs_usaf\bmt_sn_sniper.sqf"
+       #include "rhs_usaf\bmt_sn_sniper.sqf"
     };
 
     // Spotter.
     case "sp": {
-        #include "rhs_usaf\bmt_sp_spotter.sqf"
+       #include "rhs_usaf\bmt_sp_spotter.sqf"
     };
 
     // Diver Squad Leader.
     case "divsl": {
-        #include "rhs_usaf\bmt_divsl_diverSquadLeader.sqf"
+       #include "rhs_usaf\bmt_divsl_diverSquadLeader.sqf"
     };
 
     // Diver Medic.
     case "divme": {
-        #include "rhs_usaf\bmt_divme_diverMedic.sqf"
+       #include "rhs_usaf\bmt_divme_diverMedic.sqf"
     };
 
     // Diver Explosives Specialist.
     case "divexp": {
-        #include "rhs_usaf\bmt_divexp_diverExplosivesSpecialist.sqf"
+       #include "rhs_usaf\bmt_divexp_diverExplosivesSpecialist.sqf"
     };
 
     // Diver.
     case "div": {
-        #include "rhs_usaf\bmt_div_diver.sqf"
+       #include "rhs_usaf\bmt_div_diver.sqf"
     };
 
     // Helicopter pilot.
     case "hplt": {
-        #include "rhs_usaf\bmt_hplt_helicopterPilot.sqf"
+       #include "rhs_usaf\bmt_hplt_helicopterPilot.sqf"
     };
 
     // Jet pilot.
     case "jplt": {
-        #include "rhs_usaf\bmt_jplt_jetPilot.sqf"
+       #include "rhs_usaf\bmt_jplt_jetPilot.sqf"
     };
 
     // Combat crew
     case "ccrw": {
-        #include "rhs_usaf\bmt_ccrw_combatCrew.sqf"
+       #include "rhs_usaf\bmt_ccrw_combatCrew.sqf"
     };
 
     case "hmmwv": {
-        #include "rhs_usaf\bmt_hmmwv.sqf"
+       #include "rhs_usaf\bmt_hmmwv.sqf"
     };
 
     case "abrams": {
-        #include "rhs_usaf\bmt_abrahams.sqf"
+       #include "rhs_usaf\bmt_abrahams.sqf"
     };
 
     default {
         _unit sideChat format ["DEBUG (bmt_configEquipment_rhs_usaf.sqf): unit role %1 is not defined. Defaulting to rifleman.", _unitRole];
-        #include "rhs_usaf\bmt_rfl_rifleman.sqf"
+       #include "rhs_usaf\bmt_rfl_rifleman.sqf"
     };
 };
 

@@ -24,16 +24,4 @@ bmt_mod_agm = isClass (configFile >> "CfgPatches" >> "agm_core");            // 
 bmt_mod_dac = isClass (configFile >> "CfgPatches" >> "dac_source");          // Check if el DAC is loaded (addon version).
 bmt_mod_asrai3 = isClass (configFile >> "CfgPatches" >> "asr_ai3_main");     // Check if ASR AI 3 is loaded.
 
-// Make the variables public.
-if (isServer) then {
-    publicVariable "bmt_mod_acre2";
-    publicVariable "bmt_mod_tfar";
-    publicVariable "bmt_mod_ace3";
-    publicVariable "bmt_mod_ace3medical";
-    publicVariable "bmt_mod_ace3advbal";
-    publicVariable "bmt_mod_agm";
-    publicVariable "bmt_mod_dac";
-    publicVariable "bmt_mod_asrai";
-};
-
 //============================================= END OF FILE =============================================//

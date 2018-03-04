@@ -57,7 +57,7 @@ if (alive player) then {
     [player, true] call TFAR_fnc_forceSpectator;
 };
 
-player setVariable ["bmt_var_init_configRadiosReady", true, true];
+player setVariable ["bmt_var_init_configRadiosReady", true];
 
 // DEBUG OUTPUT
 if (bmt_param_debugOutput == 1) then {

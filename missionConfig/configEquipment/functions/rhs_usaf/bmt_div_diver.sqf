@@ -7,57 +7,42 @@
 // Changes: 1.0 (2017/11/07) First public version.                                                       //
 //=======================================================================================================//
 
-// Remove uniform, helmet and vest.
+comment "Exported from Arsenal by Cbo V.Arias";
+
+comment "Remove existing items";
+removeAllWeapons _unit;
+removeAllItems _unit;
+removeAllAssignedItems _unit;
 removeUniform _unit;
+removeVest _unit;
+removeBackpack _unit;
 removeHeadgear _unit;
 removeGoggles _unit;
 
-// Uniform, vest and backpack.
-_unit forceAddUniform _uniformDIV;
-_unit addVest _vestDIV;
-_unit addBackpack _backpackDIV;
+comment "Add containers";
+_unit forceAddUniform "rhs_uniform_acu_ucp";
+_unit addItemToUniform "ACE_microDAGR";
+_unit addItemToUniform "ACE_EarPlugs";
+_unit addItemToUniform "ACRE_PRC343";
+for "_i" from 1 to 2 do {_unit addItemToUniform "rhs_mag_30Rnd_556x45_M855_Stanag";};
+_unit addVest "rhsusf_spcs_ucp_rifleman";
+_unit addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag";
+_unit addHeadgear "H_Beret_02";
+_unit addGoggles "G_Aviator";
 
-// Items in the uniform.
-if (bmt_mod_ace3 or bmt_mod_agm) then {
-    (uniformContainer _unit) addItemCargoGlobal [_earPlugs, 1];
-    (uniformContainer _unit) addItemCargoGlobal [_morphine, 1];
-    (uniformContainer _unit) addItemCargoGlobal [_epinephrine, 1];
-    (uniformContainer _unit) addItemCargoGlobal [_bandage, 2];
-    if (bmt_var_equipFlashlight) then {
-        (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
-    };
-};
-(uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP", 4];
-(uniformContainer _unit) addMagazineCargoGlobal ["20Rnd_556x45_UW_mag", 3];
+comment "Add weapons";
+_unit addWeapon "rhs_weap_m4a1_carryhandle";
 
-// Items in the vest.
-// Items cannot be added to diving rebreather.
+comment "Add items";
+_unit linkItem "ItemMap";
+_unit linkItem "ItemCompass";
+_unit linkItem "ItemWatch";
+_unit linkItem "ItemRadioAcreFlagged";
+_unit linkItem "ItemGPS";
 
-// Items in the vest.
-if (bmt_mod_ace3 or bmt_mod_agm) then {
-    (unitBackpack _unit) addItemCargoGlobal [_bandage, 2];
-    if (bmt_mod_ace3 and (bmt_param_ace3_medicalSystem == 2)) then {
-        (unitBackpack _unit) addItemCargoGlobal [_elasticBandage, 3];
-        (unitBackpack _unit) addItemCargoGlobal [_quickClot, 3];
-        (unitBackpack _unit) addItemCargoGlobal [_packingBandage, 3];
-        (unitBackpack _unit) addItemCargoGlobal [_tourniquet, 1];
-    };
-};
-(unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_mk84", 1];
-(unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_an_m8hc", 2];
-(unitBackpack _unit) addMagazineCargoGlobal ["rhs_mag_m67", 4];
-(unitBackpack _unit) addMagazineCargoGlobal ["30Rnd_556x45_Stanag", 7];
-(unitBackpack _unit) addMagazineCargoGlobal ["20Rnd_556x45_UW_mag", 4];
+comment "Set identity";
+_unit setFace "Sturrock";
+_unit setSpeaker "male01gre";
 
-// Night vision.
-if ((bmt_var_equipNightVision == 1) or (bmt_var_equipNightVision == 2)) then {
-    (unitBackpack _unit) addItemCargoGlobal [_nightVision, 1];
-};
-
-// Glasses.
-_unit addGoggles _glassesDIV;
-
-// Primary weapon.
-_unit addWeapon _pweaponDIV;
 
 //============================================= END OF FILE =============================================//

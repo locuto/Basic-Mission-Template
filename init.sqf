@@ -10,7 +10,7 @@
 
 // BMT components are not loaded
 if (hasInterface) then {
-    missionNamespace setVariable ["bmt_var_init_preloadCompleted", false, false];
+    missionNamespace setVariable ["bmt_var_init_preloadCompleted", false];
 };
 
 //=======================================================================================================//
@@ -39,22 +39,22 @@ if (bmt_param_t8units_enabled == 1) then {
 // Use virtual arsenal profiles instead of custom loadout equipment. When enabled the loadout defined in //
 // configEquipment scripts is overwritten by the equivalent Virtual Arsenal profile.                     //
 //=======================================================================================================//
-if ((bmt_param_useVAProfiles == 1) && hasInterface) then {
+if ((bmt_param_useVAProfiles == 1) && {hasInterface}) then {
     bmt_script_useVAProfiles = [] execVM "src\configEquipment\scripts\bmt_configEquipment_VAprofiles.sqf";
 };
 
 // Wait until player is initalised in order to execute the rest of the script.
-if (hasInterface && (isNull player)) then {
-    waitUntil {sleep 0.1; !isNull player && player == player && time > 1};
+if (hasInterface && {isNull player}) then {
+    waitUntil {sleep 0.1; time > 1 && {!isNull player} && {player == player}};
 };
 
 //=======================================================================================================//
 // JIP supprt.                                                                                           //
 //=======================================================================================================//
-if (bmt_param_jip_enabled == 1) then {
+if (bmt_param_jip_enabled == 1 && {side player != sideLogic}) then {
     bmt_script_jip = [] execVM "src\jip\scripts\bmt_jip_init.sqf";
     if (hasInterface) then {
-        waitUntil { scriptDone bmt_script_jip };
+        waitUntil { sleep 0.1; scriptDone bmt_script_jip };
     };
 
 };
@@ -84,9 +84,9 @@ if (bmt_mod_acre2) then {
 if (hasInterface) then {
     bmt_script_preloadCompleted = [] spawn {
         if (bmt_mod_acre2 || bmt_mod_tfar) then {
-            waitUntil { player getVariable ["bmt_var_init_configRadiosReady", false] };
+            waitUntil { sleep 0.1; player getVariable ["bmt_var_init_configRadiosReady", false] };
         };
-        missionNamespace setVariable ["bmt_var_init_preloadCompleted", true, false];
+        missionNamespace setVariable ["bmt_var_init_preloadCompleted", true];
     };
 };
 

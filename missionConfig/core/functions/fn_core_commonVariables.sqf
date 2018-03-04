@@ -32,10 +32,10 @@ bmt_var_requires_t8units     = 2;  // Variable to control the use of T8 Units.
 bmt_var_requires_tfar        = 2;  // Variable to control the use of Task Force Arrowhead Radio.
 
 // List of units with a "Rifleman Radio" (fn_configEquipment.sqf).
-bmt_array_riflemanRadio = ["me", "rfl", "rflat", "rfluav", "gr", "ar", "aar", "dm", "mg", "amg", "at", "aat", "aa", "aaa", "en", "exp", "divme", "divexp", "div", "hplt", "jplt", "ccrw"];
+bmt_array_riflemanRadio = ["me", "rfl", "rflat", "rfluav", "gr", "ar", "aar", "dm", "mg", "amg", "at", "aat", "aa", "aaa", "en", "exp", "divme", "divexp", "div", "hplt","ccrw"];
 
-// List of units with a "Short Range Radio ""(fn_configEquipment.sqf).
-bmt_array_shortRangeRadio = ["pl", "psg", "rto", "fo", "jtac", "sl", "tl", "sn", "sp", "divsl"];
+// List of units with a "Short Range Radio" (fn_configEquipment.sqf).
+bmt_array_shortRangeRadio = ["pl", "psg", "rto", "fo","sl", "tl", "sn", "sp", "divsl","jplt"];
 
 // List of units with a "Long Range Radio" (fn_configEquipment.sqf).
 bmt_array_longRangeRadio = ["rto", "fo", "jtac"];
@@ -51,7 +51,7 @@ bmt_array_longRangeRadio = ["rto", "fo", "jtac"];
 //                     number of elements. When defining groups it is important to keep the following    //
 //                     structure:                                                                        //
 //                                                                                                       //
-//                                  [ GroupX, SubgroupX1, SubgroupX2, ... , SubgroupXn]                  //
+//                                  [GroupX, SubgroupX1, SubgroupX2, ... , SubgroupXn]                   //
 //                                                                                                       //
 //                     Additional radio configuration parameters can be found in:                        //
 //                      - "missionConfig/acre2/scripts/bmt_acre2_configuration.sqf                       //
@@ -62,31 +62,37 @@ bmt_array_longRangeRadio = ["rto", "fo", "jtac"];
 //                                    the same amount of elements.                                       //
 //=======================================================================================================//
 
-bmt_array_groups = [
-    ["Alpha 1", "Alpha 1-1", "Alpha 1-2", "Alpha 1-3"],
-    ["Alpha 2", "Alpha 2-1", "Alpha 2-2", "Alpha 2-3"],
-    ["Alpha 3", "Alpha 3-1", "Alpha 3-2", "Alpha 3-3"],
-    ["Command"],
-    ["Support"],
-    ["Artillery"]
+ bmt_array_groups = [
+    ["Romeo"],
+    ["Mike"],
+    ["Punisher", "Punisher 1", "Punisher 2", "Punisher 3"],
+    ["Lezo", "Lezo 1", "Lezo 2", "Lezo 3"],
+    ["Warrior"],
+    ["Wolf", "Wolf 1", "Wolf 2", "Wolf 3"],
+    ["Emergencia"],
+    ["Aereo", "Halcon", "Medevac", "Eagle","Papa Bear"]
 ];
 
 bmt_array_frequenciesShortRange = [
-    [200, 201, 202, 203],
-    [210, 211, 212, 213],
-    [220, 221, 222, 223],
-    [41],
-    [51],
-    [61]
+    [90],
+    [90.025],
+    [90.050, 60.0, 60.025, 60.050],
+    [90.075, 60.1, 60.125, 60.150],
+    [90.1],
+    [90.125, 60.2, 60.225, 60.250],
+    [90.150],
+    [91, 91.025, 91.050, 91.075, 92.000]
 ];
 
 bmt_array_frequenciesLongRange = [
-    [41],
-    [42],
-    [43],
-    [40],
-    [30],
-    [50]
+    [90],
+    [90.025],
+    [90.050],
+    [90.075],
+    [90.1],
+    [90.125],
+    [90.150],
+    [91]
 ];
 
 // Check that both arrays have the same length.

@@ -34,6 +34,14 @@
 
 params ["_missionName", "_missionLocation", "_vehicleName", "_useNVG", ["_animation", []], ["_date", "default"]];
 
+private _isSideLogic = side player isEqualTo sideLogic;
+if (!_isSideLogic) then {
+    // Disable simulation for all units during the black screen.
+    if (vehicle player != player) then {
+        (vehicle player) enableSimulation false;
+    };
+};
+
 // Get date and time
 private _month = str (date select 1);
 private _day = str (date select 2);
@@ -94,23 +102,20 @@ playMusic ("RadioAmbient" + str (1 + floor random 30));
 if (bmt_mod_ace3) then {
     ace_hearing_disableVolumeUpdate = true;
 };
-// Disable simulation for all units during the black screen.
-{
-    _x enableSimulation false;
-} forEach (allUnits - [player]);
 
-if (vehicle player == player) then {
-    private "_selectedAnimation";
+if (!_isSideLogic) then {
+    if (vehicle player == player) then {
+        private "_selectedAnimation";
 
-    if (_animation isEqualTo []) then {
-        _selectedAnimation = selectRandom _animationList;
-    } else {
-       _selectedAnimation = selectRandom _animation;
+        if (_animation isEqualTo []) then {
+            _selectedAnimation = selectRandom _animationList;
+        } else {
+           _selectedAnimation = selectRandom _animation;
+        };
+
+        player switchMove _selectedAnimation;
     };
-
-    player switchMove _selectedAnimation;
 };
-
 
 // Vehicle name, mission location and, mission location, mission date and mission name.
 [
@@ -129,7 +134,7 @@ sleep 4;
 2 fadeMusic 0;
 sleep 2;
 
-if (vehicle player == player) then {
+if (vehicle player == player && {!_isSideLogic}) then {
     player switchMove "AmovPercMstpSlowWrflDnon";
 };
 
@@ -154,9 +159,9 @@ camDestroy _camera;
 "BIS_layerInterlacing" cutText ["", "PLAIN"];
 
 // Reenable simulation for all units.
-{
-    _x enableSimulation true;
-} forEach allUnits - [player];
+if (vehicle player != player && {!_isSideLogic}) then {
+    (vehicle player) enableSimulation true;
+};
 
 // Fade into first person
 call BIS_fnc_VRFadeIn;
@@ -168,6 +173,6 @@ playSound (selectRandom ["Transition1", "Transition2", "Transition3"]);
 "dynamicBlur" ppEffectAdjust [0.0];
 "dynamicBlur" ppEffectCommit 2;
 
-player setVariable ["bmt_var_init_introFinished", true, true];
+player setVariable ["bmt_var_init_introFinished", true];
 
 //============================================= END OF FILE =============================================//

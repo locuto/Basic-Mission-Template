@@ -15,23 +15,18 @@
 //=======================================================================================================//
 
 //=======================================================================================================//
-// Mission configuration.                                                                                //
-//=======================================================================================================//
-
-// ACRE2: Configure ACRE2.
-//        - BABEL:
-//            * false: Deactivate babel between sides.
-//            * true: Activate babel between sides.
-//        - RADIOS:
-//            * false: Channels are set-up equally per side.
-//            * true: Channels are set-up differently per side.
-[true, true] call acre_api_fnc_setupMission;
-
-//=======================================================================================================//
 // Babel functionality configuration.                                                                    //
 //=======================================================================================================//
 
-bmt_acre2_languages = [["english","English"],["russian","Russian"],["arabic","Arabic"],["farsi","Farsi"],["greek","Greek"], ["german", "German"]];
+bmt_acre2_languages =   [
+                            ["english", "English"],
+                            ["russian", "Russian"],
+                            ["arabic", "Arabic"],
+                            ["farsi", "Farsi"],
+                            ["greek", "Greek"],
+                            ["german", "German"],
+                            ["spanish", "Spanish"]
+                        ];
 
 bmt_acre2_language_rhsusaf  = ["english"];
 bmt_acre2_language_rhsafrf  = ["russian"];
@@ -39,9 +34,10 @@ bmt_acre2_language_rhsins   = ["arabic"];
 bmt_acre2_language_blufor   = ["english"];
 bmt_acre2_language_opfor    = ["farsi"];
 bmt_acre2_language_indfor   = ["greek"];
-bmt_acre2_language_fia      = ["english","greek"];
+bmt_acre2_language_fia      = ["english", "greek"];
 bmt_acre2_language_civ      = ["greek"];
 bmt_acre2_language_bwa3     = ["german"];
+bmt_acre2_language_ffaa     = ["spanish"];
 bmt_acre2_language_fow_usmc = ["english"];
 bmt_acre2_language_fallback = ["english"];
 

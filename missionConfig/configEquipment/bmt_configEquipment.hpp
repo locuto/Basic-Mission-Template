@@ -28,6 +28,7 @@
         class configEquipment_rhs_vpvo {};
         class configEquipment_bwa3_faction {};
         class configEquipment_fow_usmc {};
+        class configEquipment_ffaa {};
     };
 #endif
 

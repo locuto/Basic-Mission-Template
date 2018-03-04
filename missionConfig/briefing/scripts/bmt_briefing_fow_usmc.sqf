@@ -12,12 +12,10 @@
 // Changes: 1.0 (2017/11/07) First public version.                                                       //
 //=======================================================================================================//
 
-private ["_credits", "_radio", "_adminLog", "_intel", "_missionExecution", "_situation"];
-
 //=======================================================================================================//
 // NOTES: CREDITS.                                                                                       //
 //=======================================================================================================//
-_credits = player createDiaryRecord ["diary", ["Credits","
+private _credits = player createDiaryRecord ["diary", ["Credits","
 Mission created by <font color='#00FFFF'>*** Authors ***</font> for the community <font color='#00FFFF'>*** name of the community ***</font>.
 <br/><br/>
 With the collaboration of Magnetar (A3-BMT template) and *** possible collaborators ***.
@@ -26,12 +24,12 @@ With the collaboration of Magnetar (A3-BMT template) and *** possible collaborat
 //=======================================================================================================//
 // NOTES: RADIO.                                                                                         //
 //=======================================================================================================//
-_radio = player createDiaryRecord ["diary", ["Radio frequencies", [] call bmt_fnc_briefing_listRadioFrequencies]];
+private _radio = player createDiaryRecord ["diary", ["Radio frequencies", [] call bmt_fnc_briefing_listRadioFrequencies]];
 
 //=======================================================================================================//
 // NOTES: ADMINISTRATION/LOGISTICS.                                                                       //
 //=======================================================================================================//
-_adminLog = player createDiaryRecord ["diary", ["Administration/Logistics","
+private _adminLog = player createDiaryRecord ["diary", ["Administration/Logistics","
 <font color='#FF0000' size='18'>Support</font>
 <br/>
 *** Description, if they exist, of support units like CAS, field artillery, medevac, ... ***
@@ -44,7 +42,7 @@ _adminLog = player createDiaryRecord ["diary", ["Administration/Logistics","
 //=======================================================================================================//
 // NOTES: INTEL.                                                                                         //
 //=======================================================================================================//
-_intel = player createDiaryRecord ["diary", ["Intel","
+private _intel = player createDiaryRecord ["diary", ["Intel","
 *** Intelligence information. ***
 <br/><br/>
 <font color='#FF0000' size='18'>Enemy forces</font>
@@ -59,7 +57,7 @@ _intel = player createDiaryRecord ["diary", ["Intel","
 //=======================================================================================================//
 // NOTES: MISSION AND EXECUTION.                                                                         //
 //=======================================================================================================//
-_missionExecution = player createDiaryRecord ["diary", ["Mission and Execution","
+private _missionExecution = player createDiaryRecord ["diary", ["Mission and Execution","
 <font color='#FF0000' size='18'>Mission</font>
 <br/>
 *** Mission description. ***
@@ -84,7 +82,7 @@ _missionExecution = player createDiaryRecord ["diary", ["Mission and Execution",
 //=======================================================================================================//
 // NOTES: SITUATION.                                                                                     //
 //=======================================================================================================//
-_situation = player createDiaryRecord ["diary", ["SITREP","
+private  _situation = player createDiaryRecord ["diary", ["SITREP","
 *** Brief description of the situation.***
 "]];
 

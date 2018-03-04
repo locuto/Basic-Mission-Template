@@ -22,14 +22,9 @@
     if (!(["paramLine", _paramName, true] call BIS_fnc_inString)) then {
         private _paramValue = _paramName call BIS_fnc_getParamValue;
 
-        // If it is an ACE3 setting, use the variable in bmt_paramID instead.
-        if (["ace_", _paramName, true] call BIS_fnc_inString) then {
-            _paramName = (getText (missionConfigFile >> "Params" >> _paramName >> "bmt_paramID"));
-        };
-
         call compile format["%1 = %2", _paramName, _paramValue];
         if (isServer) then {
-          publicVariable _paramName;
+            publicVariable _paramName;
         };
     };
 } forEach paramsArray;

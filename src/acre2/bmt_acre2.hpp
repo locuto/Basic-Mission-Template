@@ -68,6 +68,20 @@
         texts[] = {"No", "Yes"};
         default = BMT_ACRE2_CONFIGURE_CHANNELS;
     };
+
+    //===================================================================================================//
+    // Configure babel languages?                                                                        //
+    // Babel languages are defined in "missionConfig/acre2/bmt_acre2_configuration.sqf".                 //
+    //   - false: babel is not configured.                                                               //
+    //   - true: babel languages are configured.                                                         //
+    // Default option: true.                                                                             //
+    //===================================================================================================//
+    class bmt_param_acre2_configureBabel {
+        title = "Configure babel languages";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = BMT_ACRE2_CONFIGURE_BABEL;
+    };
 #endif
 
 #ifdef BMT_CBA_SETTINGS

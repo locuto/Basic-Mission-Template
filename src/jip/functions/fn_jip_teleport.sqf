@@ -16,7 +16,7 @@ params ["_displayEvent", "_unit"];
 
 private _canTeleport = _unit getVariable ["bmt_var_jipTeleport_enabled", false];
 
-if (_canTeleport and (_displayEvent select 1 == 87)) then {
+if (_canTeleport && {_displayEvent select 1 == 87}) then {
 
     // Try first, teleporting to the other members of the squad.
     private _unitList = [];
@@ -27,10 +27,22 @@ if (_canTeleport and (_displayEvent select 1 == 87)) then {
     private _couldTeleport = [_unit, _unitList] call bmt_fnc_misc_teleport_toFriendly;
 
     // If not, try with any unit of the same faction.
+    // Identify which faction the unit belongs to.
+    private _unitFaction = _unit getVariable ["bmt_var_unitFaction", ""];
+
+    if (_unitFaction isEqualTo "") then {
+        _unitFaction = toLower (faction _unit);
+    };
+
     if (!_couldTeleport) then {
         _unitList = [];
         {
-            if ((isPlayer  _x) && (faction _x == faction _unit)) then { _unitList pushBack _x; };
+            _remoteFaction = _x getVariable ["bmt_var_unitFaction", ""];
+
+            if (_remoteFaction isEqualTo "") then {
+                _remoteFaction = toLower (faction _x);
+            };
+            if ((isPlayer _x) && {_remoteFaction isEqualTo _unitFaction}) then { _unitList pushBack _x; };
         } forEach playableUnits - [_unit];
 
         _couldTeleport = [_unit, _unitList] call bmt_fnc_misc_teleport_toFriendly;

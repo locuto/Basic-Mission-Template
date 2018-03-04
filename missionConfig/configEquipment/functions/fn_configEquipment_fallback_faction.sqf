@@ -80,8 +80,13 @@ if ((typeName _unitOptions) == "STRING") then {
 
 _unitRole = toLower _unitRole;
 
-if ( isNil "_unitFaction") then {
-    _unitFaction = toLower (faction _unit);
+// Identify which faction the unit belongs to.
+if (_unitFaction isEqualTo "") then {
+    _unitFaction = _unit getVariable ["bmt_var_unitFaction", ""];
+
+    if (_unitFaction isEqualTo "") then {
+        _unitFaction = toLower (faction _unit);
+    };
 } else {
     _unitFaction = toLower _unitFaction;
 };
@@ -132,7 +137,7 @@ switch (_unitRole) do
 
     // Joint Terminal Attack Controller.
     case "jtac": {
-        #include "fallback_faction\bmt_jtac_jointTerminalAttachController.sqf"
+        #include "fallback_faction\bmt_jtac_jointTerminalAttackController.sqf"
     };
 
     // Platoon Medic.

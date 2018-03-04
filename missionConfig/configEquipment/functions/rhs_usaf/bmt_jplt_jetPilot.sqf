@@ -8,32 +8,47 @@
 //=======================================================================================================//
 
 // Remove uniform, helmet and vest.
+comment "Exported from Arsenal by Cbo V.Arias";
+
+comment "Remove existing items";
+removeAllWeapons _unit;
+removeAllItems _unit;
+removeAllAssignedItems _unit;
 removeUniform _unit;
+removeVest _unit;
+removeBackpack _unit;
 removeHeadgear _unit;
 removeGoggles _unit;
 
-// Uniform and parachute.
-_unit forceAddUniform _uniformJPLT;
-_unit addBackpack _parachuteJPLT;
-_unit addHeadgear _helmetJPLT;
+comment "Add containers";
+_unit forceAddUniform "U_B_PilotCoveralls";
+_unit addItemToUniform "ACE_microDAGR";
+_unit addItemToUniform "ACE_IR_Strobe_Item";
+for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_morphine";};
+_unit addItemToUniform "ACE_EarPlugs";
+_unit addItemToUniform "ACE_tourniquet";
+for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
+for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_quikclot";};
+for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_packingBandage";};
+_unit addItemToUniform "ACRE_PRC343";
+for "_i" from 1 to 2 do {_unit addItemToUniform "rhsusf_mag_17Rnd_9x19_JHP";};
+_unit addBackpack "B_Parachute";
+_unit addHeadgear "RHS_jetpilot_usaf";
 
-// Items in the uniform.
-if (bmt_mod_ace3 or bmt_mod_agm) then {
-    (uniformContainer _unit) addItemCargoGlobal [_earPlugs, 1];
-    (uniformContainer _unit) addItemCargoGlobal [_morphine, 1];
-    (uniformContainer _unit) addItemCargoGlobal [_epinephrine, 1];
-    if (bmt_var_equipFlashlight) then {
-        (uniformContainer _unit) addItemCargoGlobal [_flashlight, 1];
-    };
-};
-(uniformContainer _unit) addItemCargoGlobal [_pweaponSilencer, 1];
-(uniformContainer _unit) addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP", 2];
-(uniformContainer _unit) addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 4];
+comment "Add weapons";
+_unit addWeapon "rhsusf_weap_glock17g4";
+_unit addHandgunItem "rhsusf_acc_omega9k";
+_unit addWeapon "Binocular";
 
-// Primary weapon.
-_unit addWeapon _pweapon;
-_unit addPrimaryWeaponItem _pweaponSurefire;
-_unit addPrimaryWeaponItem _pweaponLaserLantern;
-_unit addPrimaryWeaponItem _pweaponScope;
+comment "Add items";
+_unit linkItem "ItemMap";
+_unit linkItem "ItemCompass";
+_unit linkItem "ACE_Altimeter";
+_unit linkItem "ItemRadioAcreFlagged";
+
+comment "Set identity";
+_unit setFace "Sturrock";
+_unit setSpeaker "ace_novoice";
+
 
 //============================================= END OF FILE =============================================//

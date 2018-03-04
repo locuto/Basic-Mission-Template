@@ -35,6 +35,12 @@ params ["_markerName", "_text", "_uavMovement", "_markers"];
     _x enableSimulation false;
 } forEach allUnits;
 
+player enableSimulation false;
+
+if (vehicle player != player) then {
+    (vehicle player) enableSimulation false;
+};
+
 enableEnvironment false;
 0 fadeSound 0;
 
@@ -55,9 +61,11 @@ waitUntil {missionNamespace getVariable ["bmt_var_init_preloadCompleted", false]
 titleCut ["", "BLACK FADED", 5];
 
 // Reenable simulation for all units.
-{
-    _x enableSimulation true;
-} forEach allUnits;
+player enableSimulation true;
+
+if (vehicle player != player) then {
+    (vehicle player) enableSimulation true;
+};
 
 [] spawn {
     sleep 5;
@@ -71,5 +79,5 @@ titleCut ["", "BLACK FADED", 5];
     5 fadeSound 1;
 };
 
-player setVariable ["bmt_var_init_introFinished", true, true];
+player setVariable ["bmt_var_init_introFinished", true];
 //============================================= END OF FILE =============================================//

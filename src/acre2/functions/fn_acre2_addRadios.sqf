@@ -16,7 +16,7 @@
 // Variable declarations.
 params [["_unit", objNull]];
 
-private _unitOptions = _unit getVariable ["bmt_var_configEquipment", "nil"];
+private _unitOptions = _unit getVariable ["bmt_var_configEquipment", "undefined"];
 
 private _unitRole = "";
 if ((typeName _unitOptions) == "STRING") then {

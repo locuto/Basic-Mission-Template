@@ -53,7 +53,7 @@ if (bmt_param_asrai3_enabled == 1) then {
     asr_ai3_main_loudrange = 0;
 };
 
-if ( bmt_param_debugOutput == 1 ) then {
+if (bmt_param_debugOutput == 1) then {
     diag_log format ["DEBUG (fn_asrai_config.sqf): ASR AI configured."];
 };
 

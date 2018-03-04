@@ -21,9 +21,11 @@
 // Configure the client side.
 if (hasInterface) then {
 
-    {
-        _x call acre_api_fnc_babelAddLanguageType;
-    } foreach bmt_acre2_languages;
+    if (bmt_param_acre2_configureBabel == 1) then {
+        {
+            _x call acre_api_fnc_babelAddLanguageType;
+        } foreach bmt_acre2_languages;
+    };
 
     if (didJIP) then {
         uiSleep 5;
