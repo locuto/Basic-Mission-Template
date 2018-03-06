@@ -35,7 +35,7 @@ bmt_var_requires_tfar        = 2;  // Variable to control the use of Task Force 
 bmt_array_riflemanRadio = ["me", "rfl", "rflat", "rfluav", "gr", "ar", "aar", "dm", "mg", "amg", "at", "aat", "aa", "aaa", "en", "exp", "divme", "divexp", "div", "hplt","ccrw"];
 
 // List of units with a "Short Range Radio" (fn_configEquipment.sqf).
-bmt_array_shortRangeRadio = ["pl", "psg", "rto", "fo","sl", "tl", "sn", "sp", "divsl","jplt"];
+bmt_array_shortRangeRadio = ["pl", "psg", "rto", "fo", "jtac", "sl", "tl", "sn", "sp", "divsl"];
 
 // List of units with a "Long Range Radio" (fn_configEquipment.sqf).
 bmt_array_longRangeRadio = ["rto", "fo", "jtac"];
