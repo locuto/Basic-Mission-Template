@@ -23,7 +23,7 @@ params ["_unit", "_jipPlayerVariables"];
 } forEach _jipPlayerVariables;
 
 // Handle advanced fatigue
-if (bmt_mod_ace3) then {
+if ((bmt_param_jip_saveStatus == 2) && {bmt_mod_ace3}) then {
     {
         call compile format ["%1 = %2;", _x select 0, _x select 1];
     } forEach bmt_array_advancedFatigue;

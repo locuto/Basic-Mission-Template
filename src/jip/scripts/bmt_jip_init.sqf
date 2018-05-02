@@ -77,8 +77,8 @@ if (hasInterface) then {
                 bmt_array_advancedFatigue = [];
             } else {
                 // Player is already defined. Therefore, he is reconnecting.
-                if (bmt_param_jip_saveStatus == 1) then {
-                    if (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")) then {
+                if (bmt_param_jip_saveStatus >= 1) then {
+                    if (bmt_param_jip_saveStatus == 2 && {isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")}) then {
                         waitUntil {!isNil "ace_advanced_fatigue_ae1Reserve" && player == player};
                         bmt_array_advancedFatigue = [];
 
@@ -117,12 +117,12 @@ if (hasInterface) then {
         [player] remoteExecCall ["bmt_fnc_jip_init_allowedJIPPlayerList", 2, false];
 
         // Handle JIP persistence (disconnect/reconnect) for advanced fatigue.
-        if ((bmt_param_jip_saveStatus == 1) && (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue"))) then {
+        if ((bmt_param_jip_saveStatus == 2) && {isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")}) then {
             bmt_array_advancedFatigue = [];
         };
     };
 
-    if ((bmt_param_jip_saveStatus == 1) && (isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue"))) then {
+    if ((bmt_param_jip_saveStatus == 2) && {isClass (configFile >> "CfgPatches" >> "ace_advanced_fatigue")}) then {
         bmt_script_saveAdvancedFatigue = [] spawn {
             while {true} do {
                 sleep 1;
