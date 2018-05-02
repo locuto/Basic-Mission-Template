@@ -19,16 +19,9 @@ private _jipPlayerVariables = [];
 private _variablesToStore = ["bmt", "ace"];
 {
     if (_x select [0, 3] in _variablesToStore) then {
-        // Hack for ace medical
-        if ((_x select [0, 11] isEqualTo "ace_medical") or (_x select [0, 20] isEqualTo "ace_advanced_fatigue")) then {
-            if (_x isEqualTo "ace_medical_medicclass") then {
-                _jipPlayerVariables pushBack [_x, _unit getVariable _x];
-            };
-        } else {
-            // Do not save initialisation variables
-            if (!(_x select [0, 12] isEqualTo "bmt_var_init")) then {
-                _jipPlayerVariables pushBack [_x, _unit getVariable _x];
-            };
+        // Do not store init variables or advanced fatigue
+        if (!(_x select [0, 20] isEqualTo "ace_advanced_fatigue") && {!(_x select [0, 12] isEqualTo "bmt_var_init")}) then {
+            _jipPlayerVariables pushBack [_x, _unit getVariable _x];
         };
     };
 } forEach  (allVariables _unit);

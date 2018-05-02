@@ -24,8 +24,6 @@
 #define BMT_ACE3_BALLISTICS              true // false = Basic, true = Advanced ballistics.
 #define BMT_ACE3_MEDICAL                 2 // 0 = Disabled, 1 = Basic medical system, 2 = Advanced medical system.
 #define BMT_ACE3_SPECTATOR               1 // 0 = BI (End Game), 1 = ACE 3 Spectator mode.
-#define BMT_ACE3_REVIVE                  0 // 0 = Disabled, 1 = Players only, 2 = Players and AI.
-#define BMT_ACE3_PREVENT_INSTANT_DEATH   0 // 0 = Mission dependant (script disabled), 1 = Enabled (script enabled).
 #define BMT_ACE3_PLAYER_DAMAGE_THRESHOLD 1.0
 #define BMT_ACE3_BLEEDING_COEFFICIENT    1.0
 

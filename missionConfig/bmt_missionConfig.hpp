@@ -38,11 +38,7 @@ class bmt_config {
                                          // To enable always JIP players set to -1.
     bmt_config_numAllowedRespawns = 0;   // Number of allowed respawns. Set to -99 to have unlimited
                                          // respawns, 0 to disable respawn and a positive number to limit
-                                         // the number of respawns. As a side note, if ACE3 Revive system
-                                         // is used, a positive number will effectively limit the amount of
-                                         // times a player can be revived by a medic. Nevertheless,
-                                         // activating ACE 3 Revive will disable respawning.
-};
+                                         // the number of respawns.
 
 //=======================================================================================================//
 // Loading screen: https://community.bistudio.com/wiki/Description.ext                                   //
