@@ -13,6 +13,5 @@
 if (!bmt_mod_ace3) exitWith {};
 
 bmt_param_ace3_medicalSystem = ace_medical_level;
-bmt_param_ace3_reviveSystem = ace_medical_enableRevive;
 
 //============================================= END OF FILE =============================================//
