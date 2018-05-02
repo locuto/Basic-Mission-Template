@@ -38,6 +38,5 @@ parameters:
 
 * `bmt_param_ace3_ballistics`: Enables/disables advanced ballistics.
 * `bmt_param_ace3_medicalSystem`: Can choose between Custom, Basic and Advanced medical systems.
-* `bmt_param_ace3_reviveSystem`: Enables/disables ACE 3 Revive system.
 * `bmt_param_ace3_spectator`: Enables to choose between End Game (default in the A3-BMT template) or ACE 3
 spectator modes.
