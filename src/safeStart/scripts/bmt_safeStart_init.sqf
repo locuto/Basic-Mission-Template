@@ -13,7 +13,9 @@
 
 bmt_var_safeStartTime = getNumber (missionConfigFile >> "bmt_config" >> "bmt_config_safeStartTime");
 
-if (bmt_var_safeStartTime > 0) then {
+private _safeStartEnded = missionNamespace getVariable ["bmt_var_safeStartEnded", false];
+
+if (bmt_var_safeStartTime > 0 && !_safeStartEnded) then {
     if (hasInterface) then {
         player allowDamage false;
     };
@@ -26,6 +28,7 @@ if (bmt_var_safeStartTime > 0) then {
                     player allowDamage true;
                 };
             } remoteExecCall ["bis_fnc_call", 0, true];
+            missionNamespace getVariable ["bmt_var_safeStartEnded", true];
         };
     };
 } else {

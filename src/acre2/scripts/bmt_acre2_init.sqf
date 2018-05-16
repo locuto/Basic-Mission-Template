@@ -16,7 +16,9 @@
 #include "..\..\..\missionConfig\acre2\scripts\bmt_acre2_configuration.sqf"
 
 // Configure presets for each radio.
-[] call bmt_fnc_acre2_configurePresets;
+if (bmt_param_acre2_configureChannels == 1) then {
+    [] call bmt_fnc_acre2_configurePresets;
+};
 
 // Configure the client side.
 if (hasInterface) then {

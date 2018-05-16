@@ -93,7 +93,13 @@ if (hasInterface) then {
 //=======================================================================================================//
 // Mission introduction screen.                                                                          //
 //=======================================================================================================//
-bmt_script_intro = [] execVM "missionConfig\intro\scripts\bmt_intro.sqf";
+if (bmt_mod_cba) then {
+    ["CBA_loadingScreenDone", {
+        bmt_script_intro = [] execVM "missionConfig\intro\scripts\bmt_intro.sqf";
+    }] call CBA_fnc_addEventHandler;
+} else {
+    bmt_script_intro = [] execVM "missionConfig\intro\scripts\bmt_intro.sqf";
+};
 
 //=======================================================================================================//
 // Add all editor placed objects and units to Zeus. The eventhandlers will run every time a new unit is  //

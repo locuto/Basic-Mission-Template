@@ -12,6 +12,7 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
+bmt_mod_cba = isClass (configFile >> "CfgPatches" >> "cba_common");          // Check if CBA is loaded.
 bmt_mod_acre2 = isClass (configFile >> "CfgPatches" >> "acre_main");         // Check if ACRE 2 is loaded.
 bmt_mod_tfar = isClass (configFile >> "CfgPatches" >> "task_force_radio");   // Check if TFAR is loaded.
 
