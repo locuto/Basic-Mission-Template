@@ -1,38 +1,42 @@
 class baseMan {// Weaponless baseclass
-    displayName = "Unarmed";
+    displayName = "Unarmed";                // Identificador en el editor 3D
 
-    uniform[] = {"rhs_uniform_cu_ucp"};
-    vest[] = {"rhsusf_iotv_ucp_rifleman"};
-    backpack[] = {};
-    headgear[] = {"rhsusf_ach_helmet_ucp"};
-    goggles[] = {"rhs_googles_black"};
-    binoculars[] = {};
-    nightVision[] = {};
+    uniform[] = {};     // Uniform: randoom {uniform1, uniform2}
+    vest[] = {};        // Vest randoom {vest1, vest2}
+    backpack[] = {};    // Backpack randoom {backpack1, backpack2}
+    headgear[] = {};    // Helmet randoom {helmet1, helmet2}
+    goggles[] = {};     // Goggles randoom {goggle1, google2}
+    binoculars[] = {};  // Binoculars randoom {binocular1, binocular2}
+    nightVision[] = {}; // Nightvision randoom {nvg1, nvg2}
 
     // Weapons
-    primaryWeapon[] = {};       // {weaponName, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4}
-    secondaryWeapon[] = {};
-    launcher[] = {};
+    primaryWeapon[] = {};       // Randoom weapon with randoom attachments 1a,1b + 2,2a + 3 + 4
+                                // {
+                                //    {weaponName1, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
+                                //    {weaponName2, {attachment1a, attachment1a}, {attachment2, attachment2a}, attachment3, attachment4},
+                                // }
+    secondaryWeapon[] = {};     // Handgun
+    launcher[] = {};            // Launcher
 
     // Items and magazines
-    magazines[] = {};      // Magazimes {magazineName, count}
-    items[] = {};          // Items in uniform and vest {itemName, count}
-    backpackItems[] = {};  // Items in the backpack {itemName, count}
+    magazines[] = {};      // Magazines. The first suitable magazine will be added to the corresponding weapon
+    items[] = {};          // Items in uniform and vest. Items that do not fit will be added to the backpack
+    backpackItems[] = {};  // Items in the backpack
 
     // These are added directly into their respective slots
-    map[] = {};
-    radio[] = {};
-    gps[] = {};
-    compass[] = {};
-    watch[] = {};
+    map[] = {};       // Randoom selection of map item
+    radio[] = {};     // Randoom selection of radio item. If ACRE2 is active, all radios in the list will be added
+    gps[] = {};       // Randoom selection of gps item
+    compass[] = {};   // Randoom selection of compass item
+    watch[] = {};     // Randoom selection of watch item
 
-    rank[] = {"private"};
-    insignia[] = {};
+    rank[] = {"private"};  // Unit rank
+    insignia[] = {};       // Unit insignia
 
-    preLoadout = "";
-    postLoadout = "";
+    preLoadout = "";       // Code executed before applying the loadout. Arguments: _unit.
+    postLoadout = "";      // Code executed after applying the loadout. Arguments: _unit.
 
-    languages[] = {"english"};
+    languages[] = {"english"};  // Array with spoken languages (ACRE2)
 };
 
 class rfl : baseMan {
@@ -83,7 +87,7 @@ class gr : rfl {
         EXPAND_3("ACE_HuntIR_M203")
     };
 };
-//magazines[] = {"rhs_mag_30Rnd_556x45_M855_Stanag","rhs_mag_30Rnd_556x45_M855_Stanag","rhs_mag_30Rnd_556x45_M855_Stanag","rhs_mag_30Rnd_556x45_M855_Stanag","rhs_mag_30Rnd_556x45_M855_Stanag","rhs_mag_30Rnd_556x45_M855_Stanag","rhs_mag_30Rnd_556x45_M855_Stanag","rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red","SmokeShell","SmokeShell","SmokeShell","SmokeShell","SmokeShell","rhs_mag_m67","rhs_mag_m67","rhs_mag_m67","rhs_mag_m67","rhsusf_mag_15Rnd_9x19_FMJ","rhsusf_mag_15Rnd_9x19_FMJ","ACE_HuntIR_M203","rhs_mag_m713_Red","rhs_mag_m713_Red","1Rnd_HE_Grenade_shell"};
+
 class tl : rfl {
     displayName = "Team Leader";
     vest[] = {"rhsusf_iotv_ucp_Teamleader"};
@@ -101,7 +105,7 @@ class sl : tl {
     };
     items[] += {"ACE_DAGR"};
     magazines[] += {
-        "ACE_HuntIR_M203", EXPAND_2("rhs_mag_m713_Red"), "1Rnd_HE_Grenade_shell"
+        "1Rnd_HE_Grenade_shell", "ACE_HuntIR_M203", EXPAND_2("rhs_mag_m713_Red")
     };
 
     rank[] = {"sergeant"};
