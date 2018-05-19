@@ -16,7 +16,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1623.1796,58.154259,5139.4565};
+		pos[]={1627.8995,21.848551,5165.6792};
 		dir[]={-0.0067139035,-0.62335265,0.78191876};
 		up[]={-0.0053522517,0.78193957,0.62333006};
 		aside[]={0.99996936,-3.6277697e-008,0.0085860938};
@@ -164,14 +164,13 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1629.6613,5.6887245,5187.8447};
+				position[]={1629.661,5.6887245,5187.8452};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="[""blx"",this,""blu_f""] call bmt_fnc_configEquipment;";
 			};
 			id=1;
 			type="Box_NATO_Wps_F";

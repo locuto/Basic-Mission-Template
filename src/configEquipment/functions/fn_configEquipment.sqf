@@ -2,217 +2,97 @@
 // File: fn_configEquipment.sqf                                                                          //
 // Author: TheMagnetar                                                                                   //
 // Version: 1.0                                                                                          //
-// File creation: 2015/04/02                                                                             //
-// Description: This function equips the unit according to a specified role and depending on the faction //
-//              it belongs to.                                                                           //
+// File creation: 2018/05/16                                                                             //
+// Description: This function equips the unit according to a specified role and depending on the defined //
+//              faction.                                                                                 //
 //                                                                                                       //
-//              Arguments:                                                                               //
-//               - 0: unit role <STRING> or unit role with additional options <ARRAY>.                   //
-//               - 1: unit <OBJECT>.                                                                     //
-//               - 2: unit faction <STRING><OPTIONAL>.                                                   //
+// Arguments:                                                                                            //
+//    - 0: Unit <OBJECT>                                                                                 //
+//    - 1: Unit role <STRING><OPTIONAL>                                                                  //
+//    - 2: Unit faction <STRING><OPTIONAL>                                                               //
 //                                                                                                       //
-//              Examples:                                                                                //
-//               - Unit is a Fire Team Leader.                                                           //
-//                   ["tl", this] call bmt_fnc_configEquipment;                                          //
-//               - Unit is a Squad Leader with optional equipment foo.                                   //
-//                   [["sl", "foo"], this] call bmt_fnc_configEquipment;                                 //
-//               - Unit is a medic and has the equipment of the RHS faction "United States Marine Corps" //
-//                 (D) despite not belonging to it.                                                      //
-//                   ["me", this, "rhs_faction_usmc_d"] call bmt_fnc_configEquipment;                    //
-//                                                                                                       //
-//              Unit role can be one of the following entries:                                           //
-//                                                                                                       //
-//                  Unit Role               Assigned role                                                //
-//                  pl                      Platoon Leader                                               //
-//                  psg                     Platoon Sergeant                                             //
-//                  rto                     Platoon Radiotelephone Operator                              //
-//                  fo                      Forward Observer                                             //
-//                  jtac                    Joint Terminal Attack Controller                             //
-//                  me                      Platoon Medic                                                //
-//                  sl                      Squad Leader                                                 //
-//                  tl                      Team Leader                                                  //
-//                  rfl                     Rifleman                                                     //
-//                  rflat                   Rifleman with AT4                                            //
-//                  rfluav                  Rifleman with UAV (Raven)                                    //
-//                  gr                      Grenadier                                                    //
-//                  ar                      Automatic Rifleman                                           //
-//                  aar                     Assitant Automatic Rifleman                                  //
-//                  dm                      Designated Marksman                                          //
-//                  mg                      Machine Gunner                                               //
-//                  amg                     Assitant Machine Gunner                                      //
-//                  at                      Anti-Tank                                                    //
-//                  aat                     AT Ammo handler                                              //
-//                  aa                      Anti-Aircraft gunner                                         //
-//                  aaa                     Anti-Aircraft Assitant                                       //
-//                  en                      Engineer                                                     //
-//                  exp                     Explosives Specialist                                        //
-//                  sn                      Sniper                                                       //
-//                  sp                      Spotter                                                      //
-//                  divsl                   Diver Squad Leader                                           //
-//                  divme                   Diver Medic                                                  //
-//                  divexp                  Diver Explosives Specialist                                  //
-//                  div                     Diver                                                        //
-//                  hplt                    Helicopter pilot                                             //
-//                  jplt                    Jet pilot                                                    //
-//                  ccrw                    Combat Crew                                                  //
-//                                                                                                       //
-//              while the list of supported factions is:                                                 //
-//                                                                                                       //
-//                  FACTION                 Forced faction in terms of equipment                         //
-//                  blu_f                   Blue Force                                                   //
-//                  blu_ctrg_f              CTRG (APEX)                                                  //
-//                  blu_gen_f               Gendarmerie (APEX)                                           //
-//                  blu_t_f                 Blue Force Pacific (APEX)                                    //
-//                  blu_g_f                 FIA                                                          //
-//                  ind_g_f                 FIA                                                          //
-//                  opf_g_f                 FIA                                                          //
-//                  opf_f                   Opposing Force                                               //
-//                  opf_t_f                 Opposing Force Pacific (APEX)                                //
-//                  ind_f                   Independent Force                                            //
-//                  ind_c_f                 Syndikat (APEX)                                              //
-//                  civ_f                   Facció civil                                                 //
-//                  rhs_faction_usarmy_wd   United States Army (Woodland)                                //
-//                  rhs_faction_usarmy_d    United States Army (Desert)                                  //
-//                  rhs_faction_usmc_wd     United States Marine Corps (Woodland)                        //
-//                  rhs_faction_usmc_d      United States Marine Corps (Desert)                          //
-//                  rhs_faction_usn         United States Navy                                           //
-//                  rhs_faction_insurgents  Insurgents                                                   //
-//                  rhs_faction_vpvo        Soviet Air Defense Forces (Voyska protivovozdushnoy oborony) //
-//                  rhs_faction_vdv         Russian Airborne Troops (Vozdushno-desantnye voyska)         //
-//                  bwa3_faction            Bundeswehr                                                   //
-//                  generic_faction         Generic faction (fallback faction)                           //
+// Return:                                                                                               //
+//      None                                                                                             //
 //                                                                                                       //
 // Changes: 1.0  (2015/11/26) First public version.                                                      //
+//          2.0  (2018/05/16) Rewrite.                                                                   //
 //=======================================================================================================//
 
-// Variable declaration.
-params ["_unitOptions", "_unit", ["_unitFaction", nil]];
+#include "../script_component.hpp"
 
-// Only execute if unit is local.
-if !(local _unit) exitWith {};
+params [["_role", ""], "_unit", ["_faction", ""]];
 
-// Assume faction is recognised.
-private _recognised = true;
-
-if (isNil "_unitFaction") then {
-    _unitFaction = toLower (faction _unit);
+if (_role isEqualTo "") then {
+    _role = _unit getVariable ["bmt_var_configEquipment", "rfl"];
 } else {
-    _unitFaction = toLower _unitFaction;
+    _unit setVariable ["bmt_var_configEquipment", _role, true];
 };
 
-// Save unit faction
-_unit setVariable ["bmt_var_unitFaction", _unitFaction, true];
-
-// Save unit type.
-_unit setVariable ["bmt_var_configEquipment", _unitOptions, true];
+if (_faction isEqualTo "") then {
+    _faction = _unit getVariable ["bmt_var_unitFaction", faction _unit];
+} else {
+    _unit setVariable ["bmt_var_unitFaction", _faction, true];
+};
 
 // Begin gear assignement depending on unit's role.
 _unit setVariable ["bmt_var_init_configEquipmentReady", false, true];
+systemChat format ["faction player %1", _faction];
+private _configEntry = missionConfigFile >> "CfgLoadouts" >> _faction;
 
-// Include file for equipment configuration.
-#include "..\..\..\missionConfig\configEquipment\scripts\bmt_configEquipment_options.sqf";
 
-switch (_unitFaction) do {
-
-    //====================================================================================================//
-    // Vanila factions.                                                                                   //
-    //====================================================================================================//
-
-    // Equipment for BLUFOR faction.
-    case "blu_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
-
-    // Equipment for CTRG faction (APEX).
-    case "blu_ctrg_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
-
-    // Equipment for GENDARMERIE faction (APEX).
-    case "blu_gen_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
-
-    // Equipment for BLUFOR Pacific faction (APEX).
-    case "blu_t_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_blu_f; };
-
-    // Equipment for FIA faction.
-    case "blu_g_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_fia_f; };
-
-    // Equipment for FIA faction.
-    case "ind_g_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_fia_f; };
-
-    // Equipment for FIA faction.
-    case "opf_g_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_fia_f; };
-
-    // Equipment for OPFOR faction.
-    case "opf_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_opf_f; };
-
-    // Equipment for OPFOR Pacific faction (APEX).
-    case "opf_t_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_opf_f; };
-
-    // Equipment for Independent faction.
-    case "ind_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_ind_f; };
-
-    // Equipment for Syndikat faction.
-    case "ind_c_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_ind_f; };
-
-    // Equipment for Civilian faction.
-    case "civ_f": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_civ_f; };
-
-    //====================================================================================================//
-    // RHS factions.                                                                                      //
-    //====================================================================================================//
-
-    // Equipment for RHS: USAF "United States Army" (OCP) faction.
-    case "rhs_faction_usarmy_d": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
-
-    // Equipment for RHS: USAF "United States Army" (UCP) faction.
-    case "rhs_faction_usarmy_wd": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
-
-    // Equipment for RHS: USAF "United States Marine Corps" (D) faction.
-    case "rhs_faction_usmc_d": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
-
-    // Equipment for RHS: USAF "United States Marine Corps" (WD) faction.
-    case "rhs_faction_usmc_wd": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
-
-    // Equipment for RHS: USAF "United States Navy" faction.
-    case "rhs_faction_usn": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_usaf; };
-
-    // Equipment for RHS: Insurgents faction.
-    case "rhs_faction_insurgents": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_insurgents; };
-
-    // Equipment for RHS: AFRF "Russian Airborne Troops" faction.
-    case "rhs_faction_vdv": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_vdv; };
-
-    // Equipment for RHS: AFRF "Soviet Air Defense Forces" faction.
-    case "rhs_faction_vpvo": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_rhs_vpvo; };
-
-    //====================================================================================================//
-    // Bundeswehr.                                                                                        //
-    //====================================================================================================//
-
-    // Equipment for German army "Bundeswehr" faction.
-    case "bwa3_faction": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_bwa3_faction; };
-
-    //====================================================================================================//
-    // Fuerzas Armadas (ffaa).                                                                            //
-    //====================================================================================================//
-    case "ffaa": { [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_ffaa; };
-
-    //====================================================================================================//
-    // Faces of War.                                                                                      //
-    //====================================================================================================//
-
-    // Equipment for United States Marine Corps
-    case "fow_usmc": {  [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_fow_usmc; };
-
-    default { _recognised = false; [_unitOptions, _unit, _unitFaction] call bmt_fnc_configEquipment_fallback_faction;};
+if (!isClass _configEntry) exitWith {
+    systemChat format ["Faction not found %1", _faction];
 };
 
-if (_recognised) then {
-    // DEBUG OUTPUT.
-    _unit setVariable ["bmt_var_init_configEquipmentReady", true, true];
+_configEntry = _configEntry >> _role;
 
-    if (bmt_param_debugOutput == 1) then {
-        diag_log format ["DEBUG (fn_configEquipment.sqf): unit equiped with gear of faction: %1", _unitFaction];
+if (!isClass _configEntry) exitWith {
+    systemChat format ["Role not found %1", _role];
+};
+
+[_unit] call compile (getText (_configEntry >> "preLoadout"));
+
+{
+    if (isArray (_configEntry >> _x)) then {
+        [_unit, getArray (_configEntry >> _x), _x] call bmt_fnc_configEquipment_replaceGear;
     };
-} else {
-    systemChat format ["ERROR (fn_configEquipment.sqf): Faction %1 is not defined. Using fallback faction.", _unitFaction];
+} forEach ["uniform", "vest", "backpack", "headgear", "goggles", "binoculars", "nightvision"];
+
+{
+    if (isArray (_configEntry >> _x)) then {
+        [_unit, getArray (_configEntry >> _x), _x] call bmt_fnc_configEquipment_replaceWeapon;
+    };
+} forEach ["primaryWeapon", "secondaryWeapon", "launcher"];
+
+
+private _backpackItems = getArray (_configEntry >> "backpackItems");
+{
+    if (isArray (_configEntry >> _x)) then {
+        systemChat format ["%1", _forEachIndex];
+        _backpackItems append ([_unit, getArray (_configEntry >> _x), _x] call bmt_fnc_configEquipment_replaceItem);
+    };
+} forEach ["magazines", "items"];
+
+private _couldNotAdd = [_unit, _backpackItems, "backpackitems"] call bmt_fnc_configEquipment_replaceItem;
+
+if !(_couldNotAdd isEqualTo []) then {
+    systemChat format ["The following items could not be added %1", _couldNotAdd];
 };
+
+{
+    if (isArray (_configEntry >> _x)) then {
+        [_unit, getArray (_configEntry >> _x), _x] call bmt_fnc_configEquipment_replaceLinkItems;
+    };
+} forEach ["map", "radio", "gps", "compass", "watch"];
+
+_unit setUnitRank (selectrandom (getArray (configEntry >> "rank")));
+[_unit, (getArray (configEntry >> "insignia"))] call bis_fnc_setUnitInsignia;
+
+private _languages = getArray (_configEntry >> "languages");
+_unit setVariable ["bmt_acre2_languages", _languages, true];
+
+[_unit] call compile (getText (_configEntry >> "postLoadout"));
+
+_unit setVariable ["bmt_var_init_configEquipmentReady", true, true];
 
 //============================================= END OF FILE =============================================//

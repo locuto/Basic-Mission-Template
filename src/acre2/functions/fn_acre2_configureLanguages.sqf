@@ -16,6 +16,42 @@
 // Variable declarations.
 params [["_unit", objNull]];
 
+private _preconfiguredLanguages = _unit getVariable ["bmt_acre2_languages", []];
+
+
+private _allLanguages = [];
+{
+    _allLanguages pushBackUnique (_x select 0);
+} forEach bmt_acre2_languages;
+
+if (side _unit isEqualTo sideLogic) exitWith {
+    [_allLanguages] call acre_api_fnc_babelSetSpokenLanguages;
+    [_allLanguages select 0] call acre_api_fnc_babelSetSpeakingLanguage;
+
+    if (bmt_param_debugOutput == 1) then {
+        diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for virtual unit.", _allLanguages];
+    };
+};
+
+if !(_preconfiguredLanguages isEqualTo []) exitWith {
+    private _error = false;
+    {
+        if !(_x in _allLanguages) then {
+            systemChat format ["DEBUG (fn_acre2_configureLanguages.sqf): language %1 not found", _x];
+            _error = true;
+        };
+    } forEach _preconfiguredLanguages;
+
+    if (!_error) then {
+        _preconfiguredLanguages call acre_api_fnc_babelSetSpokenLanguages;
+        [_preconfiguredLanguages select 0] call acre_api_fnc_babelSetSpeakingLanguage;
+
+        if (bmt_param_debugOutput == 1) then {
+            diag_log format ["DEBUG (fn_acre2_configureLanguages.sqf): assigning predefined languages: %1", _preconfiguredLanguages];
+        };
+    };
+};
+
 private _unitFaction = _unit getVariable ["bmt_var_unitFaction", ""];
 
 if (_unitFaction isEqualTo "") then {
@@ -24,22 +60,9 @@ if (_unitFaction isEqualTo "") then {
 
 // DEBUG OUTPUT.
 if (bmt_param_debugOutput == 1) then {
-    diag_log format ["DEBUG (fn_acre2_determinarbmt_acre2_configureLanguages.sqf): unit faction: %1", _unitFaction];
+    diag_log format ["DEBUG (fn_acre2_configureLanguages.sqf): unit faction: %1", _unitFaction];
 };
 
-if (side _unit isEqualTo sideLogic) exitWith {
-    private _allLanguages = [];
-    {
-        _allLanguages pushBackUnique (_x select 0);
-    } forEach bmt_acre2_languages;
-
-    [_allLanguages] call acre_api_fnc_babelSetSpokenLanguages;
-    [_allLanguages select 0] call acre_api_fnc_babelSetSpeakingLanguage;
-
-    if (bmt_param_debugOutput == 1) then {
-        diag_log format ["DEBUG (bmt_acre2_configureLanguages.sqf): Using %1 for virtual unit.", _allLanguages];
-    };
-};
 
 // Languages for BLUFOR faction.
 if (_unitFaction in ["blu_f", "blu_ctrg_f", "blu_gen_f", "blu_t_f"] ) exitWith {

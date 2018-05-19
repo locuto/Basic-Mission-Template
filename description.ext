@@ -87,6 +87,12 @@ class CfgRemoteExec {
     };
 };
 
+class CfgLoadouts {
+    #define BMT_LOADOUTS
+        #include "bmt_components.hpp"
+    #undef BMT_LOADOUTS
+};
+
 //=======================================================================================================//
 // CBA SETTINGS FILE: This section deals with cba settings.                                              //
 //=======================================================================================================//

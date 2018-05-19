@@ -11,6 +11,12 @@
 // BMT components are not loaded
 if (hasInterface) then {
     missionNamespace setVariable ["bmt_var_init_preloadCompleted", false];
+
+    if (bmt_mod_cba) then {
+        ["CBA_loadingScreenDone", {
+            bmt_script_intro = [] execVM "missionConfig\intro\scripts\bmt_intro.sqf";
+        }] call CBA_fnc_addEventHandler;
+    };
 };
 
 //=======================================================================================================//
@@ -56,7 +62,6 @@ if (bmt_param_jip_enabled == 1 && {side player != sideLogic}) then {
     if (hasInterface) then {
         waitUntil { sleep 0.1; scriptDone bmt_script_jip };
     };
-
 };
 
 //=======================================================================================================//
@@ -93,11 +98,7 @@ if (hasInterface) then {
 //=======================================================================================================//
 // Mission introduction screen.                                                                          //
 //=======================================================================================================//
-if (bmt_mod_cba) then {
-    ["CBA_loadingScreenDone", {
-        bmt_script_intro = [] execVM "missionConfig\intro\scripts\bmt_intro.sqf";
-    }] call CBA_fnc_addEventHandler;
-} else {
+if (!bmt_mod_cba) then {
     bmt_script_intro = [] execVM "missionConfig\intro\scripts\bmt_intro.sqf";
 };
 
