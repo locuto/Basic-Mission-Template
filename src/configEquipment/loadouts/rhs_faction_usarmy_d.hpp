@@ -1,13 +1,13 @@
 class baseMan {// Weaponless baseclass
     displayName = "Unarmed";                // Identificador en el editor 3D
 
-    uniform[] = {};     // Uniform: randoom {uniform1, uniform2}
-    vest[] = {};        // Vest randoom {vest1, vest2}
-    backpack[] = {};    // Backpack randoom {backpack1, backpack2}
-    headgear[] = {};    // Helmet randoom {helmet1, helmet2}
-    goggles[] = {};     // Goggles randoom {goggle1, google2}
-    binoculars[] = {};  // Binoculars randoom {binocular1, binocular2}
-    nightVision[] = {}; // Nightvision randoom {nvg1, nvg2}
+    uniform[] = {"rhs_uniform_cu_ucp"};     // Uniform: randoom {uniform1, uniform2}
+    vest[] = {"rhsusf_iotv_ucp_rifleman"};  // Vest randoom {vest1, vest2}
+    backpack[] = {};                        // Backpack randoom {backpack1, backpack2}
+    headgear[] = {"rhsusf_ach_helmet_ucp"}; // Helmet randoom {helmet1, helmet2}
+    goggles[] = {"rhs_googles_black"};      // Goggles randoom {goggle1, google2}
+    binoculars[] = {};                      // Binoculars randoom {binocular1, binocular2}
+    nightVision[] = {};                     // Nightvision randoom {nvg1, nvg2}
 
     // Weapons
     primaryWeapon[] = {};       // Randoom weapon with randoom attachments 1a,1b + 2,2a + 3 + 4
@@ -65,7 +65,7 @@ class rflat : rfl {
         {"rhs_weap_M136_hedp"}
     };
     magazines[] += {
-        {"rhs_m136_hedp_mag", 1}
+        "rhs_m136_hedp_mag"
     };
 };
 
@@ -109,7 +109,7 @@ class sl : tl {
     };
 
     rank[] = {"sergeant"};
-    postLoadout = "systemChat format ['this is my player %1', _unit];";
+    postLoadout = "";
 };
 
 class pl : sl {

@@ -17,6 +17,7 @@
 params [["_unit", objNull]];
 
 private _unitOptions = _unit getVariable ["bmt_var_configEquipment", "undefined"];
+private _network = _unit getVariable ["bmt_var_acreNetwork", ""];
 
 private _unitRole = "";
 if ((typeName _unitOptions) == "STRING") then {
@@ -26,42 +27,24 @@ if ((typeName _unitOptions) == "STRING") then {
 };
 
 // Assign radios depending on the unit role (fn_configEquipment).
-if (!(_unitRole isEqualTo "")) then {
+if (!(_unitRole isEqualTo "") && {!(_network isEqualTo "")}) then {
 
-    // Check if it is necessary to assign the radio defined in "bmt_acre2_riflemanRadio" to all units.
-    if (bmt_acre2_riflemanRadioEverybody) then {
-            if( _unit canAdd bmt_acre2_riflemanRadio ) then {
-            _unit addItem bmt_acre2_riflemanRadio;
-        } else {
-            diag_log format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_riflemanRadio];
-        };
-    } else {
-        if (_unitRole in bmt_array_riflemanRadio) then {
-            if( _unit canAdd bmt_acre2_riflemanRadio ) then {
-                _unit addItem bmt_acre2_riflemanRadio;
-            } else {
-                diag_log format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_riflemanRadio];
-            };
-        };
-    };
+    private _networkEntries = missionConfigFile >> "CfgAcreNetworks";
+    {
+        private _networkEntry = toLower (configName _x);
+        if (_networkEntry isEqualTo _network) then {
+            {
+                private _roles = getArray (_x >> "roles");
+                private _radio = configName _x;
+                //[_radio, toLower (configName _networkEntries)] call acre_api_fnc_setPreset;
+                [_radio, _networkEntry] call acre_api_fnc_setPreset;
 
-    // Add short range radios.
-    if (_unitRole in bmt_array_shortRangeRadio) then {
-        if( _unit canAdd bmt_acre2_shortRangeRadio ) then {
-            _unit addItem bmt_acre2_shortRangeRadio;
-        } else {
-            diag_log format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_shortRangeRadio];
+                if (_unitRole in _roles && {_unit canAdd _radio}) then {
+                    _unit addItem _radio;
+                };
+            } forEach (configProperties [_x, "isClass _x", true]);
         };
-    };
-
-    // Add long range radios.
-    if (_unitRole in bmt_array_longRangeRadio) then {
-        if( _unit canAdd bmt_acre2_longRangeRadio ) then {
-            _unit addItemToBackPack bmt_acre2_longRangeRadio;
-        } else {
-            diag_log format ["ERROR (fn_acre2_addRadios.sqf): Cannot add radio %1.", bmt_acre2_longRangeRadio];
-        };
-    };
+    } forEach (configProperties [_networkEntries, "isClass _x", true]);
 } else {
     diag_log format ["ERROR (fn_acre2_addRadios.sqf): Undefined unit role."];
 };

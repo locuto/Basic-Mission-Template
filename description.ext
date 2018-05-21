@@ -93,6 +93,12 @@ class CfgLoadouts {
     #undef BMT_LOADOUTS
 };
 
+class CfgAcreNetworks {
+    #define BMT_ACRE_NETWORKS
+        #include "bmt_components.hpp"
+    #undef BMT_ACRE_NETWORKS
+};
+
 //=======================================================================================================//
 // CBA SETTINGS FILE: This section deals with cba settings.                                              //
 //=======================================================================================================//

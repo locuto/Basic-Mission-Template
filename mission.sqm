@@ -187,14 +187,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1629.7225,5.5014391,5181.7383};
+						position[]={1629.723,5.5014391,5181.7378};
 					};
 					side="West";
 					flags=6;
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[""Alpha 2"", 3,""sl"",this] call bmt_fnc_configUnit;";
+						init="call{[""Lezo"", 1,""sl"",this, ""networkLezo""] call bmt_fnc_configUnit;}";
 						name="bmt_A1_SL";
 						description="Squad Leader";
 						isPlayer=1;
@@ -202,44 +202,227 @@ class Mission
 					};
 					id=3;
 					type="rhsusf_army_ocp_rifleman_m4";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male07ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1634.7225,5.5014391,5180.0879};
+						position[]={1634.723,5.5014391,5180.0879};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[""Alpha 1"", 1,""me"",this] call bmt_fnc_configUnit;";
+						init="call{[""Sierra"", 0,""me"",this, ""networkAir""] call bmt_fnc_configUnit;}";
 						name="bmt_A1_ME";
 						isPlayable=1;
 					};
 					id=4;
 					type="rhsusf_army_ocp_medic";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1624.7225,5.5014391,5180.0879};
+						position[]={1624.723,5.5014391,5180.0879};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						init="[""Alpha 3"", 1,""en"",this] call bmt_fnc_configUnit;";
+						init="call{[""Mike"", 0,""en"",this, ""networkCommand""] call bmt_fnc_configUnit;}";
 						name="bmt_A1_EN";
 						isPlayable=1;
 					};
 					id=5;
 					type="rhsusf_army_ocp_engineer";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 			};
 			class Attributes

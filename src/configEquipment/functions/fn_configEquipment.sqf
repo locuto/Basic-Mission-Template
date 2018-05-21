@@ -36,7 +36,6 @@ if (_faction isEqualTo "") then {
 
 // Begin gear assignement depending on unit's role.
 _unit setVariable ["bmt_var_init_configEquipmentReady", false, true];
-systemChat format ["faction player %1", _faction];
 private _configEntry = missionConfigFile >> "CfgLoadouts" >> _faction;
 
 
@@ -68,7 +67,6 @@ if (!isClass _configEntry) exitWith {
 private _backpackItems = getArray (_configEntry >> "backpackItems");
 {
     if (isArray (_configEntry >> _x)) then {
-        systemChat format ["%1", _forEachIndex];
         _backpackItems append ([_unit, getArray (_configEntry >> _x), _x] call bmt_fnc_configEquipment_replaceItem);
     };
 } forEach ["magazines", "items"];
@@ -81,7 +79,7 @@ if !(_couldNotAdd isEqualTo []) then {
 
 {
     if (isArray (_configEntry >> _x)) then {
-        [_unit, getArray (_configEntry >> _x), _x] call bmt_fnc_configEquipment_replaceLinkItems;
+        [_unit, getArray (_configEntry >> _x), _x] call bmt_fnc_configEquipment_replaceLinkedItems;
     };
 } forEach ["map", "radio", "gps", "compass", "watch"];
 

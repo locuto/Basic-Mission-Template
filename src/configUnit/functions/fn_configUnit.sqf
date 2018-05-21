@@ -25,11 +25,17 @@
 // Changes: 1.0 (2015/11/26) First public version.                                                       //
 //=======================================================================================================//
 
-params [["_groupName", nil], ["_subgroupIndex", -1], ["_unitRole", nil], "_unit", ["_unitFaction", nil]];
+params [["_groupName", nil], ["_subgroupIndex", -1], ["_unitRole", nil], "_unit", ["_network", ""], ["_unitFaction", nil]];
 
 if (isNil "_unitRole") exitwith {
     diag_log format ["ERROR (fn_configUnit.sqf): unit role is not defined. Aborting."];
 };
+
+if (_network isEqualTo "") then {
+    systemChat format ["Radio network is not defined. Function call should be ['groupName', 'groupIndex', 'role', unit, 'network'] call bmt_fnc_configUnit"];
+};
+
+_unit setVariable ["bmt_var_acreNetwork", toLower _network, true];
 
 // Configure squad and fire team.
 [_groupName, _subgroupIndex, _unit] call bmt_fnc_configGroup;

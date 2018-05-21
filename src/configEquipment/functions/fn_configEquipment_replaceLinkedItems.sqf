@@ -23,7 +23,7 @@ params ["_unit", "_items", "_type"];
 private _selectedItem = "";
 
 if !(bmt_mod_acre2 && _type isEqualTo "radio") then {
-    if (_items > 0) then {
+    if (count _items > 0) then {
         _selectedItem = selectRandom _items;
     };
 };
@@ -45,11 +45,9 @@ switch (toLower _type) do {
         };
     };
     case "gps": {
-        if (backpack _unit != _selectedItem) then {
-            removeBackpack _unit;
-            if !(_selectedItem isEqualTo "") then {
-                _unit addBackpack _selectedItem;
-            };
+        _unit unlinkItem "ItemGPS";
+        if !(_selectedItem isEqualTo "") then {
+            _unit linkItem _selectedItem;
         };
     };
     case "compass": {
